@@ -1,0 +1,3517 @@
+Abs (float f)
+Abs (int value)
+AccelerationEvent
+AcceptDrag ()
+Acos (float f)
+Add (Object key, Object value)
+Add (Rect rect)
+Add (object value)
+AddBinaryData (string fieldName, byte[] contents, string fileName=null, string mimeType = null)
+AddClip (AnimationClip clip, string newName)
+AddClip (AnimationClip clip, string newName, int firstFrame, int lastFrame, bool addLoopFrame = false)
+AddColor (int nameID, Color value)
+AddColor (string name, Color value)
+AddComponent (Type componentType)
+AddComponent (string className)
+AddComponentMenu
+AddComponentMenu (string menuName)
+AddControl (int controlId, float distance)
+AddCursorRect (Rect position, MouseCursor mouse)
+AddDefaultControl (int controlId)
+AddEvent (AnimationEvent evt)
+AddExplosionForce (float explosionForce, Vector3 explosionPosition, float explosionRadius, float upwardsModifier = 0.0F, ForceMode mode = ForceMode.Force)
+AddField (string fieldName, int i)
+AddField (string fieldName, string value, Encoding e=System.Text.Encoding.UTF8)
+AddFloat (int nameID, float value)
+AddFloat (string name, float value)
+AddForce (Vector3 force, ForceMode mode = ForceMode.Force)
+AddForce (float x, float y, float z, ForceMode mode = ForceMode.Force)
+AddForceAtPosition (Vector3 force, Vector3 position, ForceMode mode = ForceMode.Force)
+AddForceAtPosition (Vector3 force, Vector3 position, float radius, ForceMode mode = ForceMode.Force)
+AddKey (Keyframe key)
+AddKey (float time, float value)
+AddMatrix (int nameID, Matrix4x4 value)
+AddMatrix (string name, Matrix4x4 value)
+AddMixingTransform (Transform mix, bool recursive = true)
+AddObjectToAsset (Object objectToAdd, Object assetObject)
+AddObjectToAsset (Object objectToAdd, string assetPath)
+AddRelativeForce (Vector3 force, ForceMode mode = ForceMode.Force)
+AddRelativeForce (float x, float y, float z, ForceMode mode = ForceMode.Force)
+AddRelativeTorque (Vector3 torque, ForceMode mode = ForceMode.Force)
+AddRelativeTorque (float x, float y, float z, ForceMode mode = ForceMode.Force)
+AddTorque (Vector3 torque, ForceMode mode = ForceMode.Force)
+AddTorque (float x, float y, float z, ForceMode mode = ForceMode.Force)
+AddTreeInstance (TreeInstance instance)
+AddVector (int nameID, Vector4 value)
+AddVector (string name, Vector4 value)
+AllocateViewID ()
+AltDirectorySeparatorChar
+Angle (Quaternion a, Quaternion b)
+Angle (Vector2 from, Vector2 to)
+Angle (Vector3 from, Vector3 to)
+AngleAxis (float angle, Vector3 axis)
+Animation
+AnimationBlendMode
+AnimationBlendMode.Additive
+AnimationBlendMode.Blend
+AnimationClip
+AnimationClip ()
+AnimationClipCurveData
+AnimationCurve
+AnimationCurve ()
+AnimationCurve (params Keyframe[] keys)
+AnimationEvent
+AnimationEvent ()
+AnimationState
+AnimationUtility
+AnisotropicFiltering
+AnisotropicFiltering.Disable
+AnisotropicFiltering.Enable
+AnisotropicFiltering.ForceEnable
+Application
+Apply (bool updateMipmaps = true)
+ApplyModifiedProperties ()
+ApplyModifiedPropertiesMultiSelect ()
+ApplyTextureType (TextureImporterType type, bool applyAll)
+Approximately (float a, float b)
+Array
+Array ()
+Array (Object[] arrObj)
+Array (int sizeArr)
+ArrowCap (int controlID, Vector3 position, Quaternion rotation, float size)
+Asin (float f)
+AspectRatio
+AspectRatio.Aspect16by10
+AspectRatio.Aspect16by9
+AspectRatio.Aspect4by3
+AspectRatio.Aspect5by4
+AspectRatio.AspectOthers
+AssetBundle
+AssetBundleRequest
+AssetDatabase
+AssetImporter
+AssetPathToGUID (string path)
+AssetPostprocessor
+AsyncOperation
+Atan (float f)
+Atan2 (float y, float x)
+AttachToCollider (Collider collider, bool tearable = false, bool twoWayInteraction = false)
+AudioChorusFilter
+AudioClip
+AudioDistortionFilter
+AudioEchoFilter
+AudioHighPassFilter
+AudioImporter
+AudioImporterFormat
+AudioImporterFormat.Compressed
+AudioImporterFormat.Native
+AudioListener
+AudioLowPassFilter
+AudioReverbFilter
+AudioReverbPreset
+AudioReverbPreset.Alley
+AudioReverbPreset.Arena
+AudioReverbPreset.Auditorium
+AudioReverbPreset.Bathroom
+AudioReverbPreset.CarpetedHallway
+AudioReverbPreset.Cave
+AudioReverbPreset.City
+AudioReverbPreset.Concerthall
+AudioReverbPreset.Dizzy
+AudioReverbPreset.Drugged
+AudioReverbPreset.Forest
+AudioReverbPreset.Generic
+AudioReverbPreset.Hallway
+AudioReverbPreset.Hangar
+AudioReverbPreset.Livingroom
+AudioReverbPreset.Mountains
+AudioReverbPreset.Off
+AudioReverbPreset.PaddedCell
+AudioReverbPreset.ParkingLot
+AudioReverbPreset.Plain
+AudioReverbPreset.Psychotic
+AudioReverbPreset.Quarry
+AudioReverbPreset.Room
+AudioReverbPreset.SewerPipe
+AudioReverbPreset.StoneCorridor
+AudioReverbPreset.Stoneroom
+AudioReverbPreset.Underwater
+AudioReverbPreset.User
+AudioReverbZone
+AudioRolloffMode
+AudioRolloffMode.Custom
+AudioRolloffMode.Linear
+AudioRolloffMode.Logarithmic
+AudioSettings
+AudioSource
+AudioSpeakerMode
+AudioSpeakerMode.Mode5point1
+AudioSpeakerMode.Mode7point1
+AudioSpeakerMode.Mono
+AudioSpeakerMode.Prologic
+AudioSpeakerMode.Quad
+AudioSpeakerMode.Raw
+AudioSpeakerMode.Stereo
+AudioSpeakerMode.Surround
+AudioVelocityUpdateMode
+AudioVelocityUpdateMode.Auto
+AudioVelocityUpdateMode.Dynamic
+AudioVelocityUpdateMode.Fixed
+Awake ()
+Bake ()
+BakeAsync ()
+BakeSelected ()
+BakeSelectedAsync ()
+Beep ()
+Begin (int mode)
+BeginArea (Rect screenRect)
+BeginArea (Rect screenRect, GUIContent content)
+BeginArea (Rect screenRect, GUIContent content, GUIStyle style)
+BeginArea (Rect screenRect, GUIStyle style)
+BeginArea (Rect screenRect, Texture image)
+BeginArea (Rect screenRect, Texture image, GUIStyle style)
+BeginArea (Rect screenRect, string text)
+BeginArea (Rect screenRect, string text, GUIStyle style)
+BeginGUI ()
+BeginGUI (Rect position)
+BeginGroup (Rect position)
+BeginGroup (Rect position, GUIContent content)
+BeginGroup (Rect position, GUIContent content, GUIStyle style)
+BeginGroup (Rect position, GUIStyle style)
+BeginGroup (Rect position, Texture image)
+BeginGroup (Rect position, Texture image, GUIStyle style)
+BeginGroup (Rect position, string text)
+BeginGroup (Rect position, string text, GUIStyle style)
+BeginHorizontal (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+BeginHorizontal (GUIStyle style, params GUILayoutOption[] options)
+BeginHorizontal (Texture image, GUIStyle style, params GUILayoutOption[] options)
+BeginHorizontal (params GUILayoutOption[] options)
+BeginHorizontal (string text, GUIStyle style, params GUILayoutOption[] options)
+BeginSample (string name)
+BeginScrollView (Rect position, Vector2 scrollPosition, Rect viewRect)
+BeginScrollView (Rect position, Vector2 scrollPosition, Rect viewRect, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar)
+BeginScrollView (Rect position, Vector2 scrollPosition, Rect viewRect, bool alwaysShowHorizontal, bool alwaysShowVertical)
+BeginScrollView (Rect position, Vector2 scrollPosition, Rect viewRect, bool alwaysShowHorizontal, bool alwaysShowVertical, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar)
+BeginScrollView (Vector2 scrollPosition, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar, params GUILayoutOption[] options)
+BeginScrollView (Vector2 scrollPosition, GUIStyle style)
+BeginScrollView (Vector2 scrollPosition, bool alwaysShowHorizontal, bool alwaysShowVertical, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar, GUIStyle background, params GUILayoutOption[] options)
+BeginScrollView (Vector2 scrollPosition, bool alwaysShowHorizontal, bool alwaysShowVertical, GUIStyle horizontalScrollbar, GUIStyle verticalScrollbar, params GUILayoutOption[] options)
+BeginScrollView (Vector2 scrollPosition, bool alwaysShowHorizontal, bool alwaysShowVertical, params GUILayoutOption[] options)
+BeginScrollView (Vector2 scrollPosition, params GUILayoutOption[] options)
+BeginToggleGroup (GUIContent label, bool toggle)
+BeginToggleGroup (string label, bool toggle)
+BeginVertical (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+BeginVertical (GUIStyle style, params GUILayoutOption[] options)
+BeginVertical (Texture image, GUIStyle style, params GUILayoutOption[] options)
+BeginVertical (params GUILayoutOption[] options)
+BeginVertical (string text, GUIStyle style, params GUILayoutOption[] options)
+BeginWindows ()
+Behaviour
+BitStream
+Blend (string animation, float targetWeight = 1.0F, float fadeLength = 0.3F)
+Blit (Texture source, RenderTexture dest)
+Blit (Texture source, RenderTexture dest, Material mat, int pass = -1)
+BlitMultiTap (Texture source, RenderTexture dest, Material mat, params Vector2[] offsets)
+BoneWeight
+Bounds
+Bounds (Vector3 center, Vector3 size)
+Box (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+Box (GUIContent content, params GUILayoutOption[] options)
+Box (Rect position, GUIContent content)
+Box (Rect position, GUIContent content, GUIStyle style)
+Box (Rect position, Texture image)
+Box (Rect position, Texture image, GUIStyle style)
+Box (Rect position, string text)
+Box (Rect position, string text, GUIStyle style)
+Box (Texture image, GUIStyle style, params GUILayoutOption[] options)
+Box (Texture image, params GUILayoutOption[] options)
+Box (string text, GUIStyle style, params GUILayoutOption[] options)
+Box (string text, params GUILayoutOption[] options)
+BoxCollider
+Break ()
+BringWindowToBack (int windowID)
+BringWindowToFront (int windowID)
+BroadcastMessage (string methodName, object parameter = null, SendMessageOptions options = SendMessageOptions.RequireReceiver)
+BrowseURL (string url)
+BuildAssetBundle (Object mainAsset, Object[] assets, string pathName, BuildAssetBundleOptions options = BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets, BuildTarget targetPlatform = BuildTarget.WebPlayer)
+BuildAssetBundleExplicitAssetNames (Object[] assets, string[] assetNames, string pathName, BuildAssetBundleOptions options = BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets, BuildTarget targetPlatform = BuildTarget.WebPlayer)
+BuildAssetBundleOptions
+BuildAssetBundleOptions.CollectDependencies
+BuildAssetBundleOptions.CompleteAssets
+BuildAssetBundleOptions.DeterministicAssetBundle
+BuildOptions
+BuildOptions.AcceptExternalModificationsToPlayer
+BuildOptions.AutoRunPlayer
+BuildOptions.BuildAdditionalStreamedScenes
+BuildOptions.Development
+BuildOptions.None
+BuildOptions.ShowBuiltPlayer
+BuildOptions.WebPlayerOfflineDeployment
+BuildPipeline
+BuildPlayer (string[] levels, string locationPathName, BuildTarget target, BuildOptions options)
+BuildTarget
+BuildTarget.Android
+BuildTarget.DashboardWidget
+BuildTarget.PS3
+BuildTarget.StandaloneOSXIntel
+BuildTarget.StandaloneOSXPPC
+BuildTarget.StandaloneOSXUniversal
+BuildTarget.StandaloneWindows
+BuildTarget.WebPlayer
+BuildTarget.WebPlayerStreamed
+BuildTarget.Wii
+BuildTarget.XBOX360
+BuildTarget.iPhone
+Button (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+Button (GUIContent content, params GUILayoutOption[] options)
+Button (Rect position, GUIContent content)
+Button (Rect position, GUIContent content, GUIStyle style)
+Button (Rect position, Texture image)
+Button (Rect position, Texture image, GUIStyle style)
+Button (Rect position, string text)
+Button (Rect position, string text, GUIStyle style)
+Button (Texture image, GUIStyle style, params GUILayoutOption[] options)
+Button (Texture image, params GUILayoutOption[] options)
+Button (Vector3 position, Quaternion direction, float size, float pickSize, DrawCapFunction capFunc)
+Button (string text, GUIStyle style, params GUILayoutOption[] options)
+Button (string text, params GUILayoutOption[] options)
+CalcHeight (GUIContent content, float width)
+CalcLineTranslation (Vector2 src, Vector2 dest, Vector3 srcPosition, Vector3 constraintDir)
+CalcMinMaxWidth (GUIContent content, out float minWidth, out float maxWidth)
+CalcScreenSize (Vector2 contentSize)
+CalcSize (GUIContent content)
+CalculateFrustumPlanes (Camera camera)
+CalculateFrustumPlanes (Matrix4x4 worldToProjectionMatrix)
+CalculateTransformPath (Transform targetTransform, Transform root)
+CallbackFunction ()
+Camera
+CameraClearFlags
+CameraClearFlags.Depth
+CameraClearFlags.Nothing
+CameraClearFlags.Skybox
+CameraClearFlags.SolidColor
+CanStreamedLevelBeLoaded (int levelIndex)
+CanStreamedLevelBeLoaded (string levelName)
+Cancel ()
+CancelInvoke ()
+CancelInvoke (string methodName)
+CancelQuit ()
+CapsuleCast (Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+CapsuleCast (Vector3 point1, Vector3 point2, float radius, Vector3 direction, out RaycastHit hitInfo, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+CapsuleCastAll (Vector3 point1, Vector3 point2, float radius, Vector3 direction, float distance = Mathf.Infinity, int layermask = kDefaultRaycastLayers)
+CapsuleCollider
+CaptureScreenshot (string filename)
+Ceil (float f)
+CeilToInt (float f)
+CharacterController
+CharacterJoint
+CheckCapsule (Vector3 start, Vector3 end, float radius, int layermask =  kDefaultRaycastLayers)
+CheckSphere (Vector3 position, float radius, int layerMask = kDefaultRaycastLayers)
+CircleCap (int controlID, Vector3 position, Quaternion rotation, float size)
+Clamp (float value, float min, float max)
+Clamp (int value, int min, int max)
+Clamp01 (float value)
+ClampMagnitude (Vector2 vector, float maxLength)
+ClampMagnitude (Vector3 vector, float maxLength)
+Clear ()
+Clear (bool clearDepth, bool clearColor, Color backgroundColor)
+ClearCamera (Rect position, Camera camera)
+ClearCurves ()
+ClearHostList ()
+ClearLabels ( Object obj )
+ClearParticles ()
+ClearPlatformTextureSettings (string platform)
+ClearProgressBar ()
+ClearSnapshotTarget ()
+ClearWithSkybox (bool clearDepth, Camera camera)
+CloneComponent (Component c)
+Close ()
+CloseConnection (NetworkPlayer target, bool sendDisconnectionNotification)
+ClosestPointOnBounds (Vector3 position)
+ClosestPointToArc (Vector3 center, Vector3 normal, Vector3 from, float angle, float radius)
+ClosestPointToDisc (Vector3 center, Vector3 normal, float radius)
+ClosestPointToPolyLine (params Vector3[] vertices)
+ClosestPowerOfTwo (int value)
+Cloth
+ClothRenderer
+ClothSkinningCoefficient
+CollectDeepHierarchy (Object[] roots)
+CollectDependencies (Object[] roots)
+Collider
+Collision
+CollisionDetectionMode
+CollisionDetectionMode.Continuous
+CollisionDetectionMode.ContinuousDynamic
+CollisionDetectionMode.Discrete
+CollisionFlags
+CollisionFlags.Above
+CollisionFlags.Below
+CollisionFlags.None
+CollisionFlags.Sides
+Color
+Color (Color c)
+Color (float r, float g, float b)
+Color (float r, float g, float b, float a)
+ColorField (Color value, params GUILayoutOption[] options)
+ColorField (GUIContent label, Color value, params GUILayoutOption[] options)
+ColorField (Rect position, Color value)
+ColorField (Rect position, GUIContent label, Color value)
+ColorField (Rect position, string label, Color value)
+ColorField (string label, Color value, params GUILayoutOption[] options)
+Combine (GameObject staticBatchRoot)
+Combine (GameObject[] gos, GameObject staticBatchRoot)
+Combine (string path1, string path2)
+CombineInstance
+CombineMeshes (CombineInstance[] combine, bool mergeSubMeshes = true, bool useMatrices = true)
+CommandEvent (string commandName)
+CompareTag (string tag)
+CompleteLabel (string prefix)
+Component
+Compress (bool highQuality)
+CompressTexture (Texture2D texture, TextureFormat format)
+Compute (StaticOcclusionCullingQuality quality, float viewCellSize, float nearClipPlane, float farClipPlane)
+Concat (Array array, Array optionalArray0, Array optionalArray1)
+ConeCap (int controlID, Vector3 position, Quaternion rotation, float size)
+ConfigurableJoint
+ConfigurableJointMotion
+ConfigurableJointMotion.Free
+ConfigurableJointMotion.Limited
+ConfigurableJointMotion.Locked
+Connect (HostData hostData, string password = "")
+Connect (string GUID, string password = "")
+Connect (string IP, int remotePort, string password = "")
+Connect (string[] IPs, int remotePort, string password = "")
+ConnectionTesterStatus
+ConnectionTesterStatus.Error
+ConnectionTesterStatus.LimitedNATPunchthroughPortRestricted
+ConnectionTesterStatus.LimitedNATPunchthroughSymmetric
+ConnectionTesterStatus.NATpunchthroughAddressRestrictedCone
+ConnectionTesterStatus.NATpunchthroughFullCone
+ConnectionTesterStatus.PublicIPIsConnectable
+ConnectionTesterStatus.PublicIPNoServerStarted
+ConnectionTesterStatus.PublicIPPortBlocked
+ConnectionTesterStatus.Undetermined
+ConstantForce
+ContactPoint
+Contains (Object obj)
+Contains (Vector2 point)
+Contains (Vector3 point)
+Contains (int instanceID)
+Contains (object key)
+Contains (string name)
+ContainsKey (object key)
+ContainsValue (object value)
+ContextMenu
+ContextMenu (string name)
+ControllerColliderHit
+Copy ()
+CopyAsset (string path, string newPath)
+CopyFileOrDirectory (string from, string to)
+CopyFileOrDirectoryFollowSymlinks (string from, string to)
+CopyFrom (Camera other)
+CopyPropertiesFromMaterial (Material mat)
+CopySerialized (Object source, Object dest)
+CopyTo (TextureImporterSettings target)
+Coroutine
+Cos (float f)
+Count
+CountRemaining ()
+Create ()
+CreateAsset (Object asset, string path)
+CreateEmptyPrefab (string path)
+CreateGameObjectWithHideFlags (string name, HideFlags flags, params Type[] components)
+CreateInstance (Type type)
+CreateInstance (string className)
+CreatePrimitive (PrimitiveType type)
+CreateSnapshot ()
+CreateTerrainGameObject (TerrainData assignTerrain)
+Cross (Vector3 lhs, Vector3 rhs)
+CrossFade (string animation, float fadeLength = 0.3F, PlayMode mode = PlayMode.StopSameLayer)
+CrossFadeQueued (string animation, float fadeLength = 0.3F, QueueMode queue = QueueMode.CompleteOthers, PlayMode mode = PlayMode.StopSameLayer)
+CubeCap (int controlID, Vector3 position, Quaternion rotation, float size)
+Cubemap
+Cubemap (int size, TextureFormat format, bool mipmap)
+CubemapFace
+CubemapFace.NegativeX
+CubemapFace.NegativeY
+CubemapFace.NegativeZ
+CubemapFace.PositiveX
+CubemapFace.PositiveY
+CubemapFace.PositiveZ
+CurveField (AnimationCurve value, Color color, Rect ranges, params GUILayoutOption[] options)
+CurveField (AnimationCurve value, params GUILayoutOption[] options)
+CurveField (GUIContent label, AnimationCurve value, Color color, Rect ranges, params GUILayoutOption[] options)
+CurveField (GUIContent label, AnimationCurve value, params GUILayoutOption[] options)
+CurveField (Rect position, AnimationCurve value)
+CurveField (Rect position, AnimationCurve value, Color color, Rect ranges)
+CurveField (Rect position, GUIContent label, AnimationCurve value)
+CurveField (Rect position, GUIContent label, AnimationCurve value, Color color, Rect ranges)
+CurveField (Rect position, string label, AnimationCurve value)
+CurveField (Rect position, string label, AnimationCurve value, Color color, Rect ranges)
+CurveField (string label, AnimationCurve value, Color color, Rect ranges, params GUILayoutOption[] options)
+CurveField (string label, AnimationCurve value, params GUILayoutOption[] options)
+CustomEditor
+CustomEditor (System.Type inspectedType)
+CylinderCap (int controlID, Vector3 position, Quaternion rotation, float size)
+Debug
+DecreaseLevel ()
+Deg2Rad
+DeleteAll ()
+DeleteAsset (string path)
+DeleteFileOrDirectory (string path)
+DeleteKey (string key)
+DeltaAngle (float current, float target)
+DepthTextureMode
+DepthTextureMode.Depth
+DepthTextureMode.DepthNormals
+DepthTextureMode.None
+Destroy (GameObject gameObject)
+Destroy (NetworkViewID viewID)
+Destroy (Object obj, float t = 0.0F)
+DestroyImmediate (Object obj, bool allowDestroyingAssets = false)
+DestroyPlayerObjects (NetworkPlayer playerID)
+DetachChildren ()
+DetachFromCollider (Collider collider)
+DetailPrototype
+DetailRenderMode
+DetailRenderMode.Grass
+DetailRenderMode.GrassBillboard
+DetailRenderMode.VertexLit
+DeviceOrientation
+DeviceOrientation.FaceDown
+DeviceOrientation.FaceUp
+DeviceOrientation.LandscapeLeft
+DeviceOrientation.LandscapeRight
+DeviceOrientation.Portrait
+DeviceOrientation.PortraitUpsideDown
+DeviceOrientation.Unknown
+DirectorySeparatorChar
+Disc (Quaternion rotation, Vector3 position, Vector3 axis, float size, bool cutoffPlane, float snap)
+Disconnect (int timeout = 200)
+DisplayCancelableProgressBar (string title, string info, float progress)
+DisplayDialog (string title, string message, string ok, string cancel = "")
+DisplayDialogComplex (string title, string message, string ok, string cancel, string alt)
+DisplayPopupMenu (Rect position, string menuItemPath, MenuCommand command)
+DisplayProgressBar (string title, string info, float progress)
+DisplayWizard (string title, System.Type klass, string createButtonName = "Create", string otherButtonName = "")
+Distance (Vector2 a, Vector2 b)
+Distance (Vector3 a, Vector3 b)
+Distance (Vector4 a, Vector4 b)
+DistancePointBezier (Vector3 point, Vector3 startPosition, Vector3 endPosition, Vector3 startTangent, Vector3 endTangent)
+DistancePointLine (Vector3 point, Vector3 lineStart, Vector3 lineEnd)
+DistanceToArc (Vector3 center, Vector3 normal, Vector3 from, float angle, float radius)
+DistanceToCircle (Vector3 position, float radius)
+DistanceToDisc (Vector3 center, Vector3 normal, float radius)
+DistanceToLine (Vector3 p1, Vector3 p2)
+DistanceToPolyLine (params Vector3[] points)
+DoesSourceTextureHaveAlpha ()
+DontDestroyOnLoad (Object target)
+Dot (Quaternion a, Quaternion b)
+Dot (Vector2 lhs, Vector2 rhs)
+Dot (Vector3 lhs, Vector3 rhs)
+Dot (Vector4 a, Vector4 b)
+DotCap (int controlID, Vector3 position,  Quaternion rotation, float size)
+DragAndDrop
+DragAndDropVisualMode
+DragAndDropVisualMode.Copy
+DragAndDropVisualMode.Generic
+DragAndDropVisualMode.Link
+DragAndDropVisualMode.Move
+DragAndDropVisualMode.None
+DragWindow ()
+DragWindow (Rect position)
+Draw (Rect position, GUIContent content, bool isHover, bool isActive, bool on, bool hasKeyboardFocus)
+Draw (Rect position, GUIContent content, int controlID, bool on = false)
+Draw (Rect position, Texture image, bool isHover, bool isActive, bool on, bool hasKeyboardFocus)
+Draw (Rect position, bool isHover, bool isActive, bool on, bool hasKeyboardFocus)
+Draw (Rect position, string text, bool isHover, bool isActive, bool on, bool hasKeyboardFocus)
+DrawAAPolyLine (Texture2D lineTex, params Vector3[] points)
+DrawAAPolyLine (params Vector3[] points)
+DrawBezier (Vector3 startPosition, Vector3 endPosition, Vector3 startTangent, Vector3 endTangent, Color color, Texture2D texture, float width)
+DrawCamera (  Rect position, Camera camera, DrawCameraMode drawMode=DrawCameraMode.Normal )
+DrawCameraMode
+DrawCameraMode.LightmapResolution
+DrawCameraMode.Normal
+DrawCameraMode.RenderPaths
+DrawCameraMode.Textured
+DrawCameraMode.TexturedWire
+DrawCameraMode.Wireframe
+DrawCapFunction (int controlID, Vector3 position, Quaternion rotation, float size)
+DrawColorSwatch (Rect position, Color color)
+DrawCube (Vector3 center, Vector3 size)
+DrawCursor (Rect position, GUIContent content, int controlID, int Character)
+DrawCurveSwatch (Rect position, AnimationCurve curve, SerializedProperty property, Color color, Color bgColor)
+DrawCurveSwatch (Rect position, AnimationCurve curve, SerializedProperty property, Color color, Color bgColor, Rect curveRanges)
+DrawDefaultInspector ()
+DrawGUITexture (Rect screenRect, Texture texture, Material mat = null)
+DrawGUITexture (Rect screenRect, Texture texture, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Material mat = null)
+DrawGizmo
+DrawGizmo (GizmoType gizmo)
+DrawGizmo (GizmoType gizmo, Type drawnGizmoType)
+DrawIcon (Vector3 center, string name)
+DrawLine (Vector3 from, Vector3 to)
+DrawLine (Vector3 p1, Vector3 p2)
+DrawLine (Vector3 start, Vector3 end, Color color = Color.white)
+DrawMesh (Mesh mesh, Matrix4x4 matrix, Material material, int layer, Camera camera = null, int submeshIndex = 0, MaterialPropertyBlock properties = null)
+DrawMesh (Mesh mesh, Vector3 position, Quaternion rotation, Material material, int layer, Camera camera = null, int submeshIndex = 0, MaterialPropertyBlock properties = null)
+DrawMeshNow (Mesh mesh, Matrix4x4 matrix)
+DrawMeshNow (Mesh mesh, Matrix4x4 matrix, int materialIndex)
+DrawMeshNow (Mesh mesh, Vector3 position, Quaternion rotation)
+DrawMeshNow (Mesh mesh, Vector3 position, Quaternion rotation, int materialIndex)
+DrawPolyLine (params Vector3[] points)
+DrawPreviewTexture (Rect position, Texture image, Material mat = null, ScaleMode scaleMode = ScaleMode.StretchToFill,  float imageAspect = 0)
+DrawRay (Ray r)
+DrawRay (Vector3 from, Vector3 direction)
+DrawRay (Vector3 start, Vector3 dir, Color color = Color.white)
+DrawSolidArc (Vector3 center, Vector3 normal, Vector3 from, float angle, float radius)
+DrawSolidDisc (Vector3 center, Vector3 normal, float radius)
+DrawSphere (Vector3 center, float radius)
+DrawTexture (Rect position, Texture image, ScaleMode scaleMode = ScaleMode.StretchToFill, bool alphaBlend = true, float imageAspect = 0)
+DrawTexture (Rect screenRect, Texture texture, Material mat = null)
+DrawTexture (Rect screenRect, Texture texture, Rect sourceRect, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Color color, Material mat = null)
+DrawTexture (Rect screenRect, Texture texture, Rect sourceRect, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Material mat = null)
+DrawTexture (Rect screenRect, Texture texture, int leftBorder, int rightBorder, int topBorder, int bottomBorder, Material mat = null)
+DrawTextureAlpha (Rect position, Texture image, ScaleMode scaleMode = ScaleMode.StretchToFill,  float imageAspect = 0)
+DrawWireArc (Vector3 center, Vector3 normal, Vector3 from, float angle, float radius)
+DrawWireCube (Vector3 center, Vector3 size)
+DrawWireDisc (Vector3 center, Vector3 normal, float radius)
+DrawWireSphere (Vector3 center, float radius)
+DrawWithTextSelection (Rect position, GUIContent content, int controlID, int firstSelectedCharacter, int lastSelectedCharacter)
+DropShadowLabel (Rect position, GUIContent content)
+DropShadowLabel (Rect position, GUIContent content, GUIStyle style)
+DropShadowLabel (Rect position, string text)
+DropShadowLabel (Rect position, string text, GUIStyle style)
+EaseInOut (float timeStart, float valueStart, float timeEnd, float valueEnd)
+Editor
+EditorApplication
+EditorGUI
+EditorGUILayout
+EditorGUIUtility
+EditorPrefs
+EditorSkin
+EditorSkin.Game
+EditorSkin.Inspector
+EditorSkin.Scene
+EditorStyles
+EditorUtility
+EditorWindow
+Emit ()
+Emit (Vector3 pos, Vector3 velocity, float size, float energy, Color color)
+Emit (Vector3 pos, Vector3 velocity, float size, float energy, Color color, float rotation, float angularVelocity)
+Emit (int count)
+Encapsulate (Bounds bounds)
+Encapsulate (Vector3 point)
+EncodeToPNG ()
+End ()
+EndArea ()
+EndGUI ()
+EndGroup ()
+EndHorizontal ()
+EndSample ()
+EndScrollView ()
+EndToggleGroup ()
+EndVertical ()
+EndWindows ()
+EnumPopup (GUIContent label, System.Enum selected, GUIStyle style, params GUILayoutOption[] options)
+EnumPopup (GUIContent label, System.Enum selected, params GUILayoutOption[] options)
+EnumPopup (Rect position, GUIContent label, System.Enum selected, GUIStyle style = EditorStyles.popup)
+EnumPopup (Rect position, System.Enum selected, GUIStyle style = EditorStyles.popup)
+EnumPopup (Rect position, string label, System.Enum selected, GUIStyle style = EditorStyles.popup)
+EnumPopup (System.Enum selected, GUIStyle style, params GUILayoutOption[] options)
+EnumPopup (System.Enum selected, params GUILayoutOption[] options)
+EnumPopup (string label, System.Enum selected, GUIStyle style, params GUILayoutOption[] options)
+EnumPopup (string label, System.Enum selected, params GUILayoutOption[] options)
+Epsilon
+Equal (TextureImporterSettings a, TextureImporterSettings b)
+EqualContents (SerializedProperty x, SerializedProperty y)
+EscapeURL (string s, Encoding e=System.Text.Encoding.UTF8)
+Euler (Vector3 euler)
+Euler (float x, float y, float z)
+Evaluate (float time)
+Event
+EventType
+EventType.ContextClick
+EventType.DragExited
+EventType.DragPerform
+EventType.DragUpdated
+EventType.ExecuteCommand
+EventType.Ignore
+EventType.KeyDown
+EventType.KeyUp
+EventType.Layout
+EventType.MouseDown
+EventType.MouseDrag
+EventType.MouseMove
+EventType.MouseUp
+EventType.Repaint
+EventType.ScrollWheel
+EventType.Used
+EventType.ValidateCommand
+ExecuteInEditMode
+ExecuteMenuItem (string menuItemPath)
+Exit (int returnValue)
+Exp (float power)
+Expand (Vector3 amount)
+Expand (float amount)
+ExpandHeight (bool expand)
+ExpandWidth (bool expand)
+ExternalCall (string functionName, params object[] args)
+ExternalEval (string script)
+ExtractOggFile (Object obj, string path)
+FFTWindow
+FFTWindow.Blackman
+FFTWindow.BlackmanHarris
+FFTWindow.Hamming
+FFTWindow.Hanning
+FFTWindow.Rectangular
+FFTWindow.Triangle
+FileUtil
+FilterMode
+FilterMode.Bilinear
+FilterMode.Point
+FilterMode.Trilinear
+Find (NetworkViewID viewID)
+Find (string name)
+FindGameObjectsWithTag (string tag)
+FindObjectOfType (Type type)
+FindObjectsOfType (Type type)
+FindObjectsOfTypeAll (Type type)
+FindPrefabRoot (GameObject source)
+FindProperty (string propertyPath)
+FindStyle (string styleName)
+FindTexture (string name)
+FindWithTag (string tag)
+FixedJoint
+FixedUpdate ()
+Flare
+FlexibleSpace ()
+FloatField (GUIContent label, float value, GUIStyle style, params GUILayoutOption[] options)
+FloatField (GUIContent label, float value, params GUILayoutOption[] options)
+FloatField (Rect position, GUIContent label, float value, GUIStyle style = EditorStyles.numberField)
+FloatField (Rect position, float value, GUIStyle style = EditorStyles.numberField)
+FloatField (Rect position, string label, float value, GUIStyle style = EditorStyles.numberField)
+FloatField (float value, GUIStyle style, params GUILayoutOption[] options)
+FloatField (float value, params GUILayoutOption[] options)
+FloatField (string label, float value, GUIStyle style, params GUILayoutOption[] options)
+FloatField (string label, float value, params GUILayoutOption[] options)
+Floor (float f)
+FloorToInt (float f)
+Flush ()
+Focus ()
+FocusControl (string name)
+FocusProjectWindow ()
+FocusType
+FocusType.Keyboard
+FocusType.Native
+FocusType.Passive
+FocusWindow (int windowID)
+Foldout (Rect position, bool foldout, GUIContent content, GUIStyle style = EditorStyles.foldout)
+Foldout (Rect position, bool foldout, string content, GUIStyle style = EditorStyles.foldout)
+Foldout (bool foldout, GUIContent content, GUIStyle style = EditorStyles.foldout)
+Foldout (bool foldout, string content, GUIStyle style = EditorStyles.foldout)
+Font
+FontRenderMode
+FontRenderMode.LightAntialiasing
+FontRenderMode.NoAntialiasing
+FontRenderMode.StrongAntialiasing
+FontStyle
+FontStyle.Bold
+FontStyle.BoldAndItalic
+FontStyle.Italic
+FontStyle.Normal
+FontTextureCase
+FontTextureCase.ASCII
+FontTextureCase.ASCIILowerCase
+FontTextureCase.ASCIIUpperCase
+FontTextureCase.Dynamic
+FontTextureCase.Unicode
+ForceMode
+ForceMode.Acceleration
+ForceMode.Force
+ForceMode.Impulse
+ForceMode.VelocityChange
+FormatBytes (int bytes)
+FreeMoveHandle (Vector3 position, Quaternion rotation, float size, Vector3 snap, DrawCapFunction capFunc)
+FreeRotateHandle (Quaternion rotation, Vector3 position, float size)
+FromToRotation (Vector3 fromDirection, Vector3 toDirection)
+GL
+GUI
+GUIContent
+GUIContent ()
+GUIContent (GUIContent src)
+GUIContent (Texture image)
+GUIContent (Texture image, string tooltip)
+GUIContent (string text)
+GUIContent (string text, Texture image)
+GUIContent (string text, Texture image, string tooltip)
+GUIContent (string text, string tooltip)
+GUIDToAssetPath (string guid)
+GUIElement
+GUILayer
+GUILayout
+GUILayoutOption
+GUILayoutUtility
+GUIPointToWorldRay (Vector2 position)
+GUISettings
+GUISkin
+GUIStyle
+GUIStyle ()
+GUIStyle (GUIStyle other)
+GUIStyleState
+GUIText
+GUITexture
+GUIToScreenPoint (Vector2 guiPoint)
+GUIUtility
+GameObject
+GameObject ()
+GameObject (string name)
+GameObject (string name, params Type[] components)
+GenerateInBackground (StaticOcclusionCullingQuality quality, float viewCellSize, float nearClipPlane, float farClipPlane)
+GeneratePerTriangleUV ( Mesh src )
+GeneratePerTriangleUV ( Mesh src, UnwrapParam settings )
+GenerateSecondaryUVSet ( Mesh src )
+GenerateSecondaryUVSet ( Mesh src, UnwrapParam settings )
+GenerateUniqueAssetPath (string path)
+GeometryUtility
+GetAccelerationEvent (int index)
+GetAllCurves (AnimationClip clip, bool includeCurveData = true)
+GetAlphamaps (int x, int y, int width, int height)
+GetAnimatableObjects (GameObject go)
+GetAnimatableProperties (GameObject go)
+GetAnimatablePropertiesForObject (Object animatedObject, GameObject gameObject)
+GetAnimationClips (Animation component)
+GetAnimationEvents (AnimationClip clip)
+GetAspectRect (float aspect)
+GetAspectRect (float aspect, GUIStyle style)
+GetAspectRect (float aspect, GUIStyle style, params GUILayoutOption[] options)
+GetAspectRect (float aspect, params GUILayoutOption[] options)
+GetAssetPath (Object assetObject)
+GetAssetPath (int instanceID)
+GetAtPath (string path)
+GetAveragePing (NetworkPlayer player)
+GetAxis (string axisName)
+GetAxisRaw (string axisName)
+GetBool (string key, bool defaultValue = false)
+GetBuiltinSkin (EditorSkin skin)
+GetButton (string buttonName)
+GetButtonDown (string buttonName)
+GetButtonUp (string buttonName)
+GetCachedIcon (string path)
+GetClass ()
+GetClassName (Object obj)
+GetClipCount ()
+GetColor (string propertyName)
+GetColumn (int i)
+GetComponent (Type type)
+GetComponent (string type)
+GetComponentInChildren (Type t)
+GetComponentInChildren (Type type)
+GetComponents (Type type)
+GetComponentsInChildren (Type t, bool includeInactive = false)
+GetComponentsInChildren (Type type, bool includeInactive = false)
+GetControlID (FocusType focus)
+GetControlID (FocusType focus, Rect position)
+GetControlID (GUIContent contents,FocusType focus)
+GetControlID (GUIContent contents,FocusType focus, Rect position)
+GetControlID (int hint, FocusType focus)
+GetControlID (int hint, FocusType focus, Rect position)
+GetCursorPixelPosition (Rect position, GUIContent content, int cursorStringIndex)
+GetCursorStringIndex (Rect position, GUIContent content, Vector2 cursorPixelPosition)
+GetDetailLayer (int xBase, int yBase, int width, int height, int layer)
+GetDirectoryName (string path)
+GetDistanceToPoint (Vector3 inPt)
+GetDragAndDropTitle (Object obj)
+GetEditorCurve (AnimationClip clip, string relativePath, Type type, string propertyName)
+GetExtension (string path)
+GetFileName (string path)
+GetFileNameWithoutExtension (string path)
+GetFiltered (Type type, SelectionMode mode)
+GetFloat (string key, float defaultValue = 0.0F)
+GetFloat (string propertyName)
+GetFloatValue (GameObject root, string relativePath, Type type, string propertyName, out float data)
+GetGenericData (string type)
+GetGroundHit (out WheelHit hit)
+GetHandleSize (Vector3 position)
+GetHeight (int x, int y)
+GetHeights (int xBase, int yBase, int width, int height)
+GetIgnoreLayerCollision (int layer1, int layer2)
+GetInfoString ()
+GetInspectorTitle (Object obj)
+GetInstanceID ()
+GetInt (string key, int defaultValue = 0)
+GetInterpolatedHeight (float x, float y)
+GetInterpolatedNormal (float x, float y)
+GetIterator ()
+GetJoystickNames ()
+GetKey (KeyCode key)
+GetKey (string name)
+GetKeyDown (KeyCode key)
+GetKeyDown (string name)
+GetKeyUp (KeyCode key)
+GetKeyUp (string name)
+GetLabels ( Object obj )
+GetLastPing (NetworkPlayer player)
+GetLastRect ()
+GetMatrix (string propertyName)
+GetMouseButton (int button)
+GetMouseButtonDown (int button)
+GetMouseButtonUp (int button)
+GetNameOfFocusedControl ()
+GetNativeTextureID ()
+GetObjectEnabled (Object target)
+GetOutputData (float[] samples, int channel)
+GetPixel (CubemapFace face, int x, int y)
+GetPixel (int x, int y)
+GetPixelBilinear (float u, float v)
+GetPixels (CubemapFace face, int miplevel = 0)
+GetPixels (int miplevel = 0)
+GetPixels (int x, int y, int blockWidth, int blockHeight, int miplevel = 0)
+GetPlatformTextureSettings (string platform, out int maxTextureSize, out TextureImporterFormat textureFormat)
+GetPoint (float distance)
+GetPointVelocity (Vector3 worldPoint)
+GetPosition ()
+GetPostprocessOrder ()
+GetPrefabParent (Object source)
+GetPrefabType (Object target)
+GetRect (GUIContent content, GUIStyle style)
+GetRect (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+GetRect (float minWidth, float maxWidth, float minHeight, float maxHeight)
+GetRect (float minWidth, float maxWidth, float minHeight, float maxHeight, GUIStyle style)
+GetRect (float minWidth, float maxWidth, float minHeight, float maxHeight, GUIStyle style, params GUILayoutOption[] options)
+GetRect (float minWidth, float maxWidth, float minHeight, float maxHeight, params GUILayoutOption[] options)
+GetRect (float width, float height)
+GetRect (float width, float height, GUIStyle style)
+GetRect (float width, float height, GUIStyle style, params GUILayoutOption[] options)
+GetRect (float width, float height, params GUILayoutOption[] options)
+GetRelativePointVelocity (Vector3 relativePoint)
+GetRow (int i)
+GetScreenRect (Camera camera = null)
+GetSide (Vector3 inPt)
+GetSpectrumData (float[] samples, int channel, FFTWindow window)
+GetStateObject (Type t, int controlID)
+GetSteepness (float x, float y)
+GetStreamProgressForLevel (int levelIndex)
+GetStreamProgressForLevel (string levelName)
+GetString (string key, string defaultValue = "")
+GetStyle (string styleName)
+GetSupportedLayers (int xBase, int yBase, int totalWidth, int totalHeight)
+GetTag (string tag, bool searchFallbacks, string defaultValue = "")
+GetTemporary (int width, int height, int depthBuffer = 0, RenderTextureFormat format = RenderTextureFormat.ARGB32)
+GetTexture (string propertyName)
+GetTextureOffset (string propertyName)
+GetTextureScale (string propertyName)
+GetTouch (int index)
+GetTransforms (SelectionMode mode)
+GetTriangles (int submesh)
+GetTypeForControl (int controlID)
+GetUniqueTempPathInProject ()
+GetVector (string propertyName)
+GetWindow (System.Type t, bool utility = false, string title = null, bool focus = true)
+GetWindowWithRect (System.Type t, Rect rect, bool utility = false, string title = null)
+GizmoType
+GizmoType.Active
+GizmoType.NotSelected
+GizmoType.Pickable
+GizmoType.Selected
+GizmoType.SelectedOrChild
+Gizmos
+Graphics
+HFReference
+HSVToRGB (float H, float S, float V)
+HandleUtility
+Handles
+HasAspectRatio (AspectRatio aspectRatio)
+HasCharacter (char c)
+HasHelpForObject (Object obj)
+HasKey (string key)
+HasObjectThumbnail (Type objType)
+HasPreviewGUI ()
+HasProperty (string propertyName)
+Hashtable
+HavePublicAddress ()
+Height (float height)
+Help
+HideFlags
+HideFlags.DontSave
+HideFlags.HideAndDontSave
+HideFlags.HideInHierarchy
+HideFlags.HideInInspector
+HideFlags.NotEditable
+HideInInspector
+HingeJoint
+HitTest (Vector3 screenPosition)
+HitTest (Vector3 screenPosition, Camera camera = null)
+HorizontalScrollbar (Rect position, float value, float size, float leftValue, float rightValue)
+HorizontalScrollbar (Rect position, float value, float size, float leftValue, float rightValue, GUIStyle style)
+HorizontalScrollbar (float value, float size, float leftValue, float rightValue, GUIStyle style, params GUILayoutOption[] options)
+HorizontalScrollbar (float value, float size, float leftValue, float rightValue, params GUILayoutOption[] options)
+HorizontalSlider (Rect position, float value, float leftValue, float rightValue)
+HorizontalSlider (Rect position, float value, float leftValue, float rightValue, GUIStyle slider, GUIStyle thumb)
+HorizontalSlider (float value, float leftValue, float rightValue, GUIStyle slider, GUIStyle thumb, params GUILayoutOption[] options)
+HorizontalSlider (float value, float leftValue, float rightValue, params GUILayoutOption[] options)
+HostData
+IgnoreCollision (Collider collider1, Collider collider2, bool ignore = true)
+IgnoreLayerCollision (int layer1, int layer2, bool ignore = true)
+ImagePosition
+ImagePosition.ImageAbove
+ImagePosition.ImageLeft
+ImagePosition.ImageOnly
+ImagePosition.TextOnly
+ImportAsset (string path, ImportAssetOptions options = ImportAssetOptions.Default)
+ImportAssetOptions
+ImportAssetOptions.Default
+ImportAssetOptions.ForceSynchronousImport
+ImportAssetOptions.ForceUpdate
+ImportAssetOptions.ImportRecursive
+ImportAssetOptions.TryFastReimportFromMetaData
+InAnimationMode ()
+IncreaseLevel ()
+Infinity
+InitializeSecurity ()
+InitializeServer (int connections, int listenPort, bool useNat)
+Input
+InspectorTitlebar (Rect position, bool foldout, Object targetObj)
+InspectorTitlebar (bool foldout, Object targetObj)
+InstanceIDToObject (int instanceID)
+Instantiate (Object original)
+Instantiate (Object original, Vector3 position, Quaternion rotation)
+Instantiate (Object prefab, Vector3 position, Quaternion rotation, int group)
+InstantiatePrefab (Object target)
+IntField (GUIContent label, int value, GUIStyle style, params GUILayoutOption[] options)
+IntField (GUIContent label, int value, params GUILayoutOption[] options)
+IntField (Rect position, GUIContent label, int value, GUIStyle style = EditorStyles.numberField)
+IntField (Rect position, int value, GUIStyle style = EditorStyles.numberField)
+IntField (Rect position, string label, int value, GUIStyle style = EditorStyles.numberField)
+IntField (int value, GUIStyle style, params GUILayoutOption[] options)
+IntField (int value, params GUILayoutOption[] options)
+IntField (string label, int value, GUIStyle style, params GUILayoutOption[] options)
+IntField (string label, int value, params GUILayoutOption[] options)
+IntPopup (GUIContent label, int selectedValue, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style, params GUILayoutOption[] options)
+IntPopup (GUIContent label, int selectedValue, GUIContent[] displayedOptions, int[] optionValues, params GUILayoutOption[] options)
+IntPopup (Rect position, GUIContent label, int selectedValue, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style = EditorStyles.popup)
+IntPopup (Rect position, SerializedProperty property, GUIContent[] displayedOptions, int[] optionValues, GUIContent label)
+IntPopup (Rect position, int selectedValue, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style = EditorStyles.popup)
+IntPopup (Rect position, int selectedValue, string[] displayedOptions, int[] optionValues, GUIStyle style = EditorStyles.popup)
+IntPopup (Rect position, string label, int selectedValue, string[] displayedOptions, int[] optionValues, GUIStyle style = EditorStyles.popup)
+IntPopup (SerializedProperty property, GUIContent[] displayedOptions, int[] optionValues, GUIContent label, GUIStyle style, params GUILayoutOption[] options)
+IntPopup (SerializedProperty property, GUIContent[] displayedOptions, int[] optionValues, GUIContent label, params GUILayoutOption[] options)
+IntPopup (int selectedValue, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style, params GUILayoutOption[] options)
+IntPopup (int selectedValue, GUIContent[] displayedOptions, int[] optionValues, params GUILayoutOption[] options)
+IntPopup (int selectedValue, string[] displayedOptions, int[] optionValues, GUIStyle style, params GUILayoutOption[] options)
+IntPopup (int selectedValue, string[] displayedOptions, int[] optionValues, params GUILayoutOption[] options)
+IntPopup (string label, int selectedValue, string[] displayedOptions, int[] optionValues, GUIStyle style, params GUILayoutOption[] options)
+IntPopup (string label, int selectedValue, string[] displayedOptions, int[] optionValues, params GUILayoutOption[] options)
+IntSlider (GUIContent label, int value, int leftValue, int rightValue, params GUILayoutOption[] options)
+IntSlider (Rect position, GUIContent label, int value, int leftValue, int rightValue)
+IntSlider (Rect position, int value, int leftValue, int rightValue)
+IntSlider (Rect position, string label, int value, int leftValue, int rightValue)
+IntSlider (SerializedProperty property, int leftValue, int rightValue, GUIContent label, params GUILayoutOption[] options)
+IntSlider (SerializedProperty property, int leftValue, int rightValue, params GUILayoutOption[] options)
+IntSlider (SerializedProperty property, int leftValue, int rightValue, string label, params GUILayoutOption[] options)
+IntSlider (int value, int leftValue, int rightValue, params GUILayoutOption[] options)
+IntSlider (string label, int value, int leftValue, int rightValue, params GUILayoutOption[] options)
+InteractiveCloth
+IntersectRay (Ray ray)
+IntersectRay (Ray ray, out float distance)
+Intersects (Bounds bounds)
+InvalidateState ()
+Inverse (Quaternion rotation)
+InverseLerp (float from, float to, float value)
+InverseTransformDirection (Vector3 direction)
+InverseTransformDirection (float x, float y, float z)
+InverseTransformPoint (Vector3 position)
+InverseTransformPoint (float x, float y, float z)
+Invoke (string methodName, float time)
+InvokeRepeating (string methodName, float time, float repeatRate)
+IsChildOf (Transform parent)
+IsCreated ()
+IsInvoking ()
+IsInvoking (string methodName)
+IsMainAsset (Object obj)
+IsMainAsset (int instanceID)
+IsPersistent (Object target)
+IsPlaying (string name)
+IsSleeping ()
+Join (string seperator)
+Joint
+JointDrive
+JointDriveMode
+JointDriveMode.None
+JointDriveMode.Position
+JointDriveMode.PositionAndVelocity
+JointDriveMode.Velocity
+JointLimits
+JointMotor
+JointProjectionMode
+JointProjectionMode.None
+JointProjectionMode.PositionAndRotation
+JointProjectionMode.PositionOnly
+JointSpring
+KeyCode
+KeyCode.A
+KeyCode.Alpha0
+KeyCode.Alpha1
+KeyCode.Alpha2
+KeyCode.Alpha3
+KeyCode.Alpha4
+KeyCode.Alpha5
+KeyCode.Alpha6
+KeyCode.Alpha7
+KeyCode.Alpha8
+KeyCode.Alpha9
+KeyCode.AltGr
+KeyCode.Ampersand
+KeyCode.Asterisk
+KeyCode.At
+KeyCode.B
+KeyCode.BackQuote
+KeyCode.Backslash
+KeyCode.Backspace
+KeyCode.Break
+KeyCode.C
+KeyCode.CapsLock
+KeyCode.Caret
+KeyCode.Clear
+KeyCode.Colon
+KeyCode.Comma
+KeyCode.D
+KeyCode.Delete
+KeyCode.Dollar
+KeyCode.DoubleQuote
+KeyCode.DownArrow
+KeyCode.E
+KeyCode.End
+KeyCode.Equals
+KeyCode.Escape
+KeyCode.Exclaim
+KeyCode.F
+KeyCode.F1
+KeyCode.F10
+KeyCode.F11
+KeyCode.F12
+KeyCode.F13
+KeyCode.F14
+KeyCode.F15
+KeyCode.F2
+KeyCode.F3
+KeyCode.F4
+KeyCode.F5
+KeyCode.F6
+KeyCode.F7
+KeyCode.F8
+KeyCode.F9
+KeyCode.G
+KeyCode.Greater
+KeyCode.H
+KeyCode.Hash
+KeyCode.Help
+KeyCode.Home
+KeyCode.I
+KeyCode.Insert
+KeyCode.J
+KeyCode.Joystick1Button0
+KeyCode.Joystick1Button1
+KeyCode.Joystick1Button10
+KeyCode.Joystick1Button11
+KeyCode.Joystick1Button12
+KeyCode.Joystick1Button13
+KeyCode.Joystick1Button14
+KeyCode.Joystick1Button15
+KeyCode.Joystick1Button16
+KeyCode.Joystick1Button17
+KeyCode.Joystick1Button18
+KeyCode.Joystick1Button19
+KeyCode.Joystick1Button2
+KeyCode.Joystick1Button3
+KeyCode.Joystick1Button4
+KeyCode.Joystick1Button5
+KeyCode.Joystick1Button6
+KeyCode.Joystick1Button7
+KeyCode.Joystick1Button8
+KeyCode.Joystick1Button9
+KeyCode.Joystick2Button0
+KeyCode.Joystick2Button1
+KeyCode.Joystick2Button10
+KeyCode.Joystick2Button11
+KeyCode.Joystick2Button12
+KeyCode.Joystick2Button13
+KeyCode.Joystick2Button14
+KeyCode.Joystick2Button15
+KeyCode.Joystick2Button16
+KeyCode.Joystick2Button17
+KeyCode.Joystick2Button18
+KeyCode.Joystick2Button19
+KeyCode.Joystick2Button2
+KeyCode.Joystick2Button3
+KeyCode.Joystick2Button4
+KeyCode.Joystick2Button5
+KeyCode.Joystick2Button6
+KeyCode.Joystick2Button7
+KeyCode.Joystick2Button8
+KeyCode.Joystick2Button9
+KeyCode.Joystick3Button0
+KeyCode.Joystick3Button1
+KeyCode.Joystick3Button10
+KeyCode.Joystick3Button11
+KeyCode.Joystick3Button12
+KeyCode.Joystick3Button13
+KeyCode.Joystick3Button14
+KeyCode.Joystick3Button15
+KeyCode.Joystick3Button16
+KeyCode.Joystick3Button17
+KeyCode.Joystick3Button18
+KeyCode.Joystick3Button19
+KeyCode.Joystick3Button2
+KeyCode.Joystick3Button3
+KeyCode.Joystick3Button4
+KeyCode.Joystick3Button5
+KeyCode.Joystick3Button6
+KeyCode.Joystick3Button7
+KeyCode.Joystick3Button8
+KeyCode.Joystick3Button9
+KeyCode.JoystickButton0
+KeyCode.JoystickButton1
+KeyCode.JoystickButton10
+KeyCode.JoystickButton11
+KeyCode.JoystickButton12
+KeyCode.JoystickButton13
+KeyCode.JoystickButton14
+KeyCode.JoystickButton15
+KeyCode.JoystickButton16
+KeyCode.JoystickButton17
+KeyCode.JoystickButton18
+KeyCode.JoystickButton19
+KeyCode.JoystickButton2
+KeyCode.JoystickButton3
+KeyCode.JoystickButton4
+KeyCode.JoystickButton5
+KeyCode.JoystickButton6
+KeyCode.JoystickButton7
+KeyCode.JoystickButton8
+KeyCode.JoystickButton9
+KeyCode.K
+KeyCode.Keypad0
+KeyCode.Keypad1
+KeyCode.Keypad2
+KeyCode.Keypad3
+KeyCode.Keypad4
+KeyCode.Keypad5
+KeyCode.Keypad6
+KeyCode.Keypad7
+KeyCode.Keypad8
+KeyCode.Keypad9
+KeyCode.KeypadDivide
+KeyCode.KeypadEnter
+KeyCode.KeypadEquals
+KeyCode.KeypadMinus
+KeyCode.KeypadMultiply
+KeyCode.KeypadPeriod
+KeyCode.KeypadPlus
+KeyCode.L
+KeyCode.LeftAlt
+KeyCode.LeftApple
+KeyCode.LeftArrow
+KeyCode.LeftBracket
+KeyCode.LeftControl
+KeyCode.LeftParen
+KeyCode.LeftShift
+KeyCode.LeftWindows
+KeyCode.Less
+KeyCode.M
+KeyCode.Menu
+KeyCode.Minus
+KeyCode.Mouse0
+KeyCode.Mouse1
+KeyCode.Mouse2
+KeyCode.Mouse3
+KeyCode.Mouse4
+KeyCode.Mouse5
+KeyCode.Mouse6
+KeyCode.N
+KeyCode.None
+KeyCode.Numlock
+KeyCode.O
+KeyCode.P
+KeyCode.PageDown
+KeyCode.PageUp
+KeyCode.Pause
+KeyCode.Period
+KeyCode.Plus
+KeyCode.Print
+KeyCode.Q
+KeyCode.Question
+KeyCode.Quote
+KeyCode.R
+KeyCode.Return
+KeyCode.RightAlt
+KeyCode.RightApple
+KeyCode.RightArrow
+KeyCode.RightBracket
+KeyCode.RightControl
+KeyCode.RightParen
+KeyCode.RightShift
+KeyCode.RightWindows
+KeyCode.S
+KeyCode.ScrollLock
+KeyCode.Semicolon
+KeyCode.Slash
+KeyCode.Space
+KeyCode.SysReq
+KeyCode.T
+KeyCode.Tab
+KeyCode.U
+KeyCode.Underscore
+KeyCode.UpArrow
+KeyCode.V
+KeyCode.W
+KeyCode.X
+KeyCode.Y
+KeyCode.Z
+KeyboardEvent (string key)
+Keyframe
+Keyframe (float time, float value)
+Keyframe (float time, float value, float inTangent, float outTangent)
+LFReference
+LINES
+Label (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+Label (GUIContent content, params GUILayoutOption[] options)
+Label (Rect position, GUIContent content)
+Label (Rect position, GUIContent content, GUIStyle style)
+Label (Rect position, Texture image)
+Label (Rect position, Texture image, GUIStyle style)
+Label (Rect position, string text)
+Label (Rect position, string text, GUIStyle style)
+Label (Texture image, GUIStyle style, params GUILayoutOption[] options)
+Label (Texture image, params GUILayoutOption[] options)
+Label (Vector3 position, GUIContent content)
+Label (Vector3 position, GUIContent content, GUIStyle style)
+Label (Vector3 position, Texture image)
+Label (Vector3 position, string text)
+Label (Vector3 position, string text, GUIStyle style)
+Label (string text, GUIStyle style, params GUILayoutOption[] options)
+Label (string text, params GUILayoutOption[] options)
+LabelField (Rect position, string label, string label2)
+LabelField (string label, string label2, params GUILayoutOption[] options)
+LateUpdate ()
+LayerField (GUIContent label, int layer, GUIStyle style, params GUILayoutOption[] options)
+LayerField (GUIContent label, int layer, params GUILayoutOption[] options)
+LayerField (Rect position, GUIContent label, int layer, GUIStyle style = EditorStyles.popup)
+LayerField (Rect position, int layer, GUIStyle style = EditorStyles.popup)
+LayerField (Rect position, string label, int layer, GUIStyle style = EditorStyles.popup)
+LayerField (int layer, GUIStyle style, params GUILayoutOption[] options)
+LayerField (int layer, params GUILayoutOption[] options)
+LayerField (string label, int layer, GUIStyle style, params GUILayoutOption[] options)
+LayerField (string label, int layer, params GUILayoutOption[] options)
+LayerMask
+LayerToName (int layer)
+Length
+LensFlare
+Lerp (Color a, Color b, float t)
+Lerp (Material start, Material end, float t)
+Lerp (Quaternion from, Quaternion to, float t)
+Lerp (Vector2 from, Vector2 to, float t)
+Lerp (Vector3 from, Vector3 to, float t)
+Lerp (Vector4 from, Vector4 to, float t)
+Lerp (float from, float to, float t)
+LerpAngle (float a, float b, float t)
+Light
+LightRenderMode
+LightRenderMode.Auto
+LightRenderMode.ForcePixel
+LightRenderMode.ForceVertex
+LightShadows
+LightShadows.Hard
+LightShadows.None
+LightShadows.Soft
+LightType
+LightType.Directional
+LightType.Point
+LightType.Spot
+LightmapBakeQuality
+LightmapBakeQuality.High
+LightmapBakeQuality.Low
+LightmapData
+LightmapEditorSettings
+LightmapSettings
+Lightmapping
+LightmapsMode
+LightmapsMode.Dual
+LightmapsMode.Single
+LineRenderer
+Linear (float timeStart, float valueStart, float timeEnd, float valueEnd)
+Linecast (Vector3 start, Vector3 end, int layerMask = kDefaultRaycastLayers)
+Linecast (Vector3 start, Vector3 end, out RaycastHit hitInfo, int layerMask = kDefaultRaycastLayers)
+Load (string name)
+Load (string name, Type type)
+Load (string path)
+Load (string path, Type type)
+LoadAll ()
+LoadAll (Type type)
+LoadAll (string path)
+LoadAll (string path, Type type)
+LoadAllAssetsAtPath (string assetPath)
+LoadAssetAtPath (string assetPath, Type type)
+LoadAsync (string name, Type type)
+LoadIdentity ()
+LoadImage (byte[] data)
+LoadImageIntoTexture (Texture2D tex)
+LoadLevel (int index)
+LoadLevel (string name)
+LoadLevelAdditive (int index)
+LoadLevelAdditive (string name)
+LoadLevelAdditiveAsync (string levelName)
+LoadLevelAsync (string levelName)
+LoadMainAssetAtPath (string assetPath)
+LoadOrtho ()
+LoadPixelMatrix ()
+LoadPixelMatrix (float left, float right, float bottom, float top)
+LoadProjectionMatrix (Matrix4x4 mat)
+LoadRequired (string path)
+LoadUnityWeb ()
+LocationInfo
+LocationServiceStatus
+LocationServiceStatus.Failed
+LocationServiceStatus.Initializing
+LocationServiceStatus.Running
+LocationServiceStatus.Stopped
+LockReloadAssemblies ()
+Log (float f)
+Log (float f, float p)
+Log (object message)
+Log (object message, Object context)
+Log10 (float f)
+LogCallback (string condition, string stackTrace, LogType type)
+LogError (object message)
+LogError (object message, Object context)
+LogError (string warning, Object context = null)
+LogType
+LogType.Assert
+LogType.Error
+LogType.Exception
+LogType.Log
+LogType.Warning
+LogWarning (object message)
+LogWarning (object message, Object context)
+LogWarning (string warning, Object context = null)
+LookAt (Transform target, Vector3 worldUp = Vector3.up)
+LookAt (Vector3 worldPosition, Vector3 worldUp = Vector3.up)
+LookLikeControls (float labelWidth = 100, float fieldWidth = 70)
+LookLikeInspector ()
+LookRotation (Vector3 forward, Vector3 upwards = Vector3.up)
+MasterServer
+MasterServerEvent
+MasterServerEvent.HostListReceived
+MasterServerEvent.RegistrationFailedGameName
+MasterServerEvent.RegistrationFailedGameType
+MasterServerEvent.RegistrationFailedNoServer
+MasterServerEvent.RegistrationSucceeded
+Material
+Material (Material source)
+Material (Shader shader)
+Material (string contents)
+MaterialPropertyBlock
+Mathf
+Matrix4x4
+Max (Vector2 lhs, Vector2 rhs)
+Max (Vector3 lhs, Vector3 rhs)
+Max (Vector4 lhs, Vector4 rhs)
+Max (float a, float b)
+Max (int a, int b)
+Max (params float[] values)
+Max (params int[] values)
+MaxHeight (float maxHeight)
+MaxWidth (float maxWidth)
+MenuCommand
+MenuCommand (Object inContext)
+MenuCommand (Object inContext, int inUserData)
+MenuItem
+MenuItem (string itemName)
+MenuItem (string itemName, bool isValidateFunction)
+MenuItem (string itemName, bool isValidateFunction, int priority)
+Mesh
+Mesh ()
+MeshCollider
+MeshFilter
+MeshRenderer
+MeshUtility
+Min (Vector2 lhs, Vector2 rhs)
+Min (Vector3 lhs, Vector3 rhs)
+Min (Vector4 lhs, Vector4 rhs)
+Min (float a, float b)
+Min (int a, int b)
+Min (params float[] values)
+Min (params int[] values)
+MinHeight (float minHeight)
+MinMaxRect (float left, float top, float right, float bottom)
+MinMaxSlider (GUIContent label, Rect position, ref float minValue, ref float maxValue, float minLimit, float maxLimit)
+MinMaxSlider (GUIContent label, ref float minValue, ref float maxValue, float minLimit, float maxLimit, params GUILayoutOption[] options)
+MinMaxSlider (Rect position, ref float minValue, ref float maxValue, float minLimit, float maxLimit)
+MinMaxSlider (ref float minValue, ref float maxValue, float minLimit, float maxLimit, params GUILayoutOption[] options)
+MinWidth (float minWidth)
+ModelImporter
+ModelImporterAnimationCompression
+ModelImporterAnimationCompression.KeyframeReduction
+ModelImporterAnimationCompression.KeyframeReductionAndCompression
+ModelImporterAnimationCompression.Off
+ModelImporterClipAnimation
+ModelImporterGenerateAnimations
+ModelImporterGenerateAnimations.InNodes
+ModelImporterGenerateAnimations.InOriginalRoots
+ModelImporterGenerateAnimations.InRoot
+ModelImporterGenerateAnimations.None
+ModelImporterGenerateMaterials
+ModelImporterGenerateMaterials.None
+ModelImporterGenerateMaterials.PerSourceMaterial
+ModelImporterGenerateMaterials.PerTexture
+ModelImporterMeshCompression
+ModelImporterMeshCompression.High
+ModelImporterMeshCompression.Low
+ModelImporterMeshCompression.Medium
+ModelImporterMeshCompression.Off
+ModelImporterTangentSpaceMode
+ModelImporterTangentSpaceMode.Calculate
+ModelImporterTangentSpaceMode.Import
+ModelImporterTangentSpaceMode.None
+MonoBehaviour
+MonoScript
+MouseCursor
+MouseCursor.Arrow
+MouseCursor.Link
+MouseCursor.MoveArrow
+MouseCursor.ResizeHorizontal
+MouseCursor.ResizeUpLeft
+MouseCursor.ResizeUpRight
+MouseCursor.ResizeVertical
+MouseCursor.RotateArrow
+MouseCursor.ScaleArrow
+MouseCursor.SlideArrow
+MouseCursor.Text
+Move (Vector3 motion)
+MoveAsset (string oldPath, string newPath)
+MoveAssetToTrash (string path)
+MoveFileOrDirectory (string from, string to)
+MoveKey (int index, Keyframe key)
+MovePosition (Vector3 position)
+MoveRotation (Quaternion rot)
+MoveTowards (Vector2 current, Vector2 target, float maxDistanceDelta)
+MoveTowards (Vector3 current, Vector3 target, float maxDistanceDelta)
+MoveTowards (Vector4 current, Vector4 target, float maxDistanceDelta)
+MoveTowards (float current, float target, float maxDelta)
+MoveTowardsAngle (float current, float target, float maxDelta)
+MovieImporter
+MovieTexture
+MultMatrix (Matrix4x4 mat)
+MultiTexCoord (int unit, Vector3 v)
+MultiTexCoord2 (int unit, float x, float y)
+MultiTexCoord3 (int unit, float x, float y, float z)
+MultiplyPoint (Vector3 v)
+MultiplyPoint3x4 (Vector3 v)
+MultiplyVector (Vector3 v)
+NameToLayer (string layerName)
+NegativeInfinity
+Network
+NetworkConnectionError
+NetworkConnectionError.AlreadyConnectedToAnotherServer
+NetworkConnectionError.ConnectionBanned
+NetworkConnectionError.ConnectionFailed
+NetworkConnectionError.CreateSocketOrThreadFailure
+NetworkConnectionError.EmptyConnectTarget
+NetworkConnectionError.IncorrectParameters
+NetworkConnectionError.InternalDirectConnectFailed
+NetworkConnectionError.InvalidPassword
+NetworkConnectionError.NATTargetConnectionLost
+NetworkConnectionError.NATTargetNotConnected
+NetworkConnectionError.NoError
+NetworkConnectionError.RSAPublicKeyMismatch
+NetworkConnectionError.TooManyConnectedPlayers
+NetworkDisconnection
+NetworkDisconnection.Disconnected
+NetworkDisconnection.LostConnection
+NetworkLogLevel
+NetworkLogLevel.Full
+NetworkLogLevel.Informational
+NetworkLogLevel.Off
+NetworkMessageInfo
+NetworkPeerType
+NetworkPeerType.Client
+NetworkPeerType.Connecting
+NetworkPeerType.Disconnected
+NetworkPeerType.Server
+NetworkPlayer
+NetworkStateSynchronization
+NetworkStateSynchronization.Off
+NetworkStateSynchronization.ReliableDeltaCompressed
+NetworkStateSynchronization.Unreliable
+NetworkView
+NetworkViewID
+NewScene ()
+Next (bool enterChildren)
+NextVisible (bool enterChildren)
+NicifyVariableName (string name)
+NonSerialized
+Normalize ()
+Object
+ObjectContent (Object obj, System.Type type)
+ObjectField (GUIContent label, Object obj, System.Type objType, params GUILayoutOption[] options)
+ObjectField (Object obj, System.Type objType, params GUILayoutOption[] options)
+ObjectField (Rect position, GUIContent label, Object obj, System.Type objType)
+ObjectField (Rect position, Object obj, System.Type objType)
+ObjectField (Rect position, string label, Object obj, System.Type objType)
+ObjectField (string label, Object obj, System.Type objType, params GUILayoutOption[] options)
+ObjectNames
+OcclusionArea
+OnApplicationFocus (bool focus)
+OnApplicationPause (bool pause)
+OnApplicationQuit ()
+OnAssignMaterialModel (Material material, Renderer renderer)
+OnBecameInvisible ()
+OnBecameVisible ()
+OnCollisionEnter (Collision collisionInfo)
+OnCollisionExit (Collision collisionInfo)
+OnCollisionStay (Collision collisionInfo)
+OnConnectedToServer ()
+OnControllerColliderHit (ControllerColliderHit hit)
+OnDestroy ()
+OnDisable ()
+OnDisconnectedFromServer (NetworkDisconnection mode)
+OnDrawGizmos ()
+OnDrawGizmosSelected ()
+OnEnable ()
+OnFailedToConnect (NetworkConnectionError error)
+OnFailedToConnectToMasterServer (NetworkConnectionError error)
+OnFocus ()
+OnGUI ()
+OnHierarchyChange ()
+OnInspectorGUI ()
+OnInspectorUpdate ()
+OnJointBreak (float breakForce)
+OnLevelWasLoaded (int level)
+OnLostFocus ()
+OnMasterServerEvent (MasterServerEvent msEvent)
+OnMouseDown ()
+OnMouseDrag ()
+OnMouseEnter ()
+OnMouseExit ()
+OnMouseOver ()
+OnMouseUp ()
+OnNetworkInstantiate (NetworkMessageInfo info)
+OnParticleCollision (GameObject other)
+OnPlayerConnected (NetworkPlayer player)
+OnPlayerDisconnected (NetworkPlayer player)
+OnPostRender ()
+OnPostprocessAllAssets (string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromPath)
+OnPostprocessAudio (AudioClip clip)
+OnPostprocessGameObjectWithUserProperties (GameObject root, string[] propNames, object[] values)
+OnPostprocessModel (GameObject root)
+OnPostprocessTexture (Texture2D texture)
+OnPreCull ()
+OnPreRender ()
+OnPreprocessAudio ()
+OnPreprocessModel ()
+OnPreprocessTexture ()
+OnPreviewGUI (Rect r, GUIStyle background)
+OnPreviewSettings ()
+OnProjectChange ()
+OnRenderImage (RenderTexture source, RenderTexture destination)
+OnRenderObject ()
+OnSceneGUI ()
+OnSelectionChange ()
+OnSerializeNetworkView (BitStream stream, NetworkMessageInfo info)
+OnServerInitialized ()
+OnTriggerEnter (Collider other)
+OnTriggerExit (Collider other)
+OnTriggerStay (Collider other)
+OnWillRenderObject ()
+OnWizardCreate ()
+OnWizardOtherButton ()
+OnWizardUpdate ()
+Open (string text, iPhoneKeyboardType keyboardType = iPhoneKeyboardType.Default, bool autocorrection = true, bool multiline = false, bool secure = false, bool alert = false, string textPlaceholder = "")
+OpenAsset (Object target, int lineNumber = -1)
+OpenAsset (int instanceID, int lineNumber = -1)
+OpenFilePanel (string title, string directory, string extension)
+OpenFolderPanel (string title, string folder, string defaultName)
+OpenProject (string projectPath, params string[] args)
+OpenScene (string path)
+OpenSceneAdditive (string path)
+OpenURL (string url)
+Optimize ()
+Ortho (float left, float right, float bottom, float top, float zNear, float zFar)
+OrthoNormalize (ref Vector3 normal, ref Vector3 tangent)
+OrthoNormalize (ref Vector3 normal, ref Vector3 tangent, ref Vector3 binormal)
+OverlapSphere (Vector3 position, float radius, int layerMask = kAllLayers)
+PI
+PackTextures ( Texture2D[] textures, int padding, int maximumAtlasSize = 2048 )
+Particle
+ParticleAnimator
+ParticleEmitter
+ParticleRenderMode
+ParticleRenderMode.Billboard
+ParticleRenderMode.HorizontalBillboard
+ParticleRenderMode.SortedBillboard
+ParticleRenderMode.Stretch
+ParticleRenderMode.VerticalBillboard
+ParticleRenderer
+PasswordField (GUIContent label, string password, GUIStyle style, params GUILayoutOption[] options)
+PasswordField (GUIContent label, string password, params GUILayoutOption[] options)
+PasswordField (Rect position, GUIContent label, string password, GUIStyle style = EditorStyles.textField)
+PasswordField (Rect position, string label, string password, GUIStyle style = EditorStyles.textField)
+PasswordField (Rect position, string password, GUIStyle style = EditorStyles.textField)
+PasswordField (Rect position, string password, char maskChar)
+PasswordField (Rect position, string password, char maskChar, GUIStyle style)
+PasswordField (Rect position, string password, char maskChar, int maxLength)
+PasswordField (Rect position, string password, char maskChar, int maxLength, GUIStyle style)
+PasswordField (string label, string password, GUIStyle style, params GUILayoutOption[] options)
+PasswordField (string label, string password, params GUILayoutOption[] options)
+PasswordField (string password, GUIStyle style, params GUILayoutOption[] options)
+PasswordField (string password, char maskChar, GUIStyle style, params GUILayoutOption[] options)
+PasswordField (string password, char maskChar, int maxLength, GUIStyle style, params GUILayoutOption[] options)
+PasswordField (string password, char maskChar, int maxLength, params GUILayoutOption[] options)
+PasswordField (string password, char maskChar, params GUILayoutOption[] options)
+PasswordField (string password, params GUILayoutOption[] options)
+Path
+Pause ()
+PerformRedo ()
+PerformUndo ()
+Perspective (float fov, float aspect, float zNear, float zFar)
+PhysicMaterial
+PhysicMaterial ()
+PhysicMaterial (string name)
+PhysicMaterialCombine
+PhysicMaterialCombine.Average
+PhysicMaterialCombine.Maximum
+PhysicMaterialCombine.Minimum
+PhysicMaterialCombine.Multiply
+Physics
+PickGameObject (Vector2 position, bool selectPrefabRoot)
+PickRectObjects (Rect rect)
+Ping
+Ping (string address)
+PingObject (Object obj)
+PingObject (int targetInstanceID)
+PingPong (float t, float length)
+Plane
+Plane (Vector3 a, Vector3 b, Vector3 c)
+Plane (Vector3 inNormal, Vector3 inPoint)
+Plane (Vector3 inNormal, float d)
+Play ()
+Play (PlayMode mode = PlayMode.StopSameLayer)
+Play (UInt64 delay=0)
+Play (string animation, PlayMode mode = PlayMode.StopSameLayer)
+PlayClipAtPoint (AudioClip clip, Vector3 position, float volume = 1.0F)
+PlayMode
+PlayMode.StopAll
+PlayMode.StopSameLayer
+PlayMovie (string path, Color bgColor, iPhoneMovieControlMode controlMode = iPhoneMovieControlMode.Full, iPhoneMovieScalingMode scalingMode = iPhoneMovieScalingMode.AspectFit)
+PlayMovieURL (string url, Color bgColor, iPhoneMovieControlMode controlMode = iPhoneMovieControlMode.Full, iPhoneMovieScalingMode scalingMode = iPhoneMovieScalingMode.AspectFit)
+PlayOneShot (AudioClip clip, float volumeScale = 1.0F)
+PlayQueued (string animation, QueueMode queue = QueueMode.CompleteOthers, PlayMode mode = PlayMode.StopSameLayer)
+PlayerPrefs
+PlayerPrefsException
+PlayerSettings
+PollHostList ()
+Pop ()
+PopAssetDependencies ()
+PopCamera (Camera camera)
+PopMatrix ()
+Popup (GUIContent label, int selectedIndex, GUIContent[] displayedOptions, GUIStyle style, params GUILayoutOption[] options)
+Popup (GUIContent label, int selectedIndex, GUIContent[] displayedOptions, params GUILayoutOption[] options)
+Popup (Rect position, GUIContent label, int selectedIndex, GUIContent[] displayedOptions, GUIStyle style = EditorStyles.popup)
+Popup (Rect position, int selectedIndex, GUIContent[] displayedOptions, GUIStyle style = EditorStyles.popup)
+Popup (Rect position, int selectedIndex, string[] displayedOptions, GUIStyle style = EditorStyles.popup)
+Popup (Rect position, string label, int selectedIndex, string[] displayedOptions, GUIStyle style = EditorStyles.popup)
+Popup (int selectedIndex, GUIContent[] displayedOptions, GUIStyle style, params GUILayoutOption[] options)
+Popup (int selectedIndex, GUIContent[] displayedOptions, params GUILayoutOption[] options)
+Popup (int selectedIndex, string[] displayedOptions, GUIStyle style, params GUILayoutOption[] options)
+Popup (int selectedIndex, string[] displayedOptions, params GUILayoutOption[] options)
+Popup (string label, int selectedIndex, string[] displayedOptions, GUIStyle style, params GUILayoutOption[] options)
+Popup (string label, int selectedIndex, string[] displayedOptions, params GUILayoutOption[] options)
+PositionHandle (Vector3 position, Quaternion rotation)
+Pow (float f, float p)
+PrefabType
+PrefabType.DisconnectedModelPrefabInstance
+PrefabType.DisconnectedPrefabInstance
+PrefabType.MissingPrefabInstance
+PrefabType.ModelPrefab
+PrefabType.ModelPrefabInstance
+PrefabType.None
+PrefabType.Prefab
+PrefabType.PrefabInstance
+PrefetchSocketPolicy (string ip, int atPort, int timeout=3000)
+PrefixLabel (GUIContent label, GUIStyle followingStyle = "Button")
+PrefixLabel (GUIContent label, GUIStyle followingStyle, GUIStyle labelStyle)
+PrefixLabel (Rect totalPosition, int id, GUIContent label)
+PrefixLabel (string label, GUIStyle followingStyle = "Button")
+PrefixLabel (string label, GUIStyle followingStyle, GUIStyle labelStyle)
+PrepareStartDrag ()
+PrimitiveType
+PrimitiveType.Capsule
+PrimitiveType.Cube
+PrimitiveType.Cylinder
+PrimitiveType.Plane
+PrimitiveType.Sphere
+Profiler
+ProgressBar (Rect position, float value, string text)
+Project (Vector3 vector, Vector3 onNormal)
+Project (Vector4 a, Vector4 b)
+ProjectPointLine (Vector3 point, Vector3 lineStart, Vector3 lineEnd)
+Projector
+PropertyField (Rect position, SerializedProperty property, GUIContent label=null)
+PropertyField (SerializedProperty property, GUIContent label, params GUILayoutOption[] options)
+PropertyField (SerializedProperty property, params GUILayoutOption[] options)
+PropertyToID (string name)
+Push (object value)
+PushAssetDependencies ()
+PushCamera (Camera camera)
+PushMatrix ()
+QUADS
+QualityLevel
+QualityLevel.Beautiful
+QualityLevel.Fantastic
+QualityLevel.Fast
+QualityLevel.Fastest
+QualityLevel.Good
+QualityLevel.Simple
+QualitySettings
+Quaternion
+Quaternion (float x, float y, float z, float w)
+QueryStateObject (Type t, int controlID)
+QueueGameViewInputEvent (Event evt)
+QueueMode
+QueueMode.CompleteOthers
+QueueMode.PlayNow
+Quit ()
+RGBToHSV (Color rgbColor, out float H, out float S, out float V)
+RPC
+RPC (string name, NetworkPlayer target, params object[] args)
+RPC (string name, RPCMode mode, params object[] args)
+RPCMode
+RPCMode.All
+RPCMode.AllBuffered
+RPCMode.Others
+RPCMode.OthersBuffered
+RPCMode.Server
+Rad2Deg
+RadiusHandle (Quaternion rotation, Vector3 position, float radius)
+Random
+Range (float min, float max)
+Range (int min, int max)
+Ray
+Ray (Vector3 origin, Vector3 direction)
+RaySnap (Ray ray)
+Raycast (Ray ray, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+Raycast (Ray ray, out RaycastHit hitInfo, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+Raycast (Ray ray, out RaycastHit hitInfo, float distance)
+Raycast (Ray ray, out float enter)
+Raycast (Vector3 origin, Vector3 direction, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+Raycast (Vector3 origin, Vector3 direction, out RaycastHit hitInfo, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+RaycastAll (Ray ray, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+RaycastAll (Vector3 origin, Vector3 direction, float distance = Mathf.Infinity, int layermask = kDefaultRaycastLayers)
+RaycastHit
+ReadPixels (Rect source, int destX, int destY, bool recalculateMipMaps = true)
+ReadTextureSettings (TextureImporterSettings dest)
+RecalculateBounds ()
+RecalculateNormals ()
+ReconnectToLastPrefab (GameObject go)
+Rect
+Rect (float left, float top, float width, float height)
+RectField (GUIContent label, Rect value, params GUILayoutOption[] options)
+RectField (Rect position, GUIContent label, Rect value)
+RectField (Rect position, Rect value)
+RectField (Rect position, string label, Rect value)
+RectField (Rect value, params GUILayoutOption[] options)
+RectField (string label, Rect value, params GUILayoutOption[] options)
+RectOffset
+RectOffset ()
+RectOffset (int left, int right, int top, int bottom)
+RectangleCap (int controlID, Vector3 position, Quaternion rotation, float size)
+Reflect (Vector3 inDirection, Vector3 inNormal)
+Refresh (ImportAssetOptions options = ImportAssetOptions.Default)
+RefreshPrototypes ()
+RegisterCompleteAssetUndo (string assetPath, string actionName)
+RegisterCreatedObjectUndo (Object objectToUndo, string name)
+RegisterHost (string gameTypeName, string gameName, string comment = "")
+RegisterLogCallback (Application.LogCallback handler)
+RegisterLogCallbackThreaded (Application.LogCallback handler)
+RegisterSceneUndo (string name)
+RegisterSnapshot ()
+RegisterUndo (Object objectToUndo, string name)
+RegisterUndo (Object[] objectsToUndo, string name)
+Release ()
+ReleaseTemporary (RenderTexture temp)
+Remove (Rect rect)
+Remove (object key)
+RemoveAt (int index)
+RemoveClip (AnimationClip clip)
+RemoveClip (string clipName)
+RemoveKey (int index)
+RemoveNotification ()
+RemoveRPCs (NetworkPlayer playerID)
+RemoveRPCs (NetworkPlayer playerID, int group)
+RemoveRPCs (NetworkViewID viewID)
+RemoveRPCsInGroup (int group)
+RenameAsset (string pathName, string newName)
+Render ()
+RenderGameViewCameras (Rect cameraRect, Rect statsRect, bool stats, bool gizmos)
+RenderSettings
+RenderTexture
+RenderTexture (int width, int height, int depth)
+RenderTextureFormat
+RenderTextureFormat.ARGB32
+RenderTextureFormat.ARGBHalf
+RenderTextureFormat.Depth
+RenderToCubemap (Cubemap cubemap, int faceMask = 63)
+RenderToCubemap (RenderTexture cubemap, int faceMask = 63)
+RenderWithShader (Shader shader, string replacementTag)
+Renderer
+RenderingPath
+RenderingPath.DeferredLighting
+RenderingPath.Forward
+RenderingPath.UsePlayerSettings
+RenderingPath.VertexLit
+Repaint ()
+Repeat (float t, float length)
+RepeatButton (GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+RepeatButton (GUIContent content, params GUILayoutOption[] options)
+RepeatButton (Rect position, GUIContent content)
+RepeatButton (Rect position, GUIContent content, GUIStyle style)
+RepeatButton (Rect position, Texture image)
+RepeatButton (Rect position, Texture image, GUIStyle style)
+RepeatButton (Rect position, string text)
+RepeatButton (Rect position, string text, GUIStyle style)
+RepeatButton (Texture image, GUIStyle style, params GUILayoutOption[] options)
+RepeatButton (Texture image, params GUILayoutOption[] options)
+RepeatButton (string text, GUIStyle style, params GUILayoutOption[] options)
+RepeatButton (string text, params GUILayoutOption[] options)
+ReplaceDirectory (string src, string dst)
+ReplaceFile (string src, string dst)
+ReplacePrefab (GameObject go, Object targetPrefab, ReplacePrefabOptions options = ReplacePrefabOptions.Default)
+ReplacePrefabOptions
+ReplacePrefabOptions.ConnectToPrefab
+ReplacePrefabOptions.Default
+ReplacePrefabOptions.ReplaceNameBased
+ReplacePrefabOptions.UseLastUploadedPrefabRoot
+RequestHostList (string gameTypeName)
+RequireComponent
+RequireComponent (Type requiredComponent)
+RequireComponent (Type requiredComponent, Type requiredComponent2)
+RequireComponent (Type requiredComponent, Type requiredComponent2, Type requiredComponent3)
+Reset ()
+ResetAspect ()
+ResetGameObjectToPrefabState (GameObject go)
+ResetInputAxes ()
+ResetProjectionMatrix ()
+ResetReplacementShader ()
+ResetToPrefabState (Object obj)
+ResetWorldToCameraMatrix ()
+Resize (int width, int height)
+Resize (int width, int height, TextureFormat format, bool hasMipMap)
+Resolution
+ResolutionDialogSetting
+ResolutionDialogSetting.Disabled
+ResolutionDialogSetting.Enabled
+ResolutionDialogSetting.HiddenByDefault
+Resources
+RestoreSnapshot ()
+Reverse ()
+Rewind ()
+Rewind (string name)
+Rigidbody
+RigidbodyInterpolation
+RigidbodyInterpolation.Extrapolate
+RigidbodyInterpolation.Interpolate
+RigidbodyInterpolation.None
+Rotate (Vector3 axis, float angle, Space relativeTo = Space.Self)
+Rotate (Vector3 eulerAngles, Space relativeTo = Space.Self)
+Rotate (float xAngle, float yAngle, float zAngle, Space relativeTo = Space.Self)
+RotateAround (Vector3 point, Vector3 axis, float angle)
+RotateAroundPivot (float angle, Vector2 pivotPoint)
+RotateTowards (Quaternion from, Quaternion to, float maxDegreesDelta)
+RotateTowards (Vector3 current, Vector3 target, float maxRadiansDelta, float maxMagnitudeDelta)
+RotationDriveMode
+RotationDriveMode.Slerp
+RotationDriveMode.XYAndZ
+RotationHandle (Quaternion rotation, Vector3 position)
+Round (float f)
+RoundToInt (float f)
+RuntimePlatform
+RuntimePlatform.Android
+RuntimePlatform.IPhonePlayer
+RuntimePlatform.OSXDashboardPlayer
+RuntimePlatform.OSXEditor
+RuntimePlatform.OSXPlayer
+RuntimePlatform.OSXWebPlayer
+RuntimePlatform.PS3
+RuntimePlatform.WiiPlayer
+RuntimePlatform.WindowsEditor
+RuntimePlatform.WindowsPlayer
+RuntimePlatform.WindowsWebPlayer
+RuntimePlatform.XBOX360
+SameSide (Vector3 inPt0, Vector3 inPt1)
+Sample ()
+SampleAnimation (AnimationClip animation, float time)
+SampleHeight (Vector3 worldPosition)
+SaveAssets ()
+SaveCurrentSceneIfUserWantsTo ()
+SaveFilePanel (string title, string directory, string defaultName, string extension)
+SaveFilePanelInProject (string title, string defaultName, string extension, string message)
+SaveFolderPanel (string title, string folder, string defaultName)
+SaveScene (string path)
+Scale (Vector2 a, Vector2 b)
+Scale (Vector2 scale)
+Scale (Vector3 a, Vector3 b)
+Scale (Vector3 scale)
+Scale (Vector3 v)
+Scale (Vector4 a, Vector4 b)
+Scale (Vector4 scale)
+ScaleAroundPivot (Vector2 scale, Vector2 pivotPoint)
+ScaleHandle (Vector3 scale, Vector3 position, Quaternion rotation, float size)
+ScaleMode
+ScaleMode.ScaleAndCrop
+ScaleMode.ScaleToFit
+ScaleMode.StretchToFill
+ScaleSlider (float scale, Vector3 position, Vector3 direction, Quaternion rotation, float size, float snap)
+ScaleValueHandle (float value, Vector3 position, Quaternion rotation, float size, DrawCapFunction capFunc, float snap)
+Screen
+ScreenPointToRay (Vector3 position)
+ScreenToGUIPoint (Vector2 screenPoint )
+ScreenToViewportPoint (Vector3 position)
+ScreenToWorldPoint (Vector3 position)
+ScriptableObject
+ScriptableWizard
+ScrollTo (Rect position)
+Security
+Selection
+SelectionGrid (Rect position, int selected, GUIContent[] content, int xCount)
+SelectionGrid (Rect position, int selected, GUIContent[] contents, int xCount, GUIStyle style)
+SelectionGrid (Rect position, int selected, Texture[] images, int xCount)
+SelectionGrid (Rect position, int selected, Texture[] images, int xCount, GUIStyle style)
+SelectionGrid (Rect position, int selected, string[] texts, int xCount)
+SelectionGrid (Rect position, int selected, string[] texts, int xCount, GUIStyle style)
+SelectionGrid (int selected, GUIContent[] content, int xCount, params GUILayoutOption[] options)
+SelectionGrid (int selected, GUIContent[] contents, int xCount, GUIStyle style, params GUILayoutOption[] options)
+SelectionGrid (int selected, Texture[] images, int xCount, GUIStyle style, params GUILayoutOption[] options)
+SelectionGrid (int selected, Texture[] images, int xCount, params GUILayoutOption[] options)
+SelectionGrid (int selected, string[] texts, int xCount, GUIStyle style, params GUILayoutOption[] options)
+SelectionGrid (int selected, string[] texts, int xCount, params GUILayoutOption[] options)
+SelectionMode
+SelectionMode.Assets
+SelectionMode.Deep
+SelectionMode.DeepAssets
+SelectionMode.Editable
+SelectionMode.ExcludePrefab
+SelectionMode.TopLevel
+SelectionMode.Unfiltered
+SendEvent (Event e)
+SendMessage (string methodName, object value = null, SendMessageOptions options = SendMessageOptions.RequireReceiver)
+SendMessageOptions
+SendMessageOptions.DontRequireReceiver
+SendMessageOptions.RequireReceiver
+SendMessageUpwards (string methodName, object value = null, SendMessageOptions options = SendMessageOptions.RequireReceiver)
+Separator ()
+Serializable
+Serialize (ref NetworkPlayer value)
+Serialize (ref NetworkViewID viewID)
+Serialize (ref Quaternion value, float maxDelta = 0.00001F)
+Serialize (ref Vector3 value, float maxDelta = 0.00001F)
+Serialize (ref bool value)
+Serialize (ref char value)
+Serialize (ref float value, float maxDelta = 0.00001F)
+Serialize (ref int value)
+Serialize (ref short value)
+SerializeField
+SerializedObject
+SerializedObject (Object obj)
+SerializedProperty
+SerializedPropertyType
+SerializedPropertyType.AnimationCurve
+SerializedPropertyType.ArraySize
+SerializedPropertyType.Boolean
+SerializedPropertyType.Character
+SerializedPropertyType.Color
+SerializedPropertyType.Enum
+SerializedPropertyType.Float
+SerializedPropertyType.Integer
+SerializedPropertyType.LayerMask
+SerializedPropertyType.ObjectReference
+SerializedPropertyType.Rect
+SerializedPropertyType.String
+SerializedPropertyType.Vector2
+SerializedPropertyType.Vector3
+SetActiveRecursively (bool state)
+SetAlphamaps (int x, int y, float[,,] map)
+SetAnimationClips (Animation component, AnimationClip[] clips)
+SetAnimationEvents (AnimationClip clip, AnimationEvent[] events)
+SetAspectRatio (AspectRatio aspectRatio, bool enable)
+SetBool (string key, bool value)
+SetCamera (Camera camera)
+SetCamera (Rect position, Camera camera)
+SetColor (string propertyName, Color color)
+SetColors (Color start, Color end)
+SetColumn (int i, Vector4 v)
+SetCurve (string relativePath, Type type, string propertyName, AnimationCurve curve)
+SetDefaults ( out UnwrapParam param )
+SetDensity (float density)
+SetDetailLayer (int xBase, int yBase, int layer, int[,] details)
+SetDetailResolution (int detailResolution, int resolutionPerPatch)
+SetDirty (Object target)
+SetEditorCurve (AnimationClip clip, string relativePath, Type type, string propertyName, AnimationCurve curve)
+SetEnabledFading (bool enabled, float interpolationTime = 0.5f)
+SetFloat (string key, float value)
+SetFloat (string propertyName, float value)
+SetFromToRotation (Vector3 fromDirection, Vector3 toDirection)
+SetGenericData (string type, object data)
+SetGlobalColor (string propertyName, Color color)
+SetGlobalFloat (string propertyName, float value)
+SetGlobalMatrix (string propertyName, Matrix4x4 mat)
+SetGlobalShaderProperty (string propertyName)
+SetGlobalTexture (string propertyName, Texture tex)
+SetGlobalVector (string propertyName, Vector4 vec)
+SetHeights (int xBase, int yBase, float[,] heights)
+SetInt (string key, int value)
+SetLabels (Object obj, string[] labels)
+SetLevelPrefix (int prefix)
+SetLookRotation (Vector3 view, Vector3 up = Vector3.up)
+SetMatrix (string propertyName, Matrix4x4 matrix)
+SetMinMax (Vector3 min, Vector3 max)
+SetNameSmart (Object obj, string name)
+SetNeighbors (Terrain left, Terrain top, Terrain right, Terrain bottom)
+SetNextControlName (string name)
+SetObjectEnabled (Object target, bool enabled)
+SetPass (int pass)
+SetPerTriangleUV2 ( Mesh src, Vector2[] triUV )
+SetPixel (CubemapFace face, int x, int y, Color color)
+SetPixel (int x, int y, Color color)
+SetPixels (Color[] colors, CubemapFace face, int miplevel = 0)
+SetPixels (Color[] colors, int miplevel = 0)
+SetPixels (int x, int y, int blockWidth, int blockHeight, Color[] colors, int miplevel = 0)
+SetPlatformTextureSettings (string platform, int maxTextureSize, TextureImporterFormat textureFormat)
+SetPosition (int index, Vector3 position)
+SetReceivingEnabled (NetworkPlayer player, int group, bool enabled)
+SetReplacementShader (Shader shader, string replacementTag)
+SetResolution (int width, int height, bool fullscreen, int preferredRefreshRate = 0)
+SetRevertBackfacing (bool revertBackFaces)
+SetRow (int i, Vector4 v)
+SetScope (NetworkPlayer player, bool relevancy)
+SetSendingEnabled (NetworkPlayer player, int group, bool enabled)
+SetSendingEnabled (int group, bool enabled)
+SetSnapshotTarget (Object objectToUndo, string name)
+SetSnapshotTarget (Object[] objectsToUndo, string name)
+SetString (string key, string value)
+SetTRS (Vector3 pos, Quaternion q, Vector3 s)
+SetTexture (string propertyName, Texture texture)
+SetTextureOffset (string propertyName, Vector2 offset)
+SetTextureScale (string propertyName, Vector2 scale)
+SetTextureSettings (TextureImporterSettings src)
+SetTriangles (int[] triangles, int submesh)
+SetVector (string propertyName, Vector4 vector)
+SetVertexCount (int count)
+SetWidth (float start, float end)
+Shader
+Shift ()
+Show (bool immediateDisplay = false)
+ShowAuxWindow ()
+ShowHelpForObject (Object obj)
+ShowHelpPage (string page)
+ShowNotification (GUIContent notification)
+ShowPopup ()
+ShowUtility ()
+Sign (float f)
+SimpleMove (Vector3 speed)
+Simulate (float deltaTime)
+Sin (float f)
+SkinQuality
+SkinQuality.Auto
+SkinQuality.Bone1
+SkinQuality.Bone2
+SkinQuality.Bone4
+SkinnedCloth
+SkinnedMeshRenderer
+Skybox
+Sleep ()
+Slerp (Quaternion from, Quaternion to, float t)
+Slerp (Vector3 from, Vector3 to, float t)
+Slider (GUIContent label, float value, float leftValue, float rightValue, params GUILayoutOption[] options)
+Slider (Rect position, GUIContent label, float value, float leftValue, float rightValue)
+Slider (Rect position, SerializedProperty property, float leftValue, float rightValue)
+Slider (Rect position, SerializedProperty property, float leftValue, float rightValue, GUIContent label)
+Slider (Rect position, SerializedProperty property, float leftValue, float rightValue, string label)
+Slider (Rect position, float value, float leftValue, float rightValue)
+Slider (Rect position, string label, float value, float leftValue, float rightValue)
+Slider (SerializedProperty property, float leftValue, float rightValue, GUIContent label, params GUILayoutOption[] options)
+Slider (SerializedProperty property, float leftValue, float rightValue, params GUILayoutOption[] options)
+Slider (SerializedProperty property, float leftValue, float rightValue, string label, params GUILayoutOption[] options)
+Slider (Vector3 position, Vector3 direction)
+Slider (Vector3 position, Vector3 direction, float size, DrawCapFunction drawFunc, float snap)
+Slider (float value, float leftValue, float rightValue, params GUILayoutOption[] options)
+Slider (string label, float value, float leftValue, float rightValue, params GUILayoutOption[] options)
+SmoothDamp (Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float maxSpeed = Mathf.Infinity, float deltaTime = Time.deltaTime)
+SmoothDamp (float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed = Mathf.Infinity, float deltaTime = Time.deltaTime)
+SmoothDampAngle (float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed = Mathf.Infinity, float deltaTime = Time.deltaTime)
+SmoothStep (float from, float to, float t)
+SmoothTangents (int index, float weight)
+SoftJointLimit
+Sort ()
+Space
+Space ()
+Space (float pixels)
+Space.Self
+Space.World
+SphereCap (int controlID, Vector3 position, Quaternion rotation, float size)
+SphereCast (Ray ray, float radius, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+SphereCast (Ray ray, float radius, out RaycastHit hitInfo, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+SphereCast (Vector3 origin, float radius, Vector3 direction, out RaycastHit hitInfo, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+SphereCastAll (Ray ray, float radius, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+SphereCastAll (Vector3 origin, float radius, Vector3 direction, float distance = Mathf.Infinity, int layerMask = kDefaultRaycastLayers)
+SphereCollider
+SplatPrototype
+SpringJoint
+SqrDistance (Vector3 point)
+Sqrt (float f)
+Start ()
+StartAnimationMode (Object[] objects)
+StartAssetEditing ()
+StartCoroutine (IEnumerator routine)
+StartCoroutine (string methodName, object value = null)
+StartDrag (string title)
+StartLocationServiceUpdates (float desiredAccuracyInMeters = 10f, float updateDistanceInMeters = 10f)
+StaticBatchingUtility
+StaticOcclusionCulling
+StaticOcclusionCullingQuality
+StaticOcclusionCullingQuality.Preview
+StaticOcclusionCullingQuality.Production
+StaticOcclusionCullingVisualization
+Step ()
+Stop ()
+Stop (string name)
+StopAllCoroutines ()
+StopAnimationMode ()
+StopAssetEditing ()
+StopCoroutine (string methodName)
+StopLocationServiceUpdates ()
+String
+SupportsRenderTextureFormat (RenderTextureFormat format)
+SweepTest (Vector3 direction, out RaycastHit hitInfo, float distance = Mathf.Infinity)
+SweepTestAll (Vector3 direction, float distance = Mathf.Infinity)
+SyncLayer (int layer)
+SystemInfo
+SystemLanguage
+SystemLanguage.Afrikaans
+SystemLanguage.Arabic
+SystemLanguage.Basque
+SystemLanguage.Belarusian
+SystemLanguage.Bulgarian
+SystemLanguage.Catalan
+SystemLanguage.Chinese
+SystemLanguage.Czech
+SystemLanguage.Danish
+SystemLanguage.Dutch
+SystemLanguage.English
+SystemLanguage.Estonian
+SystemLanguage.Faroese
+SystemLanguage.Finnish
+SystemLanguage.French
+SystemLanguage.German
+SystemLanguage.Greek
+SystemLanguage.Hebrew
+SystemLanguage.Hugarian
+SystemLanguage.Icelandic
+SystemLanguage.Indonesian
+SystemLanguage.Italian
+SystemLanguage.Japanese
+SystemLanguage.Korean
+SystemLanguage.Latvian
+SystemLanguage.Lithuanian
+SystemLanguage.Norwegian
+SystemLanguage.Polish
+SystemLanguage.Portuguese
+SystemLanguage.Romanian
+SystemLanguage.Russian
+SystemLanguage.SerboCroatian
+SystemLanguage.Slovak
+SystemLanguage.Slovenian
+SystemLanguage.Spanish
+SystemLanguage.Swedish
+SystemLanguage.Thai
+SystemLanguage.Turkish
+SystemLanguage.Ukrainian
+SystemLanguage.Unknown
+SystemLanguage.Vietnamese
+TRIANGLES
+TRIANGLE_STRIP
+TRS (Vector3 pos, Quaternion q, Vector3 s)
+TagField (GUIContent label, string tag, GUIStyle style, params GUILayoutOption[] options)
+TagField (GUIContent label, string tag, params GUILayoutOption[] options)
+TagField (Rect position, GUIContent label, string tag, GUIStyle style = EditorStyles.popup)
+TagField (Rect position, string label, string tag, GUIStyle style = EditorStyles.popup)
+TagField (Rect position, string tag, GUIStyle style = EditorStyles.popup)
+TagField (string label, string tag, GUIStyle style, params GUILayoutOption[] options)
+TagField (string label, string tag, params GUILayoutOption[] options)
+TagField (string tag, GUIStyle style, params GUILayoutOption[] options)
+TagField (string tag, params GUILayoutOption[] options)
+Tan (float f)
+Terrain
+TerrainCollider
+TerrainData
+TestConnection (bool forceTest = false)
+TestConnectionNAT ()
+TestPlanesAABB (Plane[] planes, Bounds bounds)
+TexCoord (Vector3 v)
+TexCoord2 (float x, float y)
+TexCoord3 (float x, float y, float z)
+TextAlignment
+TextAlignment.Center
+TextAlignment.Left
+TextAlignment.Right
+TextAnchor
+TextAnchor.LowerCenter
+TextAnchor.LowerLeft
+TextAnchor.LowerRight
+TextAnchor.MiddleCenter
+TextAnchor.MiddleLeft
+TextAnchor.MiddleRight
+TextAnchor.UpperCenter
+TextAnchor.UpperLeft
+TextAnchor.UpperRight
+TextArea (Rect position, string text)
+TextArea (Rect position, string text, GUIStyle style = EditorStyles.textField)
+TextArea (Rect position, string text, GUIStyle style)
+TextArea (Rect position, string text, int maxLength)
+TextArea (Rect position, string text, int maxLength, GUIStyle style)
+TextArea (string text, GUIStyle style, params GUILayoutOption[] options)
+TextArea (string text, int maxLength, GUIStyle style, params GUILayoutOption[] options)
+TextArea (string text, int maxLength, params GUILayoutOption[] options)
+TextArea (string text, params GUILayoutOption[] options)
+TextAsset
+TextClipping
+TextClipping.Clip
+TextClipping.Overflow
+TextField (GUIContent label, string text, GUIStyle style, params GUILayoutOption[] options)
+TextField (GUIContent label, string text, params GUILayoutOption[] options)
+TextField (Rect position, GUIContent label, string text, GUIStyle style = EditorStyles.textField)
+TextField (Rect position, string label, string text, GUIStyle style = EditorStyles.textField)
+TextField (Rect position, string text)
+TextField (Rect position, string text, GUIStyle style = EditorStyles.textField)
+TextField (Rect position, string text, GUIStyle style)
+TextField (Rect position, string text, int maxLength)
+TextField (Rect position, string text, int maxLength, GUIStyle style)
+TextField (string label, string text, GUIStyle style, params GUILayoutOption[] options)
+TextField (string label, string text, params GUILayoutOption[] options)
+TextField (string text, GUIStyle style, params GUILayoutOption[] options)
+TextField (string text, int maxLength, GUIStyle style, params GUILayoutOption[] options)
+TextField (string text, int maxLength, params GUILayoutOption[] options)
+TextField (string text, params GUILayoutOption[] options)
+TextMesh
+Texture
+Texture2D
+Texture2D (int width, int height)
+Texture2D (int width, int height, TextureFormat format, bool mipmap)
+TextureFormat
+TextureFormat.ARGB32
+TextureFormat.ARGB4444
+TextureFormat.Alpha8
+TextureFormat.DXT1
+TextureFormat.DXT5
+TextureFormat.ETC_RGB4
+TextureFormat.PVRTC_RGB2
+TextureFormat.PVRTC_RGB4
+TextureFormat.PVRTC_RGBA2
+TextureFormat.PVRTC_RGBA4
+TextureFormat.RGB24
+TextureFormat.RGB565
+TextureImporter
+TextureImporterFormat
+TextureImporterFormat.ARGB16
+TextureImporterFormat.ARGB32
+TextureImporterFormat.Alpha8
+TextureImporterFormat.Automatic16bit
+TextureImporterFormat.AutomaticCompressed
+TextureImporterFormat.AutomaticTruecolor
+TextureImporterFormat.DXT1
+TextureImporterFormat.DXT5
+TextureImporterFormat.ETC_RGB4
+TextureImporterFormat.PVRTC_RGB2
+TextureImporterFormat.PVRTC_RGB4
+TextureImporterFormat.PVRTC_RGBA2
+TextureImporterFormat.PVRTC_RGBA4
+TextureImporterFormat.RGB16
+TextureImporterFormat.RGB24
+TextureImporterFormat.RGBA32
+TextureImporterGenerateCubemap
+TextureImporterGenerateCubemap.Cylindrical
+TextureImporterGenerateCubemap.NiceSpheremap
+TextureImporterGenerateCubemap.None
+TextureImporterGenerateCubemap.SimpleSpheremap
+TextureImporterGenerateCubemap.Spheremap
+TextureImporterMipFilter
+TextureImporterMipFilter.BoxFilter
+TextureImporterMipFilter.KaiserFilter
+TextureImporterNPOTScale
+TextureImporterNPOTScale.None
+TextureImporterNPOTScale.ToLarger
+TextureImporterNPOTScale.ToNearest
+TextureImporterNPOTScale.ToSmaller
+TextureImporterNormalFilter
+TextureImporterNormalFilter.Sobel
+TextureImporterNormalFilter.Standard
+TextureImporterSettings
+TextureImporterType
+TextureImporterType.Advanced
+TextureImporterType.Bump
+TextureImporterType.Cookie
+TextureImporterType.GUI
+TextureImporterType.Image
+TextureImporterType.Lightmap
+TextureImporterType.Reflection
+TextureWrapMode
+TextureWrapMode.Clamp
+TextureWrapMode.Repeat
+ThreadPriority
+ThreadPriority.BelowNormal
+ThreadPriority.High
+ThreadPriority.Low
+ThreadPriority.Normal
+Time
+ToAngleAxis (out float angle, out Vector3 axis)
+ToString ()
+ToString (string format)
+Toggle (GUIContent label, bool value, params GUILayoutOption[] options)
+Toggle (Rect position, GUIContent label, bool value)
+Toggle (Rect position, bool value)
+Toggle (Rect position, bool value, GUIContent content)
+Toggle (Rect position, bool value, GUIContent content, GUIStyle style)
+Toggle (Rect position, bool value, Texture image)
+Toggle (Rect position, bool value, Texture image, GUIStyle style)
+Toggle (Rect position, bool value, string text)
+Toggle (Rect position, bool value, string text, GUIStyle style)
+Toggle (Rect position, string label, bool value)
+Toggle (bool value, GUIContent content, GUIStyle style, params GUILayoutOption[] options)
+Toggle (bool value, GUIContent content, params GUILayoutOption[] options)
+Toggle (bool value, Texture image, GUIStyle style, params GUILayoutOption[] options)
+Toggle (bool value, Texture image, params GUILayoutOption[] options)
+Toggle (bool value, params GUILayoutOption[] options)
+Toggle (bool value, string text, GUIStyle style, params GUILayoutOption[] options)
+Toggle (bool value, string text, params GUILayoutOption[] options)
+Toggle (string label, bool value, params GUILayoutOption[] options)
+Toolbar (Rect position, int selected, GUIContent[] content)
+Toolbar (Rect position, int selected, GUIContent[] contents, GUIStyle style)
+Toolbar (Rect position, int selected, Texture[] images)
+Toolbar (Rect position, int selected, Texture[] images, GUIStyle style)
+Toolbar (Rect position, int selected, string[] texts)
+Toolbar (Rect position, int selected, string[] texts, GUIStyle style)
+Toolbar (int selected, GUIContent[] content, params GUILayoutOption[] options)
+Toolbar (int selected, GUIContent[] contents, GUIStyle style, params GUILayoutOption[] options)
+Toolbar (int selected, Texture[] images, GUIStyle style, params GUILayoutOption[] options)
+Toolbar (int selected, Texture[] images, params GUILayoutOption[] options)
+Toolbar (int selected, string[] texts, GUIStyle style, params GUILayoutOption[] options)
+Touch
+TouchPhase
+TouchPhase.Began
+TouchPhase.Canceled
+TouchPhase.Ended
+TouchPhase.Moved
+TouchPhase.Stationary
+TrailRenderer
+Transform
+TransformDirection (Vector3 direction)
+TransformDirection (float x, float y, float z)
+TransformPoint (Vector3 position)
+TransformPoint (float x, float y, float z)
+Translate (Vector3 translation, Space relativeTo = Space.Self)
+Translate (Vector3 translation, Transform relativeTo)
+Translate (float x, float y, float z, Space relativeTo = Space.Self)
+Translate (float x, float y, float z, Transform relativeTo)
+Tree
+TreeInstance
+TreePrototype
+TrueTypeFontImporter
+UnEscapeURL (string s, Encoding e=System.Text.Encoding.UTF8)
+Undo
+UnfocusWindow ()
+Unload (bool unloadAllLoadedObjects)
+UnloadUnusedAssets ()
+UnloadUnusedAssetsIgnoreManagedReferences ()
+UnlockReloadAssemblies ()
+UnregisterHost ()
+Unshift (object newElement, object optionalElement)
+UnwrapParam
+Unwrapping
+Update ()
+Use ()
+ValidateMoveAsset (string oldPath, string newPath)
+Vector2
+Vector2 (float x, float y)
+Vector2Field (Rect position, string label, Vector2 value)
+Vector2Field (string label, Vector2 value, params GUILayoutOption[] options)
+Vector3
+Vector3 (float x, float y)
+Vector3 (float x, float y, float z)
+Vector3Field (Rect position, string label, Vector3 value)
+Vector3Field (string label, Vector3 value, params GUILayoutOption[] options)
+Vector4
+Vector4 (float x, float y)
+Vector4 (float x, float y, float z)
+Vector4 (float x, float y, float z, float w)
+Vector4Field (Rect position, string label, Vector4 value)
+Vector4Field (string label, Vector4 value, params GUILayoutOption[] options)
+Vertex (Vector3 v)
+Vertex3 (float x, float y, float z)
+VerticalScrollbar (Rect position, float value, float size, float topValue, float bottomValue, GUIStyle style)
+VerticalScrollbar (float value, float size, float topValue, float bottomValue, GUIStyle style, params GUILayoutOption[] options)
+VerticalScrollbar (float value, float size, float topValue, float bottomValue, params GUILayoutOption[] options)
+VerticalSlider (Rect position, float value, float topValue, float bottomValue)
+VerticalSlider (Rect position, float value, float topValue, float bottomValue, GUIStyle slider, GUIStyle thumb)
+VerticalSlider (float value, float leftValue, float rightValue, GUIStyle slider, GUIStyle thumb, params GUILayoutOption[] options)
+VerticalSlider (float value, float leftValue, float rightValue, params GUILayoutOption[] options)
+Vibrate ()
+Viewport (Rect pixelRect)
+ViewportPointToRay (Vector3 position)
+ViewportToScreenPoint (Vector3 position)
+ViewportToWorldPoint (Vector3 position)
+WWW
+WWW (string url)
+WWW (string url, WWWForm form )
+WWW (string url, byte[] postData)
+WWW (string url, byte[] postData, Hashtable headers )
+WWWForm
+WWWForm ()
+WaitForEndOfFrame
+WaitForFixedUpdate
+WaitForSeconds
+WaitForSeconds (float seconds)
+WakeUp ()
+WheelCollider
+WheelFrictionCurve
+WheelHit
+Width (float width)
+Window (int id, Rect clientRect, WindowFunction func, GUIContent content)
+Window (int id, Rect clientRect, WindowFunction func, GUIContent title, GUIStyle style)
+Window (int id, Rect clientRect, WindowFunction func, Texture image)
+Window (int id, Rect clientRect, WindowFunction func, Texture image, GUIStyle style)
+Window (int id, Rect clientRect, WindowFunction func, string text)
+Window (int id, Rect clientRect, WindowFunction func, string text, GUIStyle style)
+Window (int id, Rect screenRect, GUI.WindowFunction func, GUIContent content, GUIStyle style, params GUILayoutOption[ ] options)
+Window (int id, Rect screenRect, GUI.WindowFunction func, GUIContent content, params GUILayoutOption[ ] options)
+Window (int id, Rect screenRect, GUI.WindowFunction func, Texture image, GUIStyle style, params GUILayoutOption[ ] options)
+Window (int id, Rect screenRect, GUI.WindowFunction func, Texture image, params GUILayoutOption[ ] options)
+Window (int id, Rect screenRect, GUI.WindowFunction func, string text, GUIStyle style, params GUILayoutOption[ ] options)
+Window (int id, Rect screenRect, GUI.WindowFunction func, string text, params GUILayoutOption[ ] options)
+WorldPointToSizedRect (Vector3 position, GUIContent content, GUIStyle style)
+WorldToGUIPoint (Vector3 world)
+WorldToScreenPoint (Vector3 position)
+WorldToViewportPoint (Vector3 position)
+WrapMode
+WrapMode.ClampForever
+WrapMode.Default
+WrapMode.Loop
+WrapMode.Once
+WrapMode.PingPong
+YieldInstruction
+a
+absoluteURL
+acceleration
+accelerationEventCount
+accelerationEvents
+actionKey
+active
+activeControlID
+activeGameObject
+activeInstanceID
+activeObject
+activeTerrain
+activeTransform
+actualRenderingPath
+addCollider
+alignment
+allCameras
+alphamapHeight
+alphamapLayers
+alphamapResolution
+alphamapWidth
+alt
+altitude
+alwaysDisplayWatermark
+ambientLight
+anchor
+angle
+angleError
+angularDrag
+angularVelocity
+angularXDrive
+angularXMotion
+angularYLimit
+angularYMotion
+angularYZDrive
+angularZLimit
+angularZMotion
+animateOnlyIfVisible
+animatePhysics
+animation
+animationCompression
+animationCurveValue
+animationPositionError
+animationRotationError
+animationScaleError
+animationState
+animationWrapMode
+anisoLevel
+anisotropicFiltering
+anyKey
+anyKeyDown
+aoAmount
+aoContrast
+aoMaxDistance
+applicationContentsPath
+applicationPath
+area
+areaError
+aspect
+aspectRatio
+asset
+assetBundle
+assetImporter
+assetPath
+asymptoteSlip
+asymptoteValue
+attachedRigidbody
+attachmentResponse
+attachmentTearFactor
+audio
+audioClip
+autoRepaintOnSceneChange
+autodestruct
+autorotateToLandscapeLeft
+autorotateToLandscapeRight
+autorotateToPortrait
+autorotateToPortraitUpsideDown
+axis
+b
+background
+backgroundColor
+backgroundLoadingPriority
+bakeIK
+barycentricCoordinate
+baseMapResolution
+basemapDistance
+bendFactor
+bendingStiffness
+bindposes
+black
+blendMode
+blue
+boldFont
+boldLabel
+boneIndex0
+boneIndex1
+boneIndex2
+boneIndex3
+boneWeights
+bones
+boolValue
+border
+borderMipmap
+bottom
+bounceBoost
+bounceCombine
+bounceIntensity
+bounceThreshold
+bounces
+bounciness
+bounds
+box
+brakeTorque
+breakForce
+breakTorque
+brightness
+button
+bypassEffects
+bytes
+camera
+cameraToWorldMatrix
+cameraVelocityScale
+capsLock
+captureFramerate
+captureSingleScreen
+castShadows
+center
+centerOfMass
+changed
+channels
+character
+childCount
+clear
+clearFlags
+clickCount
+clip
+clipAnimations
+clipping
+coefficients
+collider
+collisionDetectionMode
+collisionFlags
+collisionResponse
+collisionSphereDistance
+collisionSphereRadius
+color
+colorAnimation
+colorField
+colorValue
+colors
+command
+commandName
+comment
+companyName
+compressedSize
+compressionBitrate
+configuredInWorldSpace
+connectedBody
+connectedPlayers
+connectionTesterIP
+connectionTesterPort
+connections
+constantForce
+contacts
+contentColor
+contentOffset
+context
+control
+controller
+convertToNormalmap
+convex
+cookie
+correctGamma
+cullingMask
+current
+currentCamera
+currentLevel
+currentResolution
+currentScene
+cursorColor
+cursorFlashSpeed
+curve
+customStyles
+cutoffFrequency
+cyan
+damper
+damping
+data
+dataPath
+decayHFRatio
+decayRatio
+decayTime
+decompressOnLoad
+decompressedSize
+dedicatedServer
+defaultIsFullScreen
+defaultScreenHeight
+defaultScreenWidth
+defaultWebScreenHeight
+defaultWebScreenWidth
+delay
+delta
+deltaPosition
+deltaTime
+density
+depth
+depthTextureMode
+detailHeight
+detailObjectDensity
+detailObjectDistance
+detailPrototypes
+detailResolution
+detailWidth
+detectCollisions
+deviceOrientation
+diffusion
+direction
+displayResolutionDialog
+distance
+distortionLevel
+doesAnimateColor
+done
+dopplerLevel
+doubleClickSelectsWord
+drag
+driverCaps
+dryColor
+dryLevel
+dryMix
+duration
+dynamicFriction
+dynamicFriction2
+editable
+editorRenderFlags
+emit
+emitterVelocityScale
+enabled
+endWidth
+energy
+enumNames
+enumValueIndex
+error
+errorString
+eulerAngles
+extents
+externalAcceleration
+externalIP
+externalPort
+extremumSlip
+extremumValue
+fadeout
+farClipPlane
+feedback
+fieldOfView
+filterMode
+finalGatherContrastThreshold
+finalGatherGradientThreshold
+finalGatherInterpolationPoints
+finalGatherRays
+fingerId
+firstFrame
+firstStreamedLevelWithResources
+fixedDeltaTime
+fixedHeight
+fixedTime
+fixedWidth
+flare
+flareStrength
+floatParameter
+floatValue
+focused
+focusedWindow
+fog
+fogColor
+fogDensity
+foldout
+foldoutPreDrop
+font
+fontNames
+fontRenderMode
+fontSize
+fontStyle
+fontTTFName
+fontTextureCase
+force
+forceToMono
+format
+forward
+forwardDir
+forwardFriction
+forwardSlip
+frameCount
+frameRate
+freeSpin
+freezeRotation
+frequency
+friction
+frictionCombine
+frictionDirection2
+fullScreen
+functionKey
+functionName
+g
+gameName
+gameObject
+gameObjects
+gameType
+generateAnimations
+generateCubemap
+generateMaterials
+generateSecondaryUV
+generation
+globalMaximumLOD
+globalScale
+graphicsDeviceID
+graphicsDeviceName
+graphicsDeviceVendor
+graphicsDeviceVendorID
+graphicsDeviceVersion
+graphicsMemorySize
+graphicsPixelFillrate
+graphicsShaderLevel
+gravity
+gray
+grayscale
+grayscaleToAlpha
+green
+grey
+group
+guiText
+guiTexture
+guid
+haloStrength
+hardAngle
+hardware
+hasChildren
+hasVisibleChildren
+headers
+healthyColor
+height
+heightScale
+heightmapHeight
+heightmapMaximumLOD
+heightmapPixelError
+heightmapResolution
+heightmapScale
+heightmapWidth
+helpString
+hfReference
+hideFlags
+hideInput
+highAngularXLimit
+highTwistLimit
+highpassResonaceQ
+hingeJoint
+horizontal
+horizontalAccuracy
+horizontalScrollbar
+horizontalScrollbarLeftButton
+horizontalScrollbarRightButton
+horizontalScrollbarThumb
+horizontalSlider
+horizontalSliderThumb
+hotControl
+hover
+iPhoneBundleIdentifier
+iPhoneGeneration
+iPhoneGeneration.iPad1Gen
+iPhoneGeneration.iPhone
+iPhoneGeneration.iPhone3G
+iPhoneGeneration.iPhone3GS
+iPhoneGeneration.iPhone4
+iPhoneGeneration.iPodTouch1Gen
+iPhoneGeneration.iPodTouch2Gen
+iPhoneGeneration.iPodTouch3Gen
+iPhoneGeneration.iPodTouch4Gen
+iPhoneInput
+iPhoneKeyboard
+iPhoneKeyboardType
+iPhoneKeyboardType.ASCIICapable
+iPhoneKeyboardType.Default
+iPhoneKeyboardType.EmailAddress
+iPhoneKeyboardType.NamePhonePad
+iPhoneKeyboardType.NumberPad
+iPhoneKeyboardType.NumbersAndPunctuation
+iPhoneKeyboardType.PhonePad
+iPhoneKeyboardType.URL
+iPhoneMovieControlMode
+iPhoneMovieControlMode.CancelOnTouch
+iPhoneMovieControlMode.Full
+iPhoneMovieControlMode.Hidden
+iPhoneMovieControlMode.Minimal
+iPhoneMovieScalingMode
+iPhoneMovieScalingMode.AspectFill
+iPhoneMovieScalingMode.AspectFit
+iPhoneMovieScalingMode.Fill
+iPhoneMovieScalingMode.None
+iPhoneNetworkReachability
+iPhoneNetworkReachability.NotReachable
+iPhoneNetworkReachability.ReachableViaCarrierDataNetwork
+iPhoneNetworkReachability.ReachableViaWiFiNetwork
+iPhoneScreenOrientation
+iPhoneScreenOrientation.Landscape
+iPhoneScreenOrientation.LandscapeLeft
+iPhoneScreenOrientation.LandscapeRight
+iPhoneScreenOrientation.Portrait
+iPhoneScreenOrientation.PortraitUpsideDown
+iPhoneSettings
+iPhoneUtils
+identity
+ignoreLayers
+image
+imagePosition
+inTangent
+includeFontData
+incomingPassword
+indentLevel
+inertiaTensor
+inertiaTensorRotation
+inputString
+insideUnitCircle
+insideUnitSphere
+instanceIDs
+intParameter
+intValue
+intensity
+internetReachability
+interpolation
+inverse
+ip
+ipAddress
+isApplicationGenuine
+isApplicationGenuineAvailable
+isBakeIKSupported
+isClient
+isCompiling
+isCubemap
+isDebugBuild
+isDone
+isEditor
+isExpanded
+isGrounded
+isIdentity
+isInstantiatedPrefab
+isKey
+isKinematic
+isLoadingLevel
+isMessageQueueRunning
+isMine
+isMouse
+isPartOfStaticBatch
+isPaused
+isPlaying
+isPlayingOrWillChangePlaymode
+isPowerOfTwo
+isPreviewOcclusionCullingCameraInPVS
+isReadable
+isReading
+isReadyToPlay
+isRunning
+isServer
+isStatic
+isSupported
+isTangentImportSupported
+isTeared
+isTrigger
+isUseFileUnitsSupported
+isValid
+isVisible
+isWebPlayer
+isWriting
+keyCode
+keyaliasPass
+keyboardControl
+keys
+keystorePass
+lFReference
+label
+largeLabel
+lastFrame
+lastLocation
+lastUsedResolution
+latitude
+layer
+layerCullDistances
+layerMaskField
+left
+length
+lengthScale
+levelCount
+light
+lighting
+lightmap
+lightmapColor
+lightmapCoord
+lightmapFar
+lightmapIndex
+lightmapNear
+lightmapTilingOffset
+lightmaps
+lightmapsMode
+limit
+limits
+lineHeight
+lineSpacing
+linearLimit
+loadedLevel
+loadedLevelName
+localEulerAngles
+localPosition
+localRotation
+localRotationAxis
+localScale
+localToWorldMatrix
+localVelocity
+locationServiceEnabledByUser
+locationServiceStatus
+lockAtlas
+lockCursor
+logFile
+logLevel
+longitude
+loop
+lossyScale
+lowAngularXLimit
+lowTwistLimit
+lowpassResonaceQ
+magenta
+magnitude
+main
+mainAsset
+mainTexture
+mainTextureOffset
+mainTextureScale
+margin
+mass
+masterTextureLimit
+material
+materials
+matrix
+max
+maxAngularVelocity
+maxAtlasHeight
+maxAtlasWidth
+maxBounce
+maxConnections
+maxDistance
+maxDistanceBias
+maxEmission
+maxEnergy
+maxHeight
+maxParticleSize
+maxQueuedFrames
+maxSize
+maxTextureSize
+maxWidth
+maximumDeltaTime
+maximumForce
+maximumLOD
+mesh
+meshCompression
+messageOptions
+min
+minBounce
+minDistance
+minEmission
+minEnergy
+minHeight
+minPenetrationForPenalty
+minSize
+minWidth
+miniBoldFont
+miniBoldLabel
+miniButton
+miniButtonLeft
+miniButtonMid
+miniButtonRight
+miniFont
+miniLabel
+miniTextField
+minimumAllocatableViewIDs
+mipMapBias
+mipmapCount
+mipmapEnabled
+mipmapFadeDistanceEnd
+mipmapFadeDistanceStart
+mipmapFilter
+mode
+model
+modelview
+modifierKeysChanged
+modifiers
+motor
+motorTorque
+mouseOverWindow
+mousePosition
+moveDirection
+moveLength
+movie
+multiTouchEnabled
+mute
+name
+natFacilitatorIP
+natFacilitatorPort
+nearClipPlane
+networkView
+niceMouseDelta
+niceMouseDeltaZoom
+noiseSpread
+none
+normal
+normalImportMode
+normalSmoothingAngle
+normalized
+normalizedSpeed
+normalizedTime
+normalmap
+normalmapFilter
+normals
+notificationBackground
+notificationText
+npotScale
+numberField
+numeric
+objectField
+objectFieldThumb
+objectReferenceParameter
+objectReferenceValue
+objectReferences
+objects
+observed
+oggVorbis
+onActive
+onFocused
+onHover
+onNormal
+onUnitSphere
+one
+operatingSystem
+origin
+orthographic
+orthographicSize
+otherCollider
+outTangent
+outputSampleRate
+overflow
+owner
+packMargin
+padding
+pan
+panLevel
+parent
+particleCount
+particleEmitter
+particleRenderMode
+particles
+passCount
+passwordProtected
+path
+paths
+pause
+pauseWhenNotVisible
+peerType
+phase
+pitch
+pixelHeight
+pixelInset
+pixelLightCount
+pixelOffset
+pixelRect
+pixelWidth
+platform
+playAutomatically
+playOnAwake
+player
+playerLimit
+playmodeStateChanged
+point
+popup
+port
+position
+positionDamper
+positionSpring
+postWrapMode
+preWrapMode
+prefab
+prefabOverride
+pressure
+previewOcclucionCamera
+print (object message)
+priority
+processorCount
+processorType
+productName
+progress
+projectionAngle
+projectionDistance
+projectionMatrix
+projectionMode
+propertyName
+propertyPath
+propertyType
+prototype
+prototypeIndex
+prototypeTexture
+proxyIP
+proxyPassword
+proxyPort
+quality
+r
+radioButton
+radius
+randomAcceleration
+range
+rate
+realtimeSinceStartup
+receiveShadows
+rect
+rectValue
+red
+reflections
+reflectionsDelay
+reflectionsLevel
+refreshRate
+relativeForce
+relativeTorque
+relativeVelocity
+renderMode
+renderQueue
+renderer
+renderingPath
+resolution
+resolutionDialogBanner
+resolutions
+reverb
+reverbDelay
+reverbLevel
+reverbPreset
+right
+rigidbody
+rndAngularVelocity
+rndForce
+rndRotation
+rndVelocity
+rolloffMode
+room
+roomHF
+roomLF
+roomRolloff
+roomRolloffFactor
+root
+rotation
+rotationDriveMode
+rpm
+runInBackground
+samples
+screenCanDarken
+screenOrientation
+scrollView
+secondaryAxis
+secondaryUVAngleDistortion
+secondaryUVAreaDistortion
+secondaryUVHardAngle
+secondaryUVPackMargin
+seed
+selectionColor
+selfCollision
+sendRate
+sender
+serializedObject
+settings
+shader
+shadowCascades
+shadowDistance
+shadowStrength
+shadows
+sharedMaterial
+sharedMaterials
+sharedMesh
+shift
+showCursor
+showGeometryCulling
+showOcclusionCulling
+showPreVisualization
+showTargetVolumes
+showViewVolumes
+sidewaysDir
+sidewaysFriction
+sidewaysSlip
+size
+sizeGrow
+skin
+skinNormals
+skyLightColor
+skyLightIntensity
+skybox
+sleepAngularVelocity
+sleepVelocity
+slerpDrive
+slopeLimit
+smoothDeltaTime
+smoothSphereCollisions
+softVegetation
+solverIterationCount
+speakerMode
+speed
+splatPrototypes
+splitAnimations
+splitTangentsAcrossSeams
+spotAngle
+spread
+spring
+sqrMagnitude
+srcValue
+standardFont
+startEnergy
+startWidth
+stateSynchronization
+staticFriction
+staticFriction2
+steerAngle
+stepOffset
+stiffness
+streamedBytes
+stretchHeight
+stretchWidth
+stretchingStiffness
+string
+stringParameter
+stringValue
+structHeadingLabel
+style
+subMeshCount
+subMeshIndex
+supportsImageEffects
+supportsRenderTextures
+supportsShadows
+suspensionDistance
+suspensionSpring
+swapUVChannels
+swing1Limit
+swing2Limit
+swingAxis
+systemCopyBuffer
+systemLanguage
+systemMemorySize
+systemName
+tabSize
+tag
+tangentImportMode
+tangents
+tapCount
+target
+targetAngularVelocity
+targetFrameRate
+targetObject
+targetPosition
+targetRotation
+targetTexture
+targetVelocity
+tearFactor
+terrainData
+text
+textArea
+textColor
+textField
+texture
+textureCompression
+textureCoord
+textureCoord2
+textureFormat
+textureType
+thickness
+thisCollider
+threadPriority
+threeD
+tileOffset
+tileSize
+time
+timeSamples
+timeScale
+timeSinceLevelLoad
+timeSinceStartup
+timestamp
+toggle
+toggleGroup
+toolbar
+toolbarButton
+toolbarDropDown
+toolbarPopup
+toolbarTextField
+tooltip
+top
+torque
+touchCount
+touches
+transform
+transforms
+transpose
+treeBillboardDistance
+treeCrossFadeLength
+treeDistance
+treeInstances
+treeMaximumFullLODCount
+treePrototypes
+triangleIndex
+triangles
+tripleClickSelectsLine
+type
+unassigned
+uniqueIdentifier
+unityVersion
+up
+update
+updateRate
+updateWhenOffscreen
+uploadProgress
+url
+use2xBehaviour
+useAlphaInDashboard
+useConeFriction
+useFileUnits
+useGUILayout
+useGravity
+useLimits
+useMipMap
+useMotor
+useNat
+useProxy
+useSpring
+useWorldSpace
+userData
+uv
+uv2
+uvAnimationCycles
+uvAnimationXTile
+uvAnimationYTile
+value
+vector2Value
+vector3Value
+velocity
+velocityScale
+velocityUpdateMode
+vertexCount
+vertical
+verticalAccuracy
+verticalScrollbar
+verticalScrollbarDownButton
+verticalScrollbarThumb
+verticalScrollbarUpButton
+verticalSlider
+verticalSliderThumb
+vertices
+viewCellSize
+viewID
+visible
+visualMode
+volume
+w
+wantsMouseMove
+wavingGrassAmount
+wavingGrassSpeed
+wavingGrassStrength
+wavingGrassTint
+webSecurityEnabled
+weight
+weight0
+weight1
+weight2
+weight3
+wetMix
+wetMix1
+wetMix2
+wetMix3
+white
+whiteBoldLabel
+whiteLabel
+whiteLargeLabel
+whiteMiniLabel
+whiteTexture
+width
+widthScale
+window
+wordWrap
+wordWrappedLabel
+wordWrappedMiniLabel
+worldAccelerationScale
+worldCenterOfMass
+worldRotationAxis
+worldToCameraMatrix
+worldToLocalMatrix
+worldVelocity
+worldVelocityScale
+wrapMode
+x
+xDrive
+xMax
+xMin
+xMotion
+y
+yDrive
+yMax
+yMin
+yMotion
+yellow
+z
+zDrive
+zMotion
+zero
