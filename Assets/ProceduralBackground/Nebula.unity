@@ -171,12 +171,12 @@ GameObject:
   - 114: {fileID: 723552673}
   - 114: {fileID: 723552677}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Nebula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &723552673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee722b3a1fdd41aa90b05dd20581a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 256
+  height: 256
+  seed: 0
+  scale: 2
+  reduction: 3
 --- !u!23 &723552674
 Renderer:
   m_ObjectHideFlags: 0
@@ -200,7 +205,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: f1dd2a2ecb443485ea712071d97336ac, type: 2}
+  - {fileID: 2100000, guid: 27f58d7f3788c4c2a9fcb0b771d76f5e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
