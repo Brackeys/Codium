@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//-----------------------------------------------------------------
+// Generates a box shadow effect on any given UI element
+//-----------------------------------------------------------------
+
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -9,8 +13,12 @@ public class SoftshadowEffect : MonoBehaviour {
 	public Color color;
 	public int offset = -1;
 
+	public bool genOnStart = true;
+	public bool sizeIsStatic = true;
+
 	void Start () {
-		GenerateBoxShadow ();
+		if (genOnStart)
+			GenerateBoxShadow ();
 	}
 	
 	public void GenerateBoxShadow () {
@@ -45,11 +53,9 @@ public class SoftshadowEffect : MonoBehaviour {
 					insideRect = false;
 				}
 
-				if (insideRect) {
-					alpha = 0f;
+				if (!insideRect) {
+					pixels [(y * width) + x]  = new Color (color.r, color.g, color.b, alpha * color.a);
 				}
-
-				pixels [(y * width) + x]  = new Color (color.r, color.g, color.b, alpha * color.a);
 			}
 		}
 
@@ -68,7 +74,15 @@ public class SoftshadowEffect : MonoBehaviour {
 		go.transform.localRotation = Quaternion.identity;
 		Image img = go.AddComponent<Image>();
 		RectTransform imgrt = img.GetComponent<RectTransform>();
-		imgrt.sizeDelta = new Vector2 (rt.sizeDelta.x + size, rt.sizeDelta.y + size);
+		imgrt.anchorMin = Vector2.zero;
+		imgrt.anchorMax = Vector2.one;
+		imgrt.sizeDelta = new Vector2 (size, size);
+
+		if (!sizeIsStatic) {
+			SoftshadowAutoSize autoSize = go.AddComponent<SoftshadowAutoSize>();
+			autoSize.sizeRatio = new Vector2 ((float)size/shadowTex.width, (float)size/shadowTex.height);
+			autoSize.imgrt = imgrt;
+		}
 
 		Sprite shadowSprite = Sprite.Create(shadowTex, new Rect (0,0, shadowTex.width, shadowTex.height), new Vector2 (0.5f, 0.5f));
 		img.sprite = shadowSprite;

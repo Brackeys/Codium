@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿//-----------------------------------------------------------------
+// Editor for SoftshadowEffect
+//-----------------------------------------------------------------
+
+using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
