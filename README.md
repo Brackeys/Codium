@@ -1,6 +1,5 @@
-Codium
-======
+# Codium
 
-Offical repo for Codium: an application that allows you to Become a Developer.
+Official Repo for Codium: An interactive application for learning how to code.
 
-TODO: Write a README file.
+Codium is built with [Unity](http://unity3d.com) & is available for free at http://codium.com/
