@@ -1,8 +1,11 @@
 # =============== #
-# Unity generated #
+# Unity folders #
 # =============== #
-Temp/
-Library/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+3rdParty/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
