@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿//-----------------------------------------------------------------
+// This ScriptableObject defines the class 'Course' that will store information
+// about the different courses. It is meant to be used in conjunction with
+// 'CourseEditor' to create Custom Data Assets in Unity, each representing a course
+// that can be loaded into Codium at launch or maybe through some kind of import process.
+//-----------------------------------------------------------------
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 

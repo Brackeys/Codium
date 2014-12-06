@@ -1492,7 +1492,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1520088205}
-  - 114: {fileID: 1520088202}
   - 114: {fileID: 1520088203}
   m_Layer: 0
   m_Name: _Manager
@@ -1501,28 +1500,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1520088202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520088200}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529a5692e82504551aa09774af7f0db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keywordsArray: []
-  code: {fileID: 2122462339}
-  formattedCode: {fileID: 404956572}
-  quoteColor: <color=#e6db74>
-  commentColor: <color=grey>
-  keywordColor: <color=#a6e22d>
-  changedLineIndexes: 
-  lastCodeLines:
-  - 
-  lastFormattedCodeLines: []
-  testList: []
 --- !u!114 &1520088203
 MonoBehaviour:
   m_ObjectHideFlags: 0
