@@ -34,7 +34,7 @@ public class Intellisense {
 		Type myType = Type.GetType(typeName);
 
 		if (myType == null) {
-			Debug.LogError ("Class doesn't exist in namespace.");
+		//	Debug.LogError ("Class doesn't exist in namespace.");
 			return;
 		}
 

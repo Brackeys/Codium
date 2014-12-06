@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameType: 0
-  scene: BasicGame
+  scene: ExampleGameView
 --- !u!114 &843368572
 MonoBehaviour:
   m_ObjectHideFlags: 0

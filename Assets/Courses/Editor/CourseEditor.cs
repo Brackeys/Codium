@@ -24,7 +24,6 @@ public class CourseEditor : Editor {
 		path = FileUtil.GetProjectRelativePath(path);
 
 		Course course = CreateInstance<Course>();
-		course.InitSettings();
 		AssetDatabase.CreateAsset (course, path);
 
 		AssetDatabase.SaveAssets();
@@ -55,7 +54,7 @@ public class CourseEditor : Editor {
 		GUI.color = Color.red;
 
 		if (GUILayout.Button ("Reset to Default")) {
-			course.InitSettings();
+			course.Reset();
 		}
 
 		GUI.color = Color.white;
