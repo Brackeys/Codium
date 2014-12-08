@@ -1,0 +1,7 @@
+Copyright Notice
+
+"MaterialUI" by Invex Games is licensed under Apache License, Version 2.0
+Author: "Invex Games" - http://invexgames.com
+Source: "MaterialUI" - http://bit.ly/1A8BoW5
+License: "Apache License, Version 2.0" - http://www.apache.org/licenses/LICENSE-2.0
+Year: 2014
