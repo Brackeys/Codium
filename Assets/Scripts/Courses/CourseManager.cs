@@ -5,6 +5,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CourseManager : MonoBehaviour {
 
@@ -45,9 +46,8 @@ public class CourseManager : MonoBehaviour {
 		}
 	}
 
+	// Populate the courseList variable with Course assets in the /Courses folder
 	public void PopulateCourseList () {
-		Course c = CourseUtil.LoadCourse ("Custom Course");
-		if (c != null)
-			courseList.Add (c);
+		courseList = CourseUtil.LoadAllCourses ().ToList<Course>();
 	}
 }
