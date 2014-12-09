@@ -25,8 +25,6 @@ public class UIClock : MonoBehaviour {
 	public void UpdateClock () {
 		System.DateTime time = System.DateTime.Now;
 		clockText.text = time.ToString ("hh:mm");
-
-		Debug.Log ("Looping coroutine");
 	}
 
 }
