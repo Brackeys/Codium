@@ -723,8 +723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2a4a5ad2acfbf438ac5ea6ab7919d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curCourseIndex: 0
+  curCourse: {fileID: 0}
   courseList: []
+  completedCourseList: []
 --- !u!4 &561784384
 Transform:
   m_ObjectHideFlags: 0

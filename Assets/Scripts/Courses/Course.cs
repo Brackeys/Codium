@@ -50,6 +50,34 @@ public class Course : ScriptableObject {
 		difficulty = Difficulty.Intermediate;
 		courseViews = new List<CourseView>();
 	}
+
+	// INFO ABOUT THE COURSE (GET ONLY)
+
+	public float GetCompletionPercent () {
+		if (courseViews.Count == 0) {
+			Debug.LogWarning ("View List has 0 elements. Returning 0f");
+			return 0f;
+		}
+
+		int count = 0;
+		
+		for (int i = 0; i < courseViews.Count; i++) {
+			if (courseViews[i].viewCompleted)
+				count++;
+		}
+		
+		return ( (float)count / (float)courseViews.Count ) * 100f;
+	}
+	
+	public bool IsCompleted () {
+		for (int i = 0; i < courseViews.Count; i++) {
+			if (courseViews [i].viewCompleted == false) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
 }
 
 //	The CourseView class stores information about a single view in the course.
@@ -65,6 +93,8 @@ public class CourseView {
 	public string defaultCode;
 	public string solutionCode;
 	public string hint;
+
+	public bool viewCompleted;
 
 	// Class constructor
 	public CourseView () {
@@ -89,5 +119,7 @@ public class CourseView {
 									"Cube.renderer.material.color = Color.red;";
 
 		hint = "Remember to get put ';' at the end of the line.";
+
+		viewCompleted = false;
 	}
 }
