@@ -725,7 +725,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curCourse: {fileID: 0}
   courseList: []
-  completedCourseList: []
+  curCourseView:
+    subject: GameObjects
+    explaination: 'Everything you can see in the game is called a GameObject.
+
+      GameObjects have different properties which can be manipulated through code.'
+    codeBulletPoints:
+    - To access properties in a GameObject we use the '<b>.</b>'' operator.
+    - Sometimes you have to use the '<b>.</b>'' multiple times to access the property
+      you want.
+    - 
+    exampleBulletPoints:
+    - Cube.transform.position accesses the position of our Cube.
+    - Cube.renderer.material accesses the way the object looks.
+    - 
+    instructionBulletPoints:
+    - Access the Cubes color property under Cube.renderer.material.
+    - Set the color property equal to Color.red.
+    - (Optional) Try the same with blue, green and yellow.
+    defaultCode: "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube
+      GameObject & name it 'Cube'\n\n"
+    solutionCode: "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube
+      GameObject & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    hint: Remember to get put ';' at the end of the line.
+    viewCompleted: 0
 --- !u!4 &561784384
 Transform:
   m_ObjectHideFlags: 0
