@@ -34,12 +34,7 @@ public class Course : ScriptableObject {
 	public Category category;
 	public Difficulty difficulty;
 	public List<CourseView> courseViews;
-
-	// Class constructor
-	public Course () {
-		Reset ();
-	}
-
+	
 	// Init default values
 	// Reset is called upon initialization and when the 'Reset to Default' button is pressed.
 	public void Reset () {
@@ -49,9 +44,12 @@ public class Course : ScriptableObject {
 		category = Category.Language;
 		difficulty = Difficulty.Intermediate;
 		courseViews = new List<CourseView>();
+
+		Debug.Log ("Course values reset.");
 	}
 
-	// INFO ABOUT THE COURSE (GET ONLY)
+
+	// HELPER METHODS FOR GETTING INFO ABOUT THE COURSE
 
 	public float GetCompletionPercent () {
 		if (courseViews.Count == 0) {

@@ -26,9 +26,6 @@ public class CodeManager : MonoBehaviour {
 
 		if (setupCompiler)
 			SetupCompiler (extraNamespaces);
-
-		Intellisense codeComplete = new Intellisense ();
-		codeComplete.GetFieldsInClass ("Debug", "UnityEngine");
 	}
 
 	// STATIC SETUP METHODS

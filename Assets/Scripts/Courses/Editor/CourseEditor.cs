@@ -100,6 +100,9 @@ public class CourseEditor : Editor {
 		EditorGUILayout.Space();
 		EditorGUILayout.Space();
 
+		if (GUI.changed)
+			EditorUtility.SetDirty (target);
+
 		// COURSE VIEWS
 		for (int i = 0; i < course.courseViews.Count; i++) {
 			CourseView cw = course.courseViews[i];
@@ -177,6 +180,9 @@ public class CourseEditor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.Space();
 			EditorGUILayout.Space();
+
+			if (GUI.changed)
+				EditorUtility.SetDirty (target);
 		}
 	}
 }

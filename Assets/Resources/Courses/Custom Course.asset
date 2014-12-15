@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
   m_Name: Custom Course
   m_EditorClassIdentifier: 
-  title: Intro to Game Programming
+  title: a
   author: "Asbj\xF8rn Thirslund"
   description: 'This is a course description.
 

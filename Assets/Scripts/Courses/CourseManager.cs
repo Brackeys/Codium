@@ -41,12 +41,12 @@ public class CourseManager : MonoBehaviour {
 		}
 
 		UpdateCourseList ();
-		SortCourseListIntelligently ();
+		courseList = CourseUtil.SortCourses (courseList);
 
 		curCourse = courseList [0];
 		Debug.Log (curCourse.GetCompletionPercent());
 		Debug.Log (curCourse.IsCompleted());
-		SelectCourseViewByIndex (0);
+		GetViewByIndex (0);
 	}
 
 	// Populate the courseList variable with Course assets in the /Courses folder
@@ -55,82 +55,87 @@ public class CourseManager : MonoBehaviour {
 		courseList = CourseUtil.LoadAllCourses ().ToList<Course>();
 	}
 
-	// Loops through the courseList and returns the course that matches
-	public int FindCourseIndex ( Course course) {
-		for (int i = 0; i < courseList.Count; i++) {
-			if (courseList[i] == course) {
-				return i;
-			}
-		}
 
-		return -1;	// Return error
-	}
+	// ------- COURSE MANAGEMENT METHODS -------
 
-	// Select a current course by index
-	public void SelectCourseByIndex (int index) {
-		if (courseList.Count <= index) {
-			Debug.LogWarning ("Course couldn't be selected because the index isn't within range.");
+	// Marks the current view as completed
+	public void CompleteCurrentView () {
+		if (curCourseView == null) {
+			Debug.LogError ("No current course view.");
 			return;
 		}
 
-		curCourse = courseList [index];
+		curCourseView.viewCompleted = true;
+		Debug.Log ("CourseView: " + curCourseView.subject + " completed.");
 	}
 
-	// Select a current course by title
-	public void SelectCourseByTitle (string title) {
+	// Marks view as completed by course and index
+	public void CompleteView (Course course, int index) {
+
+		if (course.courseViews.Count <= index) {
+			Debug.LogWarning ("CourseView couldn't be completed because the index isn't within range.");
+			return;
+		}
+
+		course.courseViews[index].viewCompleted = true;
+		Debug.Log ("CourseView: " + course.courseViews[index] + " completed.");
+	}
+
+
+	// ------- HELPFUL GETTER METHODS -------
+
+
+	// Loops through the courseList and returns the course that matches, otherwise return -1
+	public int GetCourseIndex ( Course course) {
+		return courseList.IndexOf (course);
+	}
+
+	// Loop through the courseView List and return the course that matches, otherwise return -1
+	public int GetCourseViewIndex ( CourseView view) {
+		return curCourse.courseViews.IndexOf (view);
+	}
+
+	// Return course by index
+	public Course GetCourseByIndex (int index) {
+		if (courseList.Count <= index) {
+			Debug.LogWarning ("Course couldn't be selected because the index isn't within range. Returning null");
+			return null;
+		}
+
+		return courseList [index];
+	}
+
+	// Return course by title
+	public Course GetCourseByTitle (string title) {
 		for (int i = 0; i < courseList.Count; i++) {
 			if (courseList[i].title == title) {
-				curCourse = courseList [i];
-				return;
+				return courseList [i];
 			}
 		}
 
-		Debug.LogWarning ("Course with title " + title + " couldn't be found.");
-		return;
+		Debug.LogWarning ("Course with title " + title + " couldn't be found. Returning null");
+		return null;
 	}
 
-	// Select a current course view by index
-	public void SelectCourseViewByIndex (int index) {
+	// Return course view by index, else return null
+	public CourseView GetViewByIndex (int index) {
 		if (curCourse.courseViews.Count <= index) {
 			Debug.LogWarning ("CourseView couldn't be selected because the index isn't within range.");
-			return;
+			return null;
 		}
 
-		curCourseView = curCourse.courseViews [index];
+		return curCourse.courseViews [index];
 	}
 
-	// Select current course view by view subject
-	public void SelectCourseViewBySubject (string subject) {
+	// Return course view by view subject, else return null
+	public CourseView GetViewBySubject (string subject) {
 		for (int i = 0; i < curCourse.courseViews.Count; i++) {
 			if (curCourse.courseViews [i].subject == subject) {
-				curCourseView = curCourse.courseViews [i];
-				return;
+				return curCourse.courseViews [i];
 			}
 		}
 
 		Debug.LogWarning ("No courseview with subject " + subject + " could be found.");
-		return;
+		return null;
 	}
-
-	// Sort the course list by course title
-	public void SortCourseListByTitle () {
-		courseList.Sort ( (x, y) => string.Compare (x.title, y.title) );
-	}
-
-	// Sort the course list by course category
-	public void SortCourseListByCategory () {
-		courseList.Sort ( (x, y) => string.Compare (x.category.ToString(), y.category.ToString()) );
-	}
-
-	// Sort the course list intelligently
-	// This method can be adjusted to suit the user
-	public void SortCourseListIntelligently () {
-		SortCourseListByCategory ();
-
-		for (int i = 0; i < courseList.Count; i++) {
-			Debug.Log (i);
-		}
-
-		Debug.Log ("TODO: Intelligent course list sort");
-	}	
 }
