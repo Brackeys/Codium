@@ -46,17 +46,38 @@ public class CourseUtil {
 		return courses;
 	}
 	
-	// Sort course list by first category, then title
+	// Sort course list by category first, then title
 	public static List<Course> SortCourses (List<Course> courses) {
-		Debug.Log ("TODO: Get this working.");
-		
+
+		courses = SortCoursesByCategory (courses);	// Sort by category
+
+		// Final list to return
 		List <Course> sortedList = new List<Course>();
-		
-		sortedList = SortCoursesByCategory (courses);
-		
+
+		// Temp list for storing courses in same category
+		List <Course> coursesInCategory = new List<Course>();
+		Course.Category lastCourse = new Course.Category ();
+
 		for (int i = 0; i < courses.Count; i++) {
-			Debug.Log (sortedList [i]);
+
+			if (i == 0) {	// On first iteration
+				coursesInCategory.Add ( courses[i]);	// Add course to temp list
+				lastCourse = courses[i].category;		// Store this iteration's category
+				continue;
+			}
+
+			if (lastCourse != courses[i].category) {	// The course category hasn't changed
+				// Sort category and add to final list, then clear the temp list
+				sortedList.AddRange ( SortCoursesByTitle (coursesInCategory) );
+				coursesInCategory.Clear();
+			}
+
+			coursesInCategory.Add ( courses[i]);	// Add course to temp list
+			lastCourse = courses[i].category;		// Store this iteration's category
 		}
+
+		// Add the remainder of our list
+		sortedList.AddRange ( SortCoursesByTitle (coursesInCategory) );
 		
 		return sortedList;
 	}

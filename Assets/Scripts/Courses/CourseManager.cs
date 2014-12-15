@@ -44,9 +44,10 @@ public class CourseManager : MonoBehaviour {
 		courseList = CourseUtil.SortCourses (courseList);
 
 		curCourse = courseList [0];
+		curCourseView = GetViewByIndex (0);
+		CompleteCurrentView ();
 		Debug.Log (curCourse.GetCompletionPercent());
 		Debug.Log (curCourse.IsCompleted());
-		GetViewByIndex (0);
 	}
 
 	// Populate the courseList variable with Course assets in the /Courses folder
