@@ -1,5 +1,6 @@
 ﻿//-----------------------------------------------------------------
-// CourseManager persists between scenes and keeps track of courses
+// CourseManager persists between scenes and keeps track of courses & course views.
+// It has methods for updating, completing and retrieving courses & course views.
 //-----------------------------------------------------------------
 
 using UnityEngine;
