@@ -5,6 +5,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Globalization;
 
 [RequireComponent(typeof(Text))]
 public class UIClock : MonoBehaviour {
@@ -24,7 +25,7 @@ public class UIClock : MonoBehaviour {
 
 	public void UpdateClock () {
 		System.DateTime time = System.DateTime.Now;
-		clockText.text = time.ToString ("hh:mm");
+		clockText.text = time.ToString ("t");
 	}
 
 }
