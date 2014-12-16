@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CourseView.unity
   - enabled: 1
-    path: Assets/Scenes/ExampleGameView.unity
+    path: Assets/Scenes/CubeOnTurntable.unity
