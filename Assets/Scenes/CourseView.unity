@@ -872,8 +872,8 @@ GameObject:
   - 222: {fileID: 444654773}
   - 114: {fileID: 444654772}
   m_Layer: 5
-  m_Name: CodeDescBulletPoint
-  m_TagString: Untagged
+  m_Name: DescBulletPoint
+  m_TagString: DescBulletPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +941,7 @@ GameObject:
   - 224: {fileID: 455732472}
   - 114: {fileID: 455732473}
   m_Layer: 5
-  m_Name: CodeDescText
+  m_Name: CodeDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,8 +998,8 @@ GameObject:
   - 222: {fileID: 467615710}
   - 114: {fileID: 467615709}
   m_Layer: 5
-  m_Name: CodeDescBulletPoint
-  m_TagString: Untagged
+  m_Name: DescBulletPoint
+  m_TagString: DescBulletPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '    To access properties in a GameObject we use the "." operator.'
+  m_Text: '    Cube.transform.position accesses the position of our Cube.'
 --- !u!222 &467615710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1153,13 +1153,14 @@ RectTransform:
   - {fileID: 1105268868}
   - {fileID: 2144680432}
   - {fileID: 1392758166}
+  - {fileID: 1053439143}
   m_Father: {fileID: 782955589}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -15}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 29}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: .5, y: 1}
 --- !u!114 &571103806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,6 +1774,72 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!1 &787923939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 787923942}
+  - 222: {fileID: 787923941}
+  - 114: {fileID: 787923940}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &787923940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787923939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .705882311, g: .705882311, b: .705882311, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e9daa9d1f3ddd4dc4a49d14f206a615e, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: GameObjects
+--- !u!222 &787923941
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787923939}
+--- !u!224 &787923942
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 787923939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1016759592}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 3.05175781e-05, y: 3.57627869e-07}
+  m_SizeDelta: {x: 114, y: 20}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &843368569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2143,120 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: .203921571}
   m_EffectDistance: {x: 0, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!1 &1016759591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1016759592}
+  - 222: {fileID: 1016759595}
+  - 114: {fileID: 1016759594}
+  - 114: {fileID: 1016759593}
+  m_Layer: 5
+  m_Name: DropdownButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1016759592
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016759591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 40}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 787923942}
+  m_Father: {fileID: 1053439143}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 102.5, y: 0}
+  m_SizeDelta: {x: 114.300003, y: 20}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1016759593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016759591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c5b31dbc32be947b7819fb0aa7a15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topColor:
+    serializedVersion: 2
+    rgba: 4284835173
+  bottomColor:
+    serializedVersion: 2
+    rgba: 4283256141
+--- !u!114 &1016759594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016759591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .389705896, g: .389705896, b: .389705896, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1016759595
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016759591}
+--- !u!1 &1053439142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1053439143}
+  m_Layer: 5
+  m_Name: SubjectPicker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1053439143
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053439142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1016759592}
+  - {fileID: 1365318493}
+  m_Father: {fileID: 571103805}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1105268867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2502,39 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199825500}
+--- !u!1 &1233722338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1233722339}
+  m_Layer: 5
+  m_Name: ScrollContent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1233722339
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233722338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2008722099}
+  m_Father: {fileID: 1247162946}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &1247162945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2546,8 @@ GameObject:
   - 222: {fileID: 1247162948}
   - 114: {fileID: 1247162947}
   - 114: {fileID: 1247162949}
+  - 114: {fileID: 1247162950}
+  - 114: {fileID: 1247162951}
   m_Layer: 5
   m_Name: SidePanel
   m_TagString: Untagged
@@ -2350,7 +2566,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1603759843}
-  - {fileID: 2008722099}
+  - {fileID: 1233722339}
   m_Father: {fileID: 782955589}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -2391,12 +2607,49 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247162945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &1247162950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247162945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 2008722099}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: .100000001
+  m_Inertia: 1
+  m_DecelerationRate: .135000005
+  m_ScrollSensitivity: 1
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 0}
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1247162951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1247162945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f8644433d194f29aa32aed85bdc420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275883224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,8 +2728,8 @@ GameObject:
   - 222: {fileID: 1317928712}
   - 114: {fileID: 1317928711}
   m_Layer: 5
-  m_Name: CodeDescBulletPoint
-  m_TagString: Untagged
+  m_Name: DescBulletPoint
+  m_TagString: DescBulletPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2526,8 +2779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '    Sometimes you have to use "." multiple times to get the property you
-    want.'
+  m_Text: '    Cube.renderer.material accesses the way the object looks.'
 --- !u!222 &1317928712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2595,6 +2847,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1365318492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1365318493}
+  - 222: {fileID: 1365318495}
+  - 114: {fileID: 1365318494}
+  m_Layer: 5
+  m_Name: CourseTitelText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1365318493
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365318492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1053439143}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -92.1999969, y: .0249929428}
+  m_SizeDelta: {x: 251, y: 28.9500008}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1365318494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365318492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .603921592, g: .603921592, b: .603921592, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 6b44e6cd7b9eb4513b2c4c9798c117e3, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Introduction to Game Programming:'
+--- !u!222 &1365318495
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365318492}
 --- !u!1 &1370797352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,8 +2924,8 @@ GameObject:
   - 222: {fileID: 1370797355}
   - 114: {fileID: 1370797354}
   m_Layer: 5
-  m_Name: CodeDescBulletPoint
-  m_TagString: Untagged
+  m_Name: DescBulletPoint
+  m_TagString: DescBulletPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3179,7 +3497,7 @@ GameObject:
   - 224: {fileID: 1573061031}
   - 114: {fileID: 1573061032}
   m_Layer: 5
-  m_Name: CodeDescText
+  m_Name: Example
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3300,7 +3618,7 @@ GameObject:
   - 222: {fileID: 1591001914}
   - 114: {fileID: 1591001913}
   m_Layer: 5
-  m_Name: CodeTitleText
+  m_Name: ExampleTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3348,7 +3666,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Code:'
+  m_Text: 'Example:'
 --- !u!222 &1591001914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3563,7 +3881,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11463946, guid: 599025427235c47e4a25f56b8c2ca2ac, type: 2}
       propertyPath: m_Text
-      value: '    To access properties in a GameObject we use the "." operator.'
+      value: '    Cube.transform.position accesses the position of our Cube.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599025427235c47e4a25f56b8c2ca2ac, type: 2}
@@ -4226,8 +4544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11463946, guid: 599025427235c47e4a25f56b8c2ca2ac, type: 2}
       propertyPath: m_Text
-      value: '    Sometimes you have to use "." multiple times to get the property
-        you want.'
+      value: '    Cube.renderer.material accesses the way the object looks.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 599025427235c47e4a25f56b8c2ca2ac, type: 2}
@@ -4403,11 +4720,11 @@ RectTransform:
   - {fileID: 1275883225}
   - {fileID: 455732472}
   - {fileID: 1573061031}
-  m_Father: {fileID: 1247162946}
-  m_RootOrder: 1
+  m_Father: {fileID: 1233722339}
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -23.4499969}
+  m_AnchoredPosition: {x: 1, y: 0}
   m_SizeDelta: {x: -33, y: 0}
   m_Pivot: {x: .5, y: 1}
 --- !u!114 &2008722100
@@ -4424,7 +4741,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 25
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 30
