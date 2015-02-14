@@ -15,6 +15,7 @@ public class CodeManager : MonoBehaviour {
 	public TextAsset[] keywordTxtFiles;
 
 	public bool setupCompiler = true;	// Setup a CodeCompiler at startup?
+	[Multiline]
 	public string extraNamespaces = "";
 
 	private static SyntaxHighlighter syntaxHighlighter;

@@ -5,25 +5,29 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 [RequireComponent(typeof(Scrollbar))]
 public class ScrollbarHandler : MonoBehaviour {
 
-	public bool forceToBottomOnChange = false;
-	float lastSize = 0;
-
-	Scrollbar scrollbar;
+	private Scrollbar scrollbar;
+	private bool isNeeded = false;
+	private float hideCountdown = 0f;
 
 	void Awake () {
 		scrollbar = GetComponent<Scrollbar>();
+		scrollbar.interactable = false;
 	}
 
-	void OnGUI () {
+	void Update () {
 		HandleInteractability();
+		if (hideCountdown > 0f)
+			HideScrollbar ();
+	}
 
-		if (forceToBottomOnChange) {
-			ForceToBottom();
+	void HideScrollbar () {
+		hideCountdown -= Time.deltaTime;
+		if (hideCountdown <= 0) {
+			scrollbar.interactable = false;
 		}
 	}
 
@@ -34,21 +38,18 @@ public class ScrollbarHandler : MonoBehaviour {
 		}
 
 		if (scrollbar.size < 0.99f) {
-			scrollbar.interactable = true;
+			isNeeded = true;
 		} else {
-			scrollbar.interactable = false;
+			isNeeded = false;
 		}
 	}
 
-	// Forces the scrollbar to the bottom if it has changed
-	public void ForceToBottom () {
-		float sizeDif = scrollbar.size-lastSize;
-		if (sizeDif < 0) {
-			sizeDif *= -1;
-		}
-		if (sizeDif > 0.0001) {
-			scrollbar.value = 0;
-			lastSize = scrollbar.size;
-		}
+	// Call this from the scrollrect on value changed
+	public void ShowScrollbar () {
+		if (!isNeeded)
+			return;
+
+		scrollbar.interactable = true;
+		hideCountdown = 2f;
 	}
 }
