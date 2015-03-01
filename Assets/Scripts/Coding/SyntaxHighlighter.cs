@@ -68,11 +68,11 @@ public class SyntaxHighlighter
 		string[] kws = txt.text.Split( '\n' );	//Create a string array of lines
 
 		//Extract a color from the first line in the txt file
-		keyword.Color = kws[0];
+		keyword.Color = kws[0].Trim();
 
 		//Loop through the keywords and add them (skip the color)
 		for (int i = 1; i < kws.Length; i++) {
-			keyword.Word = kws[i];
+			keyword.Word = kws[i].Trim();
 			_keywords.Add (keyword);
 		}
 	}

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class CodeText : MonoBehaviour {
+public class UICodeText : MonoBehaviour {
 
 	private Text text;
 
