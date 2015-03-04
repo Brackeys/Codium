@@ -17,7 +17,7 @@ public class NebulaGenerator : MonoBehaviour {
 	// Use this for initialization
 	public void GenerateNebula () {
 		Texture2D noiseTex = GenerateNebulaTexture ();
-		transform.renderer.material.mainTexture = noiseTex;
+		transform.GetComponent<Renderer>().material.mainTexture = noiseTex;
 	}
 	
 	public Texture2D GenerateNebulaTexture () {

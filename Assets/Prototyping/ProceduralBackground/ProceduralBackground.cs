@@ -44,14 +44,14 @@ public class ProceduralBackground : MonoBehaviour {
 
 		fadeIndex += fadeSpeed * Time.deltaTime * fadeDirection;
 
-		transform.renderer.material.SetFloat("_Blend", Mathf.Clamp01(fadeIndex));
+		transform.GetComponent<Renderer>().material.SetFloat("_Blend", Mathf.Clamp01(fadeIndex));
 	}
 
 	void GenerateTexture (string texName) {
 		Texture2D noiseTex = new Texture2D(pixWidth, pixHeight);
 		noiseTex.SetPixels(CalcNoise());
 		noiseTex.Apply();
-		transform.renderer.material.SetTexture (texName, noiseTex);
+		transform.GetComponent<Renderer>().material.SetTexture (texName, noiseTex);
 	}
 
 	Color[] CalcNoise() {

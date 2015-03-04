@@ -6,7 +6,7 @@ public class StarfieldGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Texture2D noiseTex = GenerateStarfield (512, 512, 250);
-		transform.renderer.material.mainTexture = noiseTex;
+		transform.GetComponent<Renderer>().material.mainTexture = noiseTex;
 	}
 	
 	public static Texture2D GenerateStarfield (int width, int height, int starCount) {
