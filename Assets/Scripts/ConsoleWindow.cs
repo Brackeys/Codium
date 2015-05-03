@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // A console to display Unity's debug logs in-game.
 //-----------------------------------------------------------------
 
@@ -30,6 +30,7 @@ public class ConsoleWindow : MonoBehaviour
 	};
  
 	public GUISkin skin;
+	public GUIStyle style;
 	public Texture2D flatTex;
 
 	public Color bgColor, logColor01, logColor02;
@@ -101,12 +102,14 @@ public class ConsoleWindow : MonoBehaviour
  
  		// Make the clear button and a togle for collapsing logs
 		GUILayout.BeginHorizontal();
- 
+
+		GUI.backgroundColor = Color.clear;
+
 		if (GUILayout.Button(clearLabel)) {
 			logs.Clear();
 		}
  
-		collapse = GUILayout.Toggle(collapse, collapseLabel, GUILayout.ExpandWidth(false));
+		//collapse = GUILayout.Toggle(collapse, collapseLabel, GUILayout.ExpandWidth(false));
  
 		GUILayout.EndHorizontal();
 		GUILayout.EndArea();

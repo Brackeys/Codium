@@ -1,10 +1,11 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // 1. Implements the SyntaxHighlighter by supplying keywords from txt files
 // & the code to format. 
 // 2. Implements the CodeCompiler to evaluate C# code at runtime
 //-----------------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CodeManager : MonoBehaviour {
@@ -18,6 +19,9 @@ public class CodeManager : MonoBehaviour {
 	[Multiline]
 	public string extraNamespaces = "";
 
+	public Text codeText;
+	public Text formattedCodeText;
+
 	private static SyntaxHighlighter syntaxHighlighter;
 	private static CodeCompiler codeCompiler;
 
@@ -27,6 +31,38 @@ public class CodeManager : MonoBehaviour {
 
 		if (setupCompiler)
 			SetupCompiler (extraNamespaces);
+	}
+
+	//PUBLIC METHODS
+
+	// Public method for evaluating C# code if a text object is referenced
+	public void RunCodeByReference()
+	{
+		if (codeText == null)
+		{
+			Debug.LogError("Could not run code: No codeText object referenced.");
+			return;
+		}
+
+		CodeManager.RunCode(codeText.text);
+	}
+
+	// Public method for formatting code by reference
+	public void FormatCodeByReference(string code)
+	{
+		if (formattedCodeText == null)
+		{
+			Debug.LogError("Could not run code: No formattedCodeText object referenced.");
+			return;
+		}
+
+		if (syntaxHighlighter == null)
+		{
+			Debug.LogError("Couldn't format code because no SyntaxHighlighter was set up in CodeManager.");
+			return;
+		}
+
+		formattedCodeText.text = syntaxHighlighter.Highlight(code);
 	}
 
 	// STATIC SETUP METHODS
