@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .376470596}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e9daa9d1f3ddd4dc4a49d14f206a615e, type: 3}
+    m_Font: {fileID: 12800000, guid: fc618b5c05da345aa8cdb4f298534e94, type: 3}
     m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
     m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.14999998
   m_Text: 
 --- !u!222 &409562160
 CanvasRenderer:
@@ -4510,6 +4510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131516866a1b848e4b77809539800d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideWhenInactive: 1
 --- !u!114 &1213139375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5172,7 +5173,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e9daa9d1f3ddd4dc4a49d14f206a615e, type: 3}
+    m_Font: {fileID: 12800000, guid: fc618b5c05da345aa8cdb4f298534e94, type: 3}
     m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
@@ -5182,7 +5183,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.14999998
   m_Text: 
 --- !u!222 &1339115875
 CanvasRenderer:
@@ -5743,6 +5744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131516866a1b848e4b77809539800d2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideWhenInactive: 1
 --- !u!222 &1490674220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7635,7 +7637,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .588235319, g: .596078455, b: .611764729, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e9daa9d1f3ddd4dc4a49d14f206a615e, type: 3}
+    m_Font: {fileID: 12800000, guid: fc618b5c05da345aa8cdb4f298534e94, type: 3}
     m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
@@ -7645,7 +7647,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.14999998
   m_Text: '1
 
     2

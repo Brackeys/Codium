@@ -103,8 +103,8 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Margin:
-      m_Left: 120
-      m_Right: 120
+      m_Left: 0
+      m_Right: 0
       m_Top: 4
       m_Bottom: 4
     m_Padding:

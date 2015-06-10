@@ -55,7 +55,7 @@ public class ConsoleWindow : MonoBehaviour
 		DrawFillTexture (displayRect, bgColor);
 
 		// Constrain GUILayout content to be inside the actual display of the screen texture
-		GUILayout.BeginArea(displayRect);
+		GUILayout.BeginArea(new Rect (displayRect.x, displayRect.y, displayRect.width, displayRect.height - 30));
 
 		// Create a scrollview
 		scrollPosition = GUILayout.BeginScrollView(scrollPosition);
@@ -99,20 +99,18 @@ public class ConsoleWindow : MonoBehaviour
 			}
  
 		GUILayout.EndScrollView();
+		GUILayout.EndArea();
  
- 		// Make the clear button and a togle for collapsing logs
-		GUILayout.BeginHorizontal();
+ 		// Make the clear button and a toggle for collapsing logs
 
 		GUI.backgroundColor = Color.clear;
 
-		if (GUILayout.Button(clearLabel)) {
+		Rect clearButtonRect = new Rect (displayRect.x + displayRect.width / 2f - 30, displayRect.y + displayRect.height - 31, 60, 30);
+		if (GUI.Button(clearButtonRect, clearLabel)) {
 			logs.Clear();
 		}
  
 		//collapse = GUILayout.Toggle(collapse, collapseLabel, GUILayout.ExpandWidth(false));
- 
-		GUILayout.EndHorizontal();
-		GUILayout.EndArea();
 	}
 
 	// Draws a color on the screen using a tinted white texture.

@@ -42,10 +42,10 @@ public class CodeCompiler
 
 	public void RunCode (string code) {
 		bool isSuccess = Evaluator.Run(code);
-		string result = "Code Evaluated.";
 		if (!isSuccess) {
-			result = "Error in Code.";
+			Debug.LogError ("Error in Code.");
+		} else {
+			Debug.Log ("Code Evaluated.");
 		}
-		Debug.Log (result);
 	}
 }
