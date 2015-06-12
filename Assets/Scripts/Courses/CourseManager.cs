@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------
 // CourseManager persists between scenes and keeps track of courses & course views.
-// It has methods for updating, completing and retrieving courses & course views.
+// It has methods for updating and retrieving courses & course views.
 //-----------------------------------------------------------------
 
 using UnityEngine;
@@ -40,6 +40,8 @@ public class CourseManager : MonoBehaviour {
 	public RectTransform descBulletPoint;
 	public Transform examples;
 	public InputField codeField;
+	public RectTransform stepBulletPoint;
+	public Transform instructions;
 
 	void Awake () {
 		if (_ins == null) {
@@ -80,6 +82,14 @@ public class CourseManager : MonoBehaviour {
 		{
 			Debug.LogError("No codeField object referenced");
 		}
+		if (stepBulletPoint == null)
+		{
+			Debug.LogError("No stepBulletPoint prefab referenced");
+		}
+		if (instructions == null)
+		{
+			Debug.LogError("No instructions object referenced");
+		}
 
 		UpdateCourseList ();
 		courseList = CourseUtil.SortCourses (courseList);
@@ -114,7 +124,10 @@ public class CourseManager : MonoBehaviour {
 
 	public void LoadCourseView(Course course, int index)
 	{
+		// Load title
 		title.text = course.title;
+
+		// LOAD COURSE VIEW:
 
 		if (course.courseViews.Count <= index) {
 			Debug.LogWarning ("CourseView couldn't be loaded because the index isn't within range.");
@@ -123,9 +136,10 @@ public class CourseManager : MonoBehaviour {
 
 		CourseView cv = course.courseViews[index];
 
-		subject.text = cv.subject;
-		explaination.text = cv.explaination;
+		subject.text = cv.subject;	// Load subject
+		explaination.text = cv.explaination;	// Load explaination
 
+		// Load codeBulletPoints
 		for (int i = 0; i < cv.codeBulletPoints.Length; i++)
 		{
 			if (cv.codeBulletPoints[i].Length == 0)
@@ -145,6 +159,7 @@ public class CourseManager : MonoBehaviour {
 			bp.transform.SetParent (codeDesc);
 		}
 
+		// Load example bullet points
 		for (int i = 0; i < cv.exampleBulletPoints.Length; i++)
 		{
 			if (cv.exampleBulletPoints[i].Length == 0)
@@ -164,33 +179,42 @@ public class CourseManager : MonoBehaviour {
 			bp.transform.SetParent(examples);
 		}
 
+		// load default code
 		codeField.text = cv.defaultCode;
-	}
 
+		// load instructions, step by step
+		for (int i = 0; i < cv.instructionBulletPoints.Length; i++)
+		{
+			if (cv.instructionBulletPoints[i].Length == 0)
+			{
+				continue;
+			}
 
-	// ------- COURSE MANAGEMENT METHODS -------
+			RectTransform bp = Instantiate(stepBulletPoint) as RectTransform;
+			bp.name = stepBulletPoint.name;
+			Text bpText = bp.GetComponent<Text>();
+			if (bpText == null)
+			{
+				Debug.LogError("No Text component on the descBulletPoint prefab.");
+				break;
+			}
+			bpText.text = cv.instructionBulletPoints[i];
+			Transform bpCount = bp.FindChild("StepCount");
+			if (bpCount == null)
+			{
+				Debug.LogError("No child called StepCount found under " + bp.name);
+				break;
+			}
+			Text bpCountText = bpCount.GetComponent<Text>();
+			if (bpCountText == null)
+			{
+				Debug.LogError("No Text component on the StepCount object: " + bpCount.name);
+				break;
+			}
+			bpCountText.text = (i + 1).ToString();
 
-	// Marks the current view as completed
-	public void CompleteCurrentView () {
-		if (curCourseView == null) {
-			Debug.LogError ("No current course view.");
-			return;
+			bp.transform.SetParent(instructions);
 		}
-
-		curCourseView.viewCompleted = true;
-		Debug.Log ("CourseView: " + curCourseView.subject + " completed.");
-	}
-
-	// Marks view as completed by course and index
-	public void CompleteView (Course course, int index) {
-
-		if (course.courseViews.Count <= index) {
-			Debug.LogWarning ("CourseView couldn't be completed because the index isn't within range.");
-			return;
-		}
-
-		course.courseViews[index].viewCompleted = true;
-		Debug.Log ("CourseView: " + course.courseViews[index] + " completed.");
 	}
 
 

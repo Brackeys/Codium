@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // This ScriptableObject defines the class 'Course' that will store information
 // about the different courses. It is meant to be used in conjunction with
 // 'CourseEditor' to create Custom Data Assets in Unity, each representing a course
@@ -47,35 +47,6 @@ public class Course : ScriptableObject {
 
 		Debug.Log ("Course values reset.");
 	}
-
-
-	// HELPER METHODS FOR GETTING INFO ABOUT THE COURSE
-
-	public float GetCompletionPercent () {
-		if (courseViews.Count == 0) {
-			Debug.LogWarning ("View List has 0 elements. Returning 0f");
-			return 0f;
-		}
-
-		int count = 0;
-		
-		for (int i = 0; i < courseViews.Count; i++) {
-			if (courseViews[i].viewCompleted)
-				count++;
-		}
-		
-		return ( (float)count / (float)courseViews.Count ) * 100f;
-	}
-	
-	public bool IsCompleted () {
-		for (int i = 0; i < courseViews.Count; i++) {
-			if (courseViews [i].viewCompleted == false) {
-				return false;
-			}
-		}
-		
-		return true;
-	}
 }
 
 //	The CourseView class stores information about a single view in the course.
@@ -92,8 +63,6 @@ public class CourseView {
 	public string solutionCode;
 	public string hint;
 
-	public bool viewCompleted;
-
 	// Class constructor
 	public CourseView () {
 		subject = "GameObjects";
@@ -108,16 +77,15 @@ public class CourseView {
 												"Cube.renderer.material accesses the way the object looks.",
 												""};
 
-		instructionBulletPoints = new string[3] {"Access the Cubes color property under Cube.renderer.material.",
+		instructionBulletPoints = new string[8] {"Access the Cubes color property under Cube.renderer.material.",
 													"Set the color property equal to Color.red.",
-													"(Optional) Try the same with blue, green and yellow."};
+													"(Optional) Try the same with blue, green and yellow.",
+													"", "", "", "", ""};
 
-		defaultCode = "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube GameObject & name it 'Cube'\n\n";
-		solutionCode = "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube GameObject & name it 'Cube'\n\n" + 
+		defaultCode = "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject & name it 'Cube'\n\n";
+		solutionCode = "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject & name it 'Cube'\n\n" + 
 									"Cube.renderer.material.color = Color.red;";
 
-		hint = "Remember to get put ';' at the end of the line.";
-
-		viewCompleted = false;
+		hint = "Remember to put ';' at the end of the line.";
 	}
 }

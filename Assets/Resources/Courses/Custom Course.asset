@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
   m_Name: Custom Course
   m_EditorClassIdentifier: 
-  title: Test Course
+  title: Intro to Game Programming
   author: "Asbj\xF8rn Thirslund"
   description: 'This is a course description.
 
@@ -22,7 +22,6 @@ MonoBehaviour:
   courseViews:
   - subject: GameObjects
     explaination: 'Everything you can see in the game is called a GameObject.
-
 
       GameObjects have different properties which can be manipulated through code.'
     codeBulletPoints:
@@ -38,9 +37,14 @@ MonoBehaviour:
     - Access the Cubes color property under Cube.renderer.material.
     - Set the color property equal to Color.red.
     - (Optional) Try the same with blue, green and yellow.
-    defaultCode: "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube
-      GameObject & name it 'Cube'\n\n"
-    solutionCode: "GameObject Cube = GameObject.Find(INSERT QUOTES);\t//Find the Cube
-      GameObject & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
-    hint: Remember to get put ';' at the end of the line.
-    viewCompleted: 1
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
+      & name it 'Cube'\n\n"
+    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
+      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    hint: Remember to put ';' at the end of the line.
+    viewCompleted: 0

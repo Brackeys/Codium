@@ -1,4 +1,4 @@
-﻿//  Copyright 2014 Invex Games http://invexgames.com
+//  Copyright 2014 Invex Games http://invexgames.com
 //	Licensed under the Apache License, Version 2.0 (the "License");
 //	you may not use this file except in compliance with the License.
 //	You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -37,7 +37,6 @@ namespace MaterialUI
         private bool lastInteractableState; //  Used to keep track of the Slider 'interactable' bool so SliderConfig isn't being enabled/disabled every frame
 
         private CanvasGroup canvasGroup;
-        private Image handleImage;
         private Color onColor;
 
 		float currentPopupScale;
@@ -58,7 +57,6 @@ namespace MaterialUI
 
 			popup.gameObject.GetComponent<Image> ().color = handle.gameObject.GetComponent<Image> ().color;
 
-            handleImage = handle.GetComponent<Image>();
             canvasGroup = gameObject.GetComponent<CanvasGroup>();
 
 			UpdateText();
