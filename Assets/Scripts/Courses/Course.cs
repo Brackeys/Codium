@@ -58,6 +58,7 @@ public class CourseView {
 	public string explaination;
 	public string[] codeBulletPoints;
 	public string[] exampleBulletPoints;
+	public string goal;
 	public string[] instructionBulletPoints;
 	public string defaultCode;
 	public string solutionCode;
@@ -76,7 +77,7 @@ public class CourseView {
 		exampleBulletPoints = new string[3] {"Cube.transform.position accesses the position of our Cube.",
 												"Cube.renderer.material accesses the way the object looks.",
 												""};
-
+		goal = "Change the color of the Cube to your liking.";
 		instructionBulletPoints = new string[8] {"Access the Cubes color property under Cube.renderer.material.",
 													"Set the color property equal to Color.red.",
 													"(Optional) Try the same with blue, green and yellow.",

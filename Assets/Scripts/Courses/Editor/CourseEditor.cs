@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // Used in conjunktion with Course.cs
 // Allows for creating and editing course data assets.
 //-----------------------------------------------------------------
@@ -134,6 +134,12 @@ public class CourseEditor : Editor {
 			for (int j = 0; j < cw.exampleBulletPoints.Length; j++) {
 				cw.exampleBulletPoints[j] = EditorGUILayout.TextField((j+1) + ".     " + cw.exampleBulletPoints[j].Length + "/100 chars", cw.exampleBulletPoints[j]);
 			}
+
+			EditorGUILayout.Space();
+			EditorGUILayout.Space();
+
+			EditorGUILayout.LabelField("Goal:", cw.goal.Length + "/100 chars");
+			cw.goal= EditorGUILayout.TextArea(cw.goal, GUILayout.Height(50));
 
 			EditorGUILayout.Space();
 

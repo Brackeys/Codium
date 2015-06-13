@@ -10,42 +10,42 @@ using Mono.CSharp;
 
 public class CodeCompiler
 {
-	private bool _isInitialized;	// Has the evaluater been initialized?
+	//private bool _isInitialized;	// Has the evaluater been initialized?
 
-	// Gets the initialization state
-	public bool IsInitialized
-	{
-		get { return _isInitialized; }
-	}
+	//// Gets the initialization state
+	//public bool IsInitialized
+	//{
+	//	get { return _isInitialized; }
+	//}
 
-	// Class constructor
-	public CodeCompiler () {
-		_isInitialized = false;
-	}
+	//// Class constructor
+	//public CodeCompiler () {
+	//	_isInitialized = false;
+	//}
 
-	public void InitEvaluator (string namespaces) {
-		Evaluator.Interrupt();
+	//public void InitEvaluator (string namespaces) {
+	//	Evaluator.Interrupt();
 
-		Evaluator.Init(new string[] { });
-		foreach (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-		{
-			//Dbg.Log("refer: {0}", assembly.FullName);
-			if( assembly.FullName.Contains("Cecil") || assembly.FullName.Contains("UnityEditor") )
-				continue;
-			Evaluator.ReferenceAssembly(assembly);
-		}
+	//	Evaluator.Init(new string[] { });
+	//	foreach (System.Reflection.Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+	//	{
+	//		//Dbg.Log("refer: {0}", assembly.FullName);
+	//		if( assembly.FullName.Contains("Cecil") || assembly.FullName.Contains("UnityEditor") )
+	//			continue;
+	//		Evaluator.ReferenceAssembly(assembly);
+	//	}
 
-		Evaluator.Run (namespaces);
+	//	Evaluator.Run (namespaces);
 
-		_isInitialized = true;
-	}
+	//	_isInitialized = true;
+	//}
 
-	public void RunCode (string code) {
-		bool isSuccess = Evaluator.Run(code);
-		if (!isSuccess) {
-			Debug.LogError ("Error in Code.");
-		} else {
-			Debug.Log ("Code Evaluated.");
-		}
-	}
+	//public void RunCode (string code) {
+	//	bool isSuccess = Evaluator.Run(code);
+	//	if (!isSuccess) {
+	//		Debug.LogError ("Error in Code.");
+	//	} else {
+	//		Debug.Log ("Code Evaluated.");
+	//	}
+	//}
 }

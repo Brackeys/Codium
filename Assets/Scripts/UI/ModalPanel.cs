@@ -11,6 +11,33 @@ public class ModalPanel : MonoBehaviour {
 	public Button okButton;
 	public GameObject modalPanelObject;
 
+	// References to anims
+	[Header("End animations require a UIAlphaAnim on each object:")]
+	[SerializeField]
+	private float questionFadeOutDelay = 0.1f;
+	UIAlphaAnim questionUIAA;
+	[SerializeField]
+	private float yesButtonFadeOutDelay = 0.1f;
+	UIAlphaAnim yesButtonUIAA;
+	[SerializeField]
+	private float noButtonFadeOutDelay = 0.1f;
+	UIAlphaAnim noButtonUIAA;
+	[SerializeField]
+	private float cancelButtonFadeOutDelay = 0.1f;
+	UIAlphaAnim cancelButtonUIAA;
+	[SerializeField]
+	private float okButtonFadeOutDelay = 0.1f;
+	UIAlphaAnim okButtonUIAA;
+	[SerializeField]
+	private float bgFadeOutDelay = 0.1f;
+	UIAlphaAnim modalPanelObjectUIAA;
+
+	[Header("Panel end animation: (required)")]
+	[SerializeField]
+	private GameObject panelObject;
+	private UIScaleAnim panelObjectUISA;
+	private UIAlphaAnim panelObjectUIAA;
+
 	#region Singleton Pattern (Awake)
 	private static ModalPanel _ins;
 	public static ModalPanel ins
@@ -51,6 +78,7 @@ public class ModalPanel : MonoBehaviour {
 
 	void Start()
 	{
+
 		if (question == null)
 		{
 			Debug.LogError("No question object referenced");
@@ -75,6 +103,20 @@ public class ModalPanel : MonoBehaviour {
 		{
 			Debug.LogError("No modalPanelObject object referenced");
 		}
+		if (panelObject == null)
+		{
+			Debug.LogError("No panelObject object referenced");
+		}
+
+		// Cache all UIAlphaAnims
+		//questionUIAA = question.GetComponent<UIAlphaAnim>();
+		//yesButtonUIAA = yesButton.transform.parent.GetComponent<UIAlphaAnim>();
+		//noButtonUIAA = noButton.transform.parent.GetComponent<UIAlphaAnim>();
+		//cancelButtonUIAA = cancelButton.transform.parent.GetComponent<UIAlphaAnim>();
+		//okButtonUIAA = okButton.transform.parent.GetComponent<UIAlphaAnim>();
+		modalPanelObjectUIAA = modalPanelObject.GetComponent<UIAlphaAnim>();
+		panelObjectUISA = panelObject.GetComponent<UIScaleAnim>();
+		panelObjectUIAA = panelObject.GetComponent<UIAlphaAnim>();
 	}
 
 	// Yes/No/Cancel: string, yes event, no event, cancel event
@@ -155,15 +197,66 @@ public class ModalPanel : MonoBehaviour {
 
 	private void ClosePanel()
 	{
-		modalPanelObject.SetActive(false);
-		yesButton.transform.parent.gameObject.SetActive(false);
-		noButton.transform.parent.gameObject.SetActive(false);
-		cancelButton.transform.parent.gameObject.SetActive(false);
-		okButton.transform.parent.gameObject.SetActive(false);
+		// Disable objects, some via animation
+		if (modalPanelObjectUIAA != null)
+		{
+			modalPanelObjectUIAA.Animate(bgFadeOutDelay, true, true);
+		}
+		else
+		{
+			modalPanelObject.SetActive(false);
+		}
+
+		if (yesButtonUIAA != null && yesButtonUIAA.gameObject.activeInHierarchy == true)
+		{
+			yesButtonUIAA.Animate(yesButtonFadeOutDelay, true, true);
+		}
+		else
+		{
+			yesButton.transform.parent.gameObject.SetActive(false);
+		}
+
+		if (noButtonUIAA != null && noButtonUIAA.gameObject.activeInHierarchy == true)
+		{
+			noButtonUIAA.Animate(noButtonFadeOutDelay, true, true);
+		}
+		else
+		{
+			noButton.transform.parent.gameObject.SetActive(false);
+		}
+
+		if (cancelButtonUIAA != null && cancelButtonUIAA.gameObject.activeInHierarchy == true)
+		{
+			cancelButtonUIAA.Animate(cancelButtonFadeOutDelay, true, true);
+		}
+		else
+		{
+			cancelButton.transform.parent.gameObject.SetActive(false);
+		}
+
+		if (okButtonUIAA != null && okButtonUIAA.gameObject.activeInHierarchy == true)
+		{
+			okButtonUIAA.Animate(okButtonFadeOutDelay, true, true);
+		}
+		else
+		{
+			okButton.transform.parent.gameObject.SetActive(false);
+		}
+
+		if (panelObjectUIAA != null)
+		{
+			panelObjectUIAA.Animate(0f, true, false);
+		}
+		if (panelObjectUISA != null)
+		{
+			//panelObjectUISA.Animate(0f, true);
+			Debug.LogWarning("FIX THIS ANIMATION PLZZZ");
+		}
 	}
 
 	private void OpenPanel()
 	{
 		modalPanelObject.SetActive(true);
+		panelObject.SetActive(true);
 	}
 }

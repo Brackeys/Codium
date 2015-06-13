@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12322, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: CodiumCurvePresets
+  m_EditorClassIdentifier: 
+  m_Presets:
+  - m_Name: 
+    m_Curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: .511342585
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: .681586981
+        value: 1.10762572
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - time: .839554608
+        value: 1.00151014
+        inSlope: -.836253166
+        outSlope: -.836253166
+        tangentMode: 0
+      - time: .991666675
+        value: 1
+        inSlope: -.127703175
+        outSlope: -.127703175
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+  - m_Name: 
+    m_Curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 10
+      - time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+  - m_Name: 
+    m_Curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
