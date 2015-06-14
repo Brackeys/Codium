@@ -119,8 +119,10 @@ public class MCC
 		get
 		{
 			var types = new Type[] {
+				//Extra
 				typeof (Debug),
-				typeof(MonoBehaviour),
+				typeof (MonoBehaviour),
+				typeof (ICodiumBase),
 
 				// mscorlib System
 				typeof (Console),

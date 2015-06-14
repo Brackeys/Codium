@@ -7,6 +7,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System;
 
 public class CodeManager : MonoBehaviour {
 
@@ -20,14 +21,20 @@ public class CodeManager : MonoBehaviour {
 
 	public void RunCode()
 	{
+		mcc = null;
+		GC.Collect();
+		mcc = new MCC();
 		mcc.Run(code.text);
 	}
 
 	public void EvaluateCode()
 	{
-		System.Object res;
-		mcc.Evaluate<System.Object>(code.text, out res);
-		//Debug.Log(res);
+		mcc = null;
+		GC.Collect();
+		mcc = new MCC();
+		UnityEngine.Object res;
+		mcc.Evaluate<UnityEngine.Object>(code.text, out res);
+		Debug.Log(res.name);
 	}
 
 	public void GetLastError()
