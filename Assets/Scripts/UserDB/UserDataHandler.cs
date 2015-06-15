@@ -10,7 +10,7 @@ public class UserDataHandler : MonoBehaviour
 	[SerializeField]
 	private bool showGUI = false;
 
-	public UserData user = new UserData();
+	public UserData user;
 
 	[SerializeField]
 	private Text usernameText;
@@ -19,6 +19,9 @@ public class UserDataHandler : MonoBehaviour
 
 	void Start()
 	{
+		user = new UserData();
+		Debug.Log("User " + user.name + " signed up " + user.signupDate.Date.ToString("d"));
+
 		if (usernameText == null)
 		{
 			Debug.LogError("No usernameText object referenced.");

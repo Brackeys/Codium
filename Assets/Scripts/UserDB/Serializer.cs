@@ -43,11 +43,13 @@ public class Serializer : MonoBehaviour
 			if (this != _ins)
 				Destroy(this.gameObject);
 		}
+
+		path = Application.persistentDataPath;
 	}
 
 	#endregion
 
-	static string path = Application.persistentDataPath;
+	static string path;	// Set in awake
 
 	#region Generic Save/Load methods
 	public static void Save<T>(T _data, string _name)

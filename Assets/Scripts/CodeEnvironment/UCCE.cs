@@ -1,5 +1,9 @@
-// Written by Michael 'Searge' Stoyke in 03/2015
-// Released as public domain, do whatever you want with it!
+//-----------------------------------------------------------------
+// User Code Compilation Engine (UCCE). Thanks to Michael 'Searge' Stoyke for
+// providing the base for this implementation. It uses mono's runtime compiler
+// as a service. It sets up a sandboxed scripting environment. Accessible types
+// can be set under AdditionalTypes.
+//-----------------------------------------------------------------
 
 using System;
 using System.IO;
@@ -7,9 +11,7 @@ using System.Reflection;
 using System.Text;
 using Mono.CSharp;
 
-using UnityEngine;
-
-public class MCC
+public class UCCE
 {
 	private Evaluator _evaluator;
 
@@ -19,7 +21,7 @@ public class MCC
 	private MethodInfo _importTypes;
 	private string _error = string.Empty;
 
-	public MCC()
+	public UCCE()
 	{
 		_stringBuilder = new StringBuilder();
 		TextWriter _writer = new StringWriter(_stringBuilder);
@@ -120,8 +122,8 @@ public class MCC
 		{
 			var types = new Type[] {
 				//Extra
-				typeof (Debug),
-				typeof (MonoBehaviour),
+				typeof (UnityEngine.Debug),
+				typeof (UnityEngine.MonoBehaviour),
 				typeof (ICodiumBase),
 
 				// mscorlib System

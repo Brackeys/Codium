@@ -13,7 +13,7 @@ public class UserData {
 	public string name;
 	public int learnPoints;
 
-	private DateTime signupDate;
+	public DateTime signupDate;
 
 	public UserData()
 	{
@@ -24,7 +24,7 @@ public class UserData {
 
 		signupDate = DateTime.Now;
 
-		Debug.Log("User " + name + " signed up " + signupDate.Date.ToString("d"));
+		//Debug.Log("User " + name + " signed up " + signupDate.Date.ToString("d"));
 	}
 
 	public string GenerateID()

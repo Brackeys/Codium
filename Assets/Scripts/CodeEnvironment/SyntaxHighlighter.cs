@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // Formats the code by applying syntax highlighting to keywords, quotes and comments.
 //-----------------------------------------------------------------
 
@@ -202,7 +202,7 @@ public class SyntaxHighlighter
 
 		for (int i = 0; i < highlightedClasses.Count; i++)
 		{
-			content = content.ReplaceWithCss(highlightedClasses[i], TypeCssClass);
+			content = content.ReplaceWithCss(highlightedClasses[i].Trim(), TypeCssClass);
 		}
 
 		// Pass 2. Doing it in N passes due to my inferior regex knowledge of back/forwardtracking.
@@ -266,7 +266,7 @@ public class SyntaxHighlighter
 		// Highlight keywords
 		foreach (KeywordStruct keyword in _keywords)
 		{
-			Regex regexKeyword = new Regex("(" + keyword.Word + @")(>|&gt;|\s|\n|;|<)", RegexOptions.Singleline);
+			Regex regexKeyword = new Regex(@"(\W" + keyword.Word + "|^" + keyword.Word + @")(>|&gt;|\s|\n|;|<|)", RegexOptions.Singleline);
 			content = regexKeyword.Replace(content, CssExtensions.GetCssReplacement (keyword.Color)+ "$2");
 		}
 
