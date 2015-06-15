@@ -4,12 +4,16 @@ using System.Collections;
 [RequireComponent(typeof(RectTransform))]
 public class UIScaleAnim : MonoBehaviour {
 
-	[SerializeField] private AnimationCurve curve;
+	[SerializeField]
+	private AnimationCurve curve;
 	public float animSpeed = 1f;
 	[SerializeField]
 	private bool playOnEnable = false;
 	[SerializeField]
 	private float onEnableDelay = 0f;
+
+	private bool backwards = false;
+	private bool disableOnEnd = false;
 
 	[Header("Testing only:")]
 	[SerializeField]
@@ -21,15 +25,16 @@ public class UIScaleAnim : MonoBehaviour {
 	// Cache
 	void Awake()
 	{
+
 		rt = GetComponent<RectTransform>();
-		rt.localScale = Vector3.one * curve.Evaluate(0);
+		SetAnimationState(time);
 	}
 
 	void OnEnable()
 	{
 		if (playOnEnable)
 		{
-			Animate(onEnableDelay);
+			Animate(onEnableDelay, false, false);
 		}
 	}
 
@@ -37,26 +42,41 @@ public class UIScaleAnim : MonoBehaviour {
 	void Update () {
 		if (animate)
 		{
-			time += Time.deltaTime * animSpeed;
-			rt.localScale = Vector3.one * curve.Evaluate(time);
+			if (!backwards)
+				time += Time.deltaTime * animSpeed;
+			else
+				time -= Time.deltaTime * animSpeed;
+			SetAnimationState(time);
 
-			if (time > 1f)
+			if (time > 1f || time < 0f)
 			{
+				if (disableOnEnd)
+					gameObject.SetActive(false);
+
 				animate = false;
 				time = 0;
 			}
 		}
 	}
 
-	public void Animate(float delay)
+	private void SetAnimationState(float _time)
 	{
-		rt.localScale = Vector3.one * curve.Evaluate(0);
-		StartCoroutine(_Animate(delay));
+		rt.localScale = Vector3.one * curve.Evaluate(_time);
 	}
 
-	IEnumerator _Animate(float delay)
+	public void Animate(float _delay, bool _backwards, bool _disableOnEnd)
 	{
-		yield return new WaitForSeconds(delay);
+		if (_backwards)
+			time = 1f;
+		backwards = _backwards;
+		disableOnEnd = _disableOnEnd;
+		SetAnimationState(time);
+		StartCoroutine(_Animate(_delay));
+	}
+
+	IEnumerator _Animate(float _delay)
+	{
+		yield return new WaitForSeconds(_delay);
 		animate = true;
 	}
 }

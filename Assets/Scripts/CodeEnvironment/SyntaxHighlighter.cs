@@ -293,6 +293,7 @@ public class SyntaxHighlighter
 			}
 			content = content.ReplaceTokenWithCss(comment, COMMENTS_TOKEN, i, CommentCssClass);
 		}
+
 		return content;
 	}
 }

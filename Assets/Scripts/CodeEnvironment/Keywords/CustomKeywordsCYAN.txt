@@ -20,3 +20,4 @@ struct
 interface
 enum
 class
+namespace
