@@ -155,7 +155,11 @@ public class CodeManager : MonoBehaviour {
 	// Print last known error
 	public void PrintLastError()
 	{
-		Debug.Log(ucce.GetLastError());
+		string _error = ucce.GetLastError();
+		if (_error != "")
+		{
+			Debug.Log(ucce.GetLastError());
+		}
 	}
 
 	private string WrapInNamespace(string _code)
@@ -167,6 +171,9 @@ public class CodeManager : MonoBehaviour {
 
 	public void CallMethods()
 	{
+		if (ucce.GetLastError() != "")
+			return;
+
 		var type = typeof(ICodiumBase);
 		var types = AppDomain.CurrentDomain.GetAssemblies()
 			.SelectMany(s => s.GetTypes())
