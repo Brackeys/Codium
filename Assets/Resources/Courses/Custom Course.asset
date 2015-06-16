@@ -23,6 +23,7 @@ MonoBehaviour:
   - subject: GameObjects
     explaination: 'Everything you can see in the game is called a GameObject.
 
+
       GameObjects have different properties which can be manipulated through code.'
     codeBulletPoints:
     - To access properties in a GameObject we use the '<b>.</b>'' operator.

@@ -68,7 +68,7 @@ public class CourseView {
 	public CourseView () {
 		subject = "GameObjects";
 		explaination = "Everything you can see in the game is called a GameObject." +
-						"\nGameObjects have different properties which can be manipulated through code.";
+						"\n\nGameObjects have different properties which can be manipulated through code.";
 
 		codeBulletPoints = new string[3] {"To access properties in a GameObject we use the '<b>.</b>'' operator.",
 											"Sometimes you have to use the '<b>.</b>'' multiple times to access the property you want.",

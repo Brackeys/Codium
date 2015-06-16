@@ -49,6 +49,8 @@ public class ApplicationManager : MonoBehaviour {
 	private ModalPanel modalPanel;
 	private UnityAction yesQuitAction;
 	private UnityAction noQuitAction;
+	private UnityAction yesReloadCourseViewScene;
+	private UnityAction noReloadCourseViewScene;
 
 	void Start()
 	{
@@ -57,6 +59,18 @@ public class ApplicationManager : MonoBehaviour {
 		modalPanel = ModalPanel.ins;
 		yesQuitAction = new UnityAction(_QuitAndSave);
 		noQuitAction = new UnityAction(_DoNothing);
+		yesReloadCourseViewScene = new UnityAction(_ReloadCourseViewScene);
+		noReloadCourseViewScene = new UnityAction(_DoNothing);
+	}
+
+	public void ReloadCourseViewScene()
+	{
+		modalPanel.Choice("Are you sure you want to reset all?\nThe Course View will reload.", yesReloadCourseViewScene, noReloadCourseViewScene);
+	}
+	private void _ReloadCourseViewScene()
+	{
+		Debug.Log("TODO: Reload scene animation.");
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 
@@ -64,8 +78,6 @@ public class ApplicationManager : MonoBehaviour {
 	{
 		modalPanel.Choice("Are you sure you want to quit?\nThere is so much to do!", yesQuitAction, noQuitAction);
 	}
-
-	// method for exiting the application
 	private void _QuitAndSave()
 	{
 		userDataManager.SaveUserData();

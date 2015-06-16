@@ -31,6 +31,8 @@ public class CourseManager : MonoBehaviour {
 
 	public CourseView curCourseView;
 
+	public bool loadCourseOnStart = true;
+
 	// GUI REFERENCES
 
 	public Text title;
@@ -42,6 +44,7 @@ public class CourseManager : MonoBehaviour {
 	public InputField codeField;
 	public RectTransform stepBulletPoint;
 	public Transform instructions;
+	public Text goal;
 
 	void Awake () {
 		if (_ins == null) {
@@ -54,41 +57,48 @@ public class CourseManager : MonoBehaviour {
 				Destroy (this.gameObject);
 		}
 
-		if (title == null)
+		if (loadCourseOnStart)
 		{
-			Debug.LogError("No title text object referenced");
-		}
-		if (subject == null)
-		{
-			Debug.LogError("No subject text object referenced");
-		}
-		if (explaination == null)
-		{
-			Debug.LogError("No explaination text object referenced");
-		}
-		if (codeDesc == null)
-		{
-			Debug.LogError("No codeDesc object referenced");
-		}
-		if (descBulletPoint == null)
-		{
-			Debug.LogError("No descBulletPoint prefab referenced");
-		}
-		if (examples == null)
-		{
-			Debug.LogError("No examples object referenced");
-		}
-		if (codeField == null)
-		{
-			Debug.LogError("No codeField object referenced");
-		}
-		if (stepBulletPoint == null)
-		{
-			Debug.LogError("No stepBulletPoint prefab referenced");
-		}
-		if (instructions == null)
-		{
-			Debug.LogError("No instructions object referenced");
+			if (title == null)
+			{
+				Debug.LogError("No title text object referenced");
+			}
+			if (subject == null)
+			{
+				Debug.LogError("No subject text object referenced");
+			}
+			if (explaination == null)
+			{
+				Debug.LogError("No explaination text object referenced");
+			}
+			if (codeDesc == null)
+			{
+				Debug.LogError("No codeDesc object referenced");
+			}
+			if (descBulletPoint == null)
+			{
+				Debug.LogError("No descBulletPoint prefab referenced");
+			}
+			if (examples == null)
+			{
+				Debug.LogError("No examples object referenced");
+			}
+			if (codeField == null)
+			{
+				Debug.LogError("No codeField object referenced");
+			}
+			if (stepBulletPoint == null)
+			{
+				Debug.LogError("No stepBulletPoint prefab referenced");
+			}
+			if (instructions == null)
+			{
+				Debug.LogError("No instructions object referenced");
+			}
+			if (goal == null)
+			{
+				Debug.LogError("No goal object referenced");
+			}
 		}
 
 		UpdateCourseList ();
@@ -97,20 +107,59 @@ public class CourseManager : MonoBehaviour {
 
 	void Start()
 	{
-		curCourse = courseList[0];
-		curCourseView = GetViewByIndex(0);
+		if (loadCourseOnStart)
+		{
+			curCourse = courseList[0];
+			curCourseView = GetViewByIndex(0);
 
-		LoadCurrentCourseView();
+			LoadCurrentCourseView();
+		}
 	}
 
 	// Populate the courseList variable with Course assets in the /Courses folder
-	// and remove completed courses from the list
 	public void UpdateCourseList () {
 		courseList = CourseUtil.LoadAllCourses ().ToList<Course>();
 	}
 
+	#region Methods for interfacing with course data
 
-	// ------- COURSE LOADING -------
+	public void LoadCurrentCourseViewDefaultCode()
+	{
+		if (curCourseView == null)
+		{
+			Debug.LogError("No current course view.");
+			return;
+		}
+
+		LoadCourseViewDefaultCode(curCourse, GetCourseViewIndex(curCourseView));
+	}
+
+	private void LoadCourseViewDefaultCode(Course _course, int _index)
+	{
+		CourseView _cv = _course.courseViews[_index];
+		codeField.text = _cv.defaultCode;
+	}
+
+	public void LoadCurrentCourseViewSolutionCode()
+	{
+		if (curCourseView == null)
+		{
+			Debug.LogError("No current course view.");
+			return;
+		}
+
+		LoadCourseViewSolutionCode(curCourse, GetCourseViewIndex(curCourseView));
+	}
+
+	private void LoadCourseViewSolutionCode(Course _course, int _index)
+	{
+		CourseView _cv = _course.courseViews[_index];
+		codeField.text = _cv.solutionCode;
+	}
+
+	#endregion
+
+	#region Course Loading
 	public void LoadCurrentCourseView()
 	{
 		if (curCourseView == null)
@@ -182,6 +231,9 @@ public class CourseManager : MonoBehaviour {
 		// load default code
 		codeField.text = cv.defaultCode;
 
+		// load goal
+		goal.text = cv.goal;
+
 		// load instructions, step by step
 		for (int i = 0; i < cv.instructionBulletPoints.Length; i++)
 		{
@@ -217,9 +269,9 @@ public class CourseManager : MonoBehaviour {
 		}
 	}
 
+	#endregion
 
-	// ------- HELPFUL GETTER METHODS -------
-
+	#region Helpful getter methods
 
 	// Loops through the courseList and returns the course that matches, otherwise return -1
 	public int GetCourseIndex ( Course course) {
@@ -274,4 +326,6 @@ public class CourseManager : MonoBehaviour {
 		Debug.LogWarning ("No courseview with subject " + subject + " could be found.");
 		return null;
 	}
+	#endregion
+
 }
