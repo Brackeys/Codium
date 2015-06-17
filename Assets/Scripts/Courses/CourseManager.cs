@@ -31,21 +31,6 @@ public class CourseManager : MonoBehaviour {
 
 	public CourseView curCourseView;
 
-	public bool loadCourseOnStart = true;
-
-	// GUI REFERENCES
-
-	public Text title;
-	public Text subject;
-	public Text explaination;
-	public Transform codeDesc;
-	public RectTransform descBulletPoint;
-	public Transform examples;
-	public InputField codeField;
-	public RectTransform stepBulletPoint;
-	public Transform instructions;
-	public Text goal;
-
 	void Awake () {
 		if (_ins == null) {
 			// Populate with first instance
@@ -57,63 +42,11 @@ public class CourseManager : MonoBehaviour {
 				Destroy (this.gameObject);
 		}
 
-		if (loadCourseOnStart)
-		{
-			if (title == null)
-			{
-				Debug.LogError("No title text object referenced");
-			}
-			if (subject == null)
-			{
-				Debug.LogError("No subject text object referenced");
-			}
-			if (explaination == null)
-			{
-				Debug.LogError("No explaination text object referenced");
-			}
-			if (codeDesc == null)
-			{
-				Debug.LogError("No codeDesc object referenced");
-			}
-			if (descBulletPoint == null)
-			{
-				Debug.LogError("No descBulletPoint prefab referenced");
-			}
-			if (examples == null)
-			{
-				Debug.LogError("No examples object referenced");
-			}
-			if (codeField == null)
-			{
-				Debug.LogError("No codeField object referenced");
-			}
-			if (stepBulletPoint == null)
-			{
-				Debug.LogError("No stepBulletPoint prefab referenced");
-			}
-			if (instructions == null)
-			{
-				Debug.LogError("No instructions object referenced");
-			}
-			if (goal == null)
-			{
-				Debug.LogError("No goal object referenced");
-			}
-		}
-
 		UpdateCourseList ();
 		courseList = CourseUtil.SortCourses (courseList);
-	}
 
-	void Start()
-	{
-		if (loadCourseOnStart)
-		{
-			curCourse = courseList[0];
-			curCourseView = GetViewByIndex(0);
-
-			LoadCurrentCourseView();
-		}
+		SaveCurCourseDataIfEmpty();
+		LoadCurCourseData();
 	}
 
 	// Populate the courseList variable with Course assets in the /Courses folder
@@ -121,152 +54,87 @@ public class CourseManager : MonoBehaviour {
 		courseList = CourseUtil.LoadAllCourses ().ToList<Course>();
 	}
 
-	#region Methods for interfacing with course data
+	#region Save and load current course data
 
-	public void LoadCurrentCourseViewDefaultCode()
+	public void SaveCurCourseDataIfEmpty()
 	{
-		if (curCourseView == null)
+		CurCourseData _cData = new CurCourseData ();
+		if (!Serializer.PathExists(_cData.fileName))
 		{
-			Debug.LogError("No current course view.");
+			Debug.Log ("No Course Data found. Saving first Course and CourseView found.");
+			SetCurCourseByIndex(0);
+			SetCurCourseView(0);
+			_cData.ID = curCourse.ID;
+			_cData.curCVIndex = 0;
+			Serializer.Save<CurCourseData>(_cData, _cData.fileName);
+		}
+	}
+
+	public void SaveCurCourseData ()
+	{
+		int _cvIndex = GetCourseViewIndex(curCourseView);
+		if (_cvIndex == -1) {
+			Debug.LogError ("CourseView couldn't be found in courseList.");
 			return;
 		}
+		CurCourseData _cData = new CurCourseData(curCourse.ID, _cvIndex);
+		Serializer.Save<CurCourseData>(_cData, _cData.fileName);
 
-		LoadCourseViewDefaultCode(curCourse, GetCourseViewIndex(curCourseView));
+		Debug.Log("CurCourseData saved.");
 	}
 
-	private void LoadCourseViewDefaultCode(Course _course, int _index)
+	public void LoadCurCourseData()
 	{
-		CourseView _cv = _course.courseViews[_index];
-		codeField.text = _cv.defaultCode;
-	}
+		CurCourseData _cData = new CurCourseData();
+		_cData = Serializer.Load<CurCourseData>(_cData.fileName);
 
-	public void LoadCurrentCourseViewSolutionCode()
-	{
-		if (curCourseView == null)
+		for (int i = 0; i < courseList.Count; i++)
 		{
-			Debug.LogError("No current course view.");
-			return;
+			if (courseList[i].ID == _cData.ID)
+			{
+				SetCurCourseByIndex(i);
+			}
 		}
 
-		LoadCourseViewSolutionCode(curCourse, GetCourseViewIndex(curCourseView));
-	}
+		SetCurCourseView(_cData.curCVIndex);
 
-	private void LoadCourseViewSolutionCode(Course _course, int _index)
-	{
-		CourseView _cv = _course.courseViews[_index];
-		codeField.text = _cv.solutionCode;
+		Debug.Log("CurCourseData loaded.");
 	}
 
 	#endregion
 
-	#region Course Loading
-	public void LoadCurrentCourseView()
+	#region Helpful setter methods
+
+	public void SetCurCourse(Course _course)
 	{
-		if (curCourseView == null)
-		{
-			Debug.LogError("No current course view.");
+		int _index = GetCourseIndex(_course);
+		if (_index == -1) {
+			Debug.LogError ("Course: " + _course.title + " couldn't be found in courseList");
 			return;
 		}
-
-		LoadCourseView (curCourse, GetCourseViewIndex(curCourseView));
+		curCourse = courseList[_index];
 	}
 
-	public void LoadCourseView(Course course, int index)
+	public void SetCurCourseByIndex(int _index)
 	{
-		// Load title
-		title.text = course.title;
+		if (_index > courseList.Count - 1)
+		{
+			Debug.LogError("Index out of bounds. Could not set cur course by index.");
+			return;
+		}
+		curCourse = courseList[_index];
+	}
 
-		// LOAD COURSE VIEW:
+	public void SetCurCourseView(int _cvIndex)
+	{
 
-		if (course.courseViews.Count <= index) {
-			Debug.LogWarning ("CourseView couldn't be loaded because the index isn't within range.");
+		if (_cvIndex > curCourse.courseViews.Count - 1)
+		{
+			Debug.LogError("Index out of bounds: couldn't set current course view");
 			return;
 		}
 
-		CourseView cv = course.courseViews[index];
-
-		subject.text = cv.subject;	// Load subject
-		explaination.text = cv.explaination;	// Load explaination
-
-		// Load codeBulletPoints
-		for (int i = 0; i < cv.codeBulletPoints.Length; i++)
-		{
-			if (cv.codeBulletPoints[i].Length == 0)
-			{
-				continue;
-			}
-
-			RectTransform bp = Instantiate(descBulletPoint) as RectTransform;
-			bp.name = descBulletPoint.name;
-			Text bpText = bp.GetComponent<Text>();
-			if (bpText == null)
-			{
-				Debug.LogError("No Text component on the descBulletPoint prefab.");
-				break;
-			}
-			bpText.text = "    " + cv.codeBulletPoints[i];
-			bp.transform.SetParent (codeDesc);
-		}
-
-		// Load example bullet points
-		for (int i = 0; i < cv.exampleBulletPoints.Length; i++)
-		{
-			if (cv.exampleBulletPoints[i].Length == 0)
-			{
-				continue;
-			}
-
-			RectTransform bp = Instantiate(descBulletPoint) as RectTransform;
-			bp.name = descBulletPoint.name;
-			Text bpText = bp.GetComponent<Text>();
-			if (bpText == null)
-			{
-				Debug.LogError("No Text component on the descBulletPoint prefab.");
-				break;
-			}
-			bpText.text = "    " + cv.exampleBulletPoints[i];
-			bp.transform.SetParent(examples);
-		}
-
-		// load default code
-		codeField.text = cv.defaultCode;
-
-		// load goal
-		goal.text = cv.goal;
-
-		// load instructions, step by step
-		for (int i = 0; i < cv.instructionBulletPoints.Length; i++)
-		{
-			if (cv.instructionBulletPoints[i].Length == 0)
-			{
-				continue;
-			}
-
-			RectTransform bp = Instantiate(stepBulletPoint) as RectTransform;
-			bp.name = stepBulletPoint.name;
-			Text bpText = bp.GetComponent<Text>();
-			if (bpText == null)
-			{
-				Debug.LogError("No Text component on the descBulletPoint prefab.");
-				break;
-			}
-			bpText.text = cv.instructionBulletPoints[i];
-			Transform bpCount = bp.FindChild("StepCount");
-			if (bpCount == null)
-			{
-				Debug.LogError("No child called StepCount found under " + bp.name);
-				break;
-			}
-			Text bpCountText = bpCount.GetComponent<Text>();
-			if (bpCountText == null)
-			{
-				Debug.LogError("No Text component on the StepCount object: " + bpCount.name);
-				break;
-			}
-			bpCountText.text = (i + 1).ToString();
-
-			bp.transform.SetParent(instructions);
-		}
+		curCourseView = curCourse.courseViews[_cvIndex];
 	}
 
 	#endregion

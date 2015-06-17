@@ -31,14 +31,6 @@ public class CodeManager : MonoBehaviour {
 	private UCCE ucce;
 	private int namespaceCounter = 0;
 
-	// Modal panel
-	private ModalPanel modalPanel;
-	private UnityAction yesResetCode;
-	private UnityAction noResetCode;
-
-	// Course manager
-	private CourseManager courseManager;
-
 
 	#region Singleton pattern (Awake)
 
@@ -85,15 +77,6 @@ public class CodeManager : MonoBehaviour {
 	}
 
 	#endregion
-
-	void Start()
-	{
-		modalPanel = ModalPanel.ins;
-		yesResetCode = new UnityAction(_ResetCode);
-		noResetCode = new UnityAction(_DoNothing);
-
-		courseManager = CourseManager.ins;
-	}
 
 	// Testing GUI
 	void OnGUI()
@@ -260,20 +243,5 @@ public class CodeManager : MonoBehaviour {
 		formattedCodeText.text = syntaxHighlighter.Highlight(_code);
 	}
 	#endregion
-
-	public void ResetCode()
-	{
-		modalPanel.Choice("Are you sure you want to reset your code?", yesResetCode, noResetCode);
-	}
-
-	private void _ResetCode()
-	{
-		courseManager.LoadCurrentCourseViewDefaultCode();
-	}
-
-	private void _DoNothing()
-	{
-		// Watch som tv?
-	}
 
 }

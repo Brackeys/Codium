@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class ApplicationManager : MonoBehaviour {
 
@@ -52,15 +53,27 @@ public class ApplicationManager : MonoBehaviour {
 	private UnityAction yesReloadCourseViewScene;
 	private UnityAction noReloadCourseViewScene;
 
+	private Fade fade;
+
 	void Start()
 	{
 		userDataManager = UserDataManager.ins;
+		if (userDataManager == null)
+		{
+			Debug.LogError("No UserDataManager found");
+		}
 
 		modalPanel = ModalPanel.ins;
 		yesQuitAction = new UnityAction(_QuitAndSave);
 		noQuitAction = new UnityAction(_DoNothing);
 		yesReloadCourseViewScene = new UnityAction(_ReloadCourseViewScene);
 		noReloadCourseViewScene = new UnityAction(_DoNothing);
+
+		fade = Fade.ins;
+		if (fade == null)
+		{
+			Debug.LogError("No Fade found");
+		}
 	}
 
 	public void ReloadCourseViewScene()
@@ -73,6 +86,21 @@ public class ApplicationManager : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
+	public void TransitionToCourseViewScene()
+	{
+		StartCoroutine(_FadeOutLoadLevel("CourseView"));
+	}
+
+	public void TransitionToMainMenuScene()
+	{
+		StartCoroutine(_FadeOutLoadLevel("MainMenu"));
+	}
+
+	private IEnumerator _FadeOutLoadLevel(string _level)
+	{
+		yield return new WaitForSeconds(fade.BeginFade(1));
+		Application.LoadLevel(_level);
+	}
 
 	public void QuitAndSave()
 	{
@@ -81,7 +109,13 @@ public class ApplicationManager : MonoBehaviour {
 	private void _QuitAndSave()
 	{
 		userDataManager.SaveUserData();
-		Debug.Log("TODO: Display quit animation.");
+		StartCoroutine(_FadeOutQuit());
+		Application.Quit();
+	}
+	private IEnumerator _FadeOutQuit()
+	{
+		yield return new WaitForSeconds( fade.BeginFade(1) );
+		Debug.Log("APPLICATION QUIT");
 		Application.Quit();
 	}
 

@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // A general script to handle Scrollbar functionality such as
 // turning it on & off when needed and forcing it to the bottom.
 //-----------------------------------------------------------------
@@ -26,6 +26,11 @@ public class ScrollbarHandler : MonoBehaviour {
 		if (hideWhenInactive) {
 			if (hideCountdown > 0f)
 				HideScrollbar ();
+		}
+
+		if (scrollbar.interactable == true)
+		{
+			scrollbar.value += Input.GetAxis("Mouse ScrollWheel");
 		}
 	}
 	

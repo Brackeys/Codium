@@ -74,6 +74,11 @@ public class UIScaleAnim : MonoBehaviour {
 		StartCoroutine(_Animate(_delay));
 	}
 
+	public void AnimateSimple(bool _backwards)
+	{
+		Animate (0, _backwards, false);
+	}
+
 	IEnumerator _Animate(float _delay)
 	{
 		yield return new WaitForSeconds(_delay);

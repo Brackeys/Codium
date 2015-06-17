@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 485948}
   - 114: {fileID: 11482454}
-  - 114: {fileID: 11481600}
+  - 114: {fileID: 11411584}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11481600
+--- !u!114 &11411584
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,9 +37,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 192290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9495ea6583eb6654394f043404d20a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: cdeb5dfc7ae4fc54aaed25fdb613310d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: 47d4adf1d619149489393e5edfc313e9, type: 3}
+  fadeSpeed: 2
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &11482454
 MonoBehaviour:
   m_ObjectHideFlags: 1

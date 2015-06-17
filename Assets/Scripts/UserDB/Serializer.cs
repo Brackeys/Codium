@@ -51,6 +51,12 @@ public class Serializer : MonoBehaviour
 
 	static string path;	// Set in awake
 
+	public static bool PathExists(string _name)
+	{
+		string _fullPath = path + "/" + _name + ".dat";
+		return File.Exists(_fullPath);
+	}
+
 	#region Generic Save/Load methods
 	public static void Save<T>(T _data, string _name)
 	{

@@ -8,6 +8,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 //	The Course class stores ALL information about the course INCLUDING a list of CourseViews
 [System.Serializable]
@@ -34,18 +35,27 @@ public class Course : ScriptableObject {
 	public Category category;
 	public Difficulty difficulty;
 	public List<CourseView> courseViews;
+
+	public string ID;
 	
 	// Init default values
 	// Reset is called upon initialization and when the 'Reset to Default' button is pressed.
 	public void Reset () {
 		title = "Intro to Game Programming";
 		author = "Asbjørn Thirslund";
-		description = "This is a course description.\nThe author can put a short explaination here to let the user know what the course is about.";
-		category = Category.Language;
-		difficulty = Difficulty.Intermediate;
+		description = "This course teaches the fundamentals of programming games. It demonstrates techniques on setting up basic game logic.";
+		category = Category.LevelDesign;
+		difficulty = Difficulty.Beginner;
 		courseViews = new List<CourseView>();
 
+		ID = GenerateID();
+
 		Debug.Log ("Course values reset.");
+	}
+
+	public string GenerateID()
+	{
+		return Guid.NewGuid().ToString("N");
 	}
 }
 
