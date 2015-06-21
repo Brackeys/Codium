@@ -62,11 +62,9 @@ public class CourseDisplay : MonoBehaviour {
 	public void OpenInCourseView()
 	{
 		courseManager.SetCurCourse(course);
-		Debug.Log("TODO: Open according to progress");
-		courseManager.SetCurCourseView(0);
-		//Debug.Log(courseManager.curCourse.title);
-		//Debug.Log (courseManager.curCourseView.Se)
 		courseManager.SaveCurCourseData();
+		courseManager.SaveCourseCompletionDataIfEmpty();
+		courseManager.LoadCourseCompletionData();
 		applicationManager.TransitionToCourseViewScene();
 	}
 }

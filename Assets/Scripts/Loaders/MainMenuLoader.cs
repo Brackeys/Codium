@@ -50,9 +50,11 @@ public class MainMenuLoader : MonoBehaviour
 	// GUI REFERENCES
 	public Transform courseListObject;
 	public RectTransform courseDisplayPrefab;
+	public Text welcome;
 
 	// Course manager
 	private CourseManager courseManager;
+	private UserDataManager userDataManager;
 
 	void Start()
 	{
@@ -64,6 +66,10 @@ public class MainMenuLoader : MonoBehaviour
 		{
 			Debug.LogError("No courseDisplayPrefab referenced");
 		}
+		if (welcome == null)
+		{
+			Debug.LogError("No welcome object referenced");
+		}
 
 		// Course manager
 		courseManager = CourseManager.ins;
@@ -72,10 +78,23 @@ public class MainMenuLoader : MonoBehaviour
 			Debug.LogError("No CourseManager?");
 		}
 
+		// User data manager
+		userDataManager = UserDataManager.ins;
+		if (userDataManager == null)
+		{
+			Debug.LogError("No UserDataManager?");
+		}
+
 		LoadCoursesIntoList();
+		LoadUserInfo();
 	}
 
-	public void LoadCoursesIntoList () {
+	private void LoadUserInfo()
+	{
+		welcome.text = "Welcome <color=\"#fb8717\">" + userDataManager.GetName() + "</color>,";
+	}
+
+	private void LoadCoursesIntoList () {
 		Course[] _courses = courseManager.courseList.ToArray();
 
 		//Loop through all courses in the list

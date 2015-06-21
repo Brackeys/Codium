@@ -822,6 +822,52 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 480114, guid: 33e6fda9e8a28ec45b119ffdca2048e0, type: 2}
   m_PrefabInternal: {fileID: 1746639586}
+--- !u!1001 &497256509
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1685055939}
+    m_Modifications:
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &497256510 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 422448, guid: 74c581cd2d552ca4e9aebeb636603d6b, type: 2}
+  m_PrefabInternal: {fileID: 497256509}
 --- !u!1 &524838246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,11 +1792,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11488720, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_Interactable
@@ -2403,6 +2449,7 @@ Transform:
   - {fileID: 482279685}
   - {fileID: 561784384}
   - {fileID: 344331466}
+  - {fileID: 497256510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1699389053
@@ -3203,7 +3250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22479814, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 162.711868
       objectReference: {fileID: 0}
     - target: {fileID: 22498606, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3370,6 +3417,7 @@ MonoBehaviour:
   courseListObject: {fileID: 616641861}
   courseDisplayPrefab: {fileID: 22425962, guid: 32c166ef0023d344495d254e81d2c720,
     type: 2}
+  welcome: {fileID: 1859083989}
 --- !u!4 &2100390274
 Transform:
   m_ObjectHideFlags: 0

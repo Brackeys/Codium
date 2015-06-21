@@ -46,6 +46,7 @@ public class ApplicationManager : MonoBehaviour {
 	#endregion
 
 	private UserDataManager userDataManager;
+	private CourseManager courseManager;
 
 	private ModalPanel modalPanel;
 	private UnityAction yesQuitAction;
@@ -61,6 +62,11 @@ public class ApplicationManager : MonoBehaviour {
 		if (userDataManager == null)
 		{
 			Debug.LogError("No UserDataManager found");
+		}
+		courseManager = CourseManager.ins;
+		if (courseManager == null)
+		{
+			Debug.LogError("No CourseManager found");
 		}
 
 		modalPanel = ModalPanel.ins;
@@ -82,7 +88,6 @@ public class ApplicationManager : MonoBehaviour {
 	}
 	private void _ReloadCourseViewScene()
 	{
-		Debug.Log("TODO: Reload scene animation.");
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
@@ -90,12 +95,10 @@ public class ApplicationManager : MonoBehaviour {
 	{
 		StartCoroutine(_FadeOutLoadLevel("CourseView"));
 	}
-
 	public void TransitionToMainMenuScene()
 	{
 		StartCoroutine(_FadeOutLoadLevel("MainMenu"));
 	}
-
 	private IEnumerator _FadeOutLoadLevel(string _level)
 	{
 		yield return new WaitForSeconds(fade.BeginFade(1));

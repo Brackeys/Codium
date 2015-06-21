@@ -106,4 +106,39 @@ public class UserDataManager : MonoBehaviour
 		if (learnPointsText != null)
 			learnPointsText.text = user.learnPoints.ToString() + "   Learn Points";
 	}
+
+	#region Helpful getter/setter methods
+
+	public string GetName()
+	{
+		if (user == null)
+		{
+			Debug.LogError("User is null. Cannot get name");
+			return "Error: user is null";
+		}
+		return user.name;
+	}
+
+	public int GetLearnPoints()
+	{
+		if (user == null)
+		{
+			Debug.LogError("User is null. Cannot get learn points");
+			return -1;
+		}
+		return user.learnPoints;
+	}
+
+
+	public void GiveLearnPoints(int amount)
+	{
+		if (user == null)
+		{
+			Debug.LogError("User is null. Cannot set learn points");
+			return;
+		}
+		user.learnPoints += amount;
+		SaveUserData();
+	}
+	#endregion
 }

@@ -7,14 +7,12 @@ public class CurCourseData
 {
 
 	public string ID;
-	public int curCVIndex;
 
 	public string fileName;
 
-	public CurCourseData(string _ID, int _curCVIndex)
+	public CurCourseData(string _ID)
 	{
 		ID = _ID;
-		curCVIndex = _curCVIndex;
 
 		fileName = "curCourse";
 	}

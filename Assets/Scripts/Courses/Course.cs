@@ -37,6 +37,11 @@ public class Course : ScriptableObject {
 	public List<CourseView> courseViews;
 
 	public string ID;
+
+	public int LPValue
+	{
+		get { return courseViews.Count * NumberMaster.courseViewLPValue; }
+	}
 	
 	// Init default values
 	// Reset is called upon initialization and when the 'Reset to Default' button is pressed.
@@ -56,6 +61,12 @@ public class Course : ScriptableObject {
 	public string GenerateID()
 	{
 		return Guid.NewGuid().ToString("N");
+	}
+
+	public float GetCompletionPercent(int _index)
+	{
+		int _count = courseViews.Count;
+		return (float)(_count / _index) * 100f;
 	}
 }
 
