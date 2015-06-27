@@ -80,47 +80,26 @@ public class CourseManager : MonoBehaviour {
 	public void CompleteCourseView()
 	{
 		Debug.Log("TODO: MAKE THIS METHOD WORK LOLZ");
-
-		int _cvIndex = GetCourseViewIndex(curCourseView);
-		if (_cvIndex == -1)
+		if (IsLastCourseView())		// If this is the last CV: Mark course as completed
 		{
-			Debug.LogError("CourseView couldn't be found in courseViews list.");
-			return;
+			CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
+			_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
+			_ccData.Complete();
+			Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
+
+			applicationManager.TransitionToMainMenuScene();
 		}
-
-		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID, _cvIndex + 1);
-		Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
-
-		if (GetCourseCompletionData_Next() > _cvIndex)
+		else	//else save course and load next view
 		{
-			// Course already completed
-			Debug.Log("CourseCompletionData: Course view '" + _cvIndex + "' already completed.");
-			if (curCourse.GetCompletionPercent(_cvIndex) == 100)
-			{
-				applicationManager.TransitionToMainMenuScene();
-			}
-			else
-			{
-				applicationManager.TransitionToCourseViewScene();
-			}
-		}
-		else
-		{
-			if (curCourse.GetCompletionPercent(_cvIndex) == 100)
-			{
-				achievementManager.CourseCompleted(curCourse);
-			}
-			else
-			{
-				achievementManager.CourseViewCompleted();
-			}
+			SaveCourseCompletionData(1);
+			applicationManager.TransitionToCourseViewScene();
 		}
 	}
 
 	public void LoadNextCourseView()
 	{
 		if (GetCourseCompletionData_Next() <= GetCourseCompletionData_Current()) {
-			Debug.LogError("CourseCompletionData: Could not load next course view because it isn't unlocked: " + GetCourseCompletionData_Current() + 1);
+			Debug.LogError("CourseCompletionData: Could not load next course view because it isn't unlocked or course is complete " + (GetCourseCompletionData_Current() + 1));
 		}
 		else
 		{
@@ -140,6 +119,17 @@ public class CourseManager : MonoBehaviour {
 			SaveCourseCompletionData(-1);
 			applicationManager.TransitionToCourseViewScene();
 		}
+	}
+
+	private bool IsLastCourseView()
+	{
+		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
+		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
+
+		if (_ccData.nextCVIndex == curCourse.courseViews.Count - 1)
+			return true;
+		else
+			return false;
 	}
 
 	#endregion
@@ -204,87 +194,6 @@ public class CourseManager : MonoBehaviour {
 		}
 		return _ccData.currentCVIndex;
 	}
-
-	//public void SaveCourseCompletionDataIfEmpty()
-	//{
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID, 0);
-	//	if (!Serializer.PathExists(_cCData.fileName))
-	//	{
-	//		Debug.Log("No CourseCompletionData found. Saving first CourseView.");
-	//		SetCurCourseView(0);
-	//		Serializer.Save<CourseCompletionData>(_cCData, _cCData.fileName);
-	//	}
-	//}
-
-	//public void SaveCourseCompletionData()
-	//{
-	//	int _cvIndex = GetCourseViewIndex(curCourseView);
-	//	if (_cvIndex == -1)
-	//	{
-	//		Debug.LogError("CourseView couldn't be found in courseViews list.");
-	//		return;
-	//	}
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID, _cvIndex);
-
-	//	Serializer.Save<CourseCompletionData>(_cCData, _cCData.fileName);
-	//	Debug.Log("CourseCompletionData: Current course saved.");
-
-	//}
-
-	//public void OffsetCourseCompletionDataCurrent(int _offset)
-	//{
-	//	int _cvIndex = GetCourseViewIndex(curCourseView);
-	//	if (_cvIndex == -1)
-	//	{
-	//		Debug.LogError("CourseView couldn't be found in courseList.");
-	//		return;
-	//	}
-
-	//	_cvIndex += _offset;
-
-	//	if (_cvIndex > GetCourseCompletionDataNext())
-	//	{
-	//		Debug.Log("CourseCompletionData: Course view not yet unlocked: " + _cvIndex);
-	//		return;
-	//	}
-	//	if (_cvIndex < 0)
-	//	{
-	//		Debug.Log("CourseCompletionData: Course view index under zero.");
-	//		return;
-	//	}
-
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID, _cvIndex);
-	//	Serializer.Save<CourseCompletionData>(_cCData, _cCData.fileName);
-	//	Debug.Log("CourseCompletionData: Current view saved as: " + _cvIndex);
-	//}
-
-	//public void LoadCourseCompletionDataNext()
-	//{
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID);
-	//	_cCData = Serializer.Load<CourseCompletionData>(_cCData.fileName);
-
-	//	SetCurCourseView(_cCData.nextCVIndex);
-
-	//	Debug.Log("CourseCompletionData: Next view loaded.");
-	//}
-
-	//private int GetCourseCompletionDataNext()
-	//{
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID);
-	//	_cCData = Serializer.Load<CourseCompletionData>(_cCData.fileName);
-
-	//	return _cCData.nextCVIndex;
-	//}
-
-	//public void LoadCourseCompletionDataCurrent()
-	//{
-	//	CourseCompletionData _cCData = new CourseCompletionData(curCourse.ID);
-	//	_cCData = Serializer.Load<CourseCompletionData>(_cCData.fileName);
-
-	//	SetCurCourseView(_cCData.currentCVIndex);
-
-	//	Debug.Log("CourseCompletionData: Current view loaded.");
-	//}
 
 	#endregion
 

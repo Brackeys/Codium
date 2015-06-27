@@ -10,6 +10,8 @@ public class CourseCompletionData
 	public int nextCVIndex;		// The index of the next course view to complete
 	public int currentCVIndex;	// The index of the current course view
 
+	public bool isCompleted;
+
 	public string fileName;
 
 	public CourseCompletionData(string _ID, int _cvIndex)
@@ -17,11 +19,15 @@ public class CourseCompletionData
 		ID = _ID;
 		Init(_cvIndex);
 
+		isCompleted = false;
+
 		fileName = "courseCompletion_" + _ID;
 	}
 
 	public CourseCompletionData(string _ID)
 	{
+		isCompleted = false;
+
 		fileName = "courseCompletion_" + _ID;
 	}
 
@@ -32,6 +38,11 @@ public class CourseCompletionData
 			nextCVIndex = _cvIndex;
 		}
 		currentCVIndex = _cvIndex;
+	}
+
+	public void Complete()
+	{
+		isCompleted = true;
 	}
 
 }
