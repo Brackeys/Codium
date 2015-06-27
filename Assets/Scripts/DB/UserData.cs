@@ -17,14 +17,19 @@ public class UserData {
 
 	public UserData()
 	{
+		// Do nothing
+	}
+
+	public void Init()
+	{
 		ID = GenerateID();
 
 		name = "Dwayne Johnson";
-		learnPoints = 1400;
+		learnPoints = NumberMaster.startingLP;
 
 		signupDate = DateTime.Now;
 
-		//Debug.Log("User " + name + " signed up " + signupDate.Date.ToString("d"));
+		Debug.Log("User " + name + " signed up " + signupDate.Date.ToString("d"));
 	}
 
 	public string GenerateID()

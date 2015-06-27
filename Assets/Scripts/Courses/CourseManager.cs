@@ -79,20 +79,36 @@ public class CourseManager : MonoBehaviour {
 
 	public void CompleteCourseView()
 	{
-		Debug.Log("TODO: MAKE THIS METHOD WORK LOLZ");
 		if (IsLastCourseView())		// If this is the last CV: Mark course as completed
 		{
 			CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
 			_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
-			_ccData.Complete();
-			Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
 
-			applicationManager.TransitionToMainMenuScene();
+			if (!_ccData.isCompleted)
+			{
+				_ccData.Complete();
+				Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
+
+				achievementManager.CourseCompleted(curCourse);
+			}
+			else
+			{
+				// Do nothing
+			}
 		}
 		else	//else save course and load next view
 		{
+
 			SaveCourseCompletionData(1);
-			applicationManager.TransitionToCourseViewScene();
+
+			if (!CourseViewIsCompleted())
+			{
+				achievementManager.CourseViewCompleted();
+			}
+			else
+			{
+				applicationManager.TransitionToCourseViewScene();
+			}
 		}
 	}
 
@@ -126,10 +142,26 @@ public class CourseManager : MonoBehaviour {
 		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
 		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
 
-		if (_ccData.nextCVIndex == curCourse.courseViews.Count - 1)
+		if (_ccData.currentCVIndex == curCourse.courseViews.Count - 1)
 			return true;
 		else
 			return false;
+	}
+
+	private bool CourseViewIsCompleted()
+	{
+		Debug.Log("TODO: Make this method actually work!");
+
+		Debug.Log("Next: " + GetCourseCompletionData_Next() + " - Current: " + GetCourseCompletionData_Current());
+
+		if (GetCourseCompletionData_Next() + 1 > GetCourseCompletionData_Current())
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	#endregion
@@ -141,7 +173,7 @@ public class CourseManager : MonoBehaviour {
 		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
 		if (!Serializer.PathExists(_ccData.fileName))
 		{
-			Debug.Log("No CourseCompletionData found. Saving first CourseView.");
+			Debug.Log("CourseCompletion: No CourseCompletionData found. Saving first CourseView.");
 			SetCurCourseView(0);
 			Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
 		}
@@ -204,7 +236,7 @@ public class CourseManager : MonoBehaviour {
 		CurCourseData _cData = new CurCourseData ();
 		if (!Serializer.PathExists(_cData.fileName))
 		{
-			Debug.Log ("No Course Data found. Saving first Course and CourseView found.");
+			Debug.Log ("CourseData: No Course Data found. Saving first Course and CourseView found.");
 			SetCurCourseByIndex(0);
 			SetCurCourseView(0);
 			_cData.ID = curCourse.ID;
@@ -217,7 +249,7 @@ public class CourseManager : MonoBehaviour {
 		CurCourseData _cData = new CurCourseData(curCourse.ID);
 		Serializer.Save<CurCourseData>(_cData, _cData.fileName);
 
-		Debug.Log("CurCourseData saved.");
+		// Debug.Log("CurCourseData saved.");
 	}
 
 	public void LoadCurCourseData()
@@ -233,7 +265,7 @@ public class CourseManager : MonoBehaviour {
 			}
 		}
 
-		Debug.Log("CurCourseData loaded.");
+		// Debug.Log("CurCourseData loaded.");
 	}
 
 	#endregion

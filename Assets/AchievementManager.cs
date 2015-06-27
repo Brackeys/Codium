@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AchievementManager : MonoBehaviour {
 
@@ -42,9 +43,14 @@ public class AchievementManager : MonoBehaviour {
 
 	#endregion
 
+	private const string rewardTextColor = "<color=#FF9D58>";
+
 	private UserDataManager userDatamanager;
 	private ApplicationManager applicationManager;
-	private CourseManager courseManager;
+
+	private ModalPanel modalPanel;
+	private UnityAction courseCompletedOKEvent;
+	private UnityAction courseViewCompletedOKEvent;
 
 	void Start()
 	{
@@ -59,25 +65,39 @@ public class AchievementManager : MonoBehaviour {
 		{
 			Debug.LogError("No ApplicationManager?!");
 		}
-		courseManager = CourseManager.ins;
-		if (courseManager == null)
+		modalPanel = ModalPanel.ins;
+		if (modalPanel == null)
 		{
-			Debug.LogError("No CourseManager?!");
+			Debug.LogError("No ModalPanel?!");
 		}
+		courseCompletedOKEvent = new UnityAction(_CourseCompleted);
+		courseViewCompletedOKEvent = new UnityAction(_CourseViewCompleted);
 	}
 
 	public void CourseViewCompleted()
 	{
 		Print("Course View Completed!");
-		userDatamanager.GiveLearnPoints(NumberMaster.courseViewLPValue);	// Give learn points for view
+		int _lpReward = NumberMaster.courseViewLPValue;
+		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.";
+		modalPanel.Notification(_msg, courseViewCompletedOKEvent);
+		userDatamanager.GiveLearnPoints(_lpReward);	// Give learn points for view
+	}
+	private void _CourseViewCompleted()
+	{
 		applicationManager.TransitionToCourseViewScene();
 	}
 
 	public void CourseCompleted(Course _course)
 	{
-		Print("Course Complete!");
-		userDatamanager.GiveLearnPoints(_course.LPValue + NumberMaster.courseViewLPValue);	// Give learn points for course + for view
-		applicationManager.TransitionToMainMenuScene();
+		Print("Course '" + _course.title + "' Complete!");
+		int _lpReward = _course.LPValue + NumberMaster.courseViewLPValue;	// Give learn points for course + for view
+		string _msg = "Entire Course Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.";
+		modalPanel.Notification(_msg, courseCompletedOKEvent);
+		userDatamanager.GiveLearnPoints(_lpReward);
+	}
+	private void _CourseCompleted()
+	{
+		//Do nothing so far
 	}
 
 	private void Print(string msg)

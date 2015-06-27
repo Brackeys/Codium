@@ -62,8 +62,8 @@ public class UserDataManager : MonoBehaviour
 
 	void Start()
 	{
-		user = new UserData();
-		Debug.Log("User " + user.name + " signed up " + user.signupDate.Date.ToString("d"));
+		CreateUserDataIfEmpty();
+		LoadUserData();
 
 		if (usernameText != null)
 			usernameText.text = user.name;
@@ -71,16 +71,6 @@ public class UserDataManager : MonoBehaviour
 			learnPointsText.text = user.learnPoints.ToString() + "   Learn Points";
 
 		InvokeRepeating("UpdateData", 3, 3);
-	}
-
-	public void SaveUserData()
-	{
-		Serializer.Save<UserData>(user, dataFileName);
-	}
-
-	public void LoadUserData()
-	{
-		user = Serializer.Load<UserData>(dataFileName);
 	}
 
 	void OnGUI()
@@ -106,6 +96,40 @@ public class UserDataManager : MonoBehaviour
 		if (learnPointsText != null)
 			learnPointsText.text = user.learnPoints.ToString() + "   Learn Points";
 	}
+
+	#region Saving/Loading user data
+
+	public void SaveUserData()
+	{
+		Serializer.Save<UserData>(user, dataFileName);
+	}
+
+	private void LoadUserData()
+	{
+		user = Serializer.Load<UserData>(dataFileName);
+	}
+
+	private bool UserDataExists()
+	{
+		return Serializer.PathExists(dataFileName);
+	}
+
+	private void CreateUserDataIfEmpty()
+	{
+		if (UserDataExists())
+		{
+			// Do nothing
+			return;
+		}
+
+		Debug.Log("UserData: No userData found. Creating default data file.");
+
+		user = new UserData();
+		user.Init();
+		SaveUserData();
+	}
+
+	#endregion
 
 	#region Helpful getter/setter methods
 

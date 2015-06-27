@@ -84,7 +84,7 @@ public class ApplicationManager : MonoBehaviour {
 
 	public void ReloadCourseViewScene()
 	{
-		modalPanel.Choice("Are you sure you want to reset all?\nThe Course View will reload.", yesReloadCourseViewScene, noReloadCourseViewScene);
+		modalPanel.Choice("Are you sure you want to reset all?\nThis Course Step will reload.", yesReloadCourseViewScene, noReloadCourseViewScene);
 	}
 	private void _ReloadCourseViewScene()
 	{

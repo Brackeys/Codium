@@ -45,7 +45,7 @@ public class CourseDisplay : MonoBehaviour {
 		applicationManager = ApplicationManager.ins;
 		if (applicationManager == null)
 		{
-			Debug.LogError("Panik... No applicaitonManager found.");
+			Debug.LogError("Panic... No applicaitonManager found.");
 		}
 	}
 
