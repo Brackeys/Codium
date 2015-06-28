@@ -139,6 +139,22 @@ public class CourseManager : MonoBehaviour {
 		}
 	}
 
+	// Load course view using an index.
+	// This might make LoadNextCourseView() and LoadPreviousCourseView() deprecated.
+	public void LoadCourseViewByIndex(int _index)
+	{
+		if (_index > GetCourseCompletionData_Next())
+		{
+			Debug.LogError("CourseCompletionData: Could not load course view with index '" + _index + "' because it isn't unlocked.");
+		}
+		else
+		{
+			int _offset = _index - GetCourseCompletionData_Current();
+			SaveCourseCompletionData(_offset);
+			applicationManager.TransitionToCourseViewScene();
+		}
+	}
+
 	private bool IsLastCourseView()
 	{
 		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
