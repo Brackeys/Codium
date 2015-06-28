@@ -77,6 +77,9 @@ public class CourseManager : MonoBehaviour {
 
 	#region Navigate course views
 
+	// Complete the current course view (or entire course) and transition to the next one
+	// This method calls methods on other systems to handle Learn Points, Notification & already
+	// completed course views.
 	public void CompleteCourseView()
 	{
 		if (IsLastCourseView())		// If this is the last CV: Mark course as completed
@@ -98,15 +101,14 @@ public class CourseManager : MonoBehaviour {
 		}
 		else	//else save course and load next view
 		{
-
-			SaveCourseCompletionData(1);
-
 			if (!CourseViewIsCompleted())
 			{
+				SaveCourseCompletionData(1);
 				achievementManager.CourseViewCompleted();
 			}
 			else
 			{
+				SaveCourseCompletionData(1);
 				applicationManager.TransitionToCourseViewScene();
 			}
 		}
@@ -148,19 +150,16 @@ public class CourseManager : MonoBehaviour {
 			return false;
 	}
 
+	// This method uses the save data so make sure not to override it before checking
 	private bool CourseViewIsCompleted()
 	{
-		Debug.Log("TODO: Make this method actually work!");
-
-		Debug.Log("Next: " + GetCourseCompletionData_Next() + " - Current: " + GetCourseCompletionData_Current());
-
-		if (GetCourseCompletionData_Next() + 1 > GetCourseCompletionData_Current())
+		if (GetCourseCompletionData_Next() <= GetCourseCompletionData_Current())
 		{
-			return true;
+			return false;
 		}
 		else
 		{
-			return false;
+			return true;
 		}
 	}
 
