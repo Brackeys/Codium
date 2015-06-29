@@ -18,7 +18,7 @@ MonoBehaviour:
   category: 0
   difficulty: 0
   courseViews:
-  - subject: 01
+  - subject: GameObjects
     explaination: 'Everything you can see in the game is called a GameObject.
 
 
@@ -47,7 +47,7 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
-  - subject: 02
+  - subject: Instantiation
     explaination: 'Everything you can see in the game is called a GameObject.
 
 
@@ -76,7 +76,7 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
-  - subject: 03
+  - subject: The 'new' keyword
     explaination: 'Everything you can see in the game is called a GameObject.
 
 
