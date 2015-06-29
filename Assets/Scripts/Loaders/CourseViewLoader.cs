@@ -58,6 +58,8 @@ public class CourseViewLoader : MonoBehaviour {
 	public Transform instructions;
 	public Text goal;
 
+	public UIDropdown courseViewDropdown;
+
 	// Modal panel
 	private ModalPanel modalPanel;
 	private UnityAction yesResetCode;
@@ -107,6 +109,10 @@ public class CourseViewLoader : MonoBehaviour {
 		{
 			Debug.LogError("No goal object referenced");
 		}
+		if (courseViewDropdown == null)
+		{
+			Debug.LogError("No courseViewDropdown referenced");
+		}
 
 		// Modal panel
 		modalPanel = ModalPanel.ins;
@@ -146,7 +152,7 @@ public class CourseViewLoader : MonoBehaviour {
 	public void LoadCourseView(Course course, int index)
 	{
 		// Load title
-		title.text = course.title;
+		title.text = "<i><b>" + (index + 1).ToString("D2") + "</b></i>  " + course.title;
 
 		// LOAD COURSE VIEW:
 
@@ -240,6 +246,14 @@ public class CourseViewLoader : MonoBehaviour {
 
 			bp.transform.SetParent(instructions);
 		}
+
+		// Load course views into dropdown list
+		for (int i = 0; i < course.courseViews.Count; i++)
+		{
+			courseViewDropdown.AddElement(i, course.courseViews[i].subject);
+			courseViewDropdown.ConfigureCourseViewElements();
+		}
+
 	}
 	#endregion
 

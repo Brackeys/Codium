@@ -101,7 +101,7 @@ public class CourseManager : MonoBehaviour {
 		}
 		else	//else save course and load next view
 		{
-			if (!CourseViewIsCompleted())
+			if (!CurCourseViewIsCompleted())
 			{
 				SaveCourseCompletionData(1);
 				achievementManager.CourseViewCompleted();
@@ -167,7 +167,7 @@ public class CourseManager : MonoBehaviour {
 	}
 
 	// This method uses the save data so make sure not to override it before checking
-	private bool CourseViewIsCompleted()
+	private bool CurCourseViewIsCompleted()
 	{
 		if (GetCourseCompletionData_Next() <= GetCourseCompletionData_Current())
 		{
@@ -177,6 +177,14 @@ public class CourseManager : MonoBehaviour {
 		{
 			return true;
 		}
+	}
+
+	public bool CourseViewIsCompleted(int _index)
+	{
+		if (GetCourseCompletionData_Next() < _index)
+			return false;
+		else
+			return true;
 	}
 
 	#endregion

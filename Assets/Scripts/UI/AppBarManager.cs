@@ -1,4 +1,10 @@
+//-----------------------------------------------------------------
+// Manages general AppBar functionality
+//-----------------------------------------------------------------
+
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class AppBarManager : MonoBehaviour {
 
