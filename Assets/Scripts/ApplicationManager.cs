@@ -1,3 +1,8 @@
+//-----------------------------------------------------------------
+// General purpose script for managing scene switching and other
+// application tasks
+//-----------------------------------------------------------------
+
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
@@ -46,7 +51,6 @@ public class ApplicationManager : MonoBehaviour {
 	#endregion
 
 	private UserDataManager userDataManager;
-	private CourseManager courseManager;
 
 	private ModalPanel modalPanel;
 	private UnityAction yesQuitAction;
@@ -62,11 +66,6 @@ public class ApplicationManager : MonoBehaviour {
 		if (userDataManager == null)
 		{
 			Debug.LogError("No UserDataManager found");
-		}
-		courseManager = CourseManager.ins;
-		if (courseManager == null)
-		{
-			Debug.LogError("No CourseManager found");
 		}
 
 		modalPanel = ModalPanel.ins;
@@ -91,6 +90,10 @@ public class ApplicationManager : MonoBehaviour {
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
+	public void TransitionToSettingsScene()
+	{
+		StartCoroutine(_FadeOutLoadLevel("SettingsMenu"));
+	}
 	public void TransitionToCourseViewScene()
 	{
 		StartCoroutine(_FadeOutLoadLevel("CourseView"));

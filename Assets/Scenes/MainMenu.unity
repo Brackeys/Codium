@@ -1194,7 +1194,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487832, guid: b0e70c3f831edf844a562594828566cf, type: 2}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 17.2177048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0e70c3f831edf844a562594828566cf, type: 2}
@@ -1792,11 +1792,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11488720, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_Interactable
@@ -1958,6 +1958,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192825428}
+--- !u!114 &1231882423 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11491932, guid: e535ae0e7b102e745af7b344efd00b16,
+    type: 2}
+  m_PrefabInternal: {fileID: 356289960}
+  m_Script: {fileID: 11500000, guid: 67ab9ae6e30705d4cb770c249aad29b3, type: 3}
 --- !u!1 &1246167486
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,7 +3256,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22479814, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 162.711868
       objectReference: {fileID: 0}
     - target: {fileID: 22498606, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3291,6 +3297,14 @@ Prefab:
     - target: {fileID: 177914, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467034, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1231882423}
+    - target: {fileID: 11467034, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TransitionToSettingsScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}

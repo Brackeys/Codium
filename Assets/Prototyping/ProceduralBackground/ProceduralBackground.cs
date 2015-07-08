@@ -1,10 +1,11 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // Creates a procedurally generated background with the ability to be animated.
 //-----------------------------------------------------------------
 
 using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class ProceduralBackground : MonoBehaviour {
 
 	public int pixWidth;
@@ -44,14 +45,14 @@ public class ProceduralBackground : MonoBehaviour {
 
 		fadeIndex += fadeSpeed * Time.deltaTime * fadeDirection;
 
-		transform.GetComponent<Renderer>().material.SetFloat("_Blend", Mathf.Clamp01(fadeIndex));
+		transform.GetComponent<Renderer>().sharedMaterial.SetFloat("_Blend", Mathf.Clamp01(fadeIndex));
 	}
 
 	void GenerateTexture (string texName) {
 		Texture2D noiseTex = new Texture2D(pixWidth, pixHeight);
 		noiseTex.SetPixels(CalcNoise());
 		noiseTex.Apply();
-		transform.GetComponent<Renderer>().material.SetTexture (texName, noiseTex);
+		transform.GetComponent<Renderer>().sharedMaterial.SetTexture(texName, noiseTex);
 	}
 
 	Color[] CalcNoise() {
