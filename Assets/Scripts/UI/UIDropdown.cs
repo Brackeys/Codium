@@ -22,7 +22,6 @@ public class UIDropdown : MonoBehaviour {
 
 
 	public Image backgroundImage;
-	private RectTransform backgroundRectTransform;
 	private CanvasGroup backgroundCanvasGroup;
 
 	private byte state;
@@ -34,13 +33,7 @@ public class UIDropdown : MonoBehaviour {
 
 	void Awake()
 	{
-		backgroundRectTransform = backgroundImage.GetComponent<RectTransform>();
 		backgroundCanvasGroup = backgroundImage.GetComponent<CanvasGroup>();
-	}
-
-	void Start()
-	{
-		backgroundRectTransform.sizeDelta = new Vector2(Screen.width, backgroundRectTransform.sizeDelta.y);
 	}
 
 	public void Toggle()

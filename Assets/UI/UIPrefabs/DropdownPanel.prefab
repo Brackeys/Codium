@@ -30,6 +30,7 @@ GameObject:
   - 225: {fileID: 22581470}
   - 114: {fileID: 11441020}
   - 114: {fileID: 11471634}
+  - 114: {fileID: 11489418}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -219,6 +220,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11489418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d79be9b93a844dfbe1814a64ee809d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11495298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,11 +274,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22497242}
   m_RootOrder: 0
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1087, y: -504.049927}
-  m_SizeDelta: {x: 0, y: 1101.30005}
-  m_Pivot: {x: 0, y: .5}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 868, y: 100}
+  m_Pivot: {x: .5, y: .50000006}
 --- !u!224 &22475340
 RectTransform:
   m_ObjectHideFlags: 1
@@ -279,10 +291,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22497242}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 2.28881836e-05, y: 0}
+  m_SizeDelta: {x: 212, y: 0}
   m_Pivot: {x: .500000119, y: 1}
 --- !u!224 &22497242
 RectTransform:
@@ -298,10 +310,10 @@ RectTransform:
   - {fileID: 22475340}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -.000207539997, y: -12.6000004}
-  m_SizeDelta: {x: -1646, y: 12.6999998}
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 435.000031, y: 515}
+  m_SizeDelta: {x: 309, y: 100}
   m_Pivot: {x: .500000119, y: 1}
 --- !u!225 &22581470
 CanvasGroup:
