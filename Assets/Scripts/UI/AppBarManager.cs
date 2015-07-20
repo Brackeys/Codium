@@ -29,4 +29,8 @@ public class AppBarManager : MonoBehaviour {
 		applicationManager.TransitionToMainMenuScene();
 	}
 
+	public void Settings() {
+		applicationManager.TransitionToSettingsScene();
+	}
+
 }
