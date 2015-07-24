@@ -53,9 +53,13 @@ public class Course : ScriptableObject {
 		difficulty = Difficulty.Beginner;
 		courseViews = new List<CourseView>();
 
+		Debug.Log ("Course values reset.");
+	}
+	public void ResetID()
+	{
 		ID = GenerateID();
 
-		Debug.Log ("Course values reset.");
+		Debug.Log("ID reset.");
 	}
 
 	public string GenerateID()
@@ -84,6 +88,8 @@ public class CourseView {
 	public string defaultCode;
 	public string solutionCode;
 	public string hint;
+
+	public UnityEngine.Object gameScene;
 
 	// Class constructor
 	public CourseView () {

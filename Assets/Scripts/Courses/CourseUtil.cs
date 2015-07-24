@@ -1,14 +1,16 @@
-﻿//-----------------------------------------------------------------
+//-----------------------------------------------------------------
 // Hosts utility methods for handling / loading course assets at runtime.
 //-----------------------------------------------------------------
 
 using UnityEngine;
+using UnityEditor;
 using System.Collections.Generic;
 
-public class CourseUtil {
+public class CourseUtil
+{
 
 
-	// ------- COURSE LOADING -------
+	#region COURSE LOADING
 
 	public static Course LoadCourse (string name) {
 		Course course = Resources.Load<Course>("Courses" + name);
@@ -29,10 +31,9 @@ public class CourseUtil {
 
 		return courses;
 	}
+	#endregion
 
-
-	// ------- COURSE SORTING -------
-
+	#region COURSE SORTING
 
 	// Sort course list by course title
 	public static List<Course> SortCoursesByTitle (List<Course> courses) {
@@ -81,4 +82,70 @@ public class CourseUtil {
 		
 		return sortedList;
 	}
+	#endregion
+
+	#region GAME SCENE HANDLING
+
+	//Check if scene is added to Build Settings
+	public static bool IsInBuildSettings(Object _sceneObj)
+	{
+
+		string _pathToScene = AssetDatabase.GetAssetPath(_sceneObj);
+		EditorBuildSettingsScene _scene = new EditorBuildSettingsScene(_pathToScene, true);
+
+		for (int i = 0; i < EditorBuildSettings.scenes.Length; i++)
+		{
+			if (EditorBuildSettings.scenes[i].path == _scene.path)
+			{
+				return true;
+			}
+
+			//Debug.Log("Scene: " + i + " - " + EditorBuildSettings.scenes[i].path);
+		}
+
+		return false;
+
+	}
+
+	//Ads the scene to Build Settings
+	public static void AddToBuildSettings(Object _sceneObj)
+	{
+		string _pathToScene = AssetDatabase.GetAssetPath(_sceneObj);
+		EditorBuildSettingsScene _scene = new EditorBuildSettingsScene(_pathToScene, true);
+
+		EditorBuildSettingsScene[] original = EditorBuildSettings.scenes;
+		EditorBuildSettingsScene[] newSettings = new EditorBuildSettingsScene[original.Length + 1];
+		System.Array.Copy(original, newSettings, original.Length);
+
+		newSettings[original.Length] = _scene;
+
+		EditorBuildSettings.scenes = newSettings;
+
+		Debug.Log("Scene with path: " + _scene.path + " has been added to Build Settings");
+	}
+
+	//Removes the scene from Build Settings
+	public static void RemoveFromBuildSettings(Object _sceneObj)
+	{
+
+		string _pathToScene = AssetDatabase.GetAssetPath(_sceneObj);
+		EditorBuildSettingsScene _scene = new EditorBuildSettingsScene(_pathToScene, true);
+
+		List<EditorBuildSettingsScene> _scenes = new List<EditorBuildSettingsScene>();
+
+		for (int i = 0; i < EditorBuildSettings.scenes.Length; i++)
+		{
+			if (EditorBuildSettings.scenes[i].path != _scene.path)
+			{
+				_scenes.Add(EditorBuildSettings.scenes[i]);
+			}
+		}
+
+		EditorBuildSettings.scenes = _scenes.ToArray();
+
+		Debug.Log("Scene with path: " + _scene.path + " has been removed from Build Settings");
+	}
+
+	#endregion
+
 }

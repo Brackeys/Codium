@@ -47,6 +47,7 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
+    gameScene: {fileID: 102900000, guid: f4c0664a8b0a14d1dab31119359a6daa, type: 3}
   - subject: Instantiation
     explaination: 'Everything you can see in the game is called a GameObject.
 
@@ -76,6 +77,7 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
+    gameScene: {fileID: 0}
   - subject: The 'new' keyword
     explaination: 'Everything you can see in the game is called a GameObject.
 
@@ -105,4 +107,5 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
+    gameScene: {fileID: 0}
   ID: 64354c3df6c84af8b35e9bcd1a80acb2

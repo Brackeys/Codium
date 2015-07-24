@@ -24,6 +24,7 @@ public class CourseEditor : Editor {
 		path = FileUtil.GetProjectRelativePath(path);
 
 		Course course = CreateInstance<Course>();
+		course.ResetID();
 		AssetDatabase.CreateAsset (course, path);
 
 		AssetDatabase.SaveAssets();
@@ -58,6 +59,11 @@ public class CourseEditor : Editor {
 		}
 
 		GUI.color = Color.white;
+		if (GUILayout.Button("Generate ID"))
+		{
+			course.ResetID();
+		}
+		course.ID = EditorGUILayout.TextField("ID", course.ID);
 
 		EditorGUILayout.Space();
 		EditorGUILayout.Space();
@@ -162,6 +168,31 @@ public class CourseEditor : Editor {
 
 			EditorGUILayout.LabelField ("Solution Code:", cw.solutionCode.Length + "/800 chars");
 			cw.solutionCode = EditorGUILayout.TextArea(cw.solutionCode, GUILayout.Height(100));
+
+			EditorGUILayout.Space();
+
+			cw.gameScene = EditorGUILayout.ObjectField("Game Scene:", cw.gameScene, typeof(UnityEngine.Object), false);
+			if (cw.gameScene != null)
+			{
+				if (!CourseUtil.IsInBuildSettings(cw.gameScene))
+				{
+					GUI.color = Color.green;
+					if (GUILayout.Button("Add to Build Settings"))
+					{
+						CourseUtil.AddToBuildSettings(cw.gameScene);
+					}
+					GUI.color = Color.white;
+				}
+				else
+				{
+					GUI.color = Color.red;
+					if (GUILayout.Button("Remove from Build Settings"))
+					{
+						CourseUtil.RemoveFromBuildSettings(cw.gameScene);
+					}
+					GUI.color = Color.white;
+				}
+			}
 
 			EditorGUILayout.Space();
 

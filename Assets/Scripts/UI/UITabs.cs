@@ -4,6 +4,7 @@
 //-----------------------------------------------------------------
 
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -14,7 +15,8 @@ public class UITabs : MonoBehaviour
 	public class UITab
 	{
 		public Button button;
-		public GameObject content;
+		public UnityEvent enableEvent;
+		public UnityEvent disableEvent;
 	}
 
 	public UITab[] tabs;
@@ -38,7 +40,7 @@ public class UITabs : MonoBehaviour
 
 		for (int i = 0; i < tabs.Length; i++)
 		{
-			if (tabs[i].content == null || tabs[i].button == null)
+			if (tabs[i].button == null)
 			{
 				Debug.LogError("Tab " + i + " incorrectly setup. Missing reference.");
 				return;
@@ -50,7 +52,7 @@ public class UITabs : MonoBehaviour
 				Text t = tabs[i].button.GetComponentInChildren<Text>();
 				if (t != null)
 					t.color = textOnColor;
-				tabs[i].content.SetActive(true);
+				tabs[i].enableEvent.Invoke();
 			}
 			else
 			{
@@ -58,7 +60,7 @@ public class UITabs : MonoBehaviour
 				Text t = tabs[i].button.GetComponentInChildren<Text>();
 				if (t != null)
 					t.color = textOffColor;
-				tabs[i].content.SetActive(false);
+				tabs[i].disableEvent.Invoke();
 			}
 		}
 	}
