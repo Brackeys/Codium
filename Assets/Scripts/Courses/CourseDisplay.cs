@@ -14,11 +14,15 @@ public class CourseDisplay : MonoBehaviour {
 	private Text category;
 	[SerializeField]
 	private Text difficulty;
+	[SerializeField]
+	private Image completionBar;
+	[SerializeField]
+	private Text completionText;
 
 	private CourseManager courseManager;
 	private ApplicationManager applicationManager;
 
-	void Start()
+	void Init()
 	{
 		if (title == null)
 		{
@@ -36,6 +40,14 @@ public class CourseDisplay : MonoBehaviour {
 		{
 			Debug.LogError("No difficulty object referenced");
 		}
+		if (completionBar == null)
+		{
+			Debug.LogError("No completionBar object referenced");
+		}
+		if (completionText == null)
+		{
+			Debug.LogError("No completionText object referenced");
+		}
 
 		courseManager = CourseManager.ins;
 		if (courseManager == null)
@@ -51,10 +63,17 @@ public class CourseDisplay : MonoBehaviour {
 
 	public void Load(Course _course)
 	{
+		Init();
+
 		title.text = _course.title;
 		desc.text = _course.description;
 		category.text = _course.category.ToString();
 		difficulty.text = _course.difficulty.ToString();
+
+		float _pct = courseManager.GetCompletionPercent(_course);
+		completionBar.fillAmount = _pct/100f;
+		int _pctInt = Mathf.RoundToInt(_pct);
+		completionText.text = string.Format("{0}% mastered", _pctInt);
 
 		course = _course;
 	}

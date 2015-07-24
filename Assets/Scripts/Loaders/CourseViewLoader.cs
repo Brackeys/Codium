@@ -267,7 +267,10 @@ public class CourseViewLoader : MonoBehaviour {
 		}
 
 		// Load the game scene
-		gvManager.SetupGameScene(cv.gameScene.name);
+		if (cv.gameScene != null)
+		{
+			gvManager.SetupGameScene(cv.gameScene.name);
+		}
 
 	}
 	#endregion

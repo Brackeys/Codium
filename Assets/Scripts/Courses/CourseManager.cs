@@ -250,6 +250,22 @@ public class CourseManager : MonoBehaviour {
 		return _ccData.currentCVIndex;
 	}
 
+	public float GetCompletionPercent(Course _course)
+	{
+		CourseCompletionData _ccData = new CourseCompletionData(_course.ID);
+		if (!Serializer.PathExists(_ccData.fileName))
+		{
+			return 0f;
+		}
+
+		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
+		if (_ccData.isCompleted)
+		{
+			return 100f;
+		}
+		return _course.GetCompletionPercent(_ccData.nextCVIndex);
+	}
+
 	#endregion
 
 	#region Save and load current course data

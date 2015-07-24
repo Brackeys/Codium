@@ -69,8 +69,10 @@ public class Course : ScriptableObject {
 
 	public float GetCompletionPercent(int _index)
 	{
+		if (_index == 0)
+			return 0f;
 		int _count = courseViews.Count;
-		return (float)(_count / _index) * 100f;
+		return (float)_index / _count * 100f;
 	}
 }
 
