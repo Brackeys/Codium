@@ -1,39 +1,58 @@
 //-----------------------------------------------------------------
-// Loads levels and sets up console.
+// This component currently doesn't do too much but will probably be
+// expanded on in the future.
+// The central component for loading the GameView into the CourseView scene.
 //-----------------------------------------------------------------
 
 using UnityEngine;
-using System.Collections;
 
 namespace GameView
 {
+	[RequireComponent(typeof(GVScreen))]
 	[RequireComponent(typeof(GVViewport))]
 	[RequireComponent(typeof(GVConsole))]
 	public class GVManager : MonoBehaviour
 	{
 
-		public enum GameType
+		#region Singleton pattern (Awake)
+		private static GVManager _ins;
+		public static GVManager ins
 		{
-			level,
-			console
-		};
+			get
+			{
+				if (_ins == null)
+				{
+					_ins = GameObject.FindObjectOfType<GVManager>();
+				}
 
-		public GameType gameType;
-		public string scene = "";
+				return _ins;
+			}
+			set
+			{
+				_ins = value;
+			}
+		}
 
-		// Use this for initialization
 		void Awake()
 		{
-			if (gameType == GameType.level)
+			if (_ins == null)
 			{
-				Debug.Log("TODO: Check if scene exists.");
-				Application.LoadLevelAdditive(scene);
-				//GetComponent<GVViewport>().enabled = true;
+				// Populate with first instance
+				_ins = this;
 			}
-			else if (gameType == GameType.console)
+			else
 			{
-				//GetComponent<GVConsole>().enabled = true;
+				// Another instance exists, destroy
+				if (this != _ins)
+					Destroy(this.gameObject);
 			}
+		}
+
+		#endregion
+
+		public void SetupGameScene(string _sceneName)
+		{
+			Application.LoadLevelAdditive(_sceneName);
 		}
 	}
 }

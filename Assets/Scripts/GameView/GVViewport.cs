@@ -13,21 +13,15 @@ namespace GameView
 	{
 		public bool drawViewport = true;
 
-		[Header("Leave empty to use Main Camera:")]
-		public Camera cam;
+		private Camera cam;
 
 		//Used for checking if the screen size has changed
 		float prevHeight = 0;
 		float prevWidth = 0;
 
-		void Start()
+		public void Init(Camera _cam)
 		{
-			cam = Camera.main;
-			if (cam == null)
-			{
-				Debug.LogError("No camera found in Camera Vieport!");
-				return;
-			}
+			cam = _cam;
 
 			Rect pr = GVScreen.DisplayRect;
 			cam.pixelRect = new Rect(pr.x, Screen.height - pr.yMax, pr.width, pr.height);
@@ -35,6 +29,9 @@ namespace GameView
 
 		void Update()
 		{
+			if (cam == null)
+				return;
+
 			if (drawViewport)
 			{
 				if (GVScreen.isMinimized)

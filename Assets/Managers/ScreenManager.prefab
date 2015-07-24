@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 424064}
-  - 114: {fileID: 11426104}
   - 114: {fileID: 11425544}
+  - 114: {fileID: 11426104}
   - 114: {fileID: 11470242}
   - 114: {fileID: 11452780}
   m_Layer: 0
@@ -42,8 +42,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1711fa4c610849b4a5712c8d10b3d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameType: 1
-  scene: ExampleGameView
 --- !u!114 &11426104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,10 +53,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ab2152a1f7a49b194728edc9546700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysUpdate: 0
   screenTex: {fileID: 2800000, guid: 03a3757d508384008a824d7cf9123a5a, type: 3}
   screenSize: 5
   xOffset: 38.8899994
-  yOffset: 50.2999992
+  yOffset: 52.2799988
   contentRect:
     serializedVersion: 2
     x: -43
@@ -71,18 +70,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154c43a92ef4d4e49a3a39da2c5ad276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawViewport: 1
 --- !u!114 &11470242
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166414}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d85e4908a5f834d8890575cdf6ddce24, type: 3}
   m_Name: 

@@ -6,6 +6,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using GameView;
 
 public class CourseViewLoader : MonoBehaviour {
 
@@ -68,6 +69,9 @@ public class CourseViewLoader : MonoBehaviour {
 	// Course manager
 	private CourseManager courseManager;
 
+	//GameView manager
+	private GVManager gvManager;
+
 	void Start () {
 		if (title == null)
 		{
@@ -129,6 +133,14 @@ public class CourseViewLoader : MonoBehaviour {
 		{
 			Debug.LogError("No CourseManager?");
 		}
+
+		//GameView manager
+		gvManager = GVManager.ins;
+		if (gvManager == null)
+		{
+			Debug.LogError("No GVManager?");
+		}
+
 		LoadCurrentCourseView();
 	}
 
@@ -253,6 +265,9 @@ public class CourseViewLoader : MonoBehaviour {
 			courseViewDropdown.AddElement(i, course.courseViews[i].subject);
 			courseViewDropdown.ConfigureCourseViewElements();
 		}
+
+		// Load the game scene
+		gvManager.SetupGameScene(cv.gameScene.name);
 
 	}
 	#endregion
