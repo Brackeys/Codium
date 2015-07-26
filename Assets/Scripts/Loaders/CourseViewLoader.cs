@@ -206,6 +206,7 @@ public class CourseViewLoader : MonoBehaviour {
 			}
 			bpText.text = "    " + cv.codeBulletPoints[i];
 			bp.transform.SetParent(codeDesc);
+			bp.localScale = Vector3.one;
 		}
 
 		// Load example bullet points
@@ -226,6 +227,7 @@ public class CourseViewLoader : MonoBehaviour {
 			}
 			bpText.text = "    " + cv.exampleBulletPoints[i];
 			bp.transform.SetParent(examples);
+			bp.localScale = Vector3.one;
 		}
 
 		// load default code

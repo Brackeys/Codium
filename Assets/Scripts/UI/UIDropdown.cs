@@ -158,6 +158,7 @@ public class UIDropdown : MonoBehaviour {
 	{
 		RectTransform _ref = Instantiate(elementPrefab) as RectTransform;
 		_ref.SetParent (gfx.transform);
+		_ref.localScale = Vector3.one;
 		Transform _titleObj = _ref.FindChild("Title");
 		if (_titleObj == null)
 		{
