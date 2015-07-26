@@ -171,6 +171,16 @@ public class CourseEditor : Editor {
 
 			EditorGUILayout.Space();
 
+			EditorGUILayout.LabelField("Code Environment Settings:");
+			CodeEnvironment.CESettings _ceSettings = cw.ceSettings;
+
+			_ceSettings.expressionMode = EditorGUILayout.Toggle("Expression mode (simple evaluation):", _ceSettings.expressionMode);
+
+			cw.ceSettings = _ceSettings;
+
+			EditorGUILayout.Space();
+			EditorGUILayout.Space();
+
 			cw.gameScene = EditorGUILayout.ObjectField("Game Scene:", cw.gameScene, typeof(UnityEngine.Object), false);
 			if (cw.gameScene != null)
 			{

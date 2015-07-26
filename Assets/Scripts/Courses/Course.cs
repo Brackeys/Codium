@@ -91,6 +91,8 @@ public class CourseView {
 	public string solutionCode;
 	public string hint;
 
+	public CodeEnvironment.CESettings ceSettings;
+
 	public UnityEngine.Object gameScene;
 
 	// Class constructor
@@ -117,5 +119,7 @@ public class CourseView {
 									"Cube.renderer.material.color = Color.red;";
 
 		hint = "Remember to put ';' at the end of the line.";
+
+		ceSettings = new CodeEnvironment.CESettings();
 	}
 }

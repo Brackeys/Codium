@@ -11,97 +11,100 @@ using System.Reflection;
 using System.Text;
 using Mono.CSharp;
 
-public class UCCE
+namespace CodeEnvironment
 {
-	private Evaluator _evaluator;
 
-	private StringBuilder _stringBuilder;
-	private ModuleContainer _module;
-	private ReflectionImporter _importer;
-	private MethodInfo _importTypes;
-	private string _error = string.Empty;
-
-	public UCCE()
+	public class CEUCCE
 	{
-		_stringBuilder = new StringBuilder();
-		TextWriter _writer = new StringWriter(_stringBuilder);
-		CompilerSettings settings = new CompilerSettings();
-		settings.LoadDefaultReferences = false;
-		settings.StdLib = false;
-		ReportPrinter printer = new StreamReportPrinter(_writer);
-		CompilerContext ctx = new CompilerContext(settings, printer);
-		_evaluator = new Evaluator(ctx);
+		private Evaluator _evaluator;
 
-		InitEvaluator();
-		RegisterTypes(BuiltInTypes);
-		RegisterTypes(AdditionalTypes);
-	}
+		private StringBuilder _stringBuilder;
+		private ModuleContainer _module;
+		private ReflectionImporter _importer;
+		private MethodInfo _importTypes;
+		private string _error = string.Empty;
 
-	public bool Run(string code)
-	{
-		_stringBuilder.Length = 0;
-		var result = _evaluator.Run(code);
-		_error = _stringBuilder.ToString();
-		return result;
-	}
-
-	public bool Evaluate<T>(string code, out T result)
-	{
-		object resultVal;
-		bool resultSet;
-
-		result = default(T);
-		_stringBuilder.Length = 0;
-		string res = _evaluator.Evaluate(code, out resultVal, out resultSet);
-		_error = _stringBuilder.ToString();
-
-		if (res != null)
+		public CEUCCE()
 		{
-			return false;
+			_stringBuilder = new StringBuilder();
+			TextWriter _writer = new StringWriter(_stringBuilder);
+			CompilerSettings settings = new CompilerSettings();
+			settings.LoadDefaultReferences = false;
+			settings.StdLib = false;
+			ReportPrinter printer = new StreamReportPrinter(_writer);
+			CompilerContext ctx = new CompilerContext(settings, printer);
+			_evaluator = new Evaluator(ctx);
+
+			InitEvaluator();
+			RegisterTypes(BuiltInTypes);
+			RegisterTypes(AdditionalTypes);
 		}
 
-		if (resultSet)
+		public bool Run(string _code)
 		{
-			result = (T)resultVal;
+			_stringBuilder.Length = 0;
+			var result = _evaluator.Run(_code);
+			_error = _stringBuilder.ToString();
+			return result;
 		}
-		return true;
-	}
 
-	public string GetLastError()
-	{
-		return _error;
-	}
-
-	public void RegisterAssemblies(params Assembly[] apiAssembly)
-	{
-		foreach (var assembly in apiAssembly)
+		public bool Evaluate<T>(string code, out T result)
 		{
-			_evaluator.ReferenceAssembly(assembly);
+			object resultVal;
+			bool resultSet;
+
+			result = default(T);
+			_stringBuilder.Length = 0;
+			string res = _evaluator.Evaluate(code, out resultVal, out resultSet);
+			_error = _stringBuilder.ToString();
+
+			if (res != null)
+			{
+				return false;
+			}
+
+			if (resultSet)
+			{
+				result = (T)resultVal;
+			}
+			return true;
 		}
-	}
 
-	public void RegisterTypes(params Type[] types)
-	{
-		_importTypes.Invoke(_importer, new object[] { types, _module.GlobalRootNamespace, false });
-	}
-
-	private void InitEvaluator()
-	{
-		var fieldInfo1 = _evaluator.GetType().GetField("importer", BindingFlags.Instance | BindingFlags.NonPublic);
-		_importer = (ReflectionImporter)fieldInfo1.GetValue(_evaluator);
-
-		var fieldInfo2 = _evaluator.GetType().GetField("module", BindingFlags.Instance | BindingFlags.NonPublic);
-		_module = (ModuleContainer)fieldInfo2.GetValue(_evaluator);
-
-		_importTypes = _importer.GetType().GetMethod("ImportTypes", BindingFlags.NonPublic | BindingFlags.Instance, null,
-			CallingConventions.Any, new Type[] { typeof(Type[]), typeof(Namespace), typeof(bool) }, null);
-	}
-
-	private static Type[] BuiltInTypes
-	{
-		get
+		public string GetLastError()
 		{
-			var types = new Type[] {
+			return _error;
+		}
+
+		public void RegisterAssemblies(params Assembly[] apiAssembly)
+		{
+			foreach (var assembly in apiAssembly)
+			{
+				_evaluator.ReferenceAssembly(assembly);
+			}
+		}
+
+		public void RegisterTypes(params Type[] types)
+		{
+			_importTypes.Invoke(_importer, new object[] { types, _module.GlobalRootNamespace, false });
+		}
+
+		private void InitEvaluator()
+		{
+			var fieldInfo1 = _evaluator.GetType().GetField("importer", BindingFlags.Instance | BindingFlags.NonPublic);
+			_importer = (ReflectionImporter)fieldInfo1.GetValue(_evaluator);
+
+			var fieldInfo2 = _evaluator.GetType().GetField("module", BindingFlags.Instance | BindingFlags.NonPublic);
+			_module = (ModuleContainer)fieldInfo2.GetValue(_evaluator);
+
+			_importTypes = _importer.GetType().GetMethod("ImportTypes", BindingFlags.NonPublic | BindingFlags.Instance, null,
+				CallingConventions.Any, new Type[] { typeof(Type[]), typeof(Namespace), typeof(bool) }, null);
+		}
+
+		private static Type[] BuiltInTypes
+		{
+			get
+			{
+				var types = new Type[] {
 				typeof (System.Object), typeof (ValueType), typeof (System.Attribute), typeof (Int32),
 				typeof (UInt32), typeof (Int64), typeof (UInt64), typeof (Single),
 				typeof (Double), typeof (Char), typeof (Int16), typeof (Decimal),
@@ -112,15 +115,15 @@ public class UCCE
 				typeof (RuntimeFieldHandle), typeof (RuntimeTypeHandle), typeof (Exception), typeof (ParamArrayAttribute),
 				typeof (System.Runtime.InteropServices.OutAttribute),
 			};
-			return types;
+				return types;
+			}
 		}
-	}
 
-	private static Type[] AdditionalTypes
-	{
-		get
+		private static Type[] AdditionalTypes
 		{
-			var types = new Type[] {
+			get
+			{
+				var types = new Type[] {
 				//Extra
 				typeof (UnityEngine.Debug),
 				typeof (UnityEngine.MonoBehaviour),
@@ -309,7 +312,8 @@ public class UCCE
 				typeof (System.Linq.Lookup<,>),
 				typeof (System.Linq.Queryable),
 			};
-			return types;
+				return types;
+			}
 		}
 	}
 }

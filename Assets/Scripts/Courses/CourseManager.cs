@@ -34,6 +34,7 @@ public class CourseManager : MonoBehaviour {
 	// References
 	private AchievementManager achievementManager;
 	private ApplicationManager applicationManager;
+	private CourseViewLoader courseViewLoader;
 
 	void Awake () {
 		if (_ins == null) {
@@ -48,11 +49,6 @@ public class CourseManager : MonoBehaviour {
 
 		UpdateCourseList ();
 		courseList = CourseUtil.SortCourses (courseList);
-
-		SaveCurCourseDataIfEmpty();
-		LoadCurCourseData();
-		SaveCourseCompletionDataIfEmpty();
-		LoadCourseCompletionData();
 	}
 
 	void Start()
@@ -67,6 +63,37 @@ public class CourseManager : MonoBehaviour {
 		{
 			Debug.LogError("No ApplicationManager found!");
 		}
+
+		if (Application.loadedLevelName == "CourseView")
+		{
+			SetupCourseView();
+		}
+		
+	}
+
+	private void SetupCourseView()
+	{
+		courseViewLoader = CourseViewLoader.ins;
+		if (courseViewLoader == null)
+		{
+			Debug.LogError("No CourseViewLoader found!");
+		}
+
+		SaveCurCourseDataIfEmpty();
+		LoadCurCourseData();
+
+		//If no current course, go to main menu
+		if (curCourse == null)
+		{
+			applicationManager.TransitionToMainMenuScene();
+			return;
+		}
+
+		SaveCourseCompletionDataIfEmpty();
+		LoadCourseCompletionData();
+
+		//When all course data is set up, load the current one
+		courseViewLoader.LoadCurrentCourseView();
 	}
 
 	// Populate the courseList variable with Course assets in the /Courses folder

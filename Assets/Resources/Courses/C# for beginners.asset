@@ -11,101 +11,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
   m_Name: C# for beginners
   m_EditorClassIdentifier: 
-  title: C# for beginners
+  title: C# for Beginners
   author: "Asbj\xF8rn Thirslund"
-  description: This course teaches the fundamentals of programming games. It demonstrates
-    techniques on setting up basic game logic.
-  category: 0
+  description: This course teaches  how to write basic code in C# while learning the
+    fundamentals of object-oriented programming.
+  category: 2
   difficulty: 0
   courseViews:
-  - subject: GameObjects
-    explaination: 'Everything you can see in the game is called a GameObject.
+  - subject: Basic Math
+    explaination: 'C# has the power to do amazing things.
 
 
-      GameObjects have different properties which can be manipulated through code.'
+      Let''s start with the absolute basics; Simple math.'
     codeBulletPoints:
-    - To access properties in a GameObject we use the '<b>.</b>'' operator.
-    - Sometimes you have to use the '<b>.</b>'' multiple times to access the property
-      you want.
+    - You can add (+), subtract (-), divide (/) and multiply (*) using C#.
+    - Simply type in the expression you want to calculate.
     - 
     exampleBulletPoints:
-    - Cube.transform.position accesses the position of our Cube.
-    - Cube.renderer.material accesses the way the object looks.
+    - 2+2
+    - 4*5+1
     - 
-    goal: Change the color of the Cube to your liking.
+    goal: Add any two numbers.
     instructionBulletPoints:
-    - Access the Cubes color property under Cube.renderer.material.
-    - Set the color property equal to Color.red.
-    - (Optional) Try the same with blue, green and yellow.
     - 
     - 
     - 
     - 
     - 
-    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\n"
-    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
-    hint: Remember to put ';' at the end of the line.
-    gameScene: {fileID: 102900000, guid: f4c0664a8b0a14d1dab31119359a6daa, type: 3}
-  - subject: Instantiation
-    explaination: 'Everything you can see in the game is called a GameObject.
-
-
-      GameObjects have different properties which can be manipulated through code.'
-    codeBulletPoints:
-    - To access properties in a GameObject we use the '<b>.</b>'' operator.
-    - Sometimes you have to use the '<b>.</b>'' multiple times to access the property
-      you want.
-    - 
-    exampleBulletPoints:
-    - Cube.transform.position accesses the position of our Cube.
-    - Cube.renderer.material accesses the way the object looks.
-    - 
-    goal: Change the color of the Cube to your liking.
-    instructionBulletPoints:
-    - Access the Cubes color property under Cube.renderer.material.
-    - Set the color property equal to Color.red.
-    - (Optional) Try the same with blue, green and yellow.
     - 
     - 
     - 
-    - 
-    - 
-    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\n"
-    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
-    hint: Remember to put ';' at the end of the line.
+    defaultCode: 
+    solutionCode: 2+3
+    hint: 4+5 would be a possible solution.
+    ceSettings:
+      expressionMode: 1
     gameScene: {fileID: 0}
-  - subject: The 'new' keyword
-    explaination: 'Everything you can see in the game is called a GameObject.
-
-
-      GameObjects have different properties which can be manipulated through code.'
-    codeBulletPoints:
-    - To access properties in a GameObject we use the '<b>.</b>'' operator.
-    - Sometimes you have to use the '<b>.</b>'' multiple times to access the property
-      you want.
-    - 
-    exampleBulletPoints:
-    - Cube.transform.position accesses the position of our Cube.
-    - Cube.renderer.material accesses the way the object looks.
-    - 
-    goal: Change the color of the Cube to your liking.
-    instructionBulletPoints:
-    - Access the Cubes color property under Cube.renderer.material.
-    - Set the color property equal to Color.red.
-    - (Optional) Try the same with blue, green and yellow.
-    - 
-    - 
-    - 
-    - 
-    - 
-    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\n"
-    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
-    hint: Remember to put ';' at the end of the line.
-    gameScene: {fileID: 0}
-  ID: 64354c3df6c84af8b35e9bcd1a80acb2
+  ID: 1c54a3ba5c0e40d68a2f7ba492758c05

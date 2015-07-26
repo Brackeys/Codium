@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using GameView;
+using CodeEnvironment;
 
 public class CourseViewLoader : MonoBehaviour {
 
@@ -71,6 +72,9 @@ public class CourseViewLoader : MonoBehaviour {
 
 	//GameView manager
 	private GVManager gvManager;
+
+	//Code Environment Manager
+	private CEManager ceManager;
 
 	void Start () {
 		if (title == null)
@@ -141,7 +145,12 @@ public class CourseViewLoader : MonoBehaviour {
 			Debug.LogError("No GVManager?");
 		}
 
-		LoadCurrentCourseView();
+		//CodeEnvironment manager
+		ceManager = CEManager.ins;
+		if (ceManager == null)
+		{
+			Debug.LogError("No CEManager?");
+		}
 	}
 
 	#region Methods for course load on start
@@ -258,6 +267,9 @@ public class CourseViewLoader : MonoBehaviour {
 
 			bp.transform.SetParent(instructions);
 		}
+
+		// Load Code Environment settings
+		ceManager.SetCESettings(cv.ceSettings);
 
 		// Load course views into dropdown list
 		for (int i = 0; i < course.courseViews.Count; i++)
