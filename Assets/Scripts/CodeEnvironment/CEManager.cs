@@ -158,7 +158,7 @@ namespace CodeEnvironment
 					Debug.Log(_result);
 				}
 
-				if (!PrintLastError())
+				if (!PrintLastError() && _result == "")
 				{
 					Debug.Log("Parsing Error:  Syntax incorrect.");
 				}
