@@ -1313,11 +1313,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 487899853}
-  m_Father: {fileID: 1457898300}
-  m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 230, y: -3.5763e-07}
+  m_Father: {fileID: 579492853}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -57.0000153, y: -3.5763e-07}
   m_SizeDelta: {x: 142, y: 66}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &326170781
@@ -1482,11 +1482,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1832838498}
-  m_Father: {fileID: 1457898300}
-  m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 350.5, y: 0}
+  m_Father: {fileID: 579492853}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 63.4999847, y: 0}
   m_SizeDelta: {x: 131, y: 66}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &356289960
@@ -2889,6 +2889,40 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22496354, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5,
     type: 2}
   m_PrefabInternal: {fileID: 931856276}
+--- !u!1 &579492852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 579492853}
+  m_Layer: 5
+  m_Name: ResetButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &579492853
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 579492852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 248991299}
+  - {fileID: 351667033}
+  m_Father: {fileID: 1457898300}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .0399999991, y: .5}
+  m_AnchorMax: {x: .0399999991, y: .5}
+  m_AnchoredPosition: {x: 96, y: 0}
+  m_SizeDelta: {x: 257, y: 52}
+  m_Pivot: {x: 0, y: .5}
 --- !u!1 &590719231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,6 +3743,7 @@ MonoBehaviour:
   instructions: {fileID: 1212458337}
   goal: {fileID: 1909909751}
   courseViewDropdown: {fileID: 919985665}
+  gvControls: {fileID: 1051178241}
 --- !u!1 &821432799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4426,7 +4461,7 @@ RectTransform:
   - {fileID: 1414269979}
   - {fileID: 1850329204}
   m_Father: {fileID: 1457898300}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -424.999969, y: 0}
@@ -4444,6 +4479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UICam: {fileID: 1442640231}
+  xMin: 700
+  gameViewToggle: {fileID: 1850329203}
+  alwaysUpdate: 0
 --- !u!114 &1051178242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5979,8 +6017,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1208005843}
-  - {fileID: 248991299}
-  - {fileID: 351667033}
+  - {fileID: 579492853}
   - {fileID: 1051178240}
   m_Father: {fileID: 782955589}
   m_RootOrder: 3

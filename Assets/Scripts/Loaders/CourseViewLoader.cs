@@ -62,6 +62,8 @@ public class CourseViewLoader : MonoBehaviour {
 
 	public UIDropdown courseViewDropdown;
 
+	public GVControls gvControls;
+
 	// Modal panel
 	private ModalPanel modalPanel;
 	private UnityAction yesResetCode;
@@ -120,6 +122,10 @@ public class CourseViewLoader : MonoBehaviour {
 		if (courseViewDropdown == null)
 		{
 			Debug.LogError("No courseViewDropdown referenced");
+		}
+		if (gvControls == null)
+		{
+			Debug.LogError("No gvControls referenced");
 		}
 
 		// Modal panel
@@ -280,10 +286,14 @@ public class CourseViewLoader : MonoBehaviour {
 			courseViewDropdown.ConfigureCourseViewElements();
 		}
 
-		// Load the game scene
+		// Load the game scene && game view
 		if (cv.gameScene != null)
 		{
 			gvManager.SetupGameScene(cv.gameScene.name);
+		}
+		else
+		{
+			gvControls.ConfigureConsoleOnly();
 		}
 
 	}

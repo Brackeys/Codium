@@ -9,8 +9,17 @@ namespace GameView
 {
 	public class GVControls : MonoBehaviour
 	{
+		[SerializeField]
+		private Camera UICam;
+		[SerializeField]
+		private float xMin;
 
-		public Camera UICam;
+		[SerializeField]
+		private GameObject gameViewToggle;
+
+		[Tooltip("Convenience when testing:")]
+		public bool alwaysUpdate;
+
 		private RectTransform rt;
 
 		private Rect lastRect;
@@ -20,7 +29,12 @@ namespace GameView
 			rt = GetComponent<RectTransform>();
 			if (UICam == null)
 			{
-				Debug.LogError("GVBControls: No UICam reference.");
+				Debug.LogError("GVControls: No UICam reference.");
+				this.enabled = false;
+			}
+			if (gameViewToggle == null)
+			{
+				Debug.LogError("GVControls: No gameViewToggle referenced.");
 				this.enabled = false;
 			}
 
@@ -30,7 +44,7 @@ namespace GameView
 
 		void Update()
 		{
-			if (GVScreen.ScreenRect != lastRect)
+			if (GVScreen.ScreenRect != lastRect || alwaysUpdate)
 			{
 				SetXPosToScreenCenter();
 				lastRect = GVScreen.ScreenRect;
@@ -40,8 +54,14 @@ namespace GameView
 		void SetXPosToScreenCenter()
 		{
 			float _screenPos = GVScreen.ScreenRect.x + GVScreen.ScreenRect.width / 2f;
+			_screenPos = Mathf.Clamp(_screenPos, xMin, Mathf.Infinity);
 			Vector3 _worldPos = UICam.ScreenToWorldPoint(new Vector3(_screenPos, 0, 0));
 			rt.position = new Vector3(_worldPos.x, rt.position.y, rt.position.z);
+		}
+
+		public void ConfigureConsoleOnly()
+		{
+			gameViewToggle.SetActive(false);
 		}
 
 	}
