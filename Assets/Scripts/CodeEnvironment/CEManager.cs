@@ -153,12 +153,15 @@ namespace CodeEnvironment
 			{
 				System.Object _result;
 				bool _evalRes = ucce.Evaluate<System.Object>(_code, out _result);
-				if (_result != null && _evalRes == true)
+				if (_result != null)
 				{
 					Debug.Log(_result);
 				}
 
-				PrintLastError();
+				if (!PrintLastError())
+				{
+					Debug.Log("Parsing Error:  Syntax incorrect.");
+				}
 				return;
 			}
 
@@ -185,13 +188,18 @@ namespace CodeEnvironment
 			RunCode(codeText.text);
 		}
 
-		// Print last known error
-		public void PrintLastError()
+		// Print last known error - Returns true if error exists
+		public bool PrintLastError()
 		{
 			string _error = ucce.GetLastError();
 			if (_error != "")
 			{
 				Debug.Log(ucce.GetLastError());
+				return true;
+			}
+			else
+			{
+				return false;
 			}
 		}
 

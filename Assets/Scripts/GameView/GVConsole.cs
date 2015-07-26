@@ -106,7 +106,7 @@ namespace GameView
 				GUI.backgroundColor = labelBGColor;
 
 				// Create a label with a color that corresponds to the log type
-				GUILayout.Label("> " + log.message);
+				GUILayout.Label(log.message);
 
 				// Set the color back
 				GUI.contentColor = prevContentColor;
