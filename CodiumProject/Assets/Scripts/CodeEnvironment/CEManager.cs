@@ -152,13 +152,13 @@ namespace CodeEnvironment
 			if (ceSettings.expressionMode)
 			{
 				System.Object _result;
-				bool _evalRes = ucce.Evaluate<System.Object>(_code, out _result);
+				ucce.Evaluate<System.Object>(_code, out _result);
 				if (_result != null)
 				{
-					Debug.Log(_result);
+					Debug.Log(_result.ToString());
 				}
 
-				if (!PrintLastError() && _result == "")
+				if (!PrintLastError() && _result.ToString() == "")
 				{
 					Debug.Log("Parsing Error:  Syntax incorrect.");
 				}

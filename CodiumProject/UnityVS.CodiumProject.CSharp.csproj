@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDCDF94D-41D1-5585-A0BC-9EE2C912F10D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>5.1.1f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_1_1;UNITY_5_1;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_LICENSE;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_EDITOR_METRICS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CSharp">
+      <HintPath>Assets\DLLs\Mono.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\GameViews\CubeOnTurntable\Turntable.cs" />
+    <Compile Include="Assets\MaterialUI\Examples\Scripts\04 - RadioButton\Example04.cs" />
+    <Compile Include="Assets\MaterialUI\Examples\Scripts\05 - Sliders\Example05.cs" />
+    <Compile Include="Assets\MaterialUI\Examples\Scripts\xx - SelectionBoxes\RefreshSelectionBox.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\Anim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ButtonInteractableControl.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\CheckBoxToggler.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\CheckboxConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\CheckboxFillerControl.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ColorCopier.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\DialogBoxConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\EZAnim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\FPSCounter.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\HSBColor.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\InputFieldConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\MaterialGlobals.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\MaterialUIScaler.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\MaterialUIVersion.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\MenuArrowAnim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\NavDrawerConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\RadioConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\RectTransformSnap.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\RippleAnim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\RippleConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\RippleControl.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ScreenConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ScreenManager.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SelectionBoxConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SelectionBoxSubscriber.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SelectionListItemConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ShadowAnim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ShadowConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ShadowGen.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ShadowSnap.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SliderConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SnapButtonToText.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SpriteSwapper.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\SwitchConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\TextInputLine.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ToastAnim.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ToastControl.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\Toaster.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ToggleConfig.cs" />
+    <Compile Include="Assets\MaterialUI\Scripts\ToggleTextChanger.cs" />
+    <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowAutoSize.cs" />
+    <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowEffect.cs" />
+    <Compile Include="Assets\Scripts\AchievementManager.cs" />
+    <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CEManager.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CESettings.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CESyntaxHighlighter.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CEUCCE.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\ICodiumBase.cs" />
+    <Compile Include="Assets\Scripts\Courses\Course.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseCompletionData.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseDisplay.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseManager.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseUtil.cs" />
+    <Compile Include="Assets\Scripts\Courses\CurCourseData.cs" />
+    <Compile Include="Assets\Scripts\DB\Serializer.cs" />
+    <Compile Include="Assets\Scripts\DB\UserData.cs" />
+    <Compile Include="Assets\Scripts\DB\UserDataManager.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVConsole.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVControls.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVGameView.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVManager.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVScreen.cs" />
+    <Compile Include="Assets\Scripts\GameView\GVViewport.cs" />
+    <Compile Include="Assets\Scripts\Loaders\CourseViewLoader.cs" />
+    <Compile Include="Assets\Scripts\Loaders\MainMenuLoader.cs" />
+    <Compile Include="Assets\Scripts\NumberMaster.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Testing\AwaitingInput.cs" />
+    <Compile Include="Assets\Scripts\Testing\KeywordAPI.cs" />
+    <Compile Include="Assets\Scripts\UI\AppBarManager.cs" />
+    <Compile Include="Assets\Scripts\UI\DropdownElement.cs" />
+    <Compile Include="Assets\Scripts\UI\EnableMask.cs" />
+    <Compile Include="Assets\Scripts\UI\Fade.cs" />
+    <Compile Include="Assets\Scripts\UI\FitQuadToScreen.cs" />
+    <Compile Include="Assets\Scripts\UI\FitRectToScreen.cs" />
+    <Compile Include="Assets\Scripts\UI\LayoutElementHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\LineCount.cs" />
+    <Compile Include="Assets\Scripts\UI\ModalPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\ProceduralBackground.cs" />
+    <Compile Include="Assets\Scripts\UI\ResolutionListItem.cs" />
+    <Compile Include="Assets\Scripts\UI\ScrollbarHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAlphaAnim.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBringToFront.cs" />
+    <Compile Include="Assets\Scripts\UI\UIClock.cs" />
+    <Compile Include="Assets\Scripts\UI\UICopyPos.cs" />
+    <Compile Include="Assets\Scripts\UI\UIDropdown.cs" />
+    <Compile Include="Assets\Scripts\UI\UIFollowSize.cs" />
+    <Compile Include="Assets\Scripts\UI\UIGradient.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScaleAnim.cs" />
+    <Compile Include="Assets\Scripts\UI\UISelectOnKeypress.cs" />
+    <Compile Include="Assets\Scripts\UI\UITabs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />
+    <None Include="Assets\Prototyping\ProceduralBackground\BlendTextures.shader" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsCYAN.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsPURPLE.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsRED.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\ExtraKeywords.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\Old\UnityAPIList.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\Old\UnityEngineRegex.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>
