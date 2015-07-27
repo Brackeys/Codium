@@ -32,6 +32,11 @@ namespace CodeEnvironment
 		{
 			ceSettings = _settings;
 		}
+		private CEValidator ceValidator;
+		public void SetCEValidator(CEValidator _validator)
+		{
+			ceValidator = _validator;
+		}
 
 		public Text codeText;
 		public Text formattedCodeText;
@@ -158,22 +163,32 @@ namespace CodeEnvironment
 					Debug.Log(_result.ToString());
 				}
 
-				if (!PrintLastError() && _result.ToString() == "")
+				if (!PrintLastError() && (string)_result == "")
 				{
 					Debug.Log("Parsing Error:  Syntax incorrect.");
 				}
-				return;
 			}
-
-			_code = WrapInNamespace(_code);
-			bool _success = ucce.Run(_code);
-
-			if (_success)
+			else
 			{
-				namespaceCounter++;
-				CallMethods();
+				_code = WrapInNamespace(_code);
+				bool _success = ucce.Run(_code);
+
+				if (_success)
+				{
+					namespaceCounter++;
+					CallMethods();
+				}
+				PrintLastError();
 			}
-			PrintLastError();
+
+			if (ceValidator.Validate())
+			{
+				Debug.Log("SUCCESS");
+			}
+			else
+			{
+				Debug.Log("FAILURE");
+			}
 		}
 
 		// Public method for evaluating C# code if a Text object is referenced

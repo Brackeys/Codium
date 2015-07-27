@@ -5,6 +5,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using System.IO;
 
 public class CourseUtil
 {
@@ -144,6 +145,52 @@ public class CourseUtil
 		EditorBuildSettings.scenes = _scenes.ToArray();
 
 		Debug.Log("Scene with path: " + _scene.path + " has been removed from Build Settings");
+	}
+
+	#endregion
+
+	#region VALIDATOR SCRIPT HANDLING
+
+	// Generates a C# script with the template defined by ValidatorTemplate.txt
+	public static MonoScript GenValidatorTemplate(string _assetPath, int _viewIndex)
+	{
+		string name = Path.GetFileNameWithoutExtension(_assetPath) + "_View" + (_viewIndex + 1).ToString("D2"); ;
+		string fullPath = Path.GetDirectoryName(_assetPath) + "/" + name + ".cs";
+		string resourcesPath = "Assets/Resources/";
+
+		string validatorTemplateName = "ValidatorTemplate.txt";
+		string validatorTemplateTxt = File.ReadAllText(Application.dataPath + "/Resources/Courses/" + validatorTemplateName);
+		validatorTemplateTxt = validatorTemplateTxt.Replace("**CLASSNAME**", name);
+		//Debug.Log(validatorTemplateTxt);
+
+		if (File.Exists(fullPath) == false)
+		{
+			Debug.Log("Creating Validator Template: " + fullPath);
+
+			using (StreamWriter outfile =
+				new StreamWriter(fullPath))
+			{
+				outfile.Write(validatorTemplateTxt);
+			}//File written
+		}
+		else
+		{
+			Debug.Log("File already exists.");
+		}
+		AssetDatabase.Refresh();
+		string relativePath = fullPath.Remove(0, resourcesPath.Length);
+		relativePath = relativePath.Remove(relativePath.Length - 3, 3);
+		//Debug.Log(relativePath);
+		MonoScript _validatorTemp = Resources.Load(relativePath) as MonoScript;
+		if (_validatorTemp == null)
+		{
+			Debug.LogError("Something went wrong. Validator template is null");
+			return null;
+		}
+		else
+		{
+			return _validatorTemp;
+		}
 	}
 
 	#endregion

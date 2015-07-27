@@ -6,6 +6,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEditor;
+using System;
 using GameView;
 using CodeEnvironment;
 
@@ -295,6 +297,20 @@ public class CourseViewLoader : MonoBehaviour {
 		{
 			gvControls.ConfigureConsoleOnly();
 		}
+
+		// Load the validator into empty gameobject
+		if (cv.validator == null)
+		{
+			Debug.LogError("No validator referenced in course view?!");
+			return;
+		}
+		GameObject _validatorGM = new GameObject("_Validator");
+		CEValidator _validator = _validatorGM.AddComponent(cv.validator.GetClass()) as CEValidator;
+		if (_validator == null)
+		{
+			Debug.LogError("Referenced validator is not valid.");
+		}
+		ceManager.SetCEValidator(_validator);
 
 	}
 	#endregion

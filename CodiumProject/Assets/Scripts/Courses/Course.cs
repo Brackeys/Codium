@@ -92,6 +92,7 @@ public class CourseView {
 	public string hint;
 
 	public CodeEnvironment.CESettings ceSettings;
+	public UnityEditor.MonoScript validator;
 
 	public UnityEngine.Object gameScene;
 

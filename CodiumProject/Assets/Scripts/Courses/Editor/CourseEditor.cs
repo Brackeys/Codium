@@ -179,6 +179,19 @@ public class CourseEditor : Editor {
 			cw.ceSettings = _ceSettings;
 
 			EditorGUILayout.Space();
+
+			cw.validator = EditorGUILayout.ObjectField("Validator Script:", cw.validator, typeof(MonoScript), false) as MonoScript;
+			if (cw.validator == null)
+			{
+				GUI.color = Color.green;
+				if (GUILayout.Button("Generate Validator Script Template"))
+				{
+					cw.validator = CourseUtil.GenValidatorTemplate(AssetDatabase.GetAssetPath(course), i);
+				}
+				GUI.color = Color.white;
+			}
+
+			EditorGUILayout.Space();
 			EditorGUILayout.Space();
 
 			cw.gameScene = EditorGUILayout.ObjectField("Game Scene:", cw.gameScene, typeof(UnityEngine.Object), false);

@@ -123,8 +123,10 @@
     <Compile Include="Assets\MaterialUI\Scripts\ToggleTextChanger.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowAutoSize.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowEffect.cs" />
+    <Compile Include="Assets\Resources\Courses\C# for beginners\CSharpForBeginners_View01.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\CEValidator.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CEManager.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CESettings.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CESyntaxHighlighter.cs" />
@@ -177,6 +179,7 @@
   <ItemGroup>
     <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />
     <None Include="Assets\Prototyping\ProceduralBackground\BlendTextures.shader" />
+    <None Include="Assets\Resources\Courses\ValidatorTemplate.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsCYAN.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsPURPLE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsRED.txt" />
