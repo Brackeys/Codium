@@ -1,12 +1,22 @@
 using UnityEngine;
 using CodeEnvironment;
+using GameView;
 
 public class CSharpForBeginners_View01 : CEValidator {
 
 	public override bool Validate()
 	{
-		// Insert validation checks here
-		return true;
+		Log _latestLog = console.GetLatestLog();
+		int n;
+		bool isNumeric = int.TryParse(_latestLog.message, out n);
+		if (n >= 0 && isNumeric)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }

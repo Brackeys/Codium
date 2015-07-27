@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
-  m_Name: C# for beginners
+  m_Name: CSharpForBeginners
   m_EditorClassIdentifier: 
   title: C# for Beginners
   author: "Asbj\xF8rn Thirslund"
@@ -22,7 +22,7 @@ MonoBehaviour:
     explaination: 'C# has the power to do amazing things.
 
 
-      Let''s start with the absolute basics; Simple math.'
+      Let''s start by making the computer do some simple math.'
     codeBulletPoints:
     - You can add (+), subtract (-), divide (/) and multiply (*) using C#.
     - Simply type in the expression you want to calculate.
@@ -31,7 +31,7 @@ MonoBehaviour:
     - 2+2
     - 4*5+1
     - 
-    goal: Add any two numbers.
+    goal: Calculate something.
     instructionBulletPoints:
     - 
     - 
@@ -46,5 +46,6 @@ MonoBehaviour:
     hint: 4+5 would be a possible solution.
     ceSettings:
       expressionMode: 1
+    validator: {fileID: 11500000, guid: e7d152b824e74674a9f494625a910440, type: 3}
     gameScene: {fileID: 0}
   ID: 1c54a3ba5c0e40d68a2f7ba492758c05

@@ -3,25 +3,64 @@
 //-----------------------------------------------------------------
 
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace GameView
 {
+	[System.Serializable]
+	public struct Log
+	{
+		public string message;
+		public string stackTrace;
+		public LogType type;
+	}
+
 	public class GVConsole : MonoBehaviour
 	{
-		struct Log
+		#region Singleton pattern (Awake)
+
+		private static GVConsole _ins;
+		public static GVConsole ins
 		{
-			public string message;
-			public string stackTrace;
-			public LogType type;
+			get
+			{
+				if (_ins == null)
+				{
+					_ins = GameObject.FindObjectOfType<GVConsole>();
+				}
+
+				return _ins;
+			}
+			set
+			{
+				_ins = value;
+			}
 		}
 
-		List<Log> logs = new List<Log>();
+		void Awake()
+		{
+			if (_ins == null)
+			{
+				// Populate with first instance
+				_ins = this;
+			}
+			else
+			{
+				// Another instance exists, destroy
+				if (this != _ins)
+					this.enabled = false;
+			}
+		}
+
+		#endregion
+
+		[SerializeField]
+		private List<Log> logs = new List<Log>();
 		Vector2 scrollPosition;
-		bool collapse;
+		public bool collapse;
 
-		// Visual elements:
-
+		#region VISUAL ELEMENTS
 		static readonly Dictionary<LogType, Color> logTypeColors = new Dictionary<LogType, Color>()
 	{
 		{ LogType.Assert, Color.white },
@@ -48,7 +87,8 @@ namespace GameView
 		public Color bgColor, logColor01, logColor02;
 
 		GUIContent clearLabel = new GUIContent("Clear", "Clear the contents of the console.");
-		GUIContent collapseLabel = new GUIContent("Collapse", "Hide repeated messages.");
+		//GUIContent collapseLabel = new GUIContent("Collapse", "Hide repeated messages.");
+		#endregion
 
 		void Start()
 		{
@@ -59,6 +99,7 @@ namespace GameView
 			}
 		}
 
+		#region DRAWING THE CONSOLE
 		void OnGUI()
 		{
 			if (!drawConsole)
@@ -147,7 +188,9 @@ namespace GameView
 			GUI.DrawTexture(displayRect, flatTex);
 			GUI.color = prevColor;
 		}
+		#endregion
 
+		#region RECORDING LOGS
 		// Records a log from the log callback.
 		void HandleLog(string message, string stackTrace, LogType type)
 		{
@@ -162,17 +205,54 @@ namespace GameView
 			});
 		}
 
-		// Used for registering logs:
-
 		void OnEnable()
 		{
-			Application.RegisterLogCallback(HandleLog);
+			Application.logMessageReceived += HandleLog;
 		}
 
 		void OnDisable()
 		{
-			Application.RegisterLogCallback(null);
+			Application.logMessageReceived -= HandleLog;
 		}
+		#endregion
+
+		#region ACCESSING LOGS
+
+		// Get the latest log
+		public Log GetLatestLog()
+		{
+			if (logs.Count == 0)
+			{
+				Log _log = new Log();
+				return _log;
+			}
+			return logs[logs.Count - 1];
+		}
+
+		// Get logs according to amount (backwards)
+		public Log[] GetLogs(int _amount)
+		{
+			if (logs.Count == 0)
+			{
+				return new Log[0];
+			}
+			_amount = Mathf.Clamp(_amount, 1, logs.Count);
+			Log[] _logs = new Log[_amount];
+			_logs = logs.GetRange(logs.Count - _amount, _amount).ToArray();
+			Array.Reverse(_logs);
+			return _logs;
+		}
+
+		// Get all logs reversed (newest first)
+		public Log[] GetAllLogs()
+		{
+			Log[] _logs = logs.ToArray();
+			Array.Reverse(_logs);
+			return _logs;
+		}
+
+		#endregion
+
 	}
 
 }

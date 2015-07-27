@@ -163,7 +163,7 @@ namespace CodeEnvironment
 					Debug.Log(_result.ToString());
 				}
 
-				if (!PrintLastError() && (string)_result == "")
+				if (!PrintLastError() && _result == "")
 				{
 					Debug.Log("Parsing Error:  Syntax incorrect.");
 				}
