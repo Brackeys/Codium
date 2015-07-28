@@ -7,8 +7,11 @@ Codium is written solely in C# & is powered by the [Unity Engine](http://unity3d
 
 ###How to contribute to Codium
 This project is open for contributions. This means that you can:
+
 1. Create an Issue to help notify about problems or points of improvement.
+
 2. Create a Pull Request to directly modify/add to the Codium project.
+
 If this is all very new to you then see [this guide](https://guides.github.com/activities/contributing-to-open-source/) on contributing to projects on GitHub.
 
 ###Download
@@ -19,5 +22,4 @@ Coming soon (hopefully): http://getcodium.com/ - The newest build can be found u
 - Note that some image files are saved in .psd (Photoshop) format and so a copy of [Adobe Photoshop](http://www.adobe.com/products/photoshop.html) will be needed to edit those.
 
 ###Copyright
-See LICENSE.
-See NOTICE.
+See LICENSE & NOTICE.
