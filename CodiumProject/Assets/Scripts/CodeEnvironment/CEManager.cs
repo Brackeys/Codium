@@ -45,6 +45,8 @@ namespace CodeEnvironment
 		private CEUCCE ucce;
 		private int namespaceCounter = 0;
 
+		// Course manager
+		private CourseManager courseManager;
 
 		#region Singleton pattern (Awake)
 
@@ -91,6 +93,15 @@ namespace CodeEnvironment
 		}
 
 		#endregion
+
+		void Start()
+		{
+			courseManager = CourseManager.ins;
+			if (courseManager == null)
+			{
+				Debug.LogError("No CourseManager found!");
+			}
+		}
 
 		// Testing GUI
 		void OnGUI()
@@ -171,6 +182,7 @@ namespace CodeEnvironment
 			else
 			{
 				_code = WrapInNamespace(_code);
+
 				bool _success = ucce.Run(_code);
 
 				if (_success)
@@ -183,7 +195,7 @@ namespace CodeEnvironment
 
 			if (ceValidator.Validate())
 			{
-				Debug.Log("SUCCESS");
+				courseManager.CompleteCourseView();
 			}
 			else
 			{
@@ -230,7 +242,7 @@ namespace CodeEnvironment
 			if (ucce.GetLastError() != "")
 				return;
 
-			var type = typeof(ICodiumBase);
+			var type = typeof(CodiumAPI.ICodiumBase);
 			var types = AppDomain.CurrentDomain.GetAssemblies()
 				.SelectMany(s => s.GetTypes())
 				.Where(p => type.IsAssignableFrom(p));
@@ -254,6 +266,12 @@ namespace CodeEnvironment
 						mostRecentType = _type;
 					}
 				}
+			}
+
+			// If nothing found
+			if (mostRecentType == default(Type))
+			{
+				return;
 			}
 
 			object instance = Activator.CreateInstance(mostRecentType);

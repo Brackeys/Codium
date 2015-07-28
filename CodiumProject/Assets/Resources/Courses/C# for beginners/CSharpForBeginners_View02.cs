@@ -2,14 +2,14 @@ using UnityEngine;
 using CodeEnvironment;
 using GameView;
 
-public class CSharpForBeginners_View01 : CEValidator {
+public class CSharpForBeginners_View02 : CEValidator {
 
 	public override bool Validate()
 	{
 		Log _latestLog = console.GetLatestLog();
-		int n;
-		bool isNumeric = int.TryParse(_latestLog.message, out n);
-		if (isNumeric)
+		float n;
+		bool isNumeric = float.TryParse(_latestLog.message, out n);
+		if (isNumeric && (n % 1) != 0)
 		{
 			return true;
 		}

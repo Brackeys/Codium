@@ -196,6 +196,7 @@ public class CourseViewLoader : MonoBehaviour {
 		subject.text = cv.subject;	// Load subject
 		explaination.text = cv.explaination;	// Load explaination
 
+		bool _hasCodeBulletPoint = false;
 		// Load codeBulletPoints
 		for (int i = 0; i < cv.codeBulletPoints.Length; i++)
 		{
@@ -203,6 +204,8 @@ public class CourseViewLoader : MonoBehaviour {
 			{
 				continue;
 			}
+
+			_hasCodeBulletPoint = true;
 
 			RectTransform bp = Instantiate(descBulletPoint) as RectTransform;
 			bp.name = descBulletPoint.name;
@@ -216,7 +219,12 @@ public class CourseViewLoader : MonoBehaviour {
 			bp.transform.SetParent(codeDesc);
 			bp.localScale = Vector3.one;
 		}
+		if (!_hasCodeBulletPoint)
+		{
+			codeDesc.gameObject.SetActive(false);
+		}
 
+		bool _hasExampleBulletPoint = false;
 		// Load example bullet points
 		for (int i = 0; i < cv.exampleBulletPoints.Length; i++)
 		{
@@ -224,6 +232,8 @@ public class CourseViewLoader : MonoBehaviour {
 			{
 				continue;
 			}
+
+			_hasExampleBulletPoint = true;
 
 			RectTransform bp = Instantiate(descBulletPoint) as RectTransform;
 			bp.name = descBulletPoint.name;
@@ -236,6 +246,10 @@ public class CourseViewLoader : MonoBehaviour {
 			bpText.text = "    " + cv.exampleBulletPoints[i];
 			bp.transform.SetParent(examples);
 			bp.localScale = Vector3.one;
+		}
+		if (!_hasExampleBulletPoint)
+		{
+			examples.gameObject.SetActive(false);
 		}
 
 		// load default code
@@ -276,6 +290,7 @@ public class CourseViewLoader : MonoBehaviour {
 			bpCountText.text = (i + 1).ToString();
 
 			bp.transform.SetParent(instructions);
+			bp.localScale = Vector3.one;
 		}
 
 		// Load Code Environment settings

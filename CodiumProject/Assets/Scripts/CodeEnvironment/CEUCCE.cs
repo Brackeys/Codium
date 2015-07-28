@@ -125,12 +125,13 @@ namespace CodeEnvironment
 			{
 				var types = new Type[] {
 				//Extra
-				typeof (UnityEngine.Debug),
-				typeof (UnityEngine.MonoBehaviour),
-				typeof (ICodiumBase),
+				//typeof (UnityEngine.Debug),
+				//typeof (UnityEngine.MonoBehaviour),
+				typeof (CodiumAPI.ICodiumBase),
+				typeof (CodiumAPI.Console),
 
 				// mscorlib System
-				typeof (Console),
+				typeof (System.Console),
 				typeof (Action),
 				typeof (Action<>),
 				typeof (Action<,>),

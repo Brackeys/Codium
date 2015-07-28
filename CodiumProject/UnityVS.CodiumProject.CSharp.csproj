@@ -117,7 +117,10 @@
     <Compile Include="Assets\MaterialUI\Scripts\ToggleTextChanger.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowAutoSize.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowEffect.cs" />
+    <Compile Include="Assets\Resources\Courses\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Resources\Courses\C# for beginners\CSharpForBeginners_View01.cs" />
+    <Compile Include="Assets\Resources\Courses\C# for beginners\CSharpForBeginners_View02.cs" />
+    <Compile Include="Assets\Resources\Courses\C# for beginners\CSharpForBeginners_View03.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\CEValidator.cs" />
@@ -125,7 +128,8 @@
     <Compile Include="Assets\Scripts\CodeEnvironment\CESettings.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CESyntaxHighlighter.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CEUCCE.cs" />
-    <Compile Include="Assets\Scripts\CodeEnvironment\ICodiumBase.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CodiumAPI\CAPIConsole.cs" />
+    <Compile Include="Assets\Scripts\CodeEnvironment\CodiumAPI\CAPIICodiumBase.cs" />
     <Compile Include="Assets\Scripts\Courses\Course.cs" />
     <Compile Include="Assets\Scripts\Courses\CourseCompletionData.cs" />
     <Compile Include="Assets\Scripts\Courses\CourseDisplay.cs" />

@@ -4,7 +4,10 @@
 
 using UnityEngine;
 
-public interface ICodiumBase
+namespace CodiumAPI
 {
-	void Entry();
+	public interface ICodiumBase
+	{
+		void Entry();
+	}
 }

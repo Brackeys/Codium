@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
-  m_Name: Something interesting
+  m_Name: A_TestingCourse
   m_EditorClassIdentifier: 
-  title: Something interesting
+  title: Testing Course
   author: "Asbj\xF8rn Thirslund"
   description: This course teaches the fundamentals of programming games. It demonstrates
     techniques on setting up basic game logic.
@@ -47,4 +47,8 @@ MonoBehaviour:
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     hint: Remember to put ';' at the end of the line.
+    ceSettings:
+      expressionMode: 0
+    validator: {fileID: 11500000, guid: 58b478cd86a53cf448e1ac3f8b48e3cd, type: 3}
+    gameScene: {fileID: 0}
   ID: 75465a3a9ff34cad8e583ab3308fc1e2

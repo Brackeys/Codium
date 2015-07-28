@@ -2,12 +2,12 @@ using UnityEngine;
 using CodeEnvironment;
 using GameView;
 
-public class **CLASSNAME** : CEValidator {
+public class A_TestingCourse_View01 : CEValidator {
 
 	public override bool Validate()
 	{
 		// Insert validation checks here
-		return true;
+		return false;
 	}
 
 }
