@@ -47,10 +47,12 @@ public class AchievementManager : MonoBehaviour {
 
 	private UserDataManager userDatamanager;
 	private ApplicationManager applicationManager;
+	private CourseManager courseManager;
 
 	private ModalPanel modalPanel;
 	private UnityAction courseCompletedOKEvent;
 	private UnityAction courseViewCompletedOKEvent;
+	private UnityAction courseViewCompletedCancelEvent;
 
 	void Start()
 	{
@@ -65,6 +67,11 @@ public class AchievementManager : MonoBehaviour {
 		{
 			Debug.LogError("No ApplicationManager?!");
 		}
+		courseManager = CourseManager.ins;
+		if (courseManager == null)
+		{
+			Debug.LogError("No CourseManager?!");
+		}
 		modalPanel = ModalPanel.ins;
 		if (modalPanel == null)
 		{
@@ -72,19 +79,25 @@ public class AchievementManager : MonoBehaviour {
 		}
 		courseCompletedOKEvent = new UnityAction(_CourseCompleted);
 		courseViewCompletedOKEvent = new UnityAction(_CourseViewCompleted);
+		courseViewCompletedCancelEvent = new UnityAction(_CourseViewStay);
 	}
 
 	public void CourseViewCompleted()
 	{
 		Print("Course View Completed!");
 		int _lpReward = NumberMaster.courseViewLPValue;
-		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.";
-		modalPanel.Notification(_msg, courseViewCompletedOKEvent);
+		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nDo you want to continue immediately?";
+		modalPanel.CalmChoice(_msg, courseViewCompletedOKEvent, courseViewCompletedCancelEvent);
 		userDatamanager.GiveLearnPoints(_lpReward);	// Give learn points for view
 	}
 	private void _CourseViewCompleted()
 	{
+		courseManager.SaveCourseCompletionData(1);
 		applicationManager.TransitionToCourseViewScene();
+	}
+	private void _CourseViewStay()
+	{
+		// Do nothing
 	}
 
 	public void CourseCompleted(Course _course)

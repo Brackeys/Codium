@@ -130,13 +130,16 @@ public class CourseManager : MonoBehaviour {
 		{
 			if (!CurCourseViewIsCompleted())
 			{
+				// Due to how it is currently set up (very stupidly)
+				// we have to first save our progress and then use the same
+				// method to set our current view back again
 				SaveCourseCompletionData(1);
+				SaveCourseCompletionData(-1);
 				achievementManager.CourseViewCompleted();
 			}
 			else
 			{
-				SaveCourseCompletionData(1);
-				applicationManager.TransitionToCourseViewScene();
+				// Do nothing
 			}
 		}
 	}
@@ -302,7 +305,8 @@ public class CourseManager : MonoBehaviour {
 		CurCourseData _cData = new CurCourseData ();
 		if (!Serializer.PathExists(_cData.fileName))
 		{
-			Debug.Log ("CourseData: No Course Data found. Saving first Course and CourseView found.");
+			Debug.Log ("CourseData: No Course Data found. Saving first Course and CourseView found. Returning to Menu.");
+			Application.LoadLevel("MainMenu");
 			SetCurCourseByIndex(0);
 			SetCurCourseView(0);
 			_cData.ID = curCourse.ID;

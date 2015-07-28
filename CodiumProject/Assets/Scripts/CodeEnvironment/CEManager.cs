@@ -109,7 +109,7 @@ namespace CodeEnvironment
 			if (!testGUI)
 				return;
 
-			testCode = GUI.TextArea(new Rect(400, 0, 500, 500), testCode);
+			testCode = GUI.TextArea(new Rect(400, 100, 500, 500), testCode);
 			if (codeText.transform.parent.GetComponent<InputField>().text != testCode)
 				FormatCodeByReference(testCode);
 			codeText.transform.parent.GetComponent<InputField>().text = testCode;
@@ -171,12 +171,12 @@ namespace CodeEnvironment
 				ucce.Evaluate<System.Object>(_code, out _result);
 				if (_result != null)
 				{
-					Debug.Log(_result.ToString());
+					CodiumAPI.Console.Print(_result.ToString());
 				}
 
 				if (!PrintLastError() && _result == "")
 				{
-					Debug.Log("Parsing Error:  Syntax incorrect.");
+					CodiumAPI.Console.Print("Parsing Error:  Syntax incorrect.");
 				}
 			}
 			else
@@ -199,7 +199,7 @@ namespace CodeEnvironment
 			}
 			else
 			{
-				Debug.Log("FAILURE");
+				CodiumAPI.Console.Print("The code had no errors but didn't do exactly what we want.");
 			}
 		}
 
@@ -221,7 +221,7 @@ namespace CodeEnvironment
 			string _error = ucce.GetLastError();
 			if (_error != "")
 			{
-				Debug.Log(ucce.GetLastError());
+				CodiumAPI.Console.Print (ucce.GetLastError());
 				return true;
 			}
 			else

@@ -192,7 +192,7 @@ namespace GameView
 
 		#region RECORDING LOGS
 		// Records a log from the log callback.
-		void HandleLog(string message, string stackTrace, LogType type)
+		public void HandleLog(string message, string stackTrace, LogType type)
 		{
 			// Force the scrollbar to the bottom position.
 			scrollPosition.y = Mathf.Infinity;
@@ -205,15 +205,16 @@ namespace GameView
 			});
 		}
 
-		void OnEnable()
-		{
-			Application.logMessageReceived += HandleLog;
-		}
+		//void OnEnable()
+		//{
+		//	Application.logMessageReceived += HandleLog;
+		//}
 
-		void OnDisable()
-		{
-			Application.logMessageReceived -= HandleLog;
-		}
+		//void OnDisable()
+		//{
+		//	Application.logMessageReceived -= HandleLog;
+		//}
+
 		#endregion
 
 		#region ACCESSING LOGS

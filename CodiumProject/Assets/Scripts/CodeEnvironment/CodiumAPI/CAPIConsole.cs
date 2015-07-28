@@ -1,13 +1,28 @@
 using UnityEngine;
+using GameView;
 
 namespace CodiumAPI
 {
 	public static class Console
 	{
-
-		public static void Print(string _msg)
+		private static GVConsole gvConsole;
+		private static void InitGVConsole()
 		{
-			Debug.Log(_msg);
+			gvConsole = GVConsole.ins;
+			if (gvConsole == null)
+			{
+				Debug.LogError("No GVConsole found!");
+			}
+		}
+
+		public static void Print(object _msg)
+		{
+			if (gvConsole == null)
+			{
+				InitGVConsole();
+			}
+
+			gvConsole.HandleLog(_msg.ToString(), "", LogType.Log);
 		}
 
 	}

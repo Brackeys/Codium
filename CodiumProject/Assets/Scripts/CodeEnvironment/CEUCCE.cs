@@ -40,6 +40,22 @@ namespace CodeEnvironment
 			RegisterTypes(AdditionalTypes);
 		}
 
+
+		// Look into this later
+		public void GetCompletions(string _code)
+		{
+			string prefix;
+			string[] propositions = _evaluator.GetCompletions(_code, out prefix);
+
+			if (propositions != null)
+			{
+				foreach (string _prop in propositions)
+				{
+					UnityEngine.Debug.Log(_prop);
+				}
+			}
+		}
+
 		public bool Run(string _code)
 		{
 			_stringBuilder.Length = 0;

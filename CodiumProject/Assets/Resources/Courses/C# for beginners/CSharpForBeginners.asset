@@ -57,14 +57,13 @@ MonoBehaviour:
       being rounded down to <b>0</b>.
 
 
-      To fix this we add <b>f</b> at the end of the division.'
+      To fix this we add an <b>f</b> at the end of the division.'
     codeBulletPoints:
     - 
     - 
     - 
     exampleBulletPoints:
-    - <b>1 / 2 + 3f</b> will only force the <b>3</b> into a decimal number and result
-      in <b>3</b>
+    - <b>1 / 2 + 3f = 3</b> because only the <b>3</b> is forced into a decimal number.
     - <b>4 / 5f + 2</b> will correctly result in <b>0.8</b>.
     - 
     goal: Calculate a decimal point number.
@@ -89,13 +88,14 @@ MonoBehaviour:
       quote ( <b>"</b> ).
 
 
-      We can do a bunch of stuff with strings, let''s start by getting its length.'
+      We can do a bunch of stuff with a string, let''s start by getting its length.'
     codeBulletPoints:
-    - Create a string by typing some text wrapped in quotes ( <b>"</b> ).
-    - Use .Length to get number of characters in the string.
+    - We can create a string by typing some text wrapped in quotes ( <b>"</b> ).
+    - Adding .Length to the end of the string gets the number of characters in the
+      string.
     - 
     exampleBulletPoints:
-    - String are often used for names. "Dwayne Johnson" is a string.
+    - 'String are often used for names: "Dwayne Johnson" is a string.'
     - '"Dwayne Johnson".Length prints the length of the string.'
     - 
     goal: Print the length of your name.
@@ -109,8 +109,8 @@ MonoBehaviour:
     - 
     - 
     defaultCode: 
-    solutionCode: '"Dwayne Johnson".Length'
-    hint: Remember to put ';' at the end of the line.
+    solutionCode: '"Morpheus".Length'
+    hint: 
     ceSettings:
       expressionMode: 1
     validator: {fileID: 11500000, guid: 54eb7d80a0a2346408341365be4d1fc4, type: 3}
