@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GameViews\CubeOnTurntable\Turntable.cs" />
+    <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\MaterialUI\Examples\Scripts\04 - RadioButton\Example04.cs" />
     <Compile Include="Assets\MaterialUI\Examples\Scripts\05 - Sliders\Example05.cs" />
     <Compile Include="Assets\MaterialUI\Examples\Scripts\xx - SelectionBoxes\RefreshSelectionBox.cs" />

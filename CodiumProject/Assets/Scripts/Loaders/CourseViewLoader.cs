@@ -58,9 +58,7 @@ public class CourseViewLoader : MonoBehaviour {
 	public RectTransform descBulletPoint;
 	public Transform examples;
 	public InputField codeField;
-	public RectTransform stepBulletPoint;
-	public Transform instructions;
-	public Text goal;
+	public Instructions instructions;
 
 	public UIDropdown courseViewDropdown;
 
@@ -70,6 +68,8 @@ public class CourseViewLoader : MonoBehaviour {
 	private ModalPanel modalPanel;
 	private UnityAction yesResetCode;
 	private UnityAction noResetCode;
+	private UnityAction yesShowSolution;
+	private UnityAction noShowSolution;
 
 	// Course manager
 	private CourseManager courseManager;
@@ -109,17 +109,9 @@ public class CourseViewLoader : MonoBehaviour {
 		{
 			Debug.LogError("No codeField object referenced");
 		}
-		if (stepBulletPoint == null)
-		{
-			Debug.LogError("No stepBulletPoint prefab referenced");
-		}
 		if (instructions == null)
 		{
 			Debug.LogError("No instructions object referenced");
-		}
-		if (goal == null)
-		{
-			Debug.LogError("No goal object referenced");
 		}
 		if (courseViewDropdown == null)
 		{
@@ -138,6 +130,8 @@ public class CourseViewLoader : MonoBehaviour {
 		}
 		yesResetCode = new UnityAction(_ResetCode);
 		noResetCode = new UnityAction(_DoNothing);
+		yesShowSolution = new UnityAction(_ShowSolution);
+		noShowSolution = new UnityAction(_DoNothing);
 
 		// Course manager
 		courseManager = CourseManager.ins;
@@ -256,42 +250,10 @@ public class CourseViewLoader : MonoBehaviour {
 		codeField.text = cv.defaultCode;
 
 		// load goal
-		goal.text = cv.goal;
+		instructions.SetGoal(cv.goal);
 
-		// load instructions, step by step
-		for (int i = 0; i < cv.instructionBulletPoints.Length; i++)
-		{
-			if (cv.instructionBulletPoints[i].Length == 0)
-			{
-				continue;
-			}
-
-			RectTransform bp = Instantiate(stepBulletPoint) as RectTransform;
-			bp.name = stepBulletPoint.name;
-			Text bpText = bp.GetComponent<Text>();
-			if (bpText == null)
-			{
-				Debug.LogError("No Text component on the descBulletPoint prefab.");
-				break;
-			}
-			bpText.text = cv.instructionBulletPoints[i];
-			Transform bpCount = bp.FindChild("StepCount");
-			if (bpCount == null)
-			{
-				Debug.LogError("No child called StepCount found under " + bp.name);
-				break;
-			}
-			Text bpCountText = bpCount.GetComponent<Text>();
-			if (bpCountText == null)
-			{
-				Debug.LogError("No Text component on the StepCount object: " + bpCount.name);
-				break;
-			}
-			bpCountText.text = (i + 1).ToString();
-
-			bp.transform.SetParent(instructions);
-			bp.localScale = Vector3.one;
-		}
+		// load instruction steps
+		instructions.RegisterSteps(cv.instructionBulletPoints);
 
 		// Load Code Environment settings
 		ceManager.SetCESettings(cv.ceSettings);
@@ -380,10 +342,21 @@ public class CourseViewLoader : MonoBehaviour {
 		LoadCurrentCourseViewDefaultCode();
 	}
 
+	public void ShowSolution()
+	{
+		modalPanel.Choice("Are you sure you want to see the solution code?\nThis will override your current code.", yesShowSolution, noShowSolution);
+	}
+	private void _ShowSolution()
+	{
+		LoadCurrentCourseViewSolutionCode();
+		instructions.SolutionShown();
+	}
+
 	private void _DoNothing()
 	{
 		// Watch som tv?
 	}
 
 	#endregion
+
 }
