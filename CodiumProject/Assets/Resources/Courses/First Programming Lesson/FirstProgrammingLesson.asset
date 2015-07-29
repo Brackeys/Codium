@@ -112,4 +112,34 @@ MonoBehaviour:
       expressionMode: 1
     validator: {fileID: 11500000, guid: 54eb7d80a0a2346408341365be4d1fc4, type: 3}
     gameScene: {fileID: 0}
+  - subject: '"Hello, World"'
+    explaination: 'It''s common among programmers to start any project with the words:
+      "Hello, World".
+
+
+      Let''s do it with style by combining two strings.'
+    codeBulletPoints:
+    - To add strings together we simply use the <b>+</b> operator.
+    - 
+    - 
+    exampleBulletPoints:
+    - '"I am " + "Groot" will show the words <b>I am Groot</b>.'
+    - 
+    - 
+    goal: Say hi like a programmer.
+    instructionBulletPoints:
+    - Create a string called <b>"Hello, "</b> (remember the space).
+    - Combine it with another string called <b>"World"</b>
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: 
+    solutionCode: '"Hello, " + "World"'
+    ceSettings:
+      expressionMode: 1
+    validator: {fileID: 11500000, guid: 3388d8184e17eb442ad39dd282649237, type: 3}
+    gameScene: {fileID: 0}
   ID: 1c54a3ba5c0e40d68a2f7ba492758c05
