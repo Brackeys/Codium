@@ -157,10 +157,6 @@ public class CourseEditor : Editor {
 			EditorGUILayout.Space();
 			EditorGUILayout.Space();
 
-			cw.hint = EditorGUILayout.TextField("Hint to help solving:  " + cw.hint.Length + "/60 chars", cw.hint);
-
-			EditorGUILayout.Space();
-
 			EditorGUILayout.LabelField ("Starting Code:", cw.defaultCode.Length + "/500 chars");
 			cw.defaultCode = EditorGUILayout.TextArea(cw.defaultCode, GUILayout.Height(100));
 

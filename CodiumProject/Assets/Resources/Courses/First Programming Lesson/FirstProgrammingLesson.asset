@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d42b67239d81468f87c34b4ca1c2b4a, type: 3}
-  m_Name: CSharpForBeginners
+  m_Name: FirstProgrammingLesson
   m_EditorClassIdentifier: 
-  title: C# for Beginners
+  title: First Programming Lesson
   author: "Asbj\xF8rn Thirslund"
-  description: This course teaches  how to write basic code in C# while learning the
-    fundamentals of object-oriented programming.
+  description: This course teaches how to write basic code in C# while teaching fundamental
+    programming concepts.
   category: 2
   difficulty: 0
   courseViews:
@@ -44,7 +44,6 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: 2+3
-    hint: 4+5 would be a possible solution.
     ceSettings:
       expressionMode: 1
     validator: {fileID: 11500000, guid: e7d152b824e74674a9f494625a910440, type: 3}
@@ -63,8 +62,8 @@ MonoBehaviour:
     - 
     - 
     exampleBulletPoints:
-    - <b>1 / 2 + 3f = 3</b> because only the <b>3</b> is forced into a decimal number.
-    - <b>4 / 5f + 2</b> will correctly result in <b>0.8</b>.
+    - <b>1 / 2f = 0.5</b>
+    - <b>4 / 5f = 0.8</b>
     - 
     goal: Calculate a decimal point number.
     instructionBulletPoints:
@@ -78,7 +77,6 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: 3/2f
-    hint: 
     ceSettings:
       expressionMode: 1
     validator: {fileID: 11500000, guid: bd8a2b600ce73634bb84f9e6850caca5, type: 3}
@@ -110,7 +108,6 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: '"Morpheus".Length'
-    hint: 
     ceSettings:
       expressionMode: 1
     validator: {fileID: 11500000, guid: 54eb7d80a0a2346408341365be4d1fc4, type: 3}

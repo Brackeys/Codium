@@ -8,6 +8,6 @@ namespace CodiumAPI
 {
 	public interface ICodiumBase
 	{
-		void Entry();
+		void Main();
 	}
 }

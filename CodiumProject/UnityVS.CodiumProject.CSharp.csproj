@@ -117,10 +117,10 @@
     <Compile Include="Assets\MaterialUI\Scripts\ToggleTextChanger.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowAutoSize.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\SoftshadowEffect.cs" />
-    <Compile Include="Assets\Resources\Courses\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View01.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View02.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View03.cs" />
+    <Compile Include="Assets\Resources\Courses\TestingCourse\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\CEValidator.cs" />

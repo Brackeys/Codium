@@ -18,6 +18,8 @@ namespace CodeEnvironment
 	public class CEManager : MonoBehaviour
 	{
 
+		public const string ENTRY_METHOD_NAME = "Main";
+
 		public bool testGUI = false;
 		private string testCode = "";	// Testing variable
 
@@ -165,6 +167,8 @@ namespace CodeEnvironment
 				return;
 			}
 
+			bool _hasErrors = false;
+
 			if (ceSettings.expressionMode)
 			{
 				System.Object _result;
@@ -174,7 +178,9 @@ namespace CodeEnvironment
 					CodiumAPI.Console.Print(_result.ToString());
 				}
 
-				if (!PrintLastError() && _result == "")
+				_hasErrors = PrintLastError();
+
+				if (!_hasErrors && _result == "")
 				{
 					CodiumAPI.Console.Print("Parsing Error:  Syntax incorrect.");
 				}
@@ -190,14 +196,14 @@ namespace CodeEnvironment
 					namespaceCounter++;
 					CallMethods();
 				}
-				PrintLastError();
+				_hasErrors = PrintLastError();
 			}
 
 			if (ceValidator.Validate())
 			{
 				courseManager.CompleteCourseView();
 			}
-			else
+			else if (!_hasErrors)
 			{
 				CodiumAPI.Console.Print("The code had no errors but didn't do exactly what we want.");
 			}
@@ -275,7 +281,7 @@ namespace CodeEnvironment
 			}
 
 			object instance = Activator.CreateInstance(mostRecentType);
-			MethodInfo method = mostRecentType.GetMethod("Entry", BindingFlags.Instance | BindingFlags.Public);
+			MethodInfo method = mostRecentType.GetMethod(ENTRY_METHOD_NAME, BindingFlags.Instance | BindingFlags.Public);
 
 			method.Invoke(instance, null);
 		}

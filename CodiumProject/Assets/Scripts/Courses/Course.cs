@@ -89,7 +89,6 @@ public class CourseView {
 	public string[] instructionBulletPoints;
 	public string defaultCode;
 	public string solutionCode;
-	public string hint;
 
 	public CodeEnvironment.CESettings ceSettings;
 	public UnityEditor.MonoScript validator;
@@ -118,8 +117,6 @@ public class CourseView {
 		defaultCode = "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject & name it 'Cube'\n\n";
 		solutionCode = "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject & name it 'Cube'\n\n" + 
 									"Cube.renderer.material.color = Color.red;";
-
-		hint = "Remember to put ';' at the end of the line.";
 
 		ceSettings = new CodeEnvironment.CESettings();
 	}
