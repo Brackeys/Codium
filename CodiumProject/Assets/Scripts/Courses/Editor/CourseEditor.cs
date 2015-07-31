@@ -170,7 +170,12 @@ public class CourseEditor : Editor {
 			EditorGUILayout.LabelField("Code Environment Settings:");
 			CodeEnvironment.CESettings _ceSettings = cw.ceSettings;
 
-			_ceSettings.expressionMode = EditorGUILayout.Toggle("Expression mode (simple evaluation):", _ceSettings.expressionMode);
+			_ceSettings.executionMode = (CodeEnvironment.ExecutionMode)EditorGUILayout.EnumPopup("Execution Mode:", _ceSettings.executionMode);
+			if (_ceSettings.executionMode == CodeEnvironment.ExecutionMode.runInMain)
+			{
+				EditorGUILayout.LabelField("Using Namespaces:");
+				_ceSettings.usingNamespaces = EditorGUILayout.TextArea(_ceSettings.usingNamespaces, GUILayout.Height(100));
+			}
 
 			cw.ceSettings = _ceSettings;
 

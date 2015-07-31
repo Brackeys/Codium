@@ -45,7 +45,8 @@ MonoBehaviour:
     defaultCode: 
     solutionCode: 2+3
     ceSettings:
-      expressionMode: 1
+      executionMode: 1
+      usingNamespaces: 
     validator: {fileID: 11500000, guid: e7d152b824e74674a9f494625a910440, type: 3}
     gameScene: {fileID: 0}
   - subject: Decimal Numbers
@@ -78,7 +79,8 @@ MonoBehaviour:
     defaultCode: 
     solutionCode: 3/2f
     ceSettings:
-      expressionMode: 1
+      executionMode: 1
+      usingNamespaces: 
     validator: {fileID: 11500000, guid: bd8a2b600ce73634bb84f9e6850caca5, type: 3}
     gameScene: {fileID: 0}
   - subject: Strings
@@ -109,7 +111,8 @@ MonoBehaviour:
     defaultCode: 
     solutionCode: '"Morpheus".Length'
     ceSettings:
-      expressionMode: 1
+      executionMode: 1
+      usingNamespaces: 
     validator: {fileID: 11500000, guid: 54eb7d80a0a2346408341365be4d1fc4, type: 3}
     gameScene: {fileID: 0}
   - subject: '"Hello, World"'
@@ -139,7 +142,67 @@ MonoBehaviour:
     defaultCode: 
     solutionCode: '"Hello, " + "World"'
     ceSettings:
-      expressionMode: 1
+      executionMode: 1
+      usingNamespaces: 
     validator: {fileID: 11500000, guid: 3388d8184e17eb442ad39dd282649237, type: 3}
+    gameScene: {fileID: 0}
+  - subject: Comments
+    explaination: "Commenting parts of our code makes it easier to read.\n\r\nComments
+      will be ignored by the computer when it is running the program.\r"
+    codeBulletPoints:
+    - Use  <b>// TEXT HERE</b>  to make a single-line comment.
+    - Use  <b>/* TEXT HERE */</b>  to make a multi-line comment.
+    - 
+    exampleBulletPoints:
+    - "\u201CYoda\u201D.Length     // get length of string"
+    - /* This comment will continue until the end sign */
+    - 
+    goal: Make a comment that explains the code without altering it.
+    instructionBulletPoints:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: '"I am your father".Length + 2'
+    solutionCode: "\"I am your father\".Length + 2\t// get the length of the string
+      and add 2"
+    ceSettings:
+      executionMode: 2
+      usingNamespaces: using CodiumAPI;
+    validator: {fileID: 11500000, guid: 8d42a990abd129a4fb1673b5f9e3f908, type: 3}
+    gameScene: {fileID: 0}
+  - subject: Empty
+    explaination: Ignore this
+    codeBulletPoints:
+    - To access properties in a GameObject we use the '<b>.</b>'' operator.
+    - Sometimes you have to use the '<b>.</b>'' multiple times to access the property
+      you want.
+    - 
+    exampleBulletPoints:
+    - Cube.transform.position accesses the position of our Cube.
+    - Cube.renderer.material accesses the way the object looks.
+    - 
+    goal: Change the color of the Cube to your liking.
+    instructionBulletPoints:
+    - Access the Cubes color property under Cube.renderer.material.
+    - Set the color property equal to Color.red.
+    - (Optional) Try the same with blue, green and yellow.
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
+      & name it 'Cube'\n\n"
+    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
+      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    ceSettings:
+      executionMode: 1
+      usingNamespaces: 
+    validator: {fileID: 0}
     gameScene: {fileID: 0}
   ID: 1c54a3ba5c0e40d68a2f7ba492758c05

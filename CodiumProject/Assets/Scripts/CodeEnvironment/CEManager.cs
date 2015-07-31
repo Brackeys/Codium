@@ -18,8 +18,6 @@ namespace CodeEnvironment
 	public class CEManager : MonoBehaviour
 	{
 
-		public const string ENTRY_METHOD_NAME = "Main";
-
 		public bool testGUI = false;
 		private string testCode = "";	// Testing variable
 
@@ -169,36 +167,23 @@ namespace CodeEnvironment
 
 			bool _hasErrors = false;
 
-			if (ceSettings.expressionMode)
+			switch (ceSettings.executionMode)
 			{
-				System.Object _result;
-				ucce.Evaluate<System.Object>(_code, out _result);
-				if (_result != null)
-				{
-					CodiumAPI.Console.Print(_result.ToString());
-				}
-
-				_hasErrors = PrintLastError();
-
-				if (!_hasErrors && _result == "")
-				{
-					CodiumAPI.Console.Print("Parsing Error:  Syntax incorrect.");
-				}
-			}
-			else
-			{
-				_code = WrapInNamespace(_code);
-
-				bool _success = ucce.Run(_code);
-
-				if (_success)
-				{
-					namespaceCounter++;
-					CallMethods();
-				}
-				_hasErrors = PrintLastError();
+				case ExecutionMode.full:
+					_hasErrors = runCode_full(_code);
+					break;
+				case ExecutionMode.expression:
+					_hasErrors = runCode_expression(_code);
+					break;
+				case ExecutionMode.runInMain:
+					_hasErrors = runCode_runInMain(_code);
+					break;
+				default:
+					Debug.LogError("No execution mode?");
+					break;
 			}
 
+				
 			if (ceValidator.Validate())
 			{
 				courseManager.CompleteCourseView();
@@ -207,6 +192,51 @@ namespace CodeEnvironment
 			{
 				CodiumAPI.Console.Print("The code had no errors but didn't do exactly what we want.");
 			}
+		}
+
+		private bool runCode_full(string _code)
+		{
+			bool _success = ucce.Run(_code, namespaceCounter);
+
+			if (_success)
+			{
+				namespaceCounter++;
+				CallMethods();
+			}
+			bool _hasErrors = PrintLastError();
+			return _hasErrors;
+		}
+		private bool runCode_expression(string _code)
+		{
+			System.Object _result;
+			ucce.Evaluate<System.Object>(_code, out _result);
+			if (_result != null)
+			{
+				CodiumAPI.Console.Print(_result.ToString());
+			}
+
+			bool _hasErrors = PrintLastError();
+
+			if (!_hasErrors && _result == "")
+			{
+				CodiumAPI.Console.Print("Parsing Error:  Syntax incorrect.");
+			}
+
+			return _hasErrors;
+		}
+		private bool runCode_runInMain(string _code)
+		{
+			Debug.LogError("Make this return success!");
+
+			bool _success = ucce.RunInMain(_code, ceSettings.usingNamespaces, namespaceCounter);
+
+			if (_success)
+			{
+				namespaceCounter++;
+				CallMethods();
+			}
+			bool _hasErrors = PrintLastError();
+			return _hasErrors;
 		}
 
 		// Public method for evaluating C# code if a Text object is referenced
@@ -234,13 +264,6 @@ namespace CodeEnvironment
 			{
 				return false;
 			}
-		}
-
-		private string WrapInNamespace(string _code)
-		{
-			_code = "namespace Codium" + namespaceCounter + " {\n" + _code + "\n}";
-			//Debug.Log(_code);
-			return _code;
 		}
 
 		public void CallMethods()
@@ -280,8 +303,9 @@ namespace CodeEnvironment
 				return;
 			}
 
+			Debug.Log("TEST");
 			object instance = Activator.CreateInstance(mostRecentType);
-			MethodInfo method = mostRecentType.GetMethod(ENTRY_METHOD_NAME, BindingFlags.Instance | BindingFlags.Public);
+			MethodInfo method = mostRecentType.GetMethod(CEUCCE.ENTRY_METHOD_NAME, BindingFlags.Instance | BindingFlags.Public);
 
 			method.Invoke(instance, null);
 		}

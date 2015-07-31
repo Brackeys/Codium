@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class Instructions : MonoBehaviour {
+public class InstructionsDisplay : MonoBehaviour {
 
 	private List<string> steps;
 	private int nextStep = 0;
@@ -63,11 +63,7 @@ public class Instructions : MonoBehaviour {
 			steps.Add(_step);
 		}
 
-		if (HasNextStep())
-		{
-			RevealNextStep();
-		}
-		else
+		if (!HasNextStep())
 		{
 			ChangeToShowSolutionButton();
 		}

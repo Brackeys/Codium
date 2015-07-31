@@ -58,7 +58,7 @@ public class CourseViewLoader : MonoBehaviour {
 	public RectTransform descBulletPoint;
 	public Transform examples;
 	public InputField codeField;
-	public Instructions instructions;
+	public InstructionsDisplay instructions;
 
 	public UIDropdown courseViewDropdown;
 

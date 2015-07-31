@@ -16,6 +16,10 @@ namespace CodeEnvironment
 
 	public class CEUCCE
 	{
+		private static Type BASE_CLASS = typeof (CodiumAPI.ICodiumBase);
+		public static string ENTRY_METHOD_NAME = "Main";
+		private static string NAMESPACE_NAME = "Codium";
+
 		private Evaluator _evaluator;
 
 		private StringBuilder _stringBuilder;
@@ -56,8 +60,16 @@ namespace CodeEnvironment
 			}
 		}
 
-		public bool Run(string _code)
+		public bool Run(string _code)	// Don't wrap int namespace
 		{
+			_stringBuilder.Length = 0;
+			var result = _evaluator.Run(_code);
+			_error = _stringBuilder.ToString();
+			return result;
+		}
+		public bool Run(string _code, int _namespaceIndex)	// DO wrap in namespace
+		{
+			_code = WrapInNamespace(_code, _namespaceIndex);
 			_stringBuilder.Length = 0;
 			var result = _evaluator.Run(_code);
 			_error = _stringBuilder.ToString();
@@ -84,6 +96,22 @@ namespace CodeEnvironment
 				result = (T)resultVal;
 			}
 			return true;
+		}
+
+		public bool RunInMain(string _code, string _using, int _namespaceIndex)
+		{
+			string _code2Run = _using + "\n" + "public class DefaultClass : " + BASE_CLASS.Name + "{\n"
+								+ "public void " + ENTRY_METHOD_NAME + "() {\n"
+								+ _code + "\n}";
+			_code2Run = WrapInNamespace(_code2Run, _namespaceIndex);
+			UnityEngine.Debug.Log(_code2Run);
+			return Run(_code2Run);
+		}
+
+		private string WrapInNamespace(string _code, int _index)
+		{
+			_code = "namespace " + NAMESPACE_NAME + _index + " {\n" + _code + "\n}";
+			return _code;
 		}
 
 		public string GetLastError()
@@ -143,7 +171,7 @@ namespace CodeEnvironment
 				//Extra
 				typeof (UnityEngine.Debug),
 				typeof (UnityEngine.MonoBehaviour),
-				typeof (CodiumAPI.ICodiumBase),
+				BASE_CLASS,
 				typeof (CodiumAPI.Console),
 
 				// mscorlib System

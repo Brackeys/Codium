@@ -2,14 +2,18 @@ using UnityEngine;
 
 namespace CodeEnvironment
 {
+	public enum ExecutionMode { full, expression, runInMain };
+
 	[System.Serializable]
 	public class CESettings
 	{
-		public bool expressionMode;
+		public ExecutionMode executionMode;
+		public string usingNamespaces;
 
 		public CESettings()
 		{
-			expressionMode = false;
+			executionMode = ExecutionMode.expression;
+			usingNamespaces = "using CodiumAPI";
 		}
 	}
 

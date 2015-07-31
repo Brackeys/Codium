@@ -2563,11 +2563,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMin.y
@@ -4684,7 +4684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22479814, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 162.711868
       objectReference: {fileID: 0}
     - target: {fileID: 177914, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_IsActive
@@ -7809,11 +7809,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMin.x
@@ -10017,7 +10017,7 @@ Prefab:
       objectReference: {fileID: 1339115874}
     - target: {fileID: 11422596, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
       propertyPath: testGUI
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
@@ -10477,7 +10477,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_TextComponent: {fileID: 409562159}
   m_Placeholder: {fileID: 0}
@@ -10496,7 +10496,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   m_OnValueChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1520088203}
+        m_MethodName: FormatCodeByReference
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_SelectionColor: {r: .772058845, g: .772058845, b: .772058845, a: .31764707}
