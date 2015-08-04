@@ -77,6 +77,10 @@ namespace CodeEnvironment
 			//Loop through the keywords and add them (skip the color)
 			for (int i = 1; i < kws.Length; i++)
 			{
+				if (kws[i].Trim() == "")
+				{
+					continue;
+				}
 				keyword.Word = kws[i].Trim();
 				_keywords.Add(keyword);
 			}

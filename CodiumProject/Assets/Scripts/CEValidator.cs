@@ -7,6 +7,7 @@ namespace CodeEnvironment
 	public class CEValidator : MonoBehaviour
 	{
 		protected GVConsole console;
+		protected CEManager codeManager;
 
 		void Start()
 		{
@@ -14,6 +15,12 @@ namespace CodeEnvironment
 			if (console == null)
 			{
 				Debug.LogError("No GVConsole found!");
+			}
+
+			codeManager = CEManager.ins;
+			if (codeManager == null)
+			{
+				Debug.LogError("No CEManager found!");
 			}
 		}
 

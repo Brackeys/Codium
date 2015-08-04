@@ -146,6 +146,38 @@ MonoBehaviour:
       usingNamespaces: 
     validator: {fileID: 11500000, guid: 3388d8184e17eb442ad39dd282649237, type: 3}
     gameScene: {fileID: 0}
+  - subject: Questions?
+    explaination: 'The computer can do more than combine strings: It can compare values.
+
+
+      Let''s ask the computer some questions!
+
+'
+    codeBulletPoints:
+    - To check if two values are equal we use the <b>==</b> operator.
+    - The <b>!=</b> operator does exactly the opposite.
+    - 
+    exampleBulletPoints:
+    - <b>5 == 5</b> will show the result <b>True</b>.
+    - <b>"BIG" == "big"</b> will show <b>False</b>.
+    - <b>25/5 != 4</b> will show <b>True</b>.
+    goal: Find out if six multiplied by nine is equal to <b>42</b>.
+    instructionBulletPoints:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: 
+    solutionCode: 6*9 == 42
+    ceSettings:
+      executionMode: 1
+      usingNamespaces: using CodiumAPI
+    validator: {fileID: 11500000, guid: 1ed7f0be80f008d44bc3e1e8eba36ff1, type: 3}
+    gameScene: {fileID: 0}
   - subject: Comments
     explaination: "Commenting parts of our code makes it easier to read.\n\r\nComments
       will be ignored by the computer when it is running the program.\r"

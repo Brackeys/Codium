@@ -14,6 +14,7 @@ namespace GameView
 		public string message;
 		public string stackTrace;
 		public LogType type;
+		public bool systemLog;
 	}
 
 	public class GVConsole : MonoBehaviour
@@ -192,7 +193,7 @@ namespace GameView
 
 		#region RECORDING LOGS
 		// Records a log from the log callback.
-		public void HandleLog(string message, string stackTrace, LogType type)
+		public void HandleLog(string message, string stackTrace, LogType type, bool system)
 		{
 			// Force the scrollbar to the bottom position.
 			scrollPosition.y = Mathf.Infinity;
@@ -202,6 +203,7 @@ namespace GameView
 				message = message,
 				stackTrace = stackTrace,
 				type = type,
+				systemLog = system
 			});
 		}
 
@@ -222,34 +224,58 @@ namespace GameView
 		// Get the latest log
 		public Log GetLatestLog()
 		{
-			if (logs.Count == 0)
+			// Filter out the system logs
+			List<Log> _logs = new List<Log>();
+			for (int i = 0; i < logs.Count; i++)
+			{
+				if (!logs[i].systemLog)
+					_logs.Add(logs[i]);
+			}
+
+			if (_logs.Count == 0)
 			{
 				Log _log = new Log();
 				return _log;
 			}
-			return logs[logs.Count - 1];
+			return _logs[_logs.Count - 1];
 		}
 
 		// Get logs according to amount (backwards)
 		public Log[] GetLogs(int _amount)
 		{
-			if (logs.Count == 0)
+			// Filter out the system logs
+			List<Log> _logs = new List<Log>();
+			for (int i = 0; i < logs.Count; i++)
+			{
+				if (!logs[i].systemLog)
+					_logs.Add(logs[i]);
+			}
+
+			if (_logs.Count == 0)
 			{
 				return new Log[0];
 			}
-			_amount = Mathf.Clamp(_amount, 1, logs.Count);
-			Log[] _logs = new Log[_amount];
-			_logs = logs.GetRange(logs.Count - _amount, _amount).ToArray();
-			Array.Reverse(_logs);
-			return _logs;
+			_amount = Mathf.Clamp(_amount, 1, _logs.Count);
+			Log[] _logsArray = new Log[_amount];
+			_logsArray = _logs.GetRange(_logs.Count - _amount, _amount).ToArray();
+			Array.Reverse(_logsArray);
+			return _logsArray;
 		}
 
 		// Get all logs reversed (newest first)
 		public Log[] GetAllLogs()
 		{
-			Log[] _logs = logs.ToArray();
-			Array.Reverse(_logs);
-			return _logs;
+			// Filter out the system logs
+			List<Log> _logs = new List<Log>();
+			for (int i = 0; i < logs.Count; i++)
+			{
+				if (!logs[i].systemLog)
+					_logs.Add(logs[i]);
+			}
+
+			Log[] _logsArray = _logs.ToArray();
+			Array.Reverse(_logsArray);
+			return _logsArray;
 		}
 
 		#endregion

@@ -190,7 +190,7 @@ namespace CodeEnvironment
 			}
 			else if (!_hasErrors)
 			{
-				CodiumAPI.Console.Print("The code had no errors but didn't do exactly what we want.");
+				CodiumAPI.Console.PrintSystemWarning("The code had no errors but didn't do exactly what we want.");
 			}
 		}
 
@@ -219,15 +219,13 @@ namespace CodeEnvironment
 
 			if (!_hasErrors && _result == "")
 			{
-				CodiumAPI.Console.Print("Parsing Error:  Syntax incorrect.");
+				CodiumAPI.Console.PrintSystemError("Parsing Error:  Syntax incorrect.");
 			}
 
 			return _hasErrors;
 		}
 		private bool runCode_runInMain(string _code)
 		{
-			Debug.LogError("Make this return success!");
-
 			bool _success = ucce.RunInMain(_code, ceSettings.usingNamespaces, namespaceCounter);
 
 			if (_success)
@@ -257,7 +255,7 @@ namespace CodeEnvironment
 			string _error = ucce.GetLastError();
 			if (_error != "")
 			{
-				CodiumAPI.Console.Print (ucce.GetLastError());
+				CodiumAPI.Console.PrintSystemError (ucce.GetLastError());
 				return true;
 			}
 			else
@@ -343,6 +341,17 @@ namespace CodeEnvironment
 			formattedCodeText.text = syntaxHighlighter.Highlight(_code);
 		}
 		#endregion
+
+
+		#region Getter methods
+
+		public string GetUserCode()
+		{
+			return codeText.text;
+		}
+
+		#endregion
+
 
 	}
 }

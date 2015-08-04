@@ -19,6 +19,7 @@ namespace CodeEnvironment
 		private static Type BASE_CLASS = typeof (CodiumAPI.ICodiumBase);
 		public static string ENTRY_METHOD_NAME = "Main";
 		private static string NAMESPACE_NAME = "Codium";
+		private static string DEFAULT_CLASS_NAME = "DefaultClass";
 
 		private Evaluator _evaluator;
 
@@ -100,11 +101,10 @@ namespace CodeEnvironment
 
 		public bool RunInMain(string _code, string _using, int _namespaceIndex)
 		{
-			string _code2Run = _using + "\n" + "public class DefaultClass : " + BASE_CLASS.Name + "{\n"
+			string _code2Run = _using + "\n" + "public class " + DEFAULT_CLASS_NAME + " : " + BASE_CLASS.Name + "{\n"
 								+ "public void " + ENTRY_METHOD_NAME + "() {\n"
-								+ _code + "\n}";
+								+ _code + "\n}\n}";
 			_code2Run = WrapInNamespace(_code2Run, _namespaceIndex);
-			UnityEngine.Debug.Log(_code2Run);
 			return Run(_code2Run);
 		}
 

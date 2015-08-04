@@ -38,6 +38,8 @@ public class CourseEditor : Editor {
 	public SerializedProperty difficulty;
 	public SerializedProperty courseViews;
 
+	private List<bool> CVFoldout = new List<bool>();
+
 	//Editing the properties
 	void OnEnable () {
 		title = serializedObject.FindProperty ("title");
@@ -87,13 +89,25 @@ public class CourseEditor : Editor {
 			return;
 		}
 
+		if (course.courseViews.Count != CVFoldout.Count)
+		{
+			CVFoldout = new List<bool>();
+			for (int fI = 0; fI < course.courseViews.Count; fI++)
+			{
+				CVFoldout.Add(false);
+			}
+		}
+
 		if (GUILayout.Button ("Add View Below")) {
 
-			if (course.courseViews.Count < 20) {
-					course.courseViews.Add (new CourseView ());
+			if (course.courseViews.Count < 20)
+			{
+				course.courseViews.Insert (0, new CourseView ());
+				CVFoldout.Insert(0, true);
 			}
-			else {
-					EditorUtility.DisplayDialog("Too many views in Course. " + course.courseViews.Count + "/20",
+			else
+			{
+				EditorUtility.DisplayDialog("Too many views in Course. " + course.courseViews.Count + "/20",
 				"Please keep the information concise or split it up into multiple courses.", "Ok");
 			}
 		}
@@ -122,124 +136,141 @@ public class CourseEditor : Editor {
 				return;
 			}
 
-			EditorGUILayout.LabelField ("View " + (i+1) + ": " + cw.subject, EditorStyles.whiteLargeLabel);
-			cw.subject = EditorGUILayout.TextField("Subject:  " + cw.subject.Length + "/21 chars", cw.subject);
-			EditorGUILayout.LabelField ("Explaination:", cw.explaination.Length + "/150 chars");
-			cw.explaination = EditorGUILayout.TextArea(cw.explaination, GUILayout.Height(50));
+			string _displayTitle = "View " + (i+1) + ": " + cw.subject;
 
-			EditorGUILayout.Space();
+			CVFoldout[i] = EditorGUILayout.Foldout(CVFoldout[i], _displayTitle, EditorStyles.foldout);
 
-			EditorGUILayout.LabelField ("Code Breakdown:", "(Leave empty to exclude)");
-			for (int j = 0; j < cw.codeBulletPoints.Length; j++) {
-				cw.codeBulletPoints[j] = EditorGUILayout.TextField((j+1) + ".     " + cw.codeBulletPoints[j].Length + "/100 chars", cw.codeBulletPoints[j]);
-			}
-
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField ("Examples:", "(Leave empty to exclude)");
-			for (int j = 0; j < cw.exampleBulletPoints.Length; j++) {
-				cw.exampleBulletPoints[j] = EditorGUILayout.TextField((j+1) + ".     " + cw.exampleBulletPoints[j].Length + "/100 chars", cw.exampleBulletPoints[j]);
-			}
-
-			EditorGUILayout.Space();
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField("Goal:", cw.goal.Length + "/100 chars");
-			cw.goal= EditorGUILayout.TextArea(cw.goal, GUILayout.Height(50));
-
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField ("Instructions:", "(Leave empty to exclude)");
-			for (int j = 0; j < cw.instructionBulletPoints.Length; j++) {
-				cw.instructionBulletPoints[j] = EditorGUILayout.TextField((j+1) + ".     " + cw.instructionBulletPoints[j].Length + "/100 chars", cw.instructionBulletPoints[j]);
-			}
-
-			EditorGUILayout.Space();
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField ("Starting Code:", cw.defaultCode.Length + "/500 chars");
-			cw.defaultCode = EditorGUILayout.TextArea(cw.defaultCode, GUILayout.Height(100));
-
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField ("Solution Code:", cw.solutionCode.Length + "/800 chars");
-			cw.solutionCode = EditorGUILayout.TextArea(cw.solutionCode, GUILayout.Height(100));
-
-			EditorGUILayout.Space();
-
-			EditorGUILayout.LabelField("Code Environment Settings:");
-			CodeEnvironment.CESettings _ceSettings = cw.ceSettings;
-
-			_ceSettings.executionMode = (CodeEnvironment.ExecutionMode)EditorGUILayout.EnumPopup("Execution Mode:", _ceSettings.executionMode);
-			if (_ceSettings.executionMode == CodeEnvironment.ExecutionMode.runInMain)
+			if (CVFoldout[i])
 			{
-				EditorGUILayout.LabelField("Using Namespaces:");
-				_ceSettings.usingNamespaces = EditorGUILayout.TextArea(_ceSettings.usingNamespaces, GUILayout.Height(100));
-			}
+				//EditorGUILayout.LabelField(_displayTitle, EditorStyles.whiteLargeLabel);
+				cw.subject = EditorGUILayout.TextField("Subject:  " + cw.subject.Length + "/21 chars", cw.subject);
+				EditorGUILayout.LabelField("Explaination:", cw.explaination.Length + "/150 chars");
+				cw.explaination = EditorGUILayout.TextArea(cw.explaination, GUILayout.Height(50));
 
-			cw.ceSettings = _ceSettings;
+				EditorGUILayout.Space();
 
-			EditorGUILayout.Space();
-
-			cw.validator = EditorGUILayout.ObjectField("Validator Script:", cw.validator, typeof(MonoScript), false) as MonoScript;
-			if (cw.validator == null)
-			{
-				GUI.color = Color.green;
-				if (GUILayout.Button("Generate Validator Script Template"))
+				EditorGUILayout.LabelField("Code Breakdown:", "(Leave empty to exclude)");
+				for (int j = 0; j < cw.codeBulletPoints.Length; j++)
 				{
-					cw.validator = CourseUtil.GenValidatorTemplate(AssetDatabase.GetAssetPath(course), i);
+					cw.codeBulletPoints[j] = EditorGUILayout.TextField((j + 1) + ".     " + cw.codeBulletPoints[j].Length + "/100 chars", cw.codeBulletPoints[j]);
 				}
-				GUI.color = Color.white;
-			}
 
-			EditorGUILayout.Space();
-			EditorGUILayout.Space();
+				EditorGUILayout.Space();
 
-			cw.gameScene = EditorGUILayout.ObjectField("Game Scene:", cw.gameScene, typeof(UnityEngine.Object), false);
-			if (cw.gameScene != null)
-			{
-				if (!CourseUtil.IsInBuildSettings(cw.gameScene))
+				EditorGUILayout.LabelField("Examples:", "(Leave empty to exclude)");
+				for (int j = 0; j < cw.exampleBulletPoints.Length; j++)
+				{
+					cw.exampleBulletPoints[j] = EditorGUILayout.TextField((j + 1) + ".     " + cw.exampleBulletPoints[j].Length + "/100 chars", cw.exampleBulletPoints[j]);
+				}
+
+				EditorGUILayout.Space();
+				EditorGUILayout.Space();
+
+				EditorGUILayout.LabelField("Goal:", cw.goal.Length + "/100 chars");
+				cw.goal = EditorGUILayout.TextArea(cw.goal, GUILayout.Height(50));
+
+				EditorGUILayout.Space();
+
+				EditorGUILayout.LabelField("Instructions:", "(Leave empty to exclude)");
+				for (int j = 0; j < cw.instructionBulletPoints.Length; j++)
+				{
+					cw.instructionBulletPoints[j] = EditorGUILayout.TextField((j + 1) + ".     " + cw.instructionBulletPoints[j].Length + "/100 chars", cw.instructionBulletPoints[j]);
+				}
+
+				EditorGUILayout.Space();
+				EditorGUILayout.Space();
+
+				EditorGUILayout.LabelField("Starting Code:", cw.defaultCode.Length + "/500 chars");
+				cw.defaultCode = EditorGUILayout.TextArea(cw.defaultCode, GUILayout.Height(100));
+
+				EditorGUILayout.Space();
+
+				EditorGUILayout.LabelField("Solution Code:", cw.solutionCode.Length + "/800 chars");
+				cw.solutionCode = EditorGUILayout.TextArea(cw.solutionCode, GUILayout.Height(100));
+
+				EditorGUILayout.Space();
+
+				EditorGUILayout.LabelField("Code Environment Settings:");
+				CodeEnvironment.CESettings _ceSettings = cw.ceSettings;
+
+				_ceSettings.executionMode = (CodeEnvironment.ExecutionMode)EditorGUILayout.EnumPopup("Execution Mode:", _ceSettings.executionMode);
+				if (_ceSettings.executionMode == CodeEnvironment.ExecutionMode.runInMain)
+				{
+					EditorGUILayout.LabelField("Using Namespaces:");
+					_ceSettings.usingNamespaces = EditorGUILayout.TextArea(_ceSettings.usingNamespaces, GUILayout.Height(100));
+				}
+
+				cw.ceSettings = _ceSettings;
+
+				EditorGUILayout.Space();
+
+				cw.validator = EditorGUILayout.ObjectField("Validator Script:", cw.validator, typeof(MonoScript), false) as MonoScript;
+				if (cw.validator == null)
 				{
 					GUI.color = Color.green;
-					if (GUILayout.Button("Add to Build Settings"))
+					if (GUILayout.Button("Generate Validator Script Template"))
 					{
-						CourseUtil.AddToBuildSettings(cw.gameScene);
+						cw.validator = CourseUtil.GenValidatorTemplate(AssetDatabase.GetAssetPath(course), i);
 					}
 					GUI.color = Color.white;
 				}
-				else
+
+				EditorGUILayout.Space();
+				EditorGUILayout.Space();
+
+				cw.gameScene = EditorGUILayout.ObjectField("Game Scene:", cw.gameScene, typeof(UnityEngine.Object), false);
+				if (cw.gameScene != null)
 				{
-					GUI.color = Color.red;
-					if (GUILayout.Button("Remove from Build Settings"))
+					if (!CourseUtil.IsInBuildSettings(cw.gameScene))
 					{
-						CourseUtil.RemoveFromBuildSettings(cw.gameScene);
+						GUI.color = Color.green;
+						if (GUILayout.Button("Add to Build Settings"))
+						{
+							CourseUtil.AddToBuildSettings(cw.gameScene);
+						}
+						GUI.color = Color.white;
 					}
-					GUI.color = Color.white;
+					else
+					{
+						GUI.color = Color.red;
+						if (GUILayout.Button("Remove from Build Settings"))
+						{
+							CourseUtil.RemoveFromBuildSettings(cw.gameScene);
+						}
+						GUI.color = Color.white;
+					}
 				}
-			}
 
-			EditorGUILayout.Space();
+				EditorGUILayout.Space();
 
-			GUILayout.BeginHorizontal();
+				GUILayout.BeginHorizontal();
 
-			if (GUILayout.Button ("Remove View")) {
-				course.courseViews.RemoveAt (i);
-			}
-
-			if (GUILayout.Button ("Add View Below")) {
-				if (course.courseViews.Count < 20) {
-					course.courseViews.Insert (i+1, new CourseView ());
+				if (GUILayout.Button("Remove View"))
+				{
+					course.courseViews.RemoveAt(i);
+					CVFoldout.RemoveAt(i);
 				}
-				else {
+
+				if (GUILayout.Button("Add View Below"))
+				{
+					if (course.courseViews.Count < 20)
+					{
+						course.courseViews.Insert(i + 1, new CourseView());
+						CVFoldout.Insert(i + 1, true);
+					}
+					else
+					{
 						EditorUtility.DisplayDialog("Too many views in Course. " + course.courseViews.Count + "/20",
 					"Please keep the information concise or split it up into multiple courses.", "Ok");
+					}
 				}
+
+				GUILayout.EndHorizontal();
+
+				EditorGUILayout.Space();
+				EditorGUILayout.Space();
 			}
 
-			GUILayout.EndHorizontal();
-
-			EditorGUILayout.Space();
-			EditorGUILayout.Space();
 			EditorGUILayout.Space();
 
 			if (GUI.changed)

@@ -122,6 +122,7 @@
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View03.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View04.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View05.cs" />
+    <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View07.cs" />
     <Compile Include="Assets\Resources\Courses\TestingCourse\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
