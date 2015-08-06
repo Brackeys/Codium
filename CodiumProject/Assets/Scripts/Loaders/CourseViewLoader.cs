@@ -188,7 +188,7 @@ public class CourseViewLoader : MonoBehaviour {
 		CourseView cv = course.courseViews[index];
 
 		subject.text = cv.subject;	// Load subject
-		explaination.text = cv.explaination;	// Load explaination
+		explaination.text = ceManager.FormatCodeInTags(cv.explaination);	// Load explaination
 
 		bool _hasCodeBulletPoint = false;
 		// Load codeBulletPoints
@@ -209,7 +209,7 @@ public class CourseViewLoader : MonoBehaviour {
 				Debug.LogError("No Text component on the descBulletPoint prefab.");
 				break;
 			}
-			bpText.text = "    " + cv.codeBulletPoints[i];
+			bpText.text = "    " + ceManager.FormatCodeInTags(cv.codeBulletPoints[i]);
 			bp.transform.SetParent(codeDesc);
 			bp.localScale = Vector3.one;
 		}
@@ -237,7 +237,7 @@ public class CourseViewLoader : MonoBehaviour {
 				Debug.LogError("No Text component on the descBulletPoint prefab.");
 				break;
 			}
-			bpText.text = "    " + cv.exampleBulletPoints[i];
+			bpText.text = "    " + ceManager.FormatCodeInTags(cv.exampleBulletPoints[i]);
 			bp.transform.SetParent(examples);
 			bp.localScale = Vector3.one;
 		}
@@ -250,10 +250,15 @@ public class CourseViewLoader : MonoBehaviour {
 		codeField.text = cv.defaultCode;
 
 		// load goal
-		instructions.SetGoal(cv.goal);
+		instructions.SetGoal(ceManager.FormatCodeInTags(cv.goal));
 
 		// load instruction steps
-		instructions.RegisterSteps(cv.instructionBulletPoints);
+		string[] _formattedInsBP = new string[cv.instructionBulletPoints.Length];
+		for (int fI = 0; fI < _formattedInsBP.Length; fI++)
+		{
+			_formattedInsBP[fI] = ceManager.FormatCodeInTags(cv.instructionBulletPoints[fI]);
+		}
+		instructions.RegisterSteps(_formattedInsBP);
 
 		// Load Code Environment settings
 		ceManager.SetCESettings(cv.ceSettings);

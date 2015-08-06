@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{059D9A24-4CE9-F75A-CBE3-AF2265D19BFF}</ProjectGuid>
+    <ProjectGuid>{36421EE0-0065-E12D-5E2C-5E70304AFD33}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityProjectType>EditorPlugins:7</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.1.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -119,24 +119,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityVS.CodiumProject.CSharp.Plugins.csproj">
+      <Project>{366656C0-AE06-E57F-F789-FF19C327DF29}</Project>
+      <Name>UnityVS.CodiumProject.CSharp.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityVS.CodiumProject.CSharp.csproj">
       <Project>{CDCDF94D-41D1-5585-A0BC-9EE2C912F10D}</Project>
       <Name>UnityVS.CodiumProject.CSharp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Editor\GameWindowController.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\CheckboxConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\EZAnimEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\MaterialUIEditorTools.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\RectTransformSnapEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\RippleConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\ScreenConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\ShadowGenEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\SnapButtonToTextEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\TexturePostProcessor.cs" />
-    <Compile Include="Assets\Prototyping\GUISoftshadow\Editor\SoftshadowEffectEditor.cs" />
-    <Compile Include="Assets\Scripts\Courses\Editor\CourseEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Define Symbols\HyperTextDefineSymbols.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Define Symbols\UnityFeatureDefineSymbols.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\BaseEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\HyperTextEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\HyperTextStylesEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\KeywordCollectionEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\KeywordsGlossaryEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\KeywordsTextDocumentEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Editors\LocalizableTextEditor.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\GUI\EditorGUIX.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\GUI\EditorGUIXRedistributable.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\GUI\EditorStylesX.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\GUI\SceneGUI.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Gizmos\EditorGizmos.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Interfaces\ISceneGUIContext.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Preferences\Editor Preferences\EditorPreference.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Preferences\Editor Preferences\EditorPreferenceMenu.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\FlushChildrenDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\FontStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextLinkStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextLinkSubclassDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextProcessorDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextQuadStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\HyperTextTextStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\InflectedFormDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\PopupDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\PropertyBackingFieldDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\RichTextStyleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\StatusPropertyDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\TextAlignmentDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Property Drawers\TextureThumbnailDrawer.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Utilities\AssetDatabaseX.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Utilities\EditorUtilityX.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Utilities\ReflectionX.cs" />
+    <Compile Include="Assets\Plugins\Editor\Candlelight\Library\Utilities\SerializedPropertyX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />

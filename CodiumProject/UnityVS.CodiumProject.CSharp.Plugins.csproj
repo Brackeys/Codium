@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{059D9A24-4CE9-F75A-CBE3-AF2265D19BFF}</ProjectGuid>
+    <ProjectGuid>{366656C0-AE06-E57F-F789-FF19C327DF29}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.1.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -57,50 +57,11 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WP8.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WP8.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Metro.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Metro.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.BB10.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.BB10.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SamsungTV.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.SamsungTV.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.OSXStandalone.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.OSXStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -108,35 +69,39 @@
     <Reference Include="Mono.CSharp">
       <HintPath>Assets\DLLs\Mono.CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
-      <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityVS.VersionSpecific">
-      <HintPath>Assets\UnityVS\Editor\UnityVS.VersionSpecific.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UnityVS.CodiumProject.CSharp.csproj">
-      <Project>{CDCDF94D-41D1-5585-A0BC-9EE2C912F10D}</Project>
-      <Name>UnityVS.CodiumProject.CSharp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Editor\GameWindowController.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\CheckboxConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\EZAnimEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\MaterialUIEditorTools.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\RectTransformSnapEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\RippleConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\ScreenConfigEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\ShadowGenEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\SnapButtonToTextEditor.cs" />
-    <Compile Include="Assets\MaterialUI\Editor\TexturePostProcessor.cs" />
-    <Compile Include="Assets\Prototyping\GUISoftshadow\Editor\SoftshadowEffectEditor.cs" />
-    <Compile Include="Assets\Scripts\Courses\Editor\CourseEditor.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\FontUpdateTracker.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\GUIHelpers.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\HyperText.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\HyperTextProcessor.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\HyperTextStyles.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\KeywordCollection.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\KeywordsGlossary.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\KeywordsTextDocument.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\LocalizableText.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\RectOffsetX.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\RichTextStyle.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\GUI\TextAnchorX.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Interfaces\IIdentifiable.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Interfaces\IPropertyBackingFieldCompatible.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Interfaces\ITextSource.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Interfaces\IValidatable.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Property Attributes\FlushChildrenAttribute.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Property Attributes\PopupAttribute.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Property Attributes\PropertyBackingFieldAttribute.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Property Attributes\StatusPropertyAttribute.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Property Attributes\TextureThumbnailAttribute.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\ArrayX.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\IndexRange.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\ObjectX.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\Singleton.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\StringX.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Utilities\UnityVersion.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Visuals\ColorGradient.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Visuals\ColorHSV.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Visuals\ColorTween.cs" />
+    <Compile Include="Assets\Plugins\Candlelight\Library\Visuals\TextureX.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />

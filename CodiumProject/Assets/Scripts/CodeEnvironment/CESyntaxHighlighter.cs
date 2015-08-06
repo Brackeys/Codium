@@ -276,7 +276,7 @@ namespace CodeEnvironment
 			// Highlight keywords
 			foreach (KeywordStruct keyword in _keywords)
 			{
-				Regex regexKeyword = new Regex(@"(\W" + keyword.Word + "|^" + keyword.Word + @")(>|&gt;|\s|\n|;|<|)", RegexOptions.Singleline);
+				Regex regexKeyword = new Regex(@"([^\w>]" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
 				content = regexKeyword.Replace(content, CssExtensions.GetCssReplacement(keyword.Color) + "$2");
 			}
 

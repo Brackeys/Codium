@@ -11,6 +11,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace CodeEnvironment
 {
@@ -311,7 +312,7 @@ namespace CodeEnvironment
 
 		//----------- SYNTAX HIGHLIGHTING ------------
 
-		// Static method for formatting code by applying syntax highlighting
+		// method for formatting code by applying syntax highlighting
 		public string FormatCode(string _code)
 		{
 			if (syntaxHighlighter == null)
@@ -321,6 +322,21 @@ namespace CodeEnvironment
 			}
 
 			return syntaxHighlighter.Highlight(_code);
+		}
+
+		// Method for searching through text to replace text tagged with <code></code>
+		// with formatted code
+		public string FormatCodeInTags(string _text)
+		{
+			foreach (Match _match in Regex.Matches(_text, @"(<code>)(.*)(</code>)"))
+			{
+				string _m = _match.Value.Replace("<code>","");
+				_m = _m.Replace("</code>", "");
+				//Debug.Log(FormatCode(_m));
+				_text = _text.Replace(_match.Value, FormatCode(_m));
+			}
+
+			return _text;
 		}
 
 		// Public method for formatting code by reference
@@ -340,8 +356,8 @@ namespace CodeEnvironment
 
 			formattedCodeText.text = syntaxHighlighter.Highlight(_code);
 		}
-		#endregion
 
+		#endregion
 
 		#region Getter methods
 
