@@ -129,10 +129,11 @@ MonoBehaviour:
     - '"I am " + "Groot" will show the words <b>I am Groot</b>.'
     - 
     - 
-    goal: Say hi like a programmer.
+    goal: Say hi like a programmer by combining the two words.
     instructionBulletPoints:
-    - Create a string called <b>"Hello, "</b> (remember the space).
-    - Combine it with another string called <b>"World"</b>
+    - Create a string called <b>"Hello,  "</b> (remember the space to seperate the
+      words).
+    - Combine it with another string called <b>"World"</b> using the <b>+</b> sign.
     - 
     - 
     - 
