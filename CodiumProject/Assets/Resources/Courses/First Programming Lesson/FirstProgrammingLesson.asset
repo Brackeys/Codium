@@ -201,8 +201,8 @@ MonoBehaviour:
     - 
     goal: Print your name. Then print your age on a new line.
     instructionBulletPoints:
-    - Use the print command on line 1 to output your name as a string.
-    - Make a new line and use the same command but this time give it your age.
+    - Use the print command on line 2 to output your name as a string.
+    - Do the same on line 4 but this time give it your age.
     - 
     - 
     - 
@@ -215,8 +215,13 @@ MonoBehaviour:
       // Print your age below:
 
 '
-    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    solutionCode: '// Print your name below:
+
+      Console.Print("Elvis Presley");
+
+      // Print your age below:
+
+      Console.Print(80);'
     ceSettings:
       executionMode: 1
       usingNamespaces: using CodiumAPI;
