@@ -143,7 +143,7 @@ public class CourseEditor : Editor {
 			if (CVFoldout[i])
 			{
 				//EditorGUILayout.LabelField(_displayTitle, EditorStyles.whiteLargeLabel);
-				cw.subject = EditorGUILayout.TextField("Subject:  " + cw.subject.Length + "/21 chars", cw.subject);
+				cw.subject = EditorGUILayout.TextField("Subject:  " + cw.subject.Length + "/27 chars", cw.subject);
 				EditorGUILayout.LabelField("Explaination:", cw.explaination.Length + "/150 chars");
 				cw.explaination = EditorGUILayout.TextArea(cw.explaination, GUILayout.Height(50));
 
@@ -195,6 +195,10 @@ public class CourseEditor : Editor {
 
 				_ceSettings.executionMode = (CodeEnvironment.ExecutionMode)EditorGUILayout.EnumPopup("Execution Mode:", _ceSettings.executionMode);
 				if (_ceSettings.executionMode == CodeEnvironment.ExecutionMode.runInMain)
+				{
+					EditorGUILayout.LabelField("NOTE: Execution mode still in testing!");
+				}
+				if (_ceSettings.executionMode != CodeEnvironment.ExecutionMode.full)
 				{
 					EditorGUILayout.LabelField("Using Namespaces:");
 					_ceSettings.usingNamespaces = EditorGUILayout.TextArea(_ceSettings.usingNamespaces, GUILayout.Height(100));

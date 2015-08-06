@@ -143,6 +143,7 @@
     <None Include="Assets\Prototyping\ProceduralBackground\BlendTextures.shader" />
     <None Include="Assets\Resources\Courses\ValidatorTemplate.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsCYAN.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsORANGE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsPURPLE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsRED.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\ExtraKeywords.txt" />

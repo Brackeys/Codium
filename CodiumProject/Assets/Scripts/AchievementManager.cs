@@ -44,6 +44,9 @@ public class AchievementManager : MonoBehaviour {
 
 	#endregion
 
+	[SerializeField]
+	private float completeCourseViewDelay = 0.7f;
+
 	private const string rewardTextColor = "<color=#FF9D58>";
 
 	private UserDataManager userDatamanager;
@@ -86,7 +89,7 @@ public class AchievementManager : MonoBehaviour {
 	public void CourseViewCompleted()
 	{
 		Print("Course View Completed!");
-		Invoke("_CourseViewCompleted", 1f); 
+		Invoke("_CourseViewCompleted", completeCourseViewDelay); 
 		
 	}
 	private void _CourseViewCompleted()

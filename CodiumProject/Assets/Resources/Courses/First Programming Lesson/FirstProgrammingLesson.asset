@@ -29,8 +29,8 @@ MonoBehaviour:
     - Simply type in the expression you want to calculate.
     - 
     exampleBulletPoints:
-    - <b>2 + 2</b>
-    - <b>4 * 5 + 1</b>
+    - <code>2 + 2</code>
+    - <code>4 * 5 + 1</code>
     - 
     goal: Calculate something.
     instructionBulletPoints:
@@ -63,8 +63,8 @@ MonoBehaviour:
     - 
     - 
     exampleBulletPoints:
-    - <b>1 / 2f = 0.5</b>
-    - <b>4 / 5f = 0.8</b>
+    - <code>1 / 2f = 0.5</code>
+    - <code>4 / 5f = 0.8</code>
     - 
     goal: Calculate a decimal point number.
     instructionBulletPoints:
@@ -95,8 +95,8 @@ MonoBehaviour:
       string.
     - 
     exampleBulletPoints:
-    - 'String are often used for names: "Dwayne Johnson" is a string.'
-    - '"Dwayne Johnson".Length prints the length of the string.'
+    - 'String are often used for names: <code>"Dwayne Johnson"</code> is a string.'
+    - <code>"Dwayne Johnson".Length</code> prints the length of the string.
     - 
     goal: Print the length of your name.
     instructionBulletPoints:
@@ -117,7 +117,7 @@ MonoBehaviour:
     gameScene: {fileID: 0}
   - subject: '"Hello, World"'
     explaination: 'It''s common among programmers to start any project with the words:
-      "Hello, World".
+      <code>"Hello, World"</code>.
 
 
       Let''s do it with style by combining two strings.'
@@ -126,14 +126,15 @@ MonoBehaviour:
     - 
     - 
     exampleBulletPoints:
-    - '"I am " + "Groot" will show the words <b>I am Groot</b>.'
+    - <code>"I am " + "Groot"</code> will show the words <b>I am Groot</b>.
     - 
     - 
     goal: Say hi like a programmer by combining the two words.
     instructionBulletPoints:
-    - Create a string called <b>"Hello,  "</b> (remember the space to seperate the
-      words).
-    - Combine it with another string called <b>"World"</b> using the <b>+</b> sign.
+    - Create a string called <code>"Hello,  "</code> (remember the space to seperate
+      the words).
+    - Combine it with another string called <code>"World"</code> using the <b>+</b>
+      sign.
     - 
     - 
     - 
@@ -155,14 +156,14 @@ MonoBehaviour:
 
 '
     codeBulletPoints:
-    - To check if two values are equal we use the <b>==</b> operator.
-    - The <b>!=</b> operator does exactly the opposite.
+    - To check if two values are equal we use the <code>==</code> operator.
+    - The <code>!=</code> operator does exactly the opposite.
     - 
     exampleBulletPoints:
-    - <b>5 == 5</b> will show the result <b>True</b>.
-    - <b>"BIG" == "big"</b> will show <b>False</b>.
-    - <b>25/5 != 4</b> will show <b>True</b>.
-    goal: Find out if six multiplied by nine is equal to <b>42</b>.
+    - <code>5 == 5</code> will show the result <b>True</b>.
+    - <code>"BIG" == "big"</code> will show <b>False</b>.
+    - <code>25/5 != 4</code> will show <b>True</b>.
+    goal: Find out if six multiplied (<b>*</b>) by nine is equal to <b>42</b>.
     instructionBulletPoints:
     - 
     - 
@@ -176,19 +177,61 @@ MonoBehaviour:
     solutionCode: 6*9 == 42
     ceSettings:
       executionMode: 1
-      usingNamespaces: using CodiumAPI
+      usingNamespaces: 
     validator: {fileID: 11500000, guid: 1ed7f0be80f008d44bc3e1e8eba36ff1, type: 3}
+    gameScene: {fileID: 0}
+  - subject: Printing to the Console
+    explaination: 'So far the computer has shown the result of our code in the console.
+
+
+      In real programming we have to ask the computer to do this.
+
+
+      To display a value at a certain point, we use this command:
+
+
+      <code>Console.Print( value here );</code>'
+    codeBulletPoints:
+    - 
+    - 
+    - 
+    exampleBulletPoints:
+    - <code>Console.Print( 2+5 );</code>
+    - <code>Console.Print("David Hasselhoff");</code>
+    - 
+    goal: Print your name. Then print your age on a new line.
+    instructionBulletPoints:
+    - Use the print command on line 1 to output your name as a string.
+    - Make a new line and use the same command but this time give it your age.
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: '// Print your name below:
+
+
+      // Print your age below:
+
+'
+    solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
+      & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    ceSettings:
+      executionMode: 1
+      usingNamespaces: using CodiumAPI;
+    validator: {fileID: 11500000, guid: 40d32436a9eb03b42bd594f7fe3b0b25, type: 3}
     gameScene: {fileID: 0}
   - subject: Comments
     explaination: "Commenting parts of our code makes it easier to read.\n\r\nComments
       will be ignored by the computer when it is running the program.\r"
     codeBulletPoints:
-    - Use  <b>// TEXT HERE</b>  to make a single-line comment.
-    - Use  <b>/* TEXT HERE */</b>  to make a multi-line comment.
+    - Use  <code>// TEXT HERE</code>  to make a single-line comment.
+    - Use  <code>/* TEXT HERE */</code> to make a multi-line comment.
     - 
     exampleBulletPoints:
-    - "\u201CYoda\u201D.Length     // get length of string"
-    - /* This comment will continue until the end sign */
+    - <code>"Yoda".Length  //get length of string</code>
+    - <code>/* This comment will continue until the end sign */</code>
     - 
     goal: Make a comment that explains the code without altering it.
     instructionBulletPoints:
@@ -238,4 +281,4 @@ MonoBehaviour:
       usingNamespaces: 
     validator: {fileID: 0}
     gameScene: {fileID: 0}
-  ID: 1c54a3ba5c0e40d68a2f7ba492758c05
+  ID: d30c8c1df3b2427ab0c46891b7cbb514

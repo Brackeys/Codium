@@ -32,6 +32,10 @@ namespace CodeEnvironment
 		public void SetCESettings(CESettings _settings)
 		{
 			ceSettings = _settings;
+			if (ceSettings.executionMode == ExecutionMode.expression)
+			{
+				ucce.RegisterNamespaces(ceSettings.usingNamespaces);
+			}
 		}
 		private CEValidator ceValidator;
 		public void SetCEValidator(CEValidator _validator)

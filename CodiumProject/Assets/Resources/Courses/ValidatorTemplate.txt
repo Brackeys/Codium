@@ -7,7 +7,7 @@ public class **CLASSNAME** : CEValidator {
 	public override bool Validate()
 	{
 		// Insert validation checks here
-		return true;
+		return false;
 	}
 
 }

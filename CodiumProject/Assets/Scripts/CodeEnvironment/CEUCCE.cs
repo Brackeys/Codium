@@ -61,6 +61,11 @@ namespace CodeEnvironment
 			}
 		}
 
+		public void RegisterNamespaces(string _using)
+		{
+			_evaluator.Run(_using);
+		}
+
 		public bool Run(string _code)	// Don't wrap int namespace
 		{
 			_stringBuilder.Length = 0;
@@ -84,6 +89,7 @@ namespace CodeEnvironment
 
 			result = default(T);
 			_stringBuilder.Length = 0;
+			
 			string res = _evaluator.Evaluate(code, out resultVal, out resultSet);
 			_error = _stringBuilder.ToString();
 

@@ -13,7 +13,7 @@ namespace CodeEnvironment
 		public CESettings()
 		{
 			executionMode = ExecutionMode.expression;
-			usingNamespaces = "using CodiumAPI";
+			usingNamespaces = "using CodiumAPI;";
 		}
 	}
 

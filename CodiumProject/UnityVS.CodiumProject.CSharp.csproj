@@ -122,6 +122,7 @@
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View03.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View04.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View05.cs" />
+    <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View06.cs" />
     <Compile Include="Assets\Resources\Courses\First Programming Lesson\FirstProgrammingLesson_View07.cs" />
     <Compile Include="Assets\Resources\Courses\TestingCourse\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
@@ -184,6 +185,7 @@
     <None Include="Assets\Prototyping\ProceduralBackground\BlendTextures.shader" />
     <None Include="Assets\Resources\Courses\ValidatorTemplate.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsCYAN.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsORANGE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsPURPLE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsRED.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\ExtraKeywords.txt" />

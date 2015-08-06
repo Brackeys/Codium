@@ -382,8 +382,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 2.28881836e-05, y: 0}
-  m_SizeDelta: {x: 212, y: 0}
+  m_AnchoredPosition: {x: 2.38418579e-05, y: 0}
+  m_SizeDelta: {x: 260.600006, y: 0}
   m_Pivot: {x: .500000119, y: 1}
 --- !u!114 &86283972
 MonoBehaviour:
@@ -11198,6 +11198,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1685055939}
     m_Modifications:
+    - target: {fileID: 11422596, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
+      propertyPath: keywordTxtFiles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 463454, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11246,6 +11250,10 @@ Prefab:
       propertyPath: keywordTxtFiles.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 6e37d13b7bb3b0a44ac7c763ffc605fc, type: 3}
+    - target: {fileID: 11422596, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
+      propertyPath: keywordTxtFiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 4900000, guid: e4a9e7721f892d745a870776484596dc, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
   m_IsPrefabParent: 0
