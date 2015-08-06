@@ -24,8 +24,7 @@ public class FirstProgrammingLesson_View06 : CEValidator {
 		if (!isNumeric)
 			return false;
 
-		Debug.Log("TRUE");
-		return false;
+		return true;
 	}
 
 }
