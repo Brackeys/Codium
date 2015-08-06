@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class AchievementManager : MonoBehaviour {
 
@@ -78,19 +79,24 @@ public class AchievementManager : MonoBehaviour {
 			Debug.LogError("No ModalPanel?!");
 		}
 		courseCompletedOKEvent = new UnityAction(_CourseCompleted);
-		courseViewCompletedOKEvent = new UnityAction(_CourseViewCompleted);
+		courseViewCompletedOKEvent = new UnityAction(_CourseViewContinue);
 		courseViewCompletedCancelEvent = new UnityAction(_CourseViewStay);
 	}
 
 	public void CourseViewCompleted()
 	{
 		Print("Course View Completed!");
+		Invoke("_CourseViewCompleted", 1f); 
+		
+	}
+	private void _CourseViewCompleted()
+	{
 		int _lpReward = NumberMaster.courseViewLPValue;
 		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nDo you want to continue immediately?";
 		modalPanel.CalmChoice(_msg, courseViewCompletedOKEvent, courseViewCompletedCancelEvent);
 		userDatamanager.GiveLearnPoints(_lpReward);	// Give learn points for view
 	}
-	private void _CourseViewCompleted()
+	private void _CourseViewContinue()
 	{
 		courseManager.SaveCourseCompletionData(1);
 		applicationManager.TransitionToCourseViewScene();

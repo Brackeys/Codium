@@ -143,7 +143,7 @@ public class CourseManager : MonoBehaviour {
 			{
 				if (showCVAlreadyCompletedMsg)
 				{
-					CodiumAPI.Console.PrintSystem("You've already finished this challenge! Continue to the next one by using the menu at the top.");
+					CodiumAPI.Console.PrintSystem("CORRECT - Continue to the next challenge by using the menu at the top.");
 					showCVAlreadyCompletedMsg = false;
 				}
 			}

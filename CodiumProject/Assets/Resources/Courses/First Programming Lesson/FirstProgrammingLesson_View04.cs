@@ -10,6 +10,9 @@ public class FirstProgrammingLesson_View04 : CEValidator {
 		string msg = _latestLog.message;
 		msg = msg.ToLower();
 
+		if (codeManager.GetUserCode().Contains("+") == false)
+			return false;
+
 		switch (msg)
 		{
 			case "hello, world":
@@ -20,9 +23,9 @@ public class FirstProgrammingLesson_View04 : CEValidator {
 				return true;
 			case "hello world!":
 				return true;
+			default:
+				return false;
 		}
-
-		return false;
 	}
 
 }
