@@ -292,13 +292,15 @@ namespace CodeEnvironment
 				content = content.ReplaceWithCss(highlightedClasses[i], TypeCssClass);
 			}
 
-			//// Highlight numbers
-			Regex numberRegex = new Regex(@"(?<=[\s|(|0-9|.])([\d|f|.])(?=[\s|;|)|0-9|.|f])", RegexOptions.Singleline);
+			string _operators = "+|-|?|/|*|=|!";
+
+			// Highlight numbers
+			Regex numberRegex = new Regex(@"((?<=[" + _operators + @"|\s|(|0-9|.])([\d|f|.])|^([\d|f|.]))(?=[" + _operators + @"|\s|;|)|0-9|.|f])", RegexOptions.Singleline);
 			content = numberRegex.Replace(content, "<color=" + NumberCssClass + ">$1</color>");
 
 			// Highlight operators
-			Regex operatorRegex = new Regex(@"(?<=[\w|\s|+|-|?|/|*|=|!])([+|-|?|/|*|=|!])(?=[\s|+|-|?|/|*|=|!|)|;])", RegexOptions.Singleline);
-			content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
+			//Regex operatorRegex = new Regex(@"(?<=[\w|\s|" + _operators + @"])([" + _operators + @"])(?=[\s|" + _operators + @"|)|;])", RegexOptions.Singleline);
+			//content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
 
 			// Highlight keywords
 			foreach (KeywordStruct keyword in _keywords)
