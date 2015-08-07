@@ -228,8 +228,8 @@ MonoBehaviour:
     validator: {fileID: 11500000, guid: 40d32436a9eb03b42bd594f7fe3b0b25, type: 3}
     gameScene: {fileID: 0}
   - subject: Comments
-    explaination: "Commenting parts of our code makes it easier to read.\n\r\nComments
-      will be ignored by the computer when it is running the program.\r"
+    explaination: "As we saw just before, commenting parts of our code makes it easier
+      to read.\n\r\nComments are ignored by the computer when it is running the program.\r"
     codeBulletPoints:
     - Use  <code>// TEXT HERE</code>  to make a single-line comment.
     - Use  <code>/* TEXT HERE */</code> to make a multi-line comment.
@@ -248,9 +248,12 @@ MonoBehaviour:
     - 
     - 
     - 
-    defaultCode: '"I am your father".Length + 2'
-    solutionCode: "\"I am your father\".Length + 2\t// get the length of the string
-      and add 2"
+    defaultCode: '
+
+      "I am your father".Length + 2'
+    solutionCode: '// Print the length of the string plus two
+
+      Console.Print ("I am your father".Length + 2);'
     ceSettings:
       executionMode: 2
       usingNamespaces: using CodiumAPI;

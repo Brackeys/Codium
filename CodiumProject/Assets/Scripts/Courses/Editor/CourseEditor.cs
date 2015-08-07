@@ -145,7 +145,7 @@ public class CourseEditor : Editor {
 				//EditorGUILayout.LabelField(_displayTitle, EditorStyles.whiteLargeLabel);
 				cw.subject = EditorGUILayout.TextField("Subject:  " + cw.subject.Length + "/27 chars", cw.subject);
 				EditorGUILayout.LabelField("Explaination:", cw.explaination.Length + "/150 chars");
-				cw.explaination = EditorGUILayout.TextArea(cw.explaination, GUILayout.Height(50));
+				cw.explaination = EditorGUILayout.TextArea(cw.explaination, GUILayout.Height(100));
 
 				EditorGUILayout.Space();
 

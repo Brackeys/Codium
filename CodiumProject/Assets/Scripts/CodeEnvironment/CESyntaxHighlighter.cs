@@ -77,7 +77,7 @@ namespace CodeEnvironment
 			_commentCssClass = "grey";
 			_quotesCssClass = "#e6db74";
 			_typeCssClass = "#a6e22d";
-			_numberCssClass = _quotesCssClass;
+			_numberCssClass = "#ae81ff";
 			_operatorCssClass = "#f92772";
 			_keywords = new HashSet<KeywordStruct>();
 		}
