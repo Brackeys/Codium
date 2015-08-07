@@ -18,6 +18,9 @@ namespace CodeEnvironment
 		private string _keywordCssClass;
 		private string _quotesCssClass;
 		private string _typeCssClass;
+		private string _numberCssClass;
+		private string _operatorCssClass;
+
 		private HashSet<KeywordStruct> _keywords;
 
 		// Gets the list of reserved words/keywords.
@@ -40,11 +43,25 @@ namespace CodeEnvironment
 			set { _quotesCssClass = value; }
 		}
 
-		// Gets or sets the CSS class used for types. The default is 'type'.
+		// Gets or sets the CSS class used for types.
 		public string TypeCssClass
 		{
 			get { return _typeCssClass; }
 			set { _typeCssClass = value; }
+		}
+
+		// Gets or sets the CSS class used for numbers.
+		public string NumberCssClass
+		{
+			get { return _numberCssClass; }
+			set { _numberCssClass = value; }
+		}
+
+		// Gets or sets the CSS class used for operators.
+		public string OperatorCssClass
+		{
+			get { return _operatorCssClass; }
+			set { _operatorCssClass = value; }
 		}
 
 		// A struct used for pairing keywords with colors
@@ -60,6 +77,8 @@ namespace CodeEnvironment
 			_commentCssClass = "grey";
 			_quotesCssClass = "#e6db74";
 			_typeCssClass = "#a6e22d";
+			_numberCssClass = _quotesCssClass;
+			_operatorCssClass = "#f92772";
 			_keywords = new HashSet<KeywordStruct>();
 		}
 
@@ -273,10 +292,18 @@ namespace CodeEnvironment
 				content = content.ReplaceWithCss(highlightedClasses[i], TypeCssClass);
 			}
 
+			//// Highlight numbers
+			Regex numberRegex = new Regex(@"(?<=[\s|(|0-9|.])([\d|f|.])(?=[\s|;|)|0-9|.|f])", RegexOptions.Singleline);
+			content = numberRegex.Replace(content, "<color=" + NumberCssClass + ">$1</color>");
+
+			// Highlight operators
+			Regex operatorRegex = new Regex(@"(?<=[\w|\s|+|-|?|/|*|=|!])([+|-|?|/|*|=|!])(?=[\s|+|-|?|/|*|=|!|)|;])", RegexOptions.Singleline);
+			content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
+
 			// Highlight keywords
 			foreach (KeywordStruct keyword in _keywords)
 			{
-				Regex regexKeyword = new Regex(@"([^\w>]" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
+				Regex regexKeyword = new Regex(@"((?<=[(|\s])" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
 				content = regexKeyword.Replace(content, CssExtensions.GetCssReplacement(keyword.Color) + "$2");
 			}
 

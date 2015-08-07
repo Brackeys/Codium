@@ -1352,7 +1352,7 @@ namespace UnityEngine.UI
 			if (!InPlaceEditing())
 				return;
 
-			Debug.Log(clipboard);
+			//Debug.Log(clipboard);
 
 			for (int i = 0, imax = input.Length; i < imax; ++i)
 			{
