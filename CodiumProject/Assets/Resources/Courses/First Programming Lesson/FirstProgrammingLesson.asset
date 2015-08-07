@@ -255,9 +255,53 @@ MonoBehaviour:
 
       Console.Print ("I am your father".Length + 2);'
     ceSettings:
-      executionMode: 2
+      executionMode: 1
       usingNamespaces: using CodiumAPI;
     validator: {fileID: 11500000, guid: 8d42a990abd129a4fb1673b5f9e3f908, type: 3}
+    gameScene: {fileID: 0}
+  - subject: Data Types
+    explaination: "Whoah, that sounds scary!\r\n\r\nDon't worry, we've been using
+      Data Types all along.\r\n\r\nThese are the four most basic ones:\r\n\nAn <b>integer</b>
+      is a whole number.\r\nA   <b>float</b>  is a decimal number.\r\nA   <b>string</b>
+      \ is a sequence of characters.\r\nA   <b>boolean</b>  is either <b>true</b>
+      or <b>false</b>\r"
+    codeBulletPoints:
+    - 
+    - 
+    - 
+    exampleBulletPoints:
+    - 
+    - 
+    - 
+    goal: Change the name of the Data Types in the Console.Print statements to match
+      their values.
+    instructionBulletPoints:
+    - 'On the first line, replace <code>"Boolean: "</code> with <code>"Integer: "</code>'
+    - 'On the third line, replace <code>"Integer: "</code> with <code>"Boolean: "</code>'
+    - 'Swap <code>"Float: "</code> with <code>"String: "</code>'
+    - 
+    - 
+    - 
+    - 
+    - 
+    defaultCode: 'Console.Print ("Boolean: " + 14);
+
+      Console.Print ("Float: " + "Hello, World");
+
+      Console.Print ("Integer: " + false);
+
+      Console.Print ("String: " + 0.6f);'
+    solutionCode: 'Console.Print ("Integer: " + 14);
+
+      Console.Print ("String: " + "Hello, World");
+
+      Console.Print ("Boolean: " + false);
+
+      Console.Print ("Float: " + 0.6f);'
+    ceSettings:
+      executionMode: 1
+      usingNamespaces: using CodiumAPI;
+    validator: {fileID: 11500000, guid: a5f0d2d5cbd4c8f4a9a6b6a7fd10fd80, type: 3}
     gameScene: {fileID: 0}
   - subject: Empty
     explaination: Ignore this
