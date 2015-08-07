@@ -156,6 +156,7 @@
     <Compile Include="Assets\Scripts\Testing\AwaitingInput.cs" />
     <Compile Include="Assets\Scripts\Testing\KeywordAPI.cs" />
     <Compile Include="Assets\Scripts\UI\AppBarManager.cs" />
+    <Compile Include="Assets\Scripts\UI\CodeField.cs" />
     <Compile Include="Assets\Scripts\UI\DropdownElement.cs" />
     <Compile Include="Assets\Scripts\UI\EnableMask.cs" />
     <Compile Include="Assets\Scripts\UI\Fade.cs" />

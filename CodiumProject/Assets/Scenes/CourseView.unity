@@ -819,7 +819,7 @@ Prefab:
     - target: {fileID: 11495632, guid: 6ab56c683edb72a4498d605c61807e43, type: 2}
       propertyPath: codeField
       value: 
-      objectReference: {fileID: 2015519108}
+      objectReference: {fileID: 0}
     - target: {fileID: 11495632, guid: 6ab56c683edb72a4498d605c61807e43, type: 2}
       propertyPath: instructions
       value: 
@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .376470596}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FontData:
     m_Font: {fileID: 12800000, guid: fc618b5c05da345aa8cdb4f298534e94, type: 3}
     m_FontSize: 17
@@ -2563,11 +2563,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22406426, guid: 5b1893915adc8e748911f7afaa38a2c6, type: 2}
       propertyPath: m_AnchorMin.y
@@ -4684,7 +4684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22479814, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 162.711868
       objectReference: {fileID: 0}
     - target: {fileID: 177914, guid: cf2b6cb0a92552c4e9ac6eccbd4947f5, type: 2}
       propertyPath: m_IsActive
@@ -6225,7 +6225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .972549021, g: .972549021, b: .949019611, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: fc618b5c05da345aa8cdb4f298534e94, type: 3}
     m_FontSize: 17
@@ -7852,11 +7852,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22407586, guid: cbb302861c6a56d4496290de84c099fa, type: 2}
       propertyPath: m_AnchorMin.x
@@ -11651,10 +11651,10 @@ GameObject:
   m_Component:
   - 224: {fileID: 2015519107}
   - 222: {fileID: 2015519110}
-  - 114: {fileID: 2015519108}
   - 114: {fileID: 2015519109}
+  - 114: {fileID: 2015519108}
   m_Layer: 5
-  m_Name: CodeInputField
+  m_Name: CodeField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11686,11 +11686,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015519106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 575553740, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bbe7fa6be060574dadd99046dc2ee68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -11727,7 +11727,7 @@ MonoBehaviour:
   m_EndEdit:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
+    m_TypeName: UnityEngine.UI.CodeField+SubmitEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChange:
     m_PersistentCalls:
@@ -11743,11 +11743,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
+    m_TypeName: UnityEngine.UI.CodeField+OnChangeEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_SelectionColor: {r: .772058845, g: .772058845, b: .772058845, a: .31764707}
+  m_SelectionColor: {r: .315257341, g: .349034905, b: .360294104, a: .752941191}
   m_Text: 
-  m_CaretBlinkRate: 1.70000005
+  m_CaretBlinkRate: 1
+  m_CaretColor: {r: .823529422, g: .823529422, b: .823529422, a: 1}
 --- !u!114 &2015519109
 MonoBehaviour:
   m_ObjectHideFlags: 0
