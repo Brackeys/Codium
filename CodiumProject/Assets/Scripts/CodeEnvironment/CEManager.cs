@@ -306,7 +306,6 @@ namespace CodeEnvironment
 				return;
 			}
 
-			Debug.Log("TEST");
 			object instance = Activator.CreateInstance(mostRecentType);
 			MethodInfo method = mostRecentType.GetMethod(CEUCCE.ENTRY_METHOD_NAME, BindingFlags.Instance | BindingFlags.Public);
 
