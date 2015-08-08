@@ -16,6 +16,8 @@ public class FirstProgrammingLesson_View06 : CEValidator {
 		if (_latestLogs == null)
 			return false;
 
+		Debug.Log("Fix error when error");
+
 		if (_latestLogs[1].message.Any(c => char.IsDigit(c)))
 			return false;
 

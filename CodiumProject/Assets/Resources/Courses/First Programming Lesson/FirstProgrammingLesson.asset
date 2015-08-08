@@ -250,7 +250,7 @@ MonoBehaviour:
     - 
     defaultCode: '
 
-      "I am your father".Length + 2'
+      Console.Print ("I am your father".Length + 2);'
     solutionCode: '// Print the length of the string plus two
 
       Console.Print ("I am your father".Length + 2);'
