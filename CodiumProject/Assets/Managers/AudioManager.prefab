@@ -80,23 +80,23 @@ MonoBehaviour:
   pool:
   - name: Click
     sound: {fileID: 8300000, guid: aaced37749561b74795753b13100f3eb, type: 3}
-    baseVolume: 1
+    baseVolume: .689999998
     volumeVariance: .100000001
     basePitch: 1
     pitchVariance: .100000001
     mixer: {fileID: 0}
     source: {fileID: 0}
   - name: Slide
-    sound: {fileID: 8300000, guid: 9b56996ff3e6e924fad70d20e91e8cc5, type: 3}
-    baseVolume: 1
+    sound: {fileID: 8300000, guid: c614458fb84b429468dfc26c0726f604, type: 3}
+    baseVolume: .600000024
     volumeVariance: .100000001
     basePitch: 1
-    pitchVariance: .100000001
+    pitchVariance: .0500000007
     mixer: {fileID: 0}
     source: {fileID: 0}
   - name: MouseOverSubtle
     sound: {fileID: 8300000, guid: fd9d2665ae4dc614ebbb9f412fb4c821, type: 3}
-    baseVolume: 1
+    baseVolume: .867999971
     volumeVariance: .115999997
     basePitch: 1
     pitchVariance: .0489999987
@@ -108,6 +108,78 @@ MonoBehaviour:
     volumeVariance: .115999997
     basePitch: 1
     pitchVariance: .0489999987
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: Close
+    sound: {fileID: 8300000, guid: 9b56996ff3e6e924fad70d20e91e8cc5, type: 3}
+    baseVolume: .600000024
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: .0500000007
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: RunCode
+    sound: {fileID: 8300000, guid: c8806e1b63b4ac7459981b538d778ed6, type: 3}
+    baseVolume: .600000024
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: .0500000007
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: CarefulButton
+    sound: {fileID: 8300000, guid: 33970bef1786cb14493201080d301e2b, type: 3}
+    baseVolume: .448000014
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: GetHelp
+    sound: {fileID: 8300000, guid: 4d3306ff47985284daca6935913e3be6, type: 3}
+    baseVolume: .518000007
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: SadClick
+    sound: {fileID: 8300000, guid: aaced37749561b74795753b13100f3eb, type: 3}
+    baseVolume: .689999998
+    volumeVariance: .100000001
+    basePitch: .800000012
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: CourseCompleted
+    sound: {fileID: 8300000, guid: 06eb61f708ff75b4ea20837ebb67b531, type: 3}
+    baseVolume: .550000012
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: ViewCompleted
+    sound: {fileID: 8300000, guid: 092c3cc123fdbf247810673f8dcdaf2f, type: 3}
+    baseVolume: .550000012
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: Discard
+    sound: {fileID: 8300000, guid: f3a1e22b8c5b5b74a9aa9b14fb3ded31, type: 3}
+    baseVolume: .649999976
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: 0
+    mixer: {fileID: 0}
+    source: {fileID: 0}
+  - name: Apply
+    sound: {fileID: 8300000, guid: 447c07c556246b3438eada20c6661896, type: 3}
+    baseVolume: .349999994
+    volumeVariance: .100000001
+    basePitch: 1
+    pitchVariance: .0500000007
     mixer: {fileID: 0}
     source: {fileID: 0}
 --- !u!1001 &100100000

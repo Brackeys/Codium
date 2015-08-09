@@ -353,10 +353,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1685055939}
     m_Modifications:
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 489508, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -389,48 +385,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: clickSource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 113064, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: m_Name
-      value: AudioPool
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: slideSource
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: audioPool
-      value: 
-      objectReference: {fileID: 882605729}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].name
-      value: Click
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].sound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6ee65062abc5cd446a1a2385fbf7d428, type: 3}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].baseVolume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].volumeVariance
-      value: .100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].basePitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11423158, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-      propertyPath: pool.Array.data[0].pitchVariance
-      value: .100000001
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8282794, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &146482362 stripped
@@ -796,10 +751,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821432799}
---- !u!1 &882605729 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 113064, guid: a82941dd5e20f2f4287339e9a55c6b0e, type: 2}
-  m_PrefabInternal: {fileID: 146482361}
 --- !u!114 &1027739841 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11439842, guid: 0788dde0d8bb9f945be2bb1d0ed28923,

@@ -31,6 +31,9 @@ public class UIDropdown : MonoBehaviour {
 
 	private float currentBackgroundAlpha;
 
+	[SerializeField]
+	private string selectElementSound = "Click";
+
 	void Awake()
 	{
 		backgroundCanvasGroup = backgroundImage.GetComponent<CanvasGroup>();
@@ -126,6 +129,13 @@ public class UIDropdown : MonoBehaviour {
 			Debug.LogError("No CourseManager found in the HandleCourseViewElements() method");
 		}
 
+		AudioSystem.ASAudioManager _audioManager;
+		_audioManager = AudioSystem.ASAudioManager.ins;
+		if (_audioManager == null)
+		{
+			Debug.LogError("No audioManager found in the HandleCourseViewElements() method");
+		}
+
 		for (int i = 0; i < elements.Count; i++)
 		{
 			RectTransform _ref = elements[i].elementRef;
@@ -137,6 +147,7 @@ public class UIDropdown : MonoBehaviour {
 
 			int _index = i;
 			_button.onClick.RemoveAllListeners();
+			_button.onClick.AddListener(() => { _audioManager.Play(selectElementSound); });
 			_button.onClick.AddListener(() => { _courseManager.LoadCourseViewByIndex(_index); });
 		}
 

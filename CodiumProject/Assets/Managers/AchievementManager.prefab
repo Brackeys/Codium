@@ -39,6 +39,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11634309f9814a54cbed858c9afe0f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  courseCompletedSound: CourseCompleted
+  courseViewCompletedSound: ViewCompleted
+  completeDelay: .699999988
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -16,7 +16,8 @@ public class CourseManager : MonoBehaviour {
 			if (_ins == null) {
 				_ins = GameObject.FindObjectOfType <CourseManager>();
 
-				DontDestroyOnLoad (_ins.gameObject);
+				if (_ins != null)
+					DontDestroyOnLoad (_ins.gameObject);
 			}
 		
 			return _ins;

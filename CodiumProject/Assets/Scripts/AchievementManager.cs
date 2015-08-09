@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using AudioSystem;
 
 public class AchievementManager : MonoBehaviour {
 
@@ -45,13 +46,19 @@ public class AchievementManager : MonoBehaviour {
 	#endregion
 
 	[SerializeField]
-	private float completeCourseViewDelay = 0.7f;
+	private string courseCompletedSound;
+
+	[SerializeField]
+	private string courseViewCompletedSound;
+	[SerializeField]
+	private float completeDelay = 0.7f;
 
 	private const string rewardTextColor = "<color=#FF9D58>";
 
 	private UserDataManager userDatamanager;
 	private ApplicationManager applicationManager;
 	private CourseManager courseManager;
+	private ASAudioManager audioManager;
 
 	private ModalPanel modalPanel;
 	private UnityAction courseCompletedOKEvent;
@@ -84,12 +91,18 @@ public class AchievementManager : MonoBehaviour {
 		courseCompletedOKEvent = new UnityAction(_CourseCompleted);
 		courseViewCompletedOKEvent = new UnityAction(_CourseViewContinue);
 		courseViewCompletedCancelEvent = new UnityAction(_CourseViewStay);
+
+		audioManager = ASAudioManager.ins;
+		if (audioManager == null)
+		{
+			Debug.LogError("No ASAudioManager?!");
+		}
 	}
 
 	public void CourseViewCompleted()
 	{
 		Print("Course View Completed!");
-		Invoke("_CourseViewCompleted", completeCourseViewDelay); 
+		Invoke("_CourseViewCompleted", completeDelay); 
 		
 	}
 	private void _CourseViewCompleted()
@@ -97,6 +110,9 @@ public class AchievementManager : MonoBehaviour {
 		int _lpReward = NumberMaster.courseViewLPValue;
 		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nShould we move on to the next one?";
 		modalPanel.CalmChoice(_msg, courseViewCompletedOKEvent, courseViewCompletedCancelEvent);
+
+		audioManager.Play(courseViewCompletedSound);
+
 		userDatamanager.GiveLearnPoints(_lpReward);	// Give learn points for view
 	}
 	private void _CourseViewContinue()
@@ -115,6 +131,9 @@ public class AchievementManager : MonoBehaviour {
 		int _lpReward = _course.LPValue + NumberMaster.courseViewLPValue;	// Give learn points for course + for view
 		string _msg = "Entire Course Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.";
 		modalPanel.Notification(_msg, courseCompletedOKEvent);
+
+		audioManager.Play(courseCompletedSound);
+
 		userDatamanager.GiveLearnPoints(_lpReward);
 	}
 	private void _CourseCompleted()
