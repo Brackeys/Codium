@@ -12,7 +12,7 @@ using System.Collections.Generic;
 [CustomEditor(typeof(Course)), CanEditMultipleObjects]
 public class CourseEditor : Editor {
 	//Creating new courses
-	[MenuItem ("Course Editor/Create Course")]
+	[MenuItem ("Codium/Create Course")]
 	static void CreateCourse () {
 		string path = EditorUtility.SaveFilePanel ("Create Course",
 									"Assets/", "Custom Course.asset", "asset");

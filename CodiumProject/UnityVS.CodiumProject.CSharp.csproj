@@ -139,7 +139,9 @@
     <Compile Include="Assets\Scripts\Courses\CourseCompletionData.cs" />
     <Compile Include="Assets\Scripts\Courses\CourseDisplay.cs" />
     <Compile Include="Assets\Scripts\Courses\CourseManager.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseProgressData.cs" />
     <Compile Include="Assets\Scripts\Courses\CourseUtil.cs" />
+    <Compile Include="Assets\Scripts\Courses\CourseViewStateData.cs" />
     <Compile Include="Assets\Scripts\Courses\CurCourseData.cs" />
     <Compile Include="Assets\Scripts\DB\Serializer.cs" />
     <Compile Include="Assets\Scripts\DB\UserData.cs" />

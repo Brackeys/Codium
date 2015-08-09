@@ -188,14 +188,20 @@ namespace CodeEnvironment
 					break;
 			}
 
-				
-			if (ceValidator.Validate())
+			if (ceValidator != null)
 			{
-				courseManager.CompleteCourseView();
+				if (ceValidator.Validate())
+				{
+					courseManager.CompleteCurCourseView();
+				}
+				else if (!_hasErrors)
+				{
+					CodiumAPI.Console.PrintSystemWarning("The code had no errors but didn't do exactly what we want.");
+				}
 			}
-			else if (!_hasErrors)
+			else
 			{
-				CodiumAPI.Console.PrintSystemWarning("The code had no errors but didn't do exactly what we want.");
+				Debug.LogWarning("Couln't validate because validator is null");
 			}
 		}
 

@@ -51,6 +51,15 @@ public class CourseManager : MonoBehaviour {
 
 		UpdateCourseList ();
 		courseList = CourseUtil.SortCourses (courseList);
+
+		// Make sure all courses have CourseProgressData associated with them
+		for (int i = 0; i < courseList.Count; i++)
+		{
+			if (!CourseProgressDataExists(courseList[i].ID))
+			{
+				SetDefaultCourseProgressData (courseList[i]);
+			}
+		}
 	}
 
 	void Start()
@@ -91,8 +100,7 @@ public class CourseManager : MonoBehaviour {
 			return;
 		}
 
-		SaveCourseCompletionDataIfEmpty();
-		LoadCourseCompletionData();
+		LoadCourseProgressData(curCourse);
 
 		//When all course data is set up, load the current one
 		courseViewLoader.LoadCurrentCourseView();
@@ -103,203 +111,175 @@ public class CourseManager : MonoBehaviour {
 		courseList = CourseUtil.LoadAllCourses ().ToList<Course>();
 	}
 
+	#region NAVIGATING COURSES
 
-	#region Navigate course views
-
-	// Complete the current course view (or entire course) and transition to the next one
-	// This method calls methods on other systems to handle Learn Points, Notification & already
-	// completed course views.
-	public void CompleteCourseView()
+	public void LoadCourseView(string _cvID)
 	{
-		if (IsLastCourseView())		// If this is the last CV: Mark course as completed
-		{
-			CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
-			_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
+		SetCourseProgressData(curCourse.ID, _cvID);
+		applicationManager.TransitionToCourseViewScene();
+	}
 
-			if (!_ccData.isCompleted)
-			{
-				_ccData.Complete();
-				Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
-
-				achievementManager.CourseCompleted(curCourse);
-			}
-			else
-			{
-				// Do nothing
-			}
-		}
-		else	//else save course and load next view
-		{
-			if (!CurCourseViewIsCompleted())
-			{
-				// Due to how it is currently set up (very stupidly)
-				// we have to first save our progress and then use the same
-				// method to set our current view back again
-				SaveCourseCompletionData(1);
-				SaveCourseCompletionData(-1);
-				achievementManager.CourseViewCompleted();
-			}
-			else
-			{
-				if (showCVAlreadyCompletedMsg)
-				{
-					CodiumAPI.Console.PrintSystem("CORRECT - Continue to the next challenge by using the menu at the top.");
-					showCVAlreadyCompletedMsg = false;
-				}
-			}
-		}
+	public void LoadCourseViewByIndex(int _index)
+	{
+		LoadCourseView(curCourse.GetCourseViewIDByIndex (_index));
 	}
 
 	public void LoadNextCourseView()
 	{
-		if (GetCourseCompletionData_Next() <= GetCourseCompletionData_Current()) {
-			Debug.LogError("CourseCompletionData: Could not load next course view because it isn't unlocked or course is complete " + (GetCourseCompletionData_Current() + 1));
+		LoadCourseViewByIndex(GetCourseViewIndex(curCourseView) + 1);
+	}
+
+	public void CompleteCurCourseView()
+	{
+		int _completeIndex = CompleteCourseView(curCourse, curCourseView.ID);
+
+		// The course view is already completed
+		if (_completeIndex == -2)
+		{
+			CodiumAPI.Console.PrintSystem("CORRECT: Continue to the next challenge at any time.");
 		}
 		else
 		{
-			SaveCourseCompletionData(1);
-			applicationManager.TransitionToCourseViewScene();
+			if (_completeIndex >= curCourse.courseViews.Count - 1)
+			{
+				//Entire course completed
+				achievementManager.CourseCompleted(curCourse);
+			}
+			else
+			{
+				//Course view completed
+				achievementManager.CourseViewCompleted();
+			}
+
+			courseViewLoader.UpdateCourseView();
 		}
 	}
 
-	public void LoadPreviousCourseView()
+	//Completes a course view, returns its index
+	//Returns -2 if already completed
+	public int CompleteCourseView(Course _course, string _cvID)
 	{
-		if (GetCourseCompletionData_Current() == 0)
+		CourseProgressData _pData = GetCourseProgressData(_course.ID);
+		List<CourseViewStateData> _stateDataList = _pData.GetStateDataList();
+		for (int i = 0; i < _stateDataList.Count; i++)
 		{
-			Debug.LogError("CourseCompletionData: Could not load previous course view because it doesn't exist (below 0): ");
+			if (_stateDataList[i].ID == _cvID)
+			{
+				//If already completed return -2
+				if (_stateDataList[i].isCompleted)
+					return -2;
+
+				// Match found: Complete it
+				_stateDataList[i].isCompleted = true;
+				
+				int _completeIndex = _course.GetCourseViewIndexByID(_cvID);
+
+				_pData.SetStateDataList(_stateDataList);
+				SetCourseProgressData(_pData);
+				return _completeIndex;
+			}
 		}
-		else
-		{
-			SaveCourseCompletionData(-1);
-			applicationManager.TransitionToCourseViewScene();
-		}
+
+		Debug.LogError("CompleteCourseView: Course View not found! Returning -1");
+		return -1;
 	}
 
-	// Load course view using an index.
-	// This might make LoadNextCourseView() and LoadPreviousCourseView() deprecated.
-	public void LoadCourseViewByIndex(int _index)
+	public bool CourseViewIsUnlocked(int _index)
 	{
-		if (_index > GetCourseCompletionData_Next())
-		{
-			Debug.LogError("CourseCompletionData: Could not load course view with index '" + _index + "' because it isn't unlocked.");
-		}
-		else
-		{
-			int _offset = _index - GetCourseCompletionData_Current();
-			SaveCourseCompletionData(_offset);
-			applicationManager.TransitionToCourseViewScene();
-		}
-	}
-
-	private bool IsLastCourseView()
-	{
-		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
-		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
-
-		if (_ccData.currentCVIndex == curCourse.courseViews.Count - 1)
+		// The first CV is always unlocked
+		if (_index == 0)
 			return true;
-		else
-			return false;
-	}
 
-	// This method uses the save data so make sure not to override it before checking
-	private bool CurCourseViewIsCompleted()
-	{
-		if (GetCourseCompletionData_Next() <= GetCourseCompletionData_Current())
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
-	}
+		// Check the predecessor's complete status
+		string _cvID = curCourse.GetCourseViewIDByIndex (_index - 1);
 
-	public bool CourseViewIsCompleted(int _index)
-	{
-		if (GetCourseCompletionData_Next() < _index)
-			return false;
-		else
-			return true;
+		CourseProgressData _pData = GetCourseProgressData(curCourse.ID);
+		CourseViewStateData _sData = _pData.GetStateDataByID(_cvID);
+
+		return _sData.isCompleted;
 	}
 
 	#endregion
 
-	#region Save and load course completion data
-
-	public void SaveCourseCompletionDataIfEmpty()
+	#region COURSE PROGRESS DATA
+	public CourseProgressData GetCourseProgressData(string _ID)
 	{
-		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
-		if (!Serializer.PathExists(_ccData.fileName))
-		{
-			Debug.Log("CourseCompletion: No CourseCompletionData found. Saving first CourseView.");
-			SetCurCourseView(0);
-			Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
-		}
+		string _fileName = CourseProgressHelper.GetFileName (_ID);
+		CourseProgressData _pData = Serializer.Load<CourseProgressData>(_fileName);
+		return _pData;
 	}
 
-	public void SaveCourseCompletionData(int _offset)
+	// Sets entire progress data
+	public void SetCourseProgressData(CourseProgressData _pData)
 	{
-		int _cvIndex = GetCourseViewIndex(curCourseView);
-		if (_cvIndex == -1)
-		{
-			Debug.LogError("CourseView couldn't be found in courseViews list.");
-			return;
-		}
+		string _fileName = CourseProgressHelper.GetFileName(_pData.courseID);
+		Serializer.Save<CourseProgressData>(_pData, _fileName);
+	}
+	// OVERLOAD: Sets the current course view
+	public void SetCourseProgressData(string _courseID, string _curCVID)
+	{
+		CourseProgressData _pData = GetCourseProgressData(_courseID);
+		_pData.SetCurrentCourseViewID(_curCVID);
 
-		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
-		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
-		_ccData.Init(_cvIndex + _offset);
-		Serializer.Save<CourseCompletionData>(_ccData, _ccData.fileName);
+		string _fileName = CourseProgressHelper.GetFileName(_pData.courseID);
+		Serializer.Save<CourseProgressData>(_pData, _fileName);
 	}
 
-	private CourseCompletionData GetCourseCompletionData()
+	//Optional return of default data
+	public CourseProgressData SetDefaultCourseProgressData(Course _course)
 	{
-		CourseCompletionData _ccData = new CourseCompletionData(curCourse.ID);
-		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
-		return _ccData;
+		CourseProgressData _pData = new CourseProgressData(_course.ID, _course.GetCourseViewIDByIndex(0));
+		for (int i = 0; i < _course.courseViews.Count; i++)
+		{
+			_pData.AddStateData(new CourseViewStateData(_course.courseViews[i].ID));
+		}
+		SetCourseProgressData(_pData);
+		return _pData;
 	}
 
-	private int GetCourseCompletionData_Next()
+	public void LoadCourseProgressData(Course _course)
 	{
-		CourseCompletionData _ccData = GetCourseCompletionData();
-		if (_ccData == null)
+		CourseProgressData _pData;
+		if (CourseProgressDataExists(_course.ID))
 		{
-			Debug.LogError("CourseCompletionData is null. Returning -1");
-			return -1;
-		}
-		return _ccData.nextCVIndex;
-	}
+			_pData = GetCourseProgressData(_course.ID);
+			//Debug.Log("Course Progress Data exists, let's check that it's valid and updated.");
 
-	public void LoadCourseCompletionData()
-	{
-		SetCurCourseView(GetCourseCompletionData_Current());
-	}
-	private int GetCourseCompletionData_Current()
-	{
-		CourseCompletionData _ccData = GetCourseCompletionData();
-		if (_ccData == null)
-		{
-			Debug.LogError("CourseCompletionData is null. Returning -1");
-			return -1;
-		}
-		return _ccData.currentCVIndex;
-	}
+			if (_pData.GetStateDataCount() > _course.courseViews.Count)
+			{
+				Debug.LogError("Progress Data has more CV states than there are CV's. TODO: Delete them.");
+			}
+			else if (_pData.GetStateDataCount() < _course.courseViews.Count)
+			{
+				Debug.LogError("Progress Data has less CV states than there are CV's. TODO: Add them.");
+			}
 
-	public float GetCompletionPercent(Course _course)
-	{
-		CourseCompletionData _ccData = new CourseCompletionData(_course.ID);
-		if (!Serializer.PathExists(_ccData.fileName))
+			if (!_course.CourseViewExists(_pData.GetCurrentCourseViewID()))
+			{
+				Debug.Log("Current course view doesn't exist. Setting to first one.");
+				_pData.SetCurrentCourseViewID( _course.GetCourseViewIDByIndex(0) );
+			}
+		}
+		else
 		{
-			return 0f;
+			Debug.Log("NO Course Progress Data exists: Let's set the default");
+			_pData = SetDefaultCourseProgressData(_course);
 		}
 
-		_ccData = Serializer.Load<CourseCompletionData>(_ccData.fileName);
-		if (_ccData.isCompleted)
-		{
-			return 100f;
-		}
-		return _course.GetCompletionPercent(_ccData.nextCVIndex);
+		//Debug.Log("Now let's load it in!");
+		SetCurCourseView(_pData.GetCurrentCourseViewID());
+	}
+
+	public bool CourseProgressDataExists(string _ID)
+	{
+		string _fileName = CourseProgressHelper.GetFileName(_ID);
+		return Serializer.PathExists(_fileName);
+	}
+
+	public float GetCourseProgressPercent(Course _course)
+	{
+		CourseProgressData _pData = GetCourseProgressData(_course.ID);
+		return _pData.GetCourseProgressPercent();
 	}
 
 	#endregion
@@ -379,6 +359,18 @@ public class CourseManager : MonoBehaviour {
 
 		curCourseView = curCourse.courseViews[_cvIndex];
 	}
+	public void SetCurCourseView(string _cvID)
+	{
+		int _cvIndex = curCourse.GetCourseViewIndexByID(_cvID);
+
+		if (_cvIndex == -1)
+		{
+			Debug.LogError("Course View not found.");
+			return;
+		}
+
+		curCourseView = curCourse.courseViews[_cvIndex];
+	}
 
 	#endregion
 
@@ -391,7 +383,14 @@ public class CourseManager : MonoBehaviour {
 
 	// Loop through the courseView List and return the course that matches, otherwise return -1
 	public int GetCourseViewIndex ( CourseView view) {
-		return curCourse.courseViews.IndexOf (view);
+		int _cvIndex = curCourse.courseViews.IndexOf(view);
+		if (_cvIndex == -1)
+		{
+			Debug.LogError("CourseView couldn't be found in courseViews list.");
+			return -1;
+		} else {
+			return _cvIndex;
+		}
 	}
 
 	// Return course by index

@@ -70,7 +70,7 @@ public class CourseDisplay : MonoBehaviour {
 		category.text = _course.category.ToString();
 		difficulty.text = _course.difficulty.ToString();
 
-		float _pct = courseManager.GetCompletionPercent(_course);
+		float _pct = courseManager.GetCourseProgressPercent(_course);
 		completionBar.fillAmount = _pct/100f;
 		int _pctInt = Mathf.RoundToInt(_pct);
 		completionText.text = string.Format("{0}% mastered", _pctInt);
@@ -82,8 +82,7 @@ public class CourseDisplay : MonoBehaviour {
 	{
 		courseManager.SetCurCourse(course);
 		courseManager.SaveCurCourseData();
-		courseManager.SaveCourseCompletionDataIfEmpty();
-		courseManager.LoadCourseCompletionData();
+
 		applicationManager.TransitionToCourseViewScene();
 	}
 }

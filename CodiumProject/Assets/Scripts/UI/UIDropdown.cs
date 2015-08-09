@@ -138,8 +138,34 @@ public class UIDropdown : MonoBehaviour {
 			int _index = i;
 			_button.onClick.RemoveAllListeners();
 			_button.onClick.AddListener(() => { _courseManager.LoadCourseViewByIndex(_index); });
+		}
 
-			if (!_courseManager.CourseViewIsCompleted(i))
+		UpdateCourseViewElementsState();
+
+		Close();
+	}
+
+	// This method loops through the elements and enables them
+	// if they are unlocked
+	public void UpdateCourseViewElementsState()
+	{
+		CourseManager _courseManager;
+		_courseManager = CourseManager.ins;
+		if (_courseManager == null)
+		{
+			Debug.LogError("No CourseManager found in the HandleCourseViewElements() method");
+		}
+
+		for (int i = 0; i < elements.Count; i++)
+		{
+			RectTransform _ref = elements[i].elementRef;
+			Button _button = _ref.GetComponent<Button>();
+			if (_button == null)
+			{
+				Debug.LogError("No button component on the element object");
+			}
+
+			if (!_courseManager.CourseViewIsUnlocked(i))
 			{
 				_button.interactable = false;
 				CanvasGroup _cg = _ref.GetComponent<CanvasGroup>();
@@ -147,9 +173,15 @@ public class UIDropdown : MonoBehaviour {
 				_cg.interactable = false;
 				_cg.blocksRaycasts = false;
 			}
+			else
+			{
+				_button.interactable = true;
+				CanvasGroup _cg = _ref.GetComponent<CanvasGroup>();
+				_cg.alpha = 1f;
+				_cg.interactable = true;
+				_cg.blocksRaycasts = true;
+			}
 		}
-
-		Close();
 	}
 
 	#region Adding/removing elements

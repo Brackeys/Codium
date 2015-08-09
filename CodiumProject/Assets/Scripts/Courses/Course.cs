@@ -67,12 +67,38 @@ public class Course : ScriptableObject {
 		return Guid.NewGuid().ToString("N");
 	}
 
-	public float GetCompletionPercent(int _index)
+	public string GetCourseViewIDByIndex(int _index)
 	{
-		if (_index == 0)
-			return 0f;
-		int _count = courseViews.Count;
-		return (float)_index / _count * 100f;
+		if (_index < 0 || _index > courseViews.Count - 1)
+		{
+			Debug.LogError("GetCourseViewIDByIndex: Index out of bounds  -  " + _index);
+			return string.Empty;
+		}
+		return courseViews[_index].ID;
+	}
+
+	public int GetCourseViewIndexByID(string _ID)
+	{
+		for (int i = 0; i < courseViews.Count; i++)
+		{
+			if (courseViews[i].ID == _ID)
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	public bool CourseViewExists(string _ID)
+	{
+		for (int i = 0; i < courseViews.Count; i++)
+		{
+			if (courseViews[i].ID == _ID)
+				return true;
+		}
+
+		return false;
 	}
 }
 
@@ -89,6 +115,8 @@ public class CourseView {
 	public string[] instructionBulletPoints;
 	public string defaultCode;
 	public string solutionCode;
+
+	public string ID;
 
 	public CodeEnvironment.CESettings ceSettings;
 	public UnityEditor.MonoScript validator;
@@ -119,5 +147,12 @@ public class CourseView {
 									"Cube.renderer.material.color = Color.red;";
 
 		ceSettings = new CodeEnvironment.CESettings();
+
+		ID = GenerateID();
+	}
+
+	public string GenerateID()
+	{
+		return Guid.NewGuid().ToString("N");
 	}
 }

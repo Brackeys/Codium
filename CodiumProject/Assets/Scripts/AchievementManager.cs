@@ -95,13 +95,13 @@ public class AchievementManager : MonoBehaviour {
 	private void _CourseViewCompleted()
 	{
 		int _lpReward = NumberMaster.courseViewLPValue;
-		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nDo you want to continue immediately?";
+		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nShould we move on to the next one?";
 		modalPanel.CalmChoice(_msg, courseViewCompletedOKEvent, courseViewCompletedCancelEvent);
 		userDatamanager.GiveLearnPoints(_lpReward);	// Give learn points for view
 	}
 	private void _CourseViewContinue()
 	{
-		courseManager.SaveCourseCompletionData(1);
+		courseManager.LoadNextCourseView();
 		applicationManager.TransitionToCourseViewScene();
 	}
 	private void _CourseViewStay()

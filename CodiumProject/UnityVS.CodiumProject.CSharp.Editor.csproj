@@ -137,6 +137,7 @@
     <Compile Include="Assets\MaterialUI\Editor\TexturePostProcessor.cs" />
     <Compile Include="Assets\Prototyping\GUISoftshadow\Editor\SoftshadowEffectEditor.cs" />
     <Compile Include="Assets\Scripts\Courses\Editor\CourseEditor.cs" />
+    <Compile Include="Assets\Scripts\Courses\Editor\CourseProgressEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />

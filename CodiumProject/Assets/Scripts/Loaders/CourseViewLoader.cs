@@ -155,7 +155,12 @@ public class CourseViewLoader : MonoBehaviour {
 		}
 	}
 
-	#region Methods for course load on start
+	public void UpdateCourseView()
+	{
+		courseViewDropdown.UpdateCourseViewElementsState();
+	}
+
+	#region Methods for loading course view data on start
 	public void LoadCurrentCourseView()
 	{
 		if (courseManager.curCourseView == null)
@@ -166,13 +171,12 @@ public class CourseViewLoader : MonoBehaviour {
 
 		int _cvIndex = courseManager.GetCourseViewIndex(courseManager.curCourseView);
 		if (_cvIndex == -1) {
-			Debug.LogError ("CourseView couldn't be found in courseList.");
 			return;
 		}
-		LoadCourseView(courseManager.curCourse, _cvIndex);
+		LoadCourseViewData(courseManager.curCourse, _cvIndex);
 	}
 
-	public void LoadCourseView(Course course, int index)
+	public void LoadCourseViewData(Course course, int index)
 	{
 		// Load title
 		title.text = "<i><b>" + (index + 1).ToString("D2") + "</b></i>  " + course.title;
@@ -283,7 +287,7 @@ public class CourseViewLoader : MonoBehaviour {
 		// Load the validator into empty gameobject
 		if (cv.validator == null)
 		{
-			Debug.LogError("No validator referenced in course view?!");
+			Debug.LogWarning("No validator referenced in course view! CV cannot be completed.");
 			return;
 		}
 		GameObject _validatorGM = new GameObject("_Validator");
