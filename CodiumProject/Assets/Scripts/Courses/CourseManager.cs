@@ -31,8 +31,6 @@ public class CourseManager : MonoBehaviour {
 
 	public CourseView curCourseView;
 
-	private bool showCVAlreadyCompletedMsg = true;
-
 	// References
 	private AchievementManager achievementManager;
 	private ApplicationManager applicationManager;

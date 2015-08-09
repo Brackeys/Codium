@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using AudioSystem;
 using System.Collections.Generic;
 
 public class AppBarManager : MonoBehaviour {

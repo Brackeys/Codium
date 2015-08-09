@@ -128,6 +128,9 @@
     <Compile Include="Assets\Resources\Courses\TestingCourse\A_TestingCourse_View01.cs" />
     <Compile Include="Assets\Scripts\AchievementManager.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\AudioSystem\ASAudioManager.cs" />
+    <Compile Include="Assets\Scripts\AudioSystem\ASAudioPlayer.cs" />
+    <Compile Include="Assets\Scripts\AudioSystem\ASSound.cs" />
     <Compile Include="Assets\Scripts\CEValidator.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CEManager.cs" />
     <Compile Include="Assets\Scripts\CodeEnvironment\CESettings.cs" />
