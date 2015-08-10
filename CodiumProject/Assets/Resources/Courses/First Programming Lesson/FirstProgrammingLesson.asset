@@ -341,6 +341,6 @@ MonoBehaviour:
     ceSettings:
       executionMode: 1
       usingNamespaces: 
-    validator: {fileID: 0}
+    validator: {fileID: 11500000, guid: eeb98b44be8d4ee48af7edbb4663530f, type: 3}
     gameScene: {fileID: 0}
   ID: d30c8c1df3b2427ab0c46891b7cbb514

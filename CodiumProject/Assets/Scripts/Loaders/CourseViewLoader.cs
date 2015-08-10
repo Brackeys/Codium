@@ -6,7 +6,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEditor;
 using System;
 using GameView;
 using CodeEnvironment;
@@ -301,7 +300,7 @@ public class CourseViewLoader : MonoBehaviour {
 			return;
 		}
 		GameObject _validatorGM = new GameObject("_Validator");
-		CEValidator _validator = _validatorGM.AddComponent(cv.validator.GetClass()) as CEValidator;
+		CEValidator _validator = _validatorGM.AddComponent(Type.GetType(cv.validator.name)) as CEValidator;
 		if (_validator == null)
 		{
 			Debug.LogError("Referenced validator is not valid.");

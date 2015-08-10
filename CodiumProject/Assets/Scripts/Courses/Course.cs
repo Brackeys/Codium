@@ -119,7 +119,8 @@ public class CourseView {
 	public string ID;
 
 	public CodeEnvironment.CESettings ceSettings;
-	public UnityEditor.MonoScript validator;
+
+	public UnityEngine.Object validator;
 
 	public UnityEngine.Object gameScene;
 

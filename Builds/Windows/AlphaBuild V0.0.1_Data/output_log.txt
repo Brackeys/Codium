@@ -1,0 +1,47 @@
+Mono path[0] = 'C:/Users/ATBrackeys/Desktop/Projects/Codium/Builds/Windows/AlphaBuild V0.0.1_Data/Managed'
+Mono path[1] = 'C:/Users/ATBrackeys/Desktop/Projects/Codium/Builds/Windows/AlphaBuild V0.0.1_Data/Mono'
+Mono config path = 'C:/Users/ATBrackeys/Desktop/Projects/Codium/Builds/Windows/AlphaBuild V0.0.1_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/ATBrackeys/Desktop/Projects/Codium/Builds/Windows/AlphaBuild V0.0.1_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55230
+Multi-casting "[IP] 192.168.0.16 [Port] 55230 [Flags] 2 [Guid] 3844195516 [EditorId] 1699024987 [Version] 1048832 [Id] WindowsPlayer(TheBeast) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.16:55230]
+Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 780 (ID=0x1004)
+    Vendor:   NVIDIA
+    VRAM:     3013 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\Mono.CSharp.dll (this message is harmless)
+Loading C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\Mono.CSharp.dll into Unity Child Domain
+- Completed reload, in  0.076 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1200 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ATBrackeys\Desktop\Projects\Codium\Builds\Windows\AlphaBuild V0.0.1_Data\Managed\System.dll (this message is harmless)
+UnauthorizedAccessException: Access to the path "C:\courseProgress_d30c8c1df3b2427ab0c46891b7cbb514.dat" is denied.
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean anonymous, FileOptions options) [0x00337] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.IO/FileStream.cs:354 
+  at System.IO.FileStream..ctor (System.String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize) [0x00000] in <filename unknown>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream:.ctor (string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int)
+  at System.IO.File.Create (System.String path, Int32 bufferSize) [0x00000] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.IO/File.cs:135 
+  at System.IO.File.Create (System.String path) [0x00000] in /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.IO/File.cs:130 
+  at Serializer.Save[CourseProgressData] (.CourseProgressData _data, System.String _name) [0x0001c] in C:\Users\ATBrackeys\Desktop\Projects\Codium\CodiumProject\Assets\Scripts\DB\Serializer.cs:66 
+  at CourseManager.SetCourseProgressData (.CourseProgressData _pData) [0x0000c] in C:\Users\ATBrackeys\Desktop\Projects\Codium\CodiumProject\Assets\Scripts\Courses\CourseManager.cs:218 
+  at CourseManager.SetDefaultCourseProgressData (.Course _course) [0x0004b] in C:\Users\ATBrackeys\Desktop\Projects\Codium\CodiumProject\Assets\Scripts\Courses\CourseManager.cs:238 
+  at CourseManager.Awake () [0x00076] in C:\Users\ATBrackeys\Desktop\Projects\Codium\CodiumProject\Assets\Scripts\Courses\CourseManager.cs:59 
+ 
+(Filename: /Users/builduser/buildslave/mono-runtime-and-classlibs/build/mcs/class/corlib/System.IO/FileStream.cs Line: 354)
+

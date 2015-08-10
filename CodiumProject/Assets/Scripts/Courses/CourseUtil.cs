@@ -3,7 +3,9 @@
 //-----------------------------------------------------------------
 
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.Collections.Generic;
 using System.IO;
 
@@ -87,6 +89,8 @@ public class CourseUtil
 
 	#region GAME SCENE HANDLING
 
+	#if UNITY_EDITOR
+
 	//Check if scene is added to Build Settings
 	public static bool IsInBuildSettings(Object _sceneObj)
 	{
@@ -146,13 +150,16 @@ public class CourseUtil
 
 		Debug.Log("Scene with path: " + _scene.path + " has been removed from Build Settings");
 	}
+	#endif
 
 	#endregion
 
 	#region VALIDATOR SCRIPT HANDLING
 
+	#if UNITY_EDITOR
+
 	// Generates a C# script with the template defined by ValidatorTemplate.txt
-	public static MonoScript GenValidatorTemplate(string _assetPath, int _viewIndex)
+	public static UnityEngine.Object GenValidatorTemplate(string _assetPath, int _viewIndex)
 	{
 		string name = Path.GetFileNameWithoutExtension(_assetPath) + "_View" + (_viewIndex + 1).ToString("D2"); ;
 		string fullPath = Path.GetDirectoryName(_assetPath) + "/" + name + ".cs";
@@ -181,7 +188,7 @@ public class CourseUtil
 		string relativePath = fullPath.Remove(0, resourcesPath.Length);
 		relativePath = relativePath.Remove(relativePath.Length - 3, 3);
 		//Debug.Log(relativePath);
-		MonoScript _validatorTemp = Resources.Load(relativePath) as MonoScript;
+		UnityEngine.Object _validatorTemp = Resources.Load(relativePath) as UnityEngine.Object;
 		if (_validatorTemp == null)
 		{
 			Debug.LogError("Something went wrong. Validator template is null");
@@ -192,6 +199,8 @@ public class CourseUtil
 			return _validatorTemp;
 		}
 	}
+
+	#endif
 
 	#endregion
 

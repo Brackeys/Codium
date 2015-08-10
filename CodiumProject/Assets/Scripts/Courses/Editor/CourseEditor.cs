@@ -209,7 +209,7 @@ public class CourseEditor : Editor {
 
 				EditorGUILayout.Space();
 
-				cw.validator = EditorGUILayout.ObjectField("Validator Script:", cw.validator, typeof(MonoScript), false) as MonoScript;
+				cw.validator = EditorGUILayout.ObjectField("Validator Script:", cw.validator, typeof(UnityEngine.Object), false) as UnityEngine.Object;
 				if (cw.validator == null)
 				{
 					GUI.color = Color.green;
