@@ -183,10 +183,10 @@
     <Compile Include="Assets\Scripts\UI\UIDropdown.cs" />
     <Compile Include="Assets\Scripts\UI\UIFollowSize.cs" />
     <Compile Include="Assets\Scripts\UI\UIGradient.cs" />
+    <Compile Include="Assets\Scripts\UI\UIPulseAnim.cs" />
     <Compile Include="Assets\Scripts\UI\UIScaleAnim.cs" />
     <Compile Include="Assets\Scripts\UI\UISelectOnKeypress.cs" />
     <Compile Include="Assets\Scripts\UI\UITabs.cs" />
-    <Compile Include="Assets\UIPulseAnim.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MaterialUI\Fonts\NOTICE.txt" />
