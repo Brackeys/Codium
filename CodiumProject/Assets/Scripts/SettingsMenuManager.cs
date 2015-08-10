@@ -7,6 +7,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class SettingsMenuManager : MonoBehaviour {
 
@@ -51,6 +52,12 @@ public class SettingsMenuManager : MonoBehaviour {
 	[SerializeField]
 	private Toggle fullScreenToggle;
 
+	public AudioMixer masterMixer;
+
+	private float audioVolume;
+	[SerializeField]
+	private Slider audioSlider;
+
 	private Resolution resolution;
 	[SerializeField]
 	private RectTransform resolutionItemPrefab;
@@ -73,6 +80,18 @@ public class SettingsMenuManager : MonoBehaviour {
 		if (resolutionParent == null)
 		{
 			Debug.LogError("No resolutionParent referenced");
+			return;
+		}
+
+		if (masterMixer == null)
+		{
+			Debug.LogError("No masterMixer referenced.");
+			return;
+		}
+
+		if (audioSlider == null)
+		{
+			Debug.LogError("No audioSlider referenced.");
 			return;
 		}
 
@@ -148,10 +167,21 @@ public class SettingsMenuManager : MonoBehaviour {
 		fullScreen = _state;
 	}
 
+	//Set the private audioOn state
+	public void SetAudioVolume(float _volume)
+	{
+		audioVolume = _volume;
+	}
+
 	// Set the current settings to the private settings
 	public void ApplySettings()
 	{
 		Screen.SetResolution(resolution.width, resolution.height, fullScreen);
+		float _vol = Mathf.Lerp (-30f, 0f, audioVolume/10f);
+		if (_vol == -30f) {
+			_vol = -80f;
+		}
+		masterMixer.SetFloat("masterVol", _vol);
 		PrintSettings();
 	}
 
@@ -163,6 +193,10 @@ public class SettingsMenuManager : MonoBehaviour {
 		fullScreenToggle.isOn = fullScreen;
 
 		resolution = Screen.currentResolution;
+		float _volume;
+		masterMixer.GetFloat("masterVol", out _volume);
+		_volume = Mathf.Clamp(_volume, -30f, 0f);
+		audioSlider.value = Mathf.InverseLerp (-30f, 0f, _volume) * 10f;
 	}
 
 	//Print current settings to the console

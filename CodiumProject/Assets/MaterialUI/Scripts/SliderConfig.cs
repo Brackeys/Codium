@@ -189,6 +189,9 @@ namespace MaterialUI
         //  Updates the popup text to reflect the slider value
 		public void UpdateText ()
 		{
+			if (slider == null)
+				return;
+
 			if (textHasDecimal)
 			{
 				popupText.text = slider.value.ToString("0.0");
