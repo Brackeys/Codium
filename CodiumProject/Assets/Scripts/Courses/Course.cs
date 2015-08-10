@@ -148,7 +148,8 @@ public class CourseView {
 
 		ceSettings = new CodeEnvironment.CESettings();
 
-		ID = GenerateID();
+		if (ID == string.Empty)
+			ID = GenerateID();
 	}
 
 	public string GenerateID()

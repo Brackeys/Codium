@@ -47,6 +47,9 @@ public class CourseProgressEditor : EditorWindow
 
 						GUILayout.BeginHorizontal();
 						CourseViewStateData _sData = _pData.GetStateDataByID(_view.ID);
+						if (_sData == null)
+							return;
+
 						if (_sData.isCompleted)
 							GUI.color = Color.green;
 						else if (_sData.ID == _courseManager.curCourseView.ID)

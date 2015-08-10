@@ -353,7 +353,7 @@ public class CourseViewLoader : MonoBehaviour {
 
 	public void ShowSolution()
 	{
-		modalPanel.Choice("Are you sure you want to see the solution code?\nThis will override your current code.", yesShowSolution, noShowSolution);
+		modalPanel.Choice("Are you sure you want to see the solution code?\nThis will overwrite your current code.", yesShowSolution, noShowSolution);
 	}
 	private void _ShowSolution()
 	{

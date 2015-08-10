@@ -195,6 +195,9 @@ public class CourseManager : MonoBehaviour {
 		CourseProgressData _pData = GetCourseProgressData(curCourse.ID);
 		CourseViewStateData _sData = _pData.GetStateDataByID(_cvID);
 
+		if (_sData == null)
+			return false;
+
 		return _sData.isCompleted;
 	}
 

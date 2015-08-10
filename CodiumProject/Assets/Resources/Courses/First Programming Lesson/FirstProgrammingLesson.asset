@@ -44,6 +44,7 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: 2+3
+    ID: e22c6c2eafd348ea88a7fa9bbddd34bd
     ceSettings:
       executionMode: 1
       usingNamespaces: 
@@ -78,6 +79,7 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: 3/2f
+    ID: d1ceac4024334c4d80dd33fcef0d7df5
     ceSettings:
       executionMode: 1
       usingNamespaces: 
@@ -110,6 +112,7 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: '"Morpheus".Length'
+    ID: 6776e5498822400bbed9f14201898565
     ceSettings:
       executionMode: 1
       usingNamespaces: 
@@ -143,6 +146,7 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: '"Hello, " + "World"'
+    ID: 41885bd597904a8c8579b43e178aa25e
     ceSettings:
       executionMode: 1
       usingNamespaces: 
@@ -175,6 +179,7 @@ MonoBehaviour:
     - 
     defaultCode: 
     solutionCode: 6*9 == 42
+    ID: 727b3abd39224757b4d2c65f2a31741c
     ceSettings:
       executionMode: 1
       usingNamespaces: 
@@ -222,6 +227,7 @@ MonoBehaviour:
       // Print your age below:
 
       Console.Print(80);'
+    ID: dd4e36fb00e64ed2817e6ffd06d806b2
     ceSettings:
       executionMode: 1
       usingNamespaces: using CodiumAPI;
@@ -254,6 +260,7 @@ MonoBehaviour:
     solutionCode: '// Print the length of the string plus two
 
       Console.Print ("I am your father".Length + 2);'
+    ID: fb307f51e52642a780ee7eac20377349
     ceSettings:
       executionMode: 1
       usingNamespaces: using CodiumAPI;
@@ -298,6 +305,7 @@ MonoBehaviour:
       Console.Print ("Boolean: " + false);
 
       Console.Print ("Float: " + 0.6f);'
+    ID: d5d49c93f0514c4ba8de2eec0a10e156
     ceSettings:
       executionMode: 1
       usingNamespaces: using CodiumAPI;
@@ -328,6 +336,7 @@ MonoBehaviour:
       & name it 'Cube'\n\n"
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
+    ID: 5f62a7f95ba3459eb7b61bf073bf975e
     ceSettings:
       executionMode: 1
       usingNamespaces: 
