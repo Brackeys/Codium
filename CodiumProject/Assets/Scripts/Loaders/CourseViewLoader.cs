@@ -249,18 +249,7 @@ public class CourseViewLoader : MonoBehaviour {
 			examples.gameObject.SetActive(false);
 		}
 
-		string _code = cv.defaultCode;
-		// load default code
-		codeField.text = _code;
-
-		// set caret position
-		int _caretIndex = _code.IndexOf ("CARET");
-		if (_caretIndex != -1)
-		{
-			codeField.caretPosition = _caretIndex;
-			codeField.text = codeField.text.Replace("CARET", "");
-		}
-		codeField.m_Select();
+		LoadCourseViewDefaultCode(cv);
 
 		// load goal
 		instructions.SetGoal(ceManager.FormatCodeInTags(cv.goal));
@@ -320,13 +309,23 @@ public class CourseViewLoader : MonoBehaviour {
 			return;
 		}
 
-		LoadCourseViewDefaultCode(courseManager.curCourse, courseManager.GetCourseViewIndex(courseManager.curCourseView));
+		LoadCourseViewDefaultCode(courseManager.curCourseView);
 	}
 
-	private void LoadCourseViewDefaultCode(Course _course, int _index)
+	private void LoadCourseViewDefaultCode(CourseView cv)
 	{
-		CourseView _cv = _course.courseViews[_index];
-		codeField.text = _cv.defaultCode;
+		string _code = cv.defaultCode;
+		// load default code
+		codeField.text = _code;
+
+		// set caret position
+		int _caretIndex = _code.IndexOf("CARET");
+		if (_caretIndex != -1)
+		{
+			codeField.caretPosition = _caretIndex;
+			codeField.text = codeField.text.Replace("CARET", "");
+		}
+		codeField.m_Select();
 	}
 
 	public void LoadCurrentCourseViewSolutionCode()
