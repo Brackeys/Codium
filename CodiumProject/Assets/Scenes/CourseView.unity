@@ -10120,6 +10120,10 @@ Prefab:
       propertyPath: keywordTxtFiles.Array.data[3]
       value: 
       objectReference: {fileID: 4900000, guid: e4a9e7721f892d745a870776484596dc, type: 3}
+    - target: {fileID: 11422596, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
+      propertyPath: setupSyntaxHighlighter
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0604c980188caf44b9fa1fb27dd6eb79, type: 2}
   m_IsPrefabParent: 0

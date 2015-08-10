@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System;
+using System.IO;
 
 namespace CodeEnvironment
 {
@@ -114,6 +115,8 @@ namespace CodeEnvironment
 
 			return builder.ToString();
 		}
+
+		private string pContent = "";
 
 		// Formats the code (content)
 		protected virtual string HighlightSource(string content)
@@ -292,22 +295,29 @@ namespace CodeEnvironment
 				content = content.ReplaceWithCss(highlightedClasses[i], TypeCssClass);
 			}
 
-			string _operators = "+|-|?|/|*|=|!";
-
-			// Highlight numbers
-			Regex numberRegex = new Regex(@"((?<=[" + _operators + @"|\s|(|0-9|.])([\d|f|.])|^([\d|f|.]))(?=[" + _operators + @"|\s|;|)|0-9|.|f])", RegexOptions.Singleline);
-			content = numberRegex.Replace(content, "<color=" + NumberCssClass + ">$1</color>");
-
-			// Highlight operators
-			//Regex operatorRegex = new Regex(@"(?<=[\w|\s|" + _operators + @"])([" + _operators + @"])(?=[\s|" + _operators + @"|)|;])", RegexOptions.Singleline);
-			//content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
-
-			// Highlight keywords
-			foreach (KeywordStruct keyword in _keywords)
+			// Highlight only changed lines with keywords
+			string[] lines = content.Split('\n');
+			string[] pLines = pContent.Split('\n');
+			for (int i = 0; i < lines.Length; i++)
 			{
-				Regex regexKeyword = new Regex(@"((?<=[(|\s])" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
-				content = regexKeyword.Replace(content, CssExtensions.GetCssReplacement(keyword.Color) + "$2");
+				if (lines[i] == string.Empty)
+					continue;
+
+				if (i > pLines.Length - 1)
+				{
+					content = content.Replace(lines[i], HighlightKeywords(lines[i]));
+					continue;
+				}
+
+				if (lines[i] != pLines[i])
+				{
+					//Debug.Log(lines[i]);
+					content = content.Replace(lines[i], HighlightKeywords(lines[i]));
+				}
+
 			}
+
+			pContent = content;
 
 			// Shove the multiline comments back in
 			for (int i = 0; i < multiLineComments.Count; i++)
@@ -335,6 +345,29 @@ namespace CodeEnvironment
 
 			return content;
 		}
+
+		private string HighlightKeywords(string _line)
+		{
+			//string _operators = "+|-|?|/|*|=|!";
+
+			// Highlight numbers
+			//Regex numberRegex = new Regex(@"((?<=[" + _operators + @"|\s|(|0-9|.])([\d|f|.])|^([\d|f|.]))(?=[" + _operators + @"|\s|;|)|0-9|.|f])", RegexOptions.Singleline);
+			//_line = numberRegex.Replace(_line, "<color=" + NumberCssClass + ">$1</color>");
+
+			// Highlight operators
+			//Regex operatorRegex = new Regex(@"(?<=[\w|\s|" + _operators + @"])([" + _operators + @"])(?=[\s|" + _operators + @"|)|;])", RegexOptions.Singleline);
+			//content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
+
+			// Highlight keywords
+			foreach (KeywordStruct keyword in _keywords)
+			{
+				Regex regexKeyword = new Regex(@"((?<=[(|\s])" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
+				_line = regexKeyword.Replace(_line, CssExtensions.GetCssReplacement(keyword.Color) + "$2");
+			}
+
+			return _line;
+		}
+
 	}
 
 	// This class hosts some convenience methods for replacing keywords with CSS
