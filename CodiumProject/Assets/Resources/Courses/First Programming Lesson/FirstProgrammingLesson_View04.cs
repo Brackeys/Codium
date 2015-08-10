@@ -8,6 +8,9 @@ public class FirstProgrammingLesson_View04 : CEValidator {
 	{
 		Log _latestLog = console.GetLatestLog();
 		string msg = _latestLog.message;
+		if (msg == null)
+			return false;
+
 		msg = msg.ToLower();
 
 		if (codeManager.GetUserCode().Contains("+") == false)

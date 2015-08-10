@@ -216,6 +216,7 @@ MonoBehaviour:
     - 
     defaultCode: '// Print your name below:
 
+      CARET
 
       // Print your age below:
 
@@ -254,7 +255,7 @@ MonoBehaviour:
     - 
     - 
     - 
-    defaultCode: '
+    defaultCode: 'CARET
 
       Console.Print ("I am your father".Length + 2);'
     solutionCode: '// Print the length of the string plus two
@@ -291,7 +292,7 @@ MonoBehaviour:
     - 
     - 
     - 
-    defaultCode: 'Console.Print ("Boolean: " + 14);
+    defaultCode: 'Console.Print ("CARETBoolean: " + 14);
 
       Console.Print ("Float: " + "Hello, World");
 

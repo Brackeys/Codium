@@ -108,7 +108,7 @@ public class AchievementManager : MonoBehaviour {
 	private void _CourseViewCompleted()
 	{
 		int _lpReward = NumberMaster.courseViewLPValue;
-		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nShould we move on to the next one?";
+		string _msg = "Step Completed!\nYou've earned  " + rewardTextColor + _lpReward.ToString() + "</color>" + "  Learn Points.\nShould we continue now?";
 		modalPanel.CalmChoice(_msg, courseViewCompletedOKEvent, courseViewCompletedCancelEvent);
 
 		audioManager.Play(courseViewCompletedSound);

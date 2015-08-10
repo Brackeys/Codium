@@ -250,8 +250,18 @@ public class CourseViewLoader : MonoBehaviour {
 			examples.gameObject.SetActive(false);
 		}
 
+		string _code = cv.defaultCode;
 		// load default code
-		codeField.text = cv.defaultCode;
+		codeField.text = _code;
+
+		// set caret position
+		int _caretIndex = _code.IndexOf ("CARET");
+		if (_caretIndex != -1)
+		{
+			codeField.caretPosition = _caretIndex;
+			codeField.text = codeField.text.Replace("CARET", "");
+		}
+		codeField.m_Select();
 
 		// load goal
 		instructions.SetGoal(ceManager.FormatCodeInTags(cv.goal));

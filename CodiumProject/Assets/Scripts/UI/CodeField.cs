@@ -2040,7 +2040,7 @@ namespace UnityEngine.UI
 			m_isSelected = false;
 		}
 
-		private void m_Select()
+		public void m_Select()
 		{
 			Select();
 			m_isSelected = true;
