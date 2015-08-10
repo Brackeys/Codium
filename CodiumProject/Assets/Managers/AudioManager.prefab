@@ -91,7 +91,7 @@ MonoBehaviour:
     baseVolume: .600000024
     volumeVariance: .100000001
     basePitch: 1
-    pitchVariance: .0500000007
+    pitchVariance: 0
     mixer: {fileID: 0}
     source: {fileID: 0}
   - name: MouseOverSubtle
@@ -115,7 +115,7 @@ MonoBehaviour:
     baseVolume: .600000024
     volumeVariance: .100000001
     basePitch: 1
-    pitchVariance: .0500000007
+    pitchVariance: 0
     mixer: {fileID: 0}
     source: {fileID: 0}
   - name: RunCode
