@@ -333,13 +333,17 @@ MonoBehaviour:
     - 
     - 
     - 
-    defaultCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
-      & name it 'Cube'\n\n"
+    defaultCode: "using CodiumAPI;\r\n\r\npublic class TestClass : ICodiumBase {\r\n\tpublic
+      void Main () {\r\n\t\tstring hello = \"Hello, World\";\r\n\t\tConsole.Print
+      (hello);\r\n\r\n\t\tAnimal anim = new Animal();\r\n\t\tanim.age += 1;\r\n\t\tanim.Print();\r\n\r\n\t\tfor
+      (int i = 0; i < 5; i++) {\r\n\t\t\tConsole.Print (i);\r\n\t\t}\r\n\t}\r\n}\r\n\r\npublic
+      class Animal {\r\n\tpublic string name = \"Cat\";\r\n\tpublic int age = 10;\r\n\r\n\tpublic
+      void Print () {\r\n\t\tConsole.Print (\"Name: \" + name + \" and age: \" + age);\r\n\t}\r\n}"
     solutionCode: "GameObject Cube = GameObject.Find(\"Cube\");\t//Find the Cube GameObject
       & name it 'Cube'\n\nCube.renderer.material.color = Color.red;"
     ID: 5f62a7f95ba3459eb7b61bf073bf975e
     ceSettings:
-      executionMode: 1
+      executionMode: 0
       usingNamespaces: 
     validator: {fileID: 11500000, guid: eeb98b44be8d4ee48af7edbb4663530f, type: 3}
     gameScene: {fileID: 0}

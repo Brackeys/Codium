@@ -128,21 +128,8 @@ namespace CodeEnvironment
 			// Init an instance of the SyntaxHighlighter class
 			syntaxHighlighter = new CESyntaxHighlighter();
 
-			// Loop through the keywords array and add them to the SyntaxHighlighter
-			for (int i = 0; i < keywordTxtFiles.Length; i++)
-			{
-				syntaxHighlighter.AddKeywords(keywordTxtFiles[i]);
-			}
-		}
-
-		// Method for creating a SyntaxHighlighter class
-		private void SetupSyntaxHighlighter(TextAsset keywordTxtFile)
-		{
-			// Init an instance of the SyntaxHighlighter class
-			syntaxHighlighter = new CESyntaxHighlighter();
-
-			//Add the keywords in keywordTxtFile to the SyntaxHighlighter
-			syntaxHighlighter.AddKeywords(keywordTxtFile);
+			// Add keywords array to the SyntaxHighlighter
+			syntaxHighlighter.AddKeywords(keywordTxtFiles);
 		}
 
 		// Method for creating an instance of UCCE

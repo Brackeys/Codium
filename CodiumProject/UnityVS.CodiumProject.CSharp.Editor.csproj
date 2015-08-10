@@ -148,6 +148,10 @@
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsPURPLE.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\CustomKeywordsRED.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\ExtraKeywords.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\FullLists\CustomKeywordsCYAN.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\FullLists\CustomKeywordsORANGE.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\FullLists\CustomKeywordsPURPLE.txt" />
+    <None Include="Assets\Scripts\CodeEnvironment\Keywords\FullLists\CustomKeywordsRED.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\Old\UnityAPIList.txt" />
     <None Include="Assets\Scripts\CodeEnvironment\Keywords\Old\UnityEngineRegex.txt" />
   </ItemGroup>

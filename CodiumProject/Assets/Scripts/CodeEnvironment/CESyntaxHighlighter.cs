@@ -1,5 +1,6 @@
 //-----------------------------------------------------------------
 // Formats the code by applying syntax highlighting to keywords, quotes and comments.
+// Keywords are applied by using an array of keyword collections: regexes and colors
 //-----------------------------------------------------------------
 
 using UnityEngine;
@@ -13,8 +14,23 @@ using System.IO;
 
 namespace CodeEnvironment
 {
+	// A collection stores a regex with a bunch of keywords
+	// and a color for those keywords in hex format
+	public class KeywordCollection
+	{
+		public Regex regex;
+		public string color;
+
+		public KeywordCollection(string _color, Regex _regex)
+		{
+			color = _color;
+			regex = _regex;
+		}
+	}
+
 	public class CESyntaxHighlighter
 	{
+
 		private string _commentCssClass;
 		private string _keywordCssClass;
 		private string _quotesCssClass;
@@ -22,12 +38,11 @@ namespace CodeEnvironment
 		private string _numberCssClass;
 		private string _operatorCssClass;
 
-		private HashSet<KeywordStruct> _keywords;
-
-		// Gets the list of reserved words/keywords.
-		public HashSet<KeywordStruct> Keywords
+		// HUGE master regex containing all keywords
+		private KeywordCollection[] _collections;
+		public KeywordCollection[] Collections
 		{
-			get { return _keywords; }
+			get { return _collections; }
 		}
 
 		// Gets or sets the CSS class used for comments.
@@ -65,13 +80,6 @@ namespace CodeEnvironment
 			set { _operatorCssClass = value; }
 		}
 
-		// A struct used for pairing keywords with colors
-		public struct KeywordStruct
-		{
-			public string Word;
-			public string Color;
-		}
-
 		// Initializes a new instance of the SyntaxHighlighter class.
 		public CESyntaxHighlighter()
 		{
@@ -80,29 +88,49 @@ namespace CodeEnvironment
 			_typeCssClass = "#a6e22d";
 			_numberCssClass = "#ae81ff";
 			_operatorCssClass = "#f92772";
-			_keywords = new HashSet<KeywordStruct>();
 		}
 
-		// Adds new keywords to the _keywords HashSet by supplying a txt file
-		public void AddKeywords(TextAsset txt)
+		// Adds keywords to the color dictionary and the keyword regex by supplying a txt file array
+		public void AddKeywords(TextAsset[] txtFiles)
 		{
-			//Init a KeywordStruct we can fill with data
-			KeywordStruct keyword = new KeywordStruct();
+			_collections = new KeywordCollection[txtFiles.Length];
 
-			string[] kws = txt.text.Split('\n');	//Create a string array of lines
-
-			//Extract a color from the first line in the txt file
-			keyword.Color = kws[0].Trim();
-
-			//Loop through the keywords and add them (skip the color)
-			for (int i = 1; i < kws.Length; i++)
+			int i = 0;
+			foreach (TextAsset _txt in txtFiles)
 			{
-				if (kws[i].Trim() == "")
+				string[] kws = _txt.text.Split('\n');	//Create a string array of lines
+
+				//Extract a color from the first line in the txt file
+				string _color = kws[0].Trim();
+
+				string _keywordRegexPattern = "";
+				bool first = true;
+				//Loop through the keywords and add them (skip the color)
+				foreach (string _kw in kws)
 				{
-					continue;
+					if (_kw.Trim() == "")
+					{
+						continue;
+					}
+					string _keyword = _kw.Trim();
+
+					if (first)
+					{
+						_keywordRegexPattern += "(";
+						first = false;
+					}
+
+					_keywordRegexPattern += @"(?<=[(|\s])" + _keyword + "|^" + _keyword + "|";
 				}
-				keyword.Word = kws[i].Trim();
-				_keywords.Add(keyword);
+				_keywordRegexPattern = _keywordRegexPattern.Remove(_keywordRegexPattern.Length - 1, 1);
+				_keywordRegexPattern += @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)";
+
+				Regex _regex = new Regex(_keywordRegexPattern, RegexOptions.Singleline);
+
+				KeywordCollection _collection = new KeywordCollection(_color, _regex);
+				_collections[i] = _collection;
+
+				i++;
 			}
 		}
 
@@ -117,7 +145,6 @@ namespace CodeEnvironment
 		}
 
 		private string pContent = "";
-
 		// Formats the code (content)
 		protected virtual string HighlightSource(string content)
 		{
@@ -358,14 +385,14 @@ namespace CodeEnvironment
 			//Regex operatorRegex = new Regex(@"(?<=[\w|\s|" + _operators + @"])([" + _operators + @"])(?=[\s|" + _operators + @"|)|;])", RegexOptions.Singleline);
 			//content = operatorRegex.Replace(content, "<color=" + OperatorCssClass + ">$1</color>");
 
-			// Highlight keywords
-			foreach (KeywordStruct keyword in _keywords)
+			// Loop through the keyword collections
+			foreach (KeywordCollection _collection in Collections)
 			{
-				Regex regexKeyword = new Regex(@"((?<=[(|\s])" + keyword.Word + "|^" + keyword.Word + @")(\W>|\W&gt;|\W\s|\W\n|\W;|\W<|\W)", RegexOptions.Singleline);
-				_line = regexKeyword.Replace(_line, CssExtensions.GetCssReplacement(keyword.Color) + "$2");
+				_line = _collection.regex.Replace(_line, CssExtensions.GetCssReplacement(_collection.color) + "$2");
 			}
 
 			return _line;
+
 		}
 
 	}
