@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{B92D0A30-8CDF-67DD-4C51-5A1073199C95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+	<LangVersion>default</LangVersion>
+</PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+	<LangVersion>default</LangVersion>
+</PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+	<LangVersion>default</LangVersion>
+</PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity_5.3.4/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity_5.3.4/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\GSFU\Scripts\AdjustBalls.cs" />
+     <Compile Include="Assets\GSFU\Scripts\BounceCounter.cs" />
+     <Compile Include="Assets\GSFU\Scripts\UnityDataConnector.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\07 - Inputs\Example07LengthValidation.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\07 - Inputs\Example07LetterValidation.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\08 - Sliders\Example08.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\09 - Progress Indicators\Example09.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\13 - Toasts &amp; Snackbars\Example13.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\14 - Dialogs\Example14.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\15 - Pickers\Example15.cs" />
+     <Compile Include="Assets\MaterialUI\Examples\Scripts\19 - Animation\Example19.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Animation\AutoTween.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Animation\EasyTween.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Animation\Tween.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\ColorCopier.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Interfaces.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\MaterialUIScaler.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\RectTransformSnap.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Ripples\MaterialRipple.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Ripples\Ripple.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Ripples\RippleManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Shadows\AnimatedShadow.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Shadows\MaterialShadow.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\Shadows\ShadowGenerator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\SpriteSwapper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\ToggleBase.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Common\VerticalScrollLayoutElement.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Buttons\MaterialButton.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Buttons\MaterialMovableFab.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogAlert.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogAnimator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogBackground.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogCheckboxList.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogCheckboxOption.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogClickableItem.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogProgress.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogRadioList.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogRadioOption.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogSections.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogSimpleList.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\DialogSimpleOption.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\MaterialDialog.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\DatePicker\DialogDatePicker.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\DatePicker\DialogDatePickerDayItem.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\DatePicker\DialogDatePickerYearItem.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\DatePicker\DialogDatePickerYearList.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\TimePicker\DialogTimePicker.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Dialogs\Pickers\TimePicker\DialogTimePickerClock.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialCheckbox.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialDropdown.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialInputField.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialNavDrawer.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialSlider.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialSwitch.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Menus\DropdownTrigger.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\OptionData.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\OverscrollConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Progress\CircularProgressIndicator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Progress\LinearProgressIndicator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Progress\ProgressIndicator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioGroups\MaterialRadio.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioGroups\MaterialRadioGroup.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Screens\MaterialScreen.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Screens\ScreenView.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Snackbars\Snackbar.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Snackbars\SnackbarAnimator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Tabs\TabItem.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Tabs\TabPage.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Tabs\TabPagesScrollDetector.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Tabs\TabView.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Toasts\Toast.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Toasts\ToastAnimator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\ImageData.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\MaterialIconEnum.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\MaterialIconHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\MaterialUIIconHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\Model\Glyph.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\Model\VectorImageData.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\Model\VectorImageSet.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\VectorImage.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\VectorImages\VectorImageManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Managers\DialogManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Managers\PrefabManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Managers\SnackbarManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Managers\ToastManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Managers\TweenManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\AdaptiveUIGrid.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\ContinuationManager.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\EditorCoroutine.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\EditorUpdate.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\Extensions.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\FPSCounter.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\HSBColor.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\ImageHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InputFieldValidators\TextValidatorUtils.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\ButtonRectInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\ButtonRoundInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\CircleProgressIndicatorInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\DividerInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\EmptyUIObjectInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\InputFieldInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\InstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\MaterialSliderInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\PanelInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\RadioInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\TabViewInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\InstantiationHelpers\ToggleInstantiationHelper.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\MaterialColor.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\MaterialUIVersion.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\TextUnicode.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\TextureUtils.cs" />
+     <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\ObserveAttribute\ObserveAttribute.cs" />
+     <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\PopupAttribute\PopupAttribute.cs" />
+     <Compile Include="Assets\Scripts\Extensions\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Data\ChallengeData.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Data\LessonData.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Data\QuizChallengeData.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Runtime\Challenge.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Runtime\ChallengeManager.cs" />
+     <Compile Include="Assets\Scripts\Lessons\Runtime\QuizChallenge.cs" />
+     <Compile Include="Assets\Scripts\UI\CodiumColorPalette.cs" />
+     <Compile Include="Assets\Scripts\UI\ColorManager.cs" />
+     <Compile Include="Assets\Scripts\Util\GSFU_Utility.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\IJsonWrapper.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonData.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonException.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonMapper.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonMockWrapper.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonReader.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\JsonWriter.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\Lexer.cs" />
+     <Compile Include="Assets\Scripts\Util\LitJson\ParserToken.cs" />
+     <None Include="Assets\MaterialUI\README.txt" />
+     <None Include="Assets\MaterialUI\Fonts\Roboto\NOTICE.txt" />
+     <None Include="Assets\MaterialUI\Fonts\Resources\Material Design Icons\LICENSE.txt" />
+     <None Include="Assets\MaterialUI\CHANGELOG.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity_5.3.4/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity_5.3.4/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
