@@ -22,7 +22,7 @@ The lambda closure captures the www object so it can be used when the www is don
 
  */
 
-internal static class ContinuationManager
+public static class ContinuationManager
 {
 	private class Job
 	{

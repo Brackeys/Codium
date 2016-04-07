@@ -4,6 +4,7 @@ using LitJson;
 
 public class GSFUEditorMenu : MonoBehaviour
 {
+	
 	[MenuItem ("GSFU/Update from Google Spreadsheet %g")]
 	static void UpdateFromSpreadsheet()
 	{

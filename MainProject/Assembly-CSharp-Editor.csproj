@@ -105,8 +105,8 @@
      <Compile Include="Assets\MaterialUI\Editor\Tools\Vector Image Manager\VectorImagePickerWindow.cs" />
      <Compile Include="Assets\MaterialUI\Utils\Editor\UnityZip\Zip.cs" />
      <Compile Include="Assets\Scripts\Extensions\Editor\ScriptableObjectUtility.cs" />
-     <Compile Include="Assets\Scripts\Lessons\Data\Editor\GSFU_DataEditor.cs" />
-     <Compile Include="Assets\Scripts\Lessons\Data\Editor\LessonDataEditor.cs" />
+     <Compile Include="Assets\Scripts\GSFU_Custom\Editor\GSFU_Connector.cs" />
+     <Compile Include="Assets\Scripts\GSFU_Custom\Editor\GSFU_DataEditor.cs" />
      <Compile Include="Assets\Scripts\UI\Editor\CodiumColorPaletteCreator.cs" />
      <Compile Include="Assets\VSCode\Plugins\Editor\VSCode.cs" />
      <None Include="Assets\MaterialUI\README.txt" />
