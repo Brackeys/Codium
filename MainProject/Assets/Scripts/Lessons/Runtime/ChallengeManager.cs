@@ -1,5 +1,6 @@
 using UnityEngine;
 using MaterialUI;
+using UnityEngine.UI;
 
 namespace Codium.Challenges
 {
@@ -24,24 +25,48 @@ namespace Codium.Challenges
 		[SerializeField]
 		string m_resetFooterTrigger = "Reset";
 
+		[SerializeField]
+		private Slider m_progressSlider;
+
 		private bool m_challengeComplete = false;
 		public bool challengeComplete { get { return m_challengeComplete; } }
 
-		void Awake ()
-		{
-			if (m_quizChallenge == null)
-				Debug.LogError("No QuizChallenge referenced!");
+		private int m_currentChallengeIndex;
 
-			if (footerAnim == null)
-				Debug.LogError("No footer animator referenced!");
-
-			if (checkAnswerButton == null)
-				Debug.LogError("No checkAnswerButton referenced!");
-		}
+		// Caching
+		private LessonManager m_lessonManager;
 
 		void Start ()
 		{
-			m_quizChallenge.gameObject.SetActive(true);
+			m_lessonManager = LessonManager.Instance;
+
+			m_currentChallengeIndex = 0;
+			BeginChallenge(m_currentChallengeIndex);
+		}
+
+		void BeginChallenge (int challengeIndex)
+		{
+			m_progressSlider.value = challengeIndex + 1;
+
+			LessonData _lesson = m_lessonManager.CurrentLesson;
+			if (challengeIndex >= _lesson.challenges.Length)
+			{
+				Debug.LogError("Challenge index out of bounds: " + challengeIndex);
+				return;
+			}
+
+			ChallengeData _challenge = _lesson.challenges[challengeIndex];
+
+			switch (_challenge.type)
+			{
+				case ChallengeType.QUIZ:
+					m_quizChallenge.gameObject.SetActive(true);
+					m_quizChallenge.InitChallenge(_challenge);
+					break;
+				default:
+					Debug.LogError("No such challenge type registered here: " + _challenge.type);
+					return;
+			}
 		}
 
 		void CompleteChallenge ()
@@ -82,14 +107,18 @@ namespace Codium.Challenges
 
 		public void ContinueToNextChallenge ()
 		{
-			Debug.Log("Continuing to next challenge!");
 			ResetChallenge();
+
+			m_currentChallengeIndex += 1;
+			BeginChallenge(m_currentChallengeIndex);
 		}
 
 		void ResetChallenge ()
 		{
 			footerAnim.SetTrigger(m_resetFooterTrigger);
 			UncompleteChallenge();
+
+			m_quizChallenge.gameObject.SetActive(false);
 		}
 
 		public void EnableCheckAnswerButton (bool state)

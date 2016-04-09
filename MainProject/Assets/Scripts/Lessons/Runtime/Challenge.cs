@@ -1,13 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Codium.Challenges {
 
 	public abstract class Challenge : MonoBehaviour
 	{
+		//Data for the challenge
+		protected ChallengeData m_challengeData;
 
+		//UI References
+		[SerializeField]
+		protected Text m_missionText;
+		
+		//Caching
 		ChallengeManager m_challengeManager;
 		protected ChallengeManager challengeManager { get {return m_challengeManager;} }
 
+		//Has an answer been chosen?
 		private bool m_answerSelected = false;
 
 		void Awake ()
@@ -18,6 +27,7 @@ namespace Codium.Challenges {
 		}
 
 		abstract public void CheckAnswer();
+		abstract public void InitChallenge(ChallengeData challenge);
 
 		protected void OnAnswerSelected ()
 		{

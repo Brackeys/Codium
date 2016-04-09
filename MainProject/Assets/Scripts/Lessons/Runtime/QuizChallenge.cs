@@ -1,13 +1,11 @@
 using UnityEngine;
 using MaterialUI;
+using System;
 
 namespace Codium.Challenges {
 
 	public class QuizChallenge : Challenge
 	{
-
-		[SerializeField]
-		private QuizAnswer m_correctAnswer;
 
 		[SerializeField]
 		private MaterialButton m_buttonOne;
@@ -28,12 +26,23 @@ namespace Codium.Challenges {
 			m_startColor = m_buttonOne.backgroundImage.color;
 		}
 
+		public override void InitChallenge(ChallengeData challenge)
+		{
+			m_challengeData = challenge;
+
+			m_missionText.text = m_challengeData.mission;
+			QuizChallengeData _quizData = m_challengeData.quizChallengeData;
+			m_buttonOne.text.text = _quizData.optionOne;
+			m_buttonTwo.text.text = _quizData.optionTwo;
+			m_buttonThree.text.text = _quizData.optionThree;
+		}
+
 		override public void CheckAnswer()
 		{
 			if (!gameObject.activeSelf)
 				return;
 
-			if (m_selectedAnswer == m_correctAnswer)
+			if (m_selectedAnswer == m_challengeData.quizChallengeData.answer)
 			{
 				base.CorrectAnswer();
 			}
