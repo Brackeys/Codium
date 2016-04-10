@@ -1,6 +1,6 @@
 using UnityEngine;
 using MaterialUI;
-using System;
+using Codium.UI;
 
 namespace Codium.Challenges {
 
@@ -28,16 +28,15 @@ namespace Codium.Challenges {
 
 		public override void InitChallenge(ChallengeData challenge)
 		{
-			m_challengeData = challenge;
+			base.InitChallenge(challenge);
 
-			m_missionText.text = m_challengeData.mission;
 			QuizChallengeData _quizData = m_challengeData.quizChallengeData;
 			m_buttonOne.text.text = _quizData.optionOne;
 			m_buttonTwo.text.text = _quizData.optionTwo;
 			m_buttonThree.text.text = _quizData.optionThree;
 		}
 
-		override public void CheckAnswer()
+		override protected void CheckAnswer()
 		{
 			if (!gameObject.activeSelf)
 				return;

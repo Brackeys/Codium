@@ -11,6 +11,8 @@ namespace Codium.Challenges
 
 		[SerializeField]
 		QuizChallenge m_quizChallenge;
+		[SerializeField]
+		FITBChallenge m_fitbChallenge;
 
 		[SerializeField]
 		MaterialButton checkAnswerButton;
@@ -32,6 +34,12 @@ namespace Codium.Challenges
 		public bool challengeComplete { get { return m_challengeComplete; } }
 
 		private int m_currentChallengeIndex;
+
+		//Callbacks
+		public delegate void ResetChallengeCallback();
+		public ResetChallengeCallback onResetChallenge;
+		public delegate void CheckAnswerCallback();
+		public CheckAnswerCallback onCheckAnswer;
 
 		// Caching
 		private LessonManager m_lessonManager;
@@ -62,6 +70,10 @@ namespace Codium.Challenges
 				case ChallengeType.QUIZ:
 					m_quizChallenge.gameObject.SetActive(true);
 					m_quizChallenge.InitChallenge(_challenge);
+					break;
+				case ChallengeType.FITB:
+					m_fitbChallenge.gameObject.SetActive(true);
+					m_fitbChallenge.InitChallenge(_challenge);
 					break;
 				default:
 					Debug.LogError("No such challenge type registered here: " + _challenge.type);
@@ -94,31 +106,39 @@ namespace Codium.Challenges
 			footerAnim.SetTrigger(m_wrongAnswerTrigger);
 		}
 
+		public void CheckAnswer ()
+		{
+			onCheckAnswer.Invoke();
+		}
+
 		public void OnSkipChallenge()
 		{
 			Debug.Log("Skipping challenge!");
 			ContinueToNextChallenge();
 		}
 
-		public void OnContinueChallenge ()
+		public void OnContinueChallenge()
 		{
 			ContinueToNextChallenge();
 		}
 
-		public void ContinueToNextChallenge ()
+		private void ContinueToNextChallenge ()
 		{
-			ResetChallenge();
+			onResetChallenge.Invoke();
+			ResetChallengeOnManager();
 
 			m_currentChallengeIndex += 1;
 			BeginChallenge(m_currentChallengeIndex);
 		}
 
-		void ResetChallenge ()
+		private void ResetChallengeOnManager ()
 		{
 			footerAnim.SetTrigger(m_resetFooterTrigger);
 			UncompleteChallenge();
 
+			//*****
 			m_quizChallenge.gameObject.SetActive(false);
+			m_fitbChallenge.gameObject.SetActive(false);
 		}
 
 		public void EnableCheckAnswerButton (bool state)

@@ -101,6 +101,28 @@
   <ItemGroup>
     <Compile Include="Assets\Extensions\GSFU\Scripts\Editor\ContinuationManager.cs" />
     <Compile Include="Assets\Extensions\GSFU\Scripts\Editor\GSFUEditorMenu.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\GlyphInfoDrawer.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\KerningPairDrawer.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\SpriteInfoDrawer.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMP_SettingsEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMP_StyleSheetEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMP_UIStyleManager.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_ContextMenus.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_CreateObjectMenu.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_CreateSpriteAssetMenu.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_CreateStyleAssetMenu.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_EditorPanel.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_EditorShaderUtilities.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_EditorUtility.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_FontAssetCreatorWindow.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_FontEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_FontPlugin.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_SDFMaterialEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_SortingLayerHelper.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_SpriteAssetEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_TextContainerEditor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_TexturePostProcessor.cs" />
+    <Compile Include="Assets\Extensions\TextMesh Pro\Editor\TMPro_uiEditorPanel.cs" />
     <Compile Include="Assets\Extensions\VSCode\Plugins\Editor\VSCode.cs" />
     <Compile Include="Assets\MaterialUI\Editor\Custom Inspectors\EasyTweenEditor.cs" />
     <Compile Include="Assets\MaterialUI\Editor\Custom Inspectors\MaterialBaseEditor.cs" />
@@ -162,6 +184,19 @@
     <Compile Include="Assets\Scripts\Util\Editor\ScriptableObjectUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Bitmap-Mobile.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Bitmap.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF Overlay.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF-Mobile.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF-Surface.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_SDF.shader" />
+    <None Include="Assets\Extensions\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\MaterialUI\CHANGELOG.txt" />
     <None Include="Assets\MaterialUI\Fonts\Resources\Material Design Icons\LICENSE.txt" />
     <None Include="Assets\MaterialUI\Fonts\Roboto\NOTICE.txt" />

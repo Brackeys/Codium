@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Codium.Challenges {
 
@@ -10,10 +10,10 @@ namespace Codium.Challenges {
 
 		//UI References
 		[SerializeField]
-		protected Text m_missionText;
+		private TextMeshProUGUI m_missionText;
 		
 		//Caching
-		ChallengeManager m_challengeManager;
+		private ChallengeManager m_challengeManager;
 		protected ChallengeManager challengeManager { get {return m_challengeManager;} }
 
 		//Has an answer been chosen?
@@ -24,10 +24,17 @@ namespace Codium.Challenges {
 			m_challengeManager = ChallengeManager.Instance;
 			if (m_challengeManager == null)
 				Debug.LogError("No ChallengeManager found!");
+
+			m_challengeManager.onResetChallenge += ResetChallenge;
+			m_challengeManager.onCheckAnswer += CheckAnswer;
 		}
 
-		abstract public void CheckAnswer();
-		abstract public void InitChallenge(ChallengeData challenge);
+		abstract protected void CheckAnswer();
+		virtual public void InitChallenge(ChallengeData challenge)
+		{
+			m_challengeData = challenge;
+			m_missionText.text = challenge.mission;
+		}
 
 		protected void OnAnswerSelected ()
 		{
@@ -46,18 +53,6 @@ namespace Codium.Challenges {
 		protected void WrongAnswer()
 		{
 			m_challengeManager.WrongAnswer();
-		}
-
-		public void OnSkipChallenge ()
-		{
-			m_challengeManager.OnSkipChallenge();
-			ResetChallenge();
-		}
-
-		public void OnContinueChallenge()
-		{
-			m_challengeManager.OnContinueChallenge();
-			ResetChallenge();
 		}
 
 		virtual protected void ResetChallenge ()

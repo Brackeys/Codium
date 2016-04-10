@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace Codium
+namespace Codium.UI
 {
 	public class CodiumColorPaletteCreator
 	{

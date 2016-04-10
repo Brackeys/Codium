@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codium
+namespace Codium.UI
 {
 	public class ColorManager : MonoBehaviour
 	{
