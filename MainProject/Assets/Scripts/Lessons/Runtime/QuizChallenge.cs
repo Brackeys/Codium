@@ -1,6 +1,7 @@
 using UnityEngine;
 using MaterialUI;
 using Codium.UI;
+using System;
 
 namespace Codium.Challenges {
 
@@ -47,7 +48,7 @@ namespace Codium.Challenges {
 			}
 			else
 			{
-				base.WrongAnswer();
+				base.WrongAnswer(m_challengeData.quizChallengeData.GetCorrectAnswer());
 			}
 		}
 

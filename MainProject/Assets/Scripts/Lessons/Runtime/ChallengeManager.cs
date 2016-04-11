@@ -94,7 +94,6 @@ namespace Codium.Challenges
 		{
 			CompleteChallenge();
 
-			Debug.Log("Correct answer!");
 			footerAnim.SetTrigger(m_correctAnswerTrigger);
 		}
 
@@ -102,7 +101,6 @@ namespace Codium.Challenges
 		{
 			CompleteChallenge();
 
-			Debug.Log("Wrong answer!");
 			footerAnim.SetTrigger(m_wrongAnswerTrigger);
 		}
 
@@ -113,7 +111,6 @@ namespace Codium.Challenges
 
 		public void OnSkipChallenge()
 		{
-			Debug.Log("Skipping challenge!");
 			ContinueToNextChallenge();
 		}
 

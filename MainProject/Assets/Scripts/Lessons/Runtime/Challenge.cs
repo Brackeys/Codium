@@ -11,6 +11,9 @@ namespace Codium.Challenges {
 		//UI References
 		[SerializeField]
 		private TextMeshProUGUI m_missionText;
+
+		[SerializeField]
+		private TextMeshProUGUI m_answerText;
 		
 		//Caching
 		private ChallengeManager m_challengeManager;
@@ -21,10 +24,18 @@ namespace Codium.Challenges {
 
 		void Awake ()
 		{
+			//Error checking
+			if (m_missionText == null)
+				Debug.LogError("No missionText!");
+			if (m_answerText == null)
+				Debug.LogError("No answerText!");
+
+			//Caching
 			m_challengeManager = ChallengeManager.Instance;
 			if (m_challengeManager == null)
 				Debug.LogError("No ChallengeManager found!");
 
+			//Callbacks
 			m_challengeManager.onResetChallenge += ResetChallenge;
 			m_challengeManager.onCheckAnswer += CheckAnswer;
 		}
@@ -50,8 +61,9 @@ namespace Codium.Challenges {
 			m_challengeManager.CorrectAnswer();
 		}
 
-		protected void WrongAnswer()
+		protected void WrongAnswer(string correctAnswer)
 		{
+			m_answerText.text = correctAnswer;
 			m_challengeManager.WrongAnswer();
 		}
 

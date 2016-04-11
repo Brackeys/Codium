@@ -26,20 +26,17 @@ namespace Codium.Challenges
 
 			FITBChallengeData _fitbData = m_challengeData.fitbChallengeData;
 
-			string[] result;
-			
-			result = _fitbData.fillCode.Split(BLANK_TAG.ToCharArray(), StringSplitOptions.None);
+			string _fillCode = _fitbData.fillCode;
 
-			Debug.Log ("Elements: " + result.Length);
-			
-			for (int i = 0; i < result.Length; i++)
+			if (!_fillCode.Contains(BLANK_TAG))
 			{
-				Debug.Log (result[i]);
+				Debug.LogError("No " + BLANK_TAG + " found.");
+				return;
 			}
 
-			m_codeBefore.text = "test ";
+			m_codeBefore.text = _fillCode.Substring(0, _fillCode.IndexOf(BLANK_TAG));
 			m_dropdown.SetOptions(_fitbData.fillOne, _fitbData.fillTwo, _fitbData.fillThree);
-			m_codeAfter.text = " og mere test";
+			m_codeAfter.text = _fillCode.Substring(_fillCode.IndexOf(BLANK_TAG) + BLANK_TAG.Length);
 		}
 
 		override protected void CheckAnswer()
@@ -53,7 +50,7 @@ namespace Codium.Challenges
 			}
 			else
 			{
-				base.WrongAnswer();
+				base.WrongAnswer(m_challengeData.fitbChallengeData.GetCorrectAnswer());
 			}
 		}
 
