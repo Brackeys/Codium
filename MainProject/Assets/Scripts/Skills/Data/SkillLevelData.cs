@@ -13,6 +13,8 @@ namespace Codium
 		{
 			skills = new List<SkillData>();
 		}
+		
+	#if UNITY_EDITOR
 
 		public void AddSkill(int index)
 		{
@@ -27,6 +29,14 @@ namespace Codium
 			}
 			skills.RemoveAt(index);
 		}
+		
+		public void MoveSkillUp (int index) {
+			SkillData _levelUp = skills[index];
+			skills[index] = skills[index + 1];
+			skills[index + 1] = _levelUp;
+		}
+		
+	#endif
 
 	}
 }
