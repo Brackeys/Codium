@@ -1,3 +1,8 @@
+// *************************************
+// Data class for information about the SkillTree.
+// A SkillTree hosts a certain amount of skillLevels.
+// *************************************
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -7,6 +12,7 @@ namespace Codium
 	public class SkillTreeData : ScriptableObject
 	{
 
+		//List of skillLevels in the tree
 		public List<SkillLevelData> skillLevels;
 
 		public SkillTreeData ()
@@ -14,6 +20,7 @@ namespace Codium
 			skillLevels = new List<SkillLevelData>();
 		}
 
+		//In the editor I've added some utility methods for managing SkillLevels in the list
 	#if UNITY_EDITOR
 
 		public void AddSkillLevel (int index)

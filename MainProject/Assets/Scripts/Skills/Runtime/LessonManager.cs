@@ -1,5 +1,9 @@
+// *************************************
+// LessonManager keeps track of what lesson to load.
+// TODO: Implement this class further
+// *************************************
+
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Codium
 {
@@ -10,9 +14,6 @@ namespace Codium
 		//TEMP: Until lesson selection system is implemented
 		[SerializeField]
 		private LessonData startLesson;
-
-		[SerializeField]
-		private Slider m_progressSlider;
 
 		private LessonData m_currentLesson;
 		public LessonData CurrentLesson { get { return m_currentLesson; } }
@@ -25,8 +26,6 @@ namespace Codium
 		void SetLesson (LessonData lesson)
 		{
 			m_currentLesson = lesson;
-
-			m_progressSlider.maxValue = m_currentLesson.challenges.Length;
 		}
 
 	}

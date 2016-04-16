@@ -1,3 +1,8 @@
+// *************************************
+// Data class for information about the SkillLevel.
+// A skill level hosts a certain amount of skills.
+// *************************************
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -7,6 +12,7 @@ namespace Codium
 	public class SkillLevelData
 	{
 
+		//A list of skills in the SkillLevel
 		public List<SkillData> skills;
 
 		public SkillLevelData ()
@@ -14,6 +20,7 @@ namespace Codium
 			skills = new List<SkillData>();
 		}
 		
+		//In the unity editor I've added some utility methods for managing skills in the list
 	#if UNITY_EDITOR
 
 		public void AddSkill(int index)

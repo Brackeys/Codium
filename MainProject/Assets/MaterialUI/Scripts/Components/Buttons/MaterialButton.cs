@@ -156,7 +156,7 @@ namespace MaterialUI
             {
                 m_Interactable = value;
                 m_ButtonObject.interactable = m_Interactable;
-                canvasGroup.alpha = m_Interactable ? 1f : 0.5f;
+                canvasGroup.alpha = m_Interactable ? 1f : 0.8f;
                 canvasGroup.blocksRaycasts = m_Interactable;
                 if (shadowsCanvasGroup)
                 {

@@ -1,6 +1,11 @@
+// *************************************
+// This class manages all challenges.
+// This includes what happens on challenge skips, correct/wrong answers
+// and when to transition to new challenges.
+// The ChallengeManager is also responsible for adminestering loading in different challenge-types.
+// *************************************
+
 using UnityEngine;
-using MaterialUI;
-using UnityEngine.UI;
 
 namespace Codium.Challenges
 {
@@ -9,30 +14,13 @@ namespace Codium.Challenges
 
 		protected ChallengeManager() {}
 
+		//References to objects containing the different challenge-types.
 		[SerializeField]
 		QuizChallenge m_quizChallenge;
 		[SerializeField]
 		FITBChallenge m_fitbChallenge;
 
-		[SerializeField]
-		MaterialButton checkAnswerButton;
-
-		[Header("Animation")]
-		[SerializeField]
-		Animator footerAnim;
-		[SerializeField]
-		string m_correctAnswerTrigger = "CorrectAnswer";
-		[SerializeField]
-		string m_wrongAnswerTrigger = "WrongAnswer";
-		[SerializeField]
-		string m_resetFooterTrigger = "Reset";
-
-		[SerializeField]
-		private Slider m_progressSlider;
-
-		private bool m_challengeComplete = false;
-		public bool challengeComplete { get { return m_challengeComplete; } }
-
+		//TODO: Better way of keeping track of current challenges
 		private int m_currentChallengeIndex;
 
 		//Callbacks
@@ -40,31 +28,61 @@ namespace Codium.Challenges
 		public ResetChallengeCallback onResetChallenge;
 		public delegate void CheckAnswerCallback();
 		public CheckAnswerCallback onCheckAnswer;
+		public delegate void CompleteChallengeCallback(float completionPercentage);
+		public CompleteChallengeCallback onCompleteChallenge;
+		public delegate void CorrectAnswerCallback();
+		public CorrectAnswerCallback onCorrectAnswer;
+		public delegate void WrongAnswerCallback(string correctAnswer);
+		public WrongAnswerCallback onWrongAnswer;
+		public delegate void AnswerSelectedCallback();
+		public AnswerSelectedCallback onAnswerSelected;
+		public delegate void OnBeginChallengeCallback (ChallengeData challenge);
+		public OnBeginChallengeCallback onBeginChallenge;
 
-		// Caching
-		private LessonManager m_lessonManager;
+		//Caching
+		LessonManager m_lessonManager;
+
+		void Awake () {
+			//Caching
+			m_lessonManager = LessonManager.Instance;
+			if (m_lessonManager == null) {
+				Debug.LogError ("No LessonManager found!");
+			}
+		}
 
 		void Start ()
 		{
-			m_lessonManager = LessonManager.Instance;
+			//Begin by resetting the current challenge
+			ResetChallenge();
 
+			//TODO: Load in a certain challenge, not just the first in the list
 			m_currentChallengeIndex = 0;
-			BeginChallenge(m_currentChallengeIndex);
+			BeginChallenge();
+		}
+		
+		private ChallengeData GetCurrentChallenge () {
+			//TODO: This can be deleted when a proper way of keeping track
+			//of the current challenge is implemented.
+			
+			LessonData _lesson = LessonManager.Instance.CurrentLesson;
+			if (m_currentChallengeIndex >= _lesson.challenges.Length)
+			{
+				Debug.LogError("Challenge index out of bounds: " + m_currentChallengeIndex);
+				return null;
+			}
+			
+			return _lesson.challenges[m_currentChallengeIndex];
 		}
 
-		void BeginChallenge (int challengeIndex)
+		//Begin the current challenge
+		void BeginChallenge ()
 		{
-			m_progressSlider.value = challengeIndex + 1;
+			ChallengeData _challenge = GetCurrentChallenge();
+			
+			//Invoke onBeginChallenge
+			onBeginChallenge.Invoke(_challenge);
 
-			LessonData _lesson = m_lessonManager.CurrentLesson;
-			if (challengeIndex >= _lesson.challenges.Length)
-			{
-				Debug.LogError("Challenge index out of bounds: " + challengeIndex);
-				return;
-			}
-
-			ChallengeData _challenge = _lesson.challenges[challengeIndex];
-
+			//Load and init challenge based on type
 			switch (_challenge.type)
 			{
 				case ChallengeType.QUIZ:
@@ -81,67 +99,75 @@ namespace Codium.Challenges
 			}
 		}
 
+		//Complete the current challenge
+		//A challenge is currently completed no matter if the answer was correct or not
 		void CompleteChallenge ()
 		{
-			m_challengeComplete = true;
-		}
-		void UncompleteChallenge()
-		{
-			m_challengeComplete = false;
+			LessonData _lesson = m_lessonManager.CurrentLesson;
+			float _completionPercentage = ((float)(m_currentChallengeIndex + 1)/_lesson.challenges.Length) * 100f;
+			
+			if (onCompleteChallenge != null)
+				onCompleteChallenge.Invoke(_completionPercentage);
 		}
 
+		//This method is called when a correct answer is chosen
+		//It is called by the current Challenge
 		public void CorrectAnswer ()
 		{
+			if (onCorrectAnswer != null)
+				onCorrectAnswer.Invoke();
+			
 			CompleteChallenge();
-
-			footerAnim.SetTrigger(m_correctAnswerTrigger);
 		}
 
-		public void WrongAnswer()
+		//This method is called when a wrong answer is chosen
+		//It is called by the current Challenge
+		public void WrongAnswer(string correctAnswer)
 		{
+			if (onWrongAnswer != null)
+				onWrongAnswer.Invoke(correctAnswer);
+			
 			CompleteChallenge();
-
-			footerAnim.SetTrigger(m_wrongAnswerTrigger);
 		}
-
-		public void CheckAnswer ()
-		{
-			onCheckAnswer.Invoke();
-		}
-
-		public void OnSkipChallenge()
-		{
-			ContinueToNextChallenge();
-		}
-
-		public void OnContinueChallenge()
-		{
-			ContinueToNextChallenge();
-		}
-
+		
+		//Continue to the next challenge
+		//TODO: Chose the next challenge by criteria, not just the next in the list
 		private void ContinueToNextChallenge ()
 		{
-			onResetChallenge.Invoke();
-			ResetChallengeOnManager();
+			ResetChallenge();
 
 			m_currentChallengeIndex += 1;
-			BeginChallenge(m_currentChallengeIndex);
+			BeginChallenge();
 		}
 
-		private void ResetChallengeOnManager ()
+		//Reset the current challenge
+		//Unload any potentialy loaded challenges
+		private void ResetChallenge ()
 		{
-			footerAnim.SetTrigger(m_resetFooterTrigger);
-			UncompleteChallenge();
+			if (onResetChallenge != null)
+				onResetChallenge.Invoke();
 
-			//*****
 			m_quizChallenge.gameObject.SetActive(false);
 			m_fitbChallenge.gameObject.SetActive(false);
 		}
-
-		public void EnableCheckAnswerButton (bool state)
+		
+		// ***** BUTTON METHOD CALLS *****
+		
+		public void CheckAnswer_Button ()
 		{
-			checkAnswerButton.interactable = state;
-        }
+			if (onCheckAnswer != null)
+				onCheckAnswer.Invoke();
+		}
+
+		public void SkipChallenge_Button()
+		{
+			ContinueToNextChallenge();
+		}
+
+		public void ContinueChallenge_Button()
+		{
+			ContinueToNextChallenge();
+		}
 
 	}
 

@@ -1,12 +1,18 @@
+// *************************************
+// QuizChallenge derives from Challenge.
+// It implements functionality specific to "quiz" challenges.
+// *************************************
+
 using UnityEngine;
 using MaterialUI;
 using Codium.UI;
-using System;
 
 namespace Codium.Challenges {
 
 	public class QuizChallenge : Challenge
 	{
+		
+		// ***** UI REFERENCES *****
 
 		[SerializeField]
 		private MaterialButton m_buttonOne;
@@ -15,11 +21,14 @@ namespace Codium.Challenges {
 		[SerializeField]
 		private MaterialButton m_buttonThree;
 
+		//Name of the color to use for selected option
 		[SerializeField]
 		private string m_selectColorName;
 
+		//Store the start color of the buttons
 		private Color m_startColor;
 
+		//Currently selected answer
 		private QuizAnswer m_selectedAnswer;
 
 		void Start()
@@ -27,18 +36,24 @@ namespace Codium.Challenges {
 			m_startColor = m_buttonOne.backgroundImage.color;
 		}
 
+		//Setup the challenge using ChallengeData
 		public override void InitChallenge(ChallengeData challenge)
 		{
+			//Call the base
 			base.InitChallenge(challenge);
 
+			//Setup Quiz specific objects
 			QuizChallengeData _quizData = m_challengeData.quizChallengeData;
 			m_buttonOne.text.text = _quizData.optionOne;
 			m_buttonTwo.text.text = _quizData.optionTwo;
 			m_buttonThree.text.text = _quizData.optionThree;
 		}
 
+		//Check current answer
+		//Call base methods depending on wether or not the answer is correct
 		override protected void CheckAnswer()
 		{
+			//Only check answer if gameObject is active
 			if (!gameObject.activeSelf)
 				return;
 
@@ -52,23 +67,21 @@ namespace Codium.Challenges {
 			}
 		}
 
+		//Reset the challenge
 		override protected void ResetChallenge ()
 		{
-			base.ResetChallenge();
-
 			m_buttonOne.materialRipple.SetGraphicColor(m_startColor, true);
 			m_buttonTwo.materialRipple.SetGraphicColor(m_startColor, true);
 			m_buttonThree.materialRipple.SetGraphicColor(m_startColor, true);
 		}
 
+		// ***** METHODS FOR SELECTING AN ANSWER *****
+		
 		public void SelectAnswerOne()
 		{
-			if (challengeManager.challengeComplete)
-				return;
-
 			m_selectedAnswer = QuizAnswer.ONE;
 
-			OnAnswerSelected();
+			base.AnswerSelected();
 
 			m_buttonOne.materialRipple.SetGraphicColor(ColorManager.GetColor(m_selectColorName), true);
 			m_buttonTwo.materialRipple.SetGraphicColor(m_startColor, true);
@@ -76,12 +89,9 @@ namespace Codium.Challenges {
 		}
 		public void SelectAnswerTwo()
 		{
-			if (challengeManager.challengeComplete)
-				return;
-
 			m_selectedAnswer = QuizAnswer.TWO;
 
-			OnAnswerSelected();
+			base.AnswerSelected();
 
 			m_buttonOne.materialRipple.SetGraphicColor(m_startColor, true);
 			m_buttonTwo.materialRipple.SetGraphicColor(ColorManager.GetColor(m_selectColorName), true);
@@ -89,12 +99,9 @@ namespace Codium.Challenges {
 		}
 		public void SelectAnswerThree()
 		{
-			if (challengeManager.challengeComplete)
-				return;
-
 			m_selectedAnswer = QuizAnswer.THREE;
 
-			OnAnswerSelected();
+			base.AnswerSelected();
 
 			m_buttonOne.materialRipple.SetGraphicColor(m_startColor, true);
 			m_buttonTwo.materialRipple.SetGraphicColor(m_startColor, true);

@@ -1,10 +1,16 @@
-﻿using UnityEngine;
+﻿// *************************************
+// Handles setting up a connection to Google Spreadsheet.
+// Allows for retrieving data from at spreadsheet.
+// *************************************
+
+using UnityEngine;
 using LitJson;
 
 namespace Codium.GSFU
 {
 	public class GSFU_Connector {
 		
+		//Constructor
 		public GSFU_Connector (string spreadsheetID, string worksheetName) {
 			m_spreadsheetID = spreadsheetID;
 			m_worksheetName = worksheetName;

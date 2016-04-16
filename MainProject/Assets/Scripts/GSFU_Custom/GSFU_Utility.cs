@@ -1,3 +1,7 @@
+// *************************************
+// Custom utility class for Google Spreadsheet For Unity.
+// *************************************
+
 namespace Codium.GSFU
 {
 	public class GSFU_Utility {

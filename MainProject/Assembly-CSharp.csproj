@@ -209,6 +209,9 @@
      <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\TextureUtils.cs" />
      <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\ObserveAttribute\ObserveAttribute.cs" />
      <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\PopupAttribute\PopupAttribute.cs" />
+     <Compile Include="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" />
+     <Compile Include="Assets\ProgressBar\Script\ProgressRadialBehaviour.cs" />
+     <Compile Include="Assets\ProgressBar\Script\Utils.cs" />
      <Compile Include="Assets\Scripts\GSFU_Custom\GSFU_Utility.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\IJsonWrapper.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\JsonData.cs" />
@@ -227,6 +230,7 @@
      <Compile Include="Assets\Scripts\Skills\Data\SkillLevelData.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\SkillTreeData.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\Challenge.cs" />
+     <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\ChallengeDisplay.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\ChallengeManager.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\FITBChallenge.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\QuizChallenge.cs" />

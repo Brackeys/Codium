@@ -1,16 +1,23 @@
+// *************************************
+// Skill Tree editor window.
+// This creates an editor for SkillTreeData, SkillLevelData and SkillData.
+// *************************************
+
 using UnityEngine;
 using UnityEditor;
-
-using System.Collections.Generic;
 
 namespace Codium
 {
 	public class SkillTreeEditorWindow : EditorWindow
 	{
+		//The name of the SkillTreeData object to be edited.
+		//The object MUST be in a Resources folder.
 		private const string SKILL_TREE_NAME = "SkillTree";
 
+		//The SkillTreeData object currently being edited
 		private SkillTreeData m_skillTree;
 
+		//Current scroll position
 		private Vector2 m_scrollPos = Vector2.zero;
 
 		[MenuItem("Window/Skill Editor")]
@@ -25,15 +32,15 @@ namespace Codium
 			window.Setup();
         }
 
+		//Performs setup nessecary for editing
 		public void Setup()
 		{
 			m_skillTree = (SkillTreeData)Resources.Load(SKILL_TREE_NAME);
         }
 
+		//Draw everything :)
 		void OnGUI ()
 		{
-			//EditorGUI.DrawRect(new Rect(0,0, maxSize.x, maxSize.y), new Color(.1f, .1f, .1f));
-
 			GUI.color = Color.white;
 			
 			if (m_skillTree == null) {
@@ -56,6 +63,7 @@ namespace Codium
 
 		}
 		
+		//Draws all the skill levels
 		void DrawSkillLevels () {
 			Undo.RecordObject (m_skillTree, "Skill Tree Action");
 			
@@ -119,6 +127,7 @@ namespace Codium
 			EditorUtility.SetDirty(m_skillTree);
 		}
 		
+		//Draws all the skills withing a skill level
 		void DrawSkills (SkillLevelData _skillLevel) {
 			EditorGUILayout.BeginHorizontal();
 
