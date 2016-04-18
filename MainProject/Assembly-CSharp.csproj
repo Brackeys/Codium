@@ -232,6 +232,7 @@
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\Challenge.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\ChallengeDisplay.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\ChallengeManager.cs" />
+     <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\ChallengeProgressManager.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\FITBChallenge.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\Challenges\QuizChallenge.cs" />
      <Compile Include="Assets\Scripts\Skills\Runtime\LessonManager.cs" />

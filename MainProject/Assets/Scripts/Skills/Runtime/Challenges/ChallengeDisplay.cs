@@ -75,6 +75,7 @@ namespace Codium.Challenges
 		//When a challenge is reset
 		void OnResetChallenge () {
 			m_footerAnim.SetTrigger(m_resetFooterTrigger);
+			m_checkAnswerButton.interactable = false;
 		}
 		
 		//When a challenge is answered correctly

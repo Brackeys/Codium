@@ -9,6 +9,7 @@ using UnityEngine;
 
 namespace Codium.Challenges
 {
+	[RequireComponent(typeof(ChallengeProgressManager))]
 	public class ChallengeManager : Singleton<ChallengeManager>
 	{
 
@@ -19,9 +20,6 @@ namespace Codium.Challenges
 		QuizChallenge m_quizChallenge;
 		[SerializeField]
 		FITBChallenge m_fitbChallenge;
-
-		//TODO: Better way of keeping track of current challenges
-		private int m_currentChallengeIndex;
 
 		//Callbacks
 		public delegate void ResetChallengeCallback();
@@ -38,76 +36,60 @@ namespace Codium.Challenges
 		public AnswerSelectedCallback onAnswerSelected;
 		public delegate void OnBeginChallengeCallback (ChallengeData challenge);
 		public OnBeginChallengeCallback onBeginChallenge;
+		
+		//Properties
+		private ChallengeData CurrentChallenge { get { return m_progressManager.CurrentChallenge; } }
 
 		//Caching
 		LessonManager m_lessonManager;
+		ChallengeProgressManager m_progressManager;
 
 		void Awake () {
 			//Caching
-			m_lessonManager = LessonManager.Instance;
-			if (m_lessonManager == null) {
-				Debug.LogError ("No LessonManager found!");
-			}
+			m_progressManager = GetComponent<ChallengeProgressManager>();
 		}
 
 		void Start ()
 		{
-			//Begin by resetting the current challenge
-			ResetChallenge();
-
-			//TODO: Load in a certain challenge, not just the first in the list
-			m_currentChallengeIndex = 0;
-			BeginChallenge();
-		}
-		
-		private ChallengeData GetCurrentChallenge () {
-			//TODO: This can be deleted when a proper way of keeping track
-			//of the current challenge is implemented.
-			
-			LessonData _lesson = LessonManager.Instance.CurrentLesson;
-			if (m_currentChallengeIndex >= _lesson.challenges.Length)
-			{
-				Debug.LogError("Challenge index out of bounds: " + m_currentChallengeIndex);
-				return null;
-			}
-			
-			return _lesson.challenges[m_currentChallengeIndex];
+			ContinueToNextChallenge();
 		}
 
 		//Begin the current challenge
-		void BeginChallenge ()
-		{
-			ChallengeData _challenge = GetCurrentChallenge();
-			
+		private void BeginChallenge ()
+		{	
 			//Invoke onBeginChallenge
-			onBeginChallenge.Invoke(_challenge);
+			onBeginChallenge.Invoke(CurrentChallenge);
 
 			//Load and init challenge based on type
-			switch (_challenge.type)
+			switch (CurrentChallenge.type)
 			{
 				case ChallengeType.QUIZ:
 					m_quizChallenge.gameObject.SetActive(true);
-					m_quizChallenge.InitChallenge(_challenge);
+					m_quizChallenge.InitChallenge(CurrentChallenge);
 					break;
 				case ChallengeType.FITB:
 					m_fitbChallenge.gameObject.SetActive(true);
-					m_fitbChallenge.InitChallenge(_challenge);
+					m_fitbChallenge.InitChallenge(CurrentChallenge);
 					break;
 				default:
-					Debug.LogError("No such challenge type registered here: " + _challenge.type);
+					Debug.LogError("No such challenge type registered here: " + CurrentChallenge.type);
 					return;
 			}
 		}
 
 		//Complete the current challenge
-		//A challenge is currently completed no matter if the answer was correct or not
-		void CompleteChallenge ()
+		private void CompleteChallenge ()
 		{
-			LessonData _lesson = m_lessonManager.CurrentLesson;
-			float _completionPercentage = ((float)(m_currentChallengeIndex + 1)/_lesson.challenges.Length) * 100f;
+			//Complete challenge in progress manager
+			m_progressManager.CompleteChallenge();
 			
+			//Get the completionPercentage
+			float _completionPercentage = m_progressManager.GetCompletionPercentage();
+			
+			//Invoke the onCompleteChallenge callback
 			if (onCompleteChallenge != null)
 				onCompleteChallenge.Invoke(_completionPercentage);
+			
 		}
 
 		//This method is called when a correct answer is chosen
@@ -126,17 +108,18 @@ namespace Codium.Challenges
 		{
 			if (onWrongAnswer != null)
 				onWrongAnswer.Invoke(correctAnswer);
-			
-			CompleteChallenge();
 		}
 		
 		//Continue to the next challenge
-		//TODO: Chose the next challenge by criteria, not just the next in the list
 		private void ContinueToNextChallenge ()
 		{
+			//Reset the current challenge
 			ResetChallenge();
 
-			m_currentChallengeIndex += 1;
+			//Progress to the next challenge
+			m_progressManager.ProgressToNextChallenge();
+			
+			//Begin the challenge
 			BeginChallenge();
 		}
 
