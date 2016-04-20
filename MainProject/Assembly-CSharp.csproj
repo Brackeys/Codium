@@ -51,6 +51,9 @@
      <Compile Include="Assets\Extensions\GSFU\Scripts\AdjustBalls.cs" />
      <Compile Include="Assets\Extensions\GSFU\Scripts\BounceCounter.cs" />
      <Compile Include="Assets\Extensions\GSFU\Scripts\UnityDataConnector.cs" />
+     <Compile Include="Assets\Extensions\ProgressBar\Script\ProgressBarBehaviour.cs" />
+     <Compile Include="Assets\Extensions\ProgressBar\Script\ProgressRadialBehaviour.cs" />
+     <Compile Include="Assets\Extensions\ProgressBar\Script\Utils.cs" />
      <Compile Include="Assets\Extensions\TextMesh Pro\Examples\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Extensions\TextMesh Pro\Examples\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\Extensions\TextMesh Pro\Examples\Scripts\Benchmark02.cs" />
@@ -209,9 +212,6 @@
      <Compile Include="Assets\MaterialUI\Scripts\MaterialUtils\TextureUtils.cs" />
      <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\ObserveAttribute\ObserveAttribute.cs" />
      <Compile Include="Assets\MaterialUI\Utils\PropertyDrawers\PopupAttribute\PopupAttribute.cs" />
-     <Compile Include="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" />
-     <Compile Include="Assets\ProgressBar\Script\ProgressRadialBehaviour.cs" />
-     <Compile Include="Assets\ProgressBar\Script\Utils.cs" />
      <Compile Include="Assets\Scripts\GSFU_Custom\GSFU_Utility.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\IJsonWrapper.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\JsonData.cs" />

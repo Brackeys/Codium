@@ -79,10 +79,16 @@ namespace ProgressBar
             m_Fill = GetComponent<Image>();
             m_Value = 0;
             SetFillerSize(0);
+            
+            Debug.Log ("Remember to turn of this test.");
         }
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.T)) {
+                SetFillerSizeAsPercentage (66);
+            }
+            
             //If theses two values aren't equals this means m_Value has been updated and the animation needs to start.
             if (TransitoryValue != m_Value)
             {
@@ -134,7 +140,7 @@ namespace ProgressBar
         public void SetFillerSize(float fill)
         {
             if (m_AttachedText)
-                m_AttachedText.text = Mathf.RoundToInt(fill*100).ToString() + " %";
+                m_AttachedText.text = Mathf.RoundToInt(fill*100).ToString() + "%";
 
             m_Fill.fillAmount = fill;
         }
