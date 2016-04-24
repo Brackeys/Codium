@@ -222,6 +222,7 @@
      <Compile Include="Assets\Scripts\Libraries\LitJson\JsonWriter.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\Lexer.cs" />
      <Compile Include="Assets\Scripts\Libraries\LitJson\ParserToken.cs" />
+     <Compile Include="Assets\Scripts\LocalManagers.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\Challenges\ChallengeData.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\Challenges\FITBChallengeData.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\Challenges\QuizChallengeData.cs" />
@@ -239,6 +240,7 @@
      <Compile Include="Assets\Scripts\UI\CodiumColorPalette.cs" />
      <Compile Include="Assets\Scripts\UI\ColorManager.cs" />
      <Compile Include="Assets\Scripts\UI\DropdownMenu_ThreeOptions.cs" />
+     <Compile Include="Assets\Scripts\UI\ScaleOnMouseOver.cs" />
      <Compile Include="Assets\Scripts\UI\TMP_EmulateText.cs" />
      <Compile Include="Assets\Scripts\Util\Singleton.cs" />
      <None Include="Assets\Extensions\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

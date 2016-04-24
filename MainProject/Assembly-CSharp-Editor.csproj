@@ -127,6 +127,7 @@
      <Compile Include="Assets\MaterialUI\Editor\Tools\Vector Image Manager\VectorImageManagerWindow.cs" />
      <Compile Include="Assets\MaterialUI\Editor\Tools\Vector Image Manager\VectorImagePickerWindow.cs" />
      <Compile Include="Assets\MaterialUI\Utils\Editor\UnityZip\Zip.cs" />
+     <Compile Include="Assets\Scripts\Editor\LocalManagersEditor.cs" />
      <Compile Include="Assets\Scripts\GSFU_Custom\Editor\GSFU_Connector.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\Editor\LessonDataEditor.cs" />
      <Compile Include="Assets\Scripts\Skills\Data\Editor\SkillTreeEditorWindow.cs" />
